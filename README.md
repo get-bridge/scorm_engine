@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/phallstrom/scorm_engine.svg?branch=master)](https://travis-ci.org/phallstrom/scorm_engine)
+
 # ScormEngine
 
 Welcome to your new gem! In this directory, you'll find the files you need to
