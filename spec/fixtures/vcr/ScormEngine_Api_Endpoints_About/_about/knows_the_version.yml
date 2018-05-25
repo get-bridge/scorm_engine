@@ -21,7 +21,7 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Thu, 24 May 2018 22:04:16 GMT
+      - Fri, 25 May 2018 21:32:44 GMT
       server:
       - nginx
       vary:
@@ -34,5 +34,5 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"version":"2017.1.28.969","platform":"Java"}'
     http_version: 
-  recorded_at: Thu, 24 May 2018 22:04:16 GMT
+  recorded_at: Fri, 25 May 2018 21:32:44 GMT
 recorded_with: VCR 4.0.0
