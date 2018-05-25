@@ -49,4 +49,12 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
       pending "Can't test until we have enough results to paginate. I think?"
     end
   end
+
+  describe "#course_import" do
+    pending
+  end
+
+  describe "#course_import_status" do
+    pending
+  end
 end

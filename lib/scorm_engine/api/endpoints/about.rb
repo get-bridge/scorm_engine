@@ -6,6 +6,9 @@ module ScormEngine
         # Get back the version and platform of the running instance of Engine
         #
         # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__about_get
+        #
+        # @returns [ScormEngine::Response]
+        #
         def about
           response = get("about")
           result = OpenStruct.new(response.body)
@@ -15,16 +18,20 @@ module ScormEngine
         #
         # Gets the number of users across all tenants.
         #
+        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__about_userCount_get
+        #
         # @param [Hash] options
         #
         # @option options [DateTime] :before 
         #   Only userCount updated before the specified time (inclusive) are included. 
         #   If a time zone is not specified, the server's time zone will be used.
+        #
         # @option options [DateTime] :since 
         #   Only userCount updated since the specified time (inclusive) are included.
         #   If a time zone is not specified, the server's time zone will be used.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__about_userCount_get
+        # @returns [ScormEngine::Response]
+        #
         def about_user_count(options = {})
           response = get("about/userCount", options)
 

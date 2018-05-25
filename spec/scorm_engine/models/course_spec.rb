@@ -1,3 +1,3 @@
 RSpec.describe ScormEngine::Models::Course do
-  pending
+  pending ".new_from_api"
 end

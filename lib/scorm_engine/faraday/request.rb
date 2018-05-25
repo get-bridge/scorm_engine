@@ -5,12 +5,12 @@ module ScormEngine
         request(:get, path, options)
       end
 
-      def post(path, options = {})
-        request(:post, path, options)
+      def post(path, options = {}, body = nil)
+        request(:post, path, options, body)
       end
 
-      def put(path, options = {})
-        request(:put, path, options)
+      def put(path, options = {}, body = nil)
+        request(:put, path, options, body)
       end
 
       def delete(path, options = {})
@@ -19,7 +19,7 @@ module ScormEngine
 
       private
 
-      def request(method, path, options)
+      def request(method, path, options, body = nil)
         path = "#{tenant}/#{path}"
 
         options = coerce_options(options)
@@ -29,8 +29,12 @@ module ScormEngine
           when :get, :delete
             request.url(path, options)
           when :post, :put
-            request.path = path
-            request.body = options unless options.empty?
+            if body.nil?
+              body = options.dup
+              options = {}
+            end
+            request.url(path, options)
+            request.body = body unless body.empty?
           end
         end
       end

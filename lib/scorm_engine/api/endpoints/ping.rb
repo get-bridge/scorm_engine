@@ -6,6 +6,9 @@ module ScormEngine
         # Get back a message indicating that the API is working.
         #
         # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__ping_get
+        #
+        # @returns [ScormEngine::Response]
+        #
         def ping
           response = get("ping")
           Response.new(raw_response: response)
