@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting/courses
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - ScormEngine Ruby Gem 0.1.0
+      Authorization:
+      - Basic <BASIC_AUTH>
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      content-type:
+      - application/json
+      date:
+      - Fri, 25 May 2018 22:15:53 GMT
+      server:
+      - nginx
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '212'
+      connection:
+      - Close
+    body:
+      encoding: ASCII-8BIT
+      string: '{"courses":[{"id":"course_1524151356","version":0,"title":"LMS365","courseLearningStandard":"SCORM_12","registrationCount":1,"updated":"2018-04-19T15:22:43.000Z","metadata":{"title":"LMS365","titleLanguage":"x-none","description":"Introduction
+        to LMS365","descriptionLanguage":"x-none"}}]}'
+    http_version: 
+  recorded_at: Fri, 25 May 2018 22:15:53 GMT
+recorded_with: VCR 4.0.0

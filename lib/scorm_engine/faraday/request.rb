@@ -39,7 +39,7 @@ module ScormEngine
         options.dup.each do |k, v|
           case k
           when :before, :since
-            options[k] = v.iso8601
+            options[k] = v.iso8601 if v.respond_to?(:iso8601)
           end
         end
         options

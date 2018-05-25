@@ -7,6 +7,10 @@ module ScormEngine
       @result = result
     end
 
+    def results
+      Array(result)
+    end
+
     def success?
       raw_response.success?
     end
