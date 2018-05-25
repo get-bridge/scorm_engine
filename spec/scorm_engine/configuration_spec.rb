@@ -1,14 +1,14 @@
 RSpec.describe ScormEngine::Configuration do
   before do
     ScormEngine.configure do |config|
-      config.base_url = "https://scorm.engine/ScormEngineInterface/api/v1"
+      config.host = "scorm.engine"
       config.username = "admin"
       config.password = "secret"
     end
   end
 
-  it "knows its base url" do
-    expect(ScormEngine.configuration.base_url).to eq "https://scorm.engine/ScormEngineInterface/api/v1"
+  it "knows its host" do
+    expect(ScormEngine.configuration.host).to eq "scorm.engine"
   end
 
   it "knows its username" do
@@ -21,5 +21,9 @@ RSpec.describe ScormEngine::Configuration do
 
   it "knows its logger" do
     expect(ScormEngine.configuration.logger).to be_a Logger
+  end
+
+  it "knows its log options" do
+    expect(ScormEngine.configuration.log_options).to eq({headers: false, bodies: false})
   end
 end
