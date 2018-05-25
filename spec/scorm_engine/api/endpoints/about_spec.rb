@@ -41,7 +41,7 @@ RSpec.describe ScormEngine::Api::Endpoints::About do
     end
 
     it "accepts :before option" do
-      subject = ScormEngine::Client.new(tenant: "ScormEngineGemTesting").about_user_count(before: Time.parse("1901-01-1").utc)
+      subject = ScormEngine::Client.new(tenant: "ScormEngineGemTesting").about_user_count(before: Time.parse("1901-01-1 00:00:00 UTC"))
       aggregate_failures do
         expect(subject.success?).to eq true
         expect(subject.result.total).to eq 0
@@ -49,7 +49,7 @@ RSpec.describe ScormEngine::Api::Endpoints::About do
     end
 
     it "accepts :since option" do
-      subject = ScormEngine::Client.new(tenant: "ScormEngineGemTesting").about_user_count(since: Time.parse("2031-01-1").utc)
+      subject = ScormEngine::Client.new(tenant: "ScormEngineGemTesting").about_user_count(since: Time.parse("2031-01-1 00:00:00 UTC"))
       aggregate_failures do
         expect(subject.success?).to eq true
         expect(subject.result.total).to eq 0
