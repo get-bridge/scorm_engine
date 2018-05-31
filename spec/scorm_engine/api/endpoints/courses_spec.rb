@@ -29,10 +29,17 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
 
     describe ":id option" do
       it "fetches a single course" do
-        courses = subject.courses(id: "687b9565-fed2-4281-ba0a-0ddb72468e6b")
-        course = courses.results.first
+        response = subject.courses(id: "687b9565-fed2-4281-ba0a-0ddb72468e6b")
+        course = response.results.first
         expect(course.id).to eq "687b9565-fed2-4281-ba0a-0ddb72468e6b"
         expect(course.title).to eq "Golf Explained - Run-time Basic Calls"
+      end
+
+      it "returns 404 when ID is invalid" do
+        response = subject.courses(id: "invalid-bogus")
+        expect(response.success?).to eq false
+        expect(response.status).to eq 404
+        expect(response.message).to match(/External Package ID 'invalid-bogus'/)
       end
     end
 
