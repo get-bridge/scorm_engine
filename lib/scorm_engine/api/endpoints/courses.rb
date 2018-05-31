@@ -7,8 +7,13 @@ module ScormEngine
         # Get the list of courses
         #
         # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__courses_get
+        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__courses__courseId__get
         #
         # @param [Hash] options
+        #
+        # @option options [String] :id 
+        #   The ID of the single course to retrieve. If set no other options
+        #   are respected.
         #
         # @option options [DateTime] :since 
         #   Only courses updated since the specified ISO 8601 TimeStamp
@@ -18,7 +23,11 @@ module ScormEngine
         # @return [Array<ScormEngine::Models::Course>] in the result
         #
         def courses(options = {})
-          response = get("courses", options)
+          response = if options[:id]
+                       get("courses/#{options[:id]}")
+                     else
+                       get("courses", options)
+                     end
 
           result = if response.success?
                      response.body["courses"].map do |course|

@@ -27,6 +27,15 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
       end
     end
 
+    describe ":id option" do
+      it "fetches a single course" do
+        courses = subject.courses(id: "687b9565-fed2-4281-ba0a-0ddb72468e6b")
+        course = courses.results.first
+        expect(course.id).to eq "687b9565-fed2-4281-ba0a-0ddb72468e6b"
+        expect(course.title).to eq "Golf Explained - Run-time Basic Calls"
+      end
+    end
+
     describe ":since option" do
       it "works" do
         courses = subject.courses(since: Time.parse("2000-01-1 00:00:00 UTC"))
@@ -42,7 +51,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
           expect(courses.success?).to eq false
           expect(courses.status).to eq 400
           expect(courses.results).to eq []
-          expect(courses.message).to match /'invalid' is either not a timestamp or seems to be not formatted according to ISO 8601/
+          expect(courses.message).to match(/'invalid' is either not a timestamp or seems to be not formatted according to ISO 8601/)
         end
       end
     end
