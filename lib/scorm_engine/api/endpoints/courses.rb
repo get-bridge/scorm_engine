@@ -40,6 +40,24 @@ module ScormEngine
           Response.new(raw_response: response, result: result)
         end
 
+        # 
+        # Delete a course
+        #
+        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__courses__courseId__delete
+        #
+        # @param [Hash] options
+        #
+        # @option options [String] :id 
+        #   The ID of the course to delete.
+        #
+        # @returns [ScormEngine::Response]
+        #
+        def delete_course(options = {})
+          raise ArgumentError.new('Required arguments :id missing') if options[:id].nil?
+          response = delete("courses/#{options[:id]}")
+          Response.new(raw_response: response)
+        end
+
         #
         # Import a course
         #

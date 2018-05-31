@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses/nonexistent-course
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - ScormEngine Ruby Gem 0.1.0
+      Authorization:
+      - Basic <BASIC_AUTH>
+  response:
+    status:
+      code: 404
+      message: ''
+    headers:
+      content-type:
+      - application/json
+      date:
+      - Thu, 31 May 2018 22:25:06 GMT
+      server:
+      - nginx
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '73'
+      connection:
+      - Close
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"External Package ID ''nonexistent-course''"}'
+    http_version: 
+  recorded_at: Thu, 31 May 2018 22:25:06 GMT
+recorded_with: VCR 4.0.0

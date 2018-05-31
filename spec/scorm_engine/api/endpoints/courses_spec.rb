@@ -68,6 +68,30 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
     end
   end
 
+  describe "#delete_course" do
+    it "works" do
+      import = subject.course_import(course: "course-to-be-deleted", url: "https://github.com/phallstrom/scorm_engine/raw/master/spec/fixtures/zip/RuntimeBasicCalls_SCORM20043rdEdition.zip", may_create_new_version: true)
+      sleep 20 if recording_vcr?
+      import_status = subject.course_import_status(id: import.result.id)
+      raise "Course failed to import successfully" unless import_status.result.complete?
+
+      response = subject.delete_course(id: "course-to-be-deleted")
+      expect(response.success?).to eq true
+      expect(response.status).to eq 204
+    end
+
+    it "raises ArgumentError when :id is missing" do
+      expect { subject.delete_course }.to raise_error(ArgumentError, /:id missing/)
+    end
+
+    it "fails when id is invalid" do
+      response = subject.delete_course(id: "nonexistent-course")
+      expect(response.success?).to eq false
+      expect(response.status).to eq 404
+        expect(response.message).to match(/External Package ID 'nonexistent-course'/)
+    end
+  end
+
   describe "#course_import" do
     it "raises ArgumentError when :course is missing" do
       expect { subject.course_import }.to raise_error(ArgumentError, /:course missing/)
