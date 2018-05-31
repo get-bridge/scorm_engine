@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting/courses?since=invalid
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses?since=invalid
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Fri, 25 May 2018 22:15:54 GMT
+      - Thu, 31 May 2018 19:14:21 GMT
       server:
       - nginx
       content-length:
@@ -33,5 +33,5 @@ http_interactions:
       string: '{"message":"''invalid'' is either not a timestamp or seems to be not
         formatted according to ISO 8601"}'
     http_version: 
-  recorded_at: Fri, 25 May 2018 22:15:54 GMT
+  recorded_at: Thu, 31 May 2018 19:14:21 GMT
 recorded_with: VCR 4.0.0

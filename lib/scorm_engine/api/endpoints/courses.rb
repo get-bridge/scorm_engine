@@ -78,7 +78,7 @@ module ScormEngine
 
           response = post("courses/importJobs", query_params, body)
 
-          result = if response.success?
+          result = if response&.success?
                      ScormEngine::Models::CourseImport.new_from_api(response.body)
                    end
 
@@ -102,7 +102,7 @@ module ScormEngine
 
           response = get("courses/importJobs/#{options[:id]}")
 
-          result = if response.success?
+          result = if response&.success?
                      ScormEngine::Models::CourseImport.new_from_api(response.body)
                    end
 

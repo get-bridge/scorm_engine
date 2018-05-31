@@ -45,4 +45,9 @@ RSpec.configure do |config|
   end
 end
 
-
+# A helper used by specs to potentially sleep while we wait for async SCORM
+# jobs to process before checking their status. This is necessary because
+# otherwise VCR will cache the first status request and never update.
+def recording_vcr?
+  ENV.key?("RECORDING_VCR")
+end

@@ -20,7 +20,7 @@ module ScormEngine
         else
           this.id = options["jobId"]
           this.status = options["status"]
-          this.course = Course.new_from_api(options["course"])
+          this.course = Course.new_from_api(options["course"]) if options.key?("course") # unavailable in error states
         end
 
         this
