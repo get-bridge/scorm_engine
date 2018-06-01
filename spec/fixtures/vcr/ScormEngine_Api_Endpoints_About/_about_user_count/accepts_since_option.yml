@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting/about/userCount?since=2031-01-01T00%3A00%3A00Z
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/about/userCount?since=2031-01-01T00%3A00%3A00Z
     body:
       encoding: US-ASCII
       string: ''
@@ -21,18 +21,18 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Fri, 25 May 2018 21:36:14 GMT
+      - Fri, 01 Jun 2018 21:19:56 GMT
       server:
       - nginx
       vary:
       - Accept-Encoding
       content-length:
-      - '110'
+      - '136'
       connection:
       - Close
     body:
       encoding: ASCII-8BIT
-      string: '{"combinedTenants":{"total":0,"dispatched":0,"nonDispatched":0},"byTenant":[{"tenantName":"default","total":0,"dispatched":0,"nonDispatched":0},{"tenantName":"defaultid","total":0,"dispatched":0,"nonDispatched":0}]}'
+      string: '{"combinedTenants":{"total":0,"dispatched":0,"nonDispatched":0},"byTenant":[{"tenantName":"default","total":0,"dispatched":0,"nonDispatched":0},{"tenantName":"defaultid","total":0,"dispatched":0,"nonDispatched":0},{"tenantName":"scormenginegemtesting","total":0,"dispatched":0,"nonDispatched":0},{"tenantName":"scormenginegemtesting-default","total":0,"dispatched":0,"nonDispatched":0}]}'
     http_version: 
-  recorded_at: Fri, 25 May 2018 21:36:14 GMT
+  recorded_at: Fri, 01 Jun 2018 21:19:56 GMT
 recorded_with: VCR 4.0.0
