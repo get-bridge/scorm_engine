@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting/ping
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/ping
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Thu, 24 May 2018 20:54:51 GMT
+      - Fri, 01 Jun 2018 21:16:59 GMT
       server:
       - nginx
       vary:
@@ -34,5 +34,5 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"message":"API is up."}'
     http_version: 
-  recorded_at: Thu, 24 May 2018 20:54:51 GMT
+  recorded_at: Fri, 01 Jun 2018 21:16:59 GMT
 recorded_with: VCR 4.0.0

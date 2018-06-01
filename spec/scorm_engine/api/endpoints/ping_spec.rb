@@ -1,5 +1,5 @@
 RSpec.describe ScormEngine::Api::Endpoints::Ping do
-  let(:subject) { ScormEngine::Client.new(tenant: "ScormEngineGemTesting").ping }
+  let(:subject) { scorm_engine_client.ping }
 
   it "is successful" do
     expect(subject.success?).to eq true
