@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses/687b9565-fed2-4281-ba0a-0ddb72468e6b
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses/testing-golf-explained
     body:
       encoding: US-ASCII
       string: ''
@@ -21,19 +21,19 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Thu, 31 May 2018 22:09:06 GMT
+      - Tue, 19 Jun 2018 20:12:33 GMT
       server:
       - nginx
       vary:
       - Accept-Encoding
       content-length:
-      - '211'
+      - '190'
       connection:
       - Close
     body:
       encoding: ASCII-8BIT
-      string: '{"courses":[{"id":"687b9565-fed2-4281-ba0a-0ddb72468e6b","version":0,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T18:00:17.000Z"}]}'
+      string: '{"courses":[{"id":"testing-golf-explained","version":0,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-06-19T20:12:16.000Z"}]}'
     http_version: 
-  recorded_at: Thu, 31 May 2018 22:09:06 GMT
+  recorded_at: Tue, 19 Jun 2018 20:12:33 GMT
 recorded_with: VCR 4.0.0

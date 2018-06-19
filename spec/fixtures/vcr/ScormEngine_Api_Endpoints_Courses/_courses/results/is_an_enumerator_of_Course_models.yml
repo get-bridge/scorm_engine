@@ -21,13 +21,13 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 19 Jun 2018 20:21:05 GMT
+      - Tue, 19 Jun 2018 20:29:43 GMT
       server:
       - nginx
       vary:
       - Accept-Encoding
       content-length:
-      - '266'
+      - '288'
       connection:
       - Close
     body:
@@ -38,7 +38,8 @@ http_interactions:
         Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-06-19T20:12:25.000Z"},{"id":"valid123","version":0,"title":"Golf
         Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-06-19T20:12:37.000Z"},{"id":"course-to-be-deleted","version":0,"title":"Golf
         Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-06-19T20:15:35.000Z"},{"id":"a-valid-course-url","version":0,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-06-19T20:20:46.000Z"}]}'
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-06-19T20:20:46.000Z"},{"id":"a-previously-existing-course","version":0,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-06-19T20:25:55.000Z"}]}'
     http_version: 
-  recorded_at: Tue, 19 Jun 2018 20:21:05 GMT
+  recorded_at: Tue, 19 Jun 2018 20:29:43 GMT
 recorded_with: VCR 4.0.0

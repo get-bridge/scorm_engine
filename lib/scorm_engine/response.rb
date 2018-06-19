@@ -8,7 +8,7 @@ module ScormEngine
     end
 
     def results
-      Array(result)
+      result.is_a?(Enumerator) ? result : Array(result)
     end
 
     def success?

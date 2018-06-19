@@ -21,7 +21,7 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Thu, 31 May 2018 22:13:55 GMT
+      - Tue, 19 Jun 2018 20:12:31 GMT
       server:
       - nginx
       vary:
@@ -34,5 +34,5 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"message":"External Package ID ''invalid-bogus''"}'
     http_version: 
-  recorded_at: Thu, 31 May 2018 22:13:55 GMT
+  recorded_at: Tue, 19 Jun 2018 20:12:31 GMT
 recorded_with: VCR 4.0.0

@@ -21,46 +21,22 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Thu, 31 May 2018 19:14:21 GMT
+      - Tue, 19 Jun 2018 20:12:30 GMT
       server:
       - nginx
       vary:
       - Accept-Encoding
       content-length:
-      - '425'
+      - '237'
       connection:
       - Close
     body:
       encoding: ASCII-8BIT
-      string: '{"courses":[{"id":"687b9565-fed2-4281-ba0a-0ddb72468e6b","version":0,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T18:00:17.000Z"},{"id":"testing123","version":0,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T18:28:39.000Z"},{"id":"testing123","version":1,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T18:32:19.000Z"},{"id":"testing123","version":2,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T18:32:19.000Z"},{"id":"testing123","version":3,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T18:32:19.000Z"},{"id":"testing123","version":4,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T18:35:36.000Z"},{"id":"testing123","version":5,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T18:50:47.000Z"},{"id":"testing123","version":6,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T18:50:47.000Z"},{"id":"testing123","version":7,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T18:50:48.000Z"},{"id":"testing123","version":8,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T18:50:48.000Z"},{"id":"testing123","version":9,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T18:53:42.000Z"},{"id":"testing123","version":10,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T18:53:43.000Z"},{"id":"testing123","version":11,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T18:53:43.000Z"},{"id":"testing123","version":12,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T18:53:44.000Z"},{"id":"testing123","version":13,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T18:57:43.000Z"},{"id":"testing123","version":14,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T18:59:30.000Z"},{"id":"testing123","version":15,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T18:59:30.000Z"},{"id":"testing123","version":16,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T18:59:31.000Z"},{"id":"testing123","version":17,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T18:59:31.000Z"},{"id":"valid123","version":0,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T18:59:32.000Z"},{"id":"valid123","version":1,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T19:00:29.000Z"},{"id":"valid123","version":2,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T19:01:22.000Z"},{"id":"testing123","version":18,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T19:01:29.000Z"},{"id":"testing123","version":19,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T19:01:29.000Z"},{"id":"testing123","version":20,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T19:01:31.000Z"},{"id":"testing123","version":21,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T19:01:31.000Z"},{"id":"valid123","version":3,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T19:06:54.000Z"},{"id":"valid123","version":4,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-05-31T19:13:34.000Z"}]}'
+      string: '{"courses":[{"id":"testing-golf-explained","version":0,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-06-19T20:12:16.000Z"},{"id":"testing123","version":0,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-06-19T20:12:24.000Z"},{"id":"testing123","version":1,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-06-19T20:12:25.000Z"},{"id":"course-to-be-deleted","version":0,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-06-19T20:12:28.000Z"}]}'
     http_version: 
-  recorded_at: Thu, 31 May 2018 19:14:21 GMT
+  recorded_at: Tue, 19 Jun 2018 20:12:30 GMT
 recorded_with: VCR 4.0.0

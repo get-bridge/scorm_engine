@@ -11,11 +11,12 @@ module ScormEngine
         #
         # @param [Hash] options
         #
-        # @option options [String] :id 
+        # @option options [String] :course_id
         #   The ID of the single course to retrieve. If set no other options
-        #   are respected.
+        #   are respected. Note that multiple results may be returned if the
+        #   course has multiple versions.
         #
-        # @option options [DateTime] :since 
+        # @option options [DateTime] :since
         #   Only courses updated since the specified ISO 8601 TimeStamp
         #   (inclusive) are included.  If a time zone is not specified, the
         #   server's time zone will be used.
@@ -23,38 +24,39 @@ module ScormEngine
         # @return [Array<ScormEngine::Models::Course>] in the result
         #
         def courses(options = {})
-          response = if options[:id]
-                       get("courses/#{options[:id]}")
-                     else
-                       get("courses", options)
-                     end
+          path = "courses"
+          path = "courses/#{options.delete(:course_id)}" if options[:course_id]
 
-          result = if response.success?
-                     response.body["courses"].map do |course|
-                       ScormEngine::Models::Course.new_from_api(course)
-                     end
-                   else
-                     []
-                   end
+          response = get(path, options)
+
+          result = Enumerator.new do |enum|
+            loop do
+              response.success? && response.body["courses"].each do |course|
+                enum << ScormEngine::Models::Course.new_from_api(course)
+              end
+              break if !response.success? || response.body["more"].nil?
+              response = get(response.body["more"])
+            end
+          end
 
           Response.new(raw_response: response, result: result)
         end
 
-        # 
+        #
         # Delete a course
         #
         # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__courses__courseId__delete
         #
         # @param [Hash] options
         #
-        # @option options [String] :id 
+        # @option options [String] :course_id
         #   The ID of the course to delete.
         #
         # @returns [ScormEngine::Response]
         #
         def delete_course(options = {})
-          raise ArgumentError.new('Required arguments :id missing') if options[:id].nil?
-          response = delete("courses/#{options[:id]}")
+          raise ArgumentError.new('Required arguments :course_id missing') if options[:course_id].nil?
+          response = delete("courses/#{options[:course_id]}")
           Response.new(raw_response: response)
         end
 
@@ -71,7 +73,7 @@ module ScormEngine
         # @option options [String] :url
         #   URL path to the .zip package representing the course or the manifest file defining the course.
         #
-        # @option options [String] :course
+        # @option options [String] :course_id
         #   A unique identifier your application will use to identify the
         #   course after import. Your application is responsible both for
         #   generating this unique ID and for keeping track of the ID for later
@@ -89,18 +91,17 @@ module ScormEngine
         # @return [ScormEngine::Models::CourseImport] in the result
         #
         def course_import(options = {})
-          raise ArgumentError.new('Required arguments :course missing') if options[:course].nil?
+          raise ArgumentError.new('Required arguments :course_id missing') if options[:course_id].nil?
           raise ArgumentError.new('Required arguments :url missing') if options[:url].nil?
-          options[:name] ||= options[:course]
 
           query_params = {
-            course: options[:course],
+            course: options[:course_id],
             mayCreateNewVersion: !!options[:may_create_new_version]
           }
 
           body = {
             url: options[:url],
-            courseName: options[:name] || options[:course],
+            courseName: options[:name] || options[:course_id],
           }
 
           response = post("courses/importJobs", query_params, body)
@@ -130,7 +131,8 @@ module ScormEngine
           response = get("courses/importJobs/#{options[:id]}")
 
           result = if response&.success?
-                     ScormEngine::Models::CourseImport.new_from_api(response.body)
+                     # jobId is not always returned. :why:
+                     ScormEngine::Models::CourseImport.new_from_api({"jobId" => options[:id]}.merge(response.body))
                    end
 
           Response.new(raw_response: response, result: result)

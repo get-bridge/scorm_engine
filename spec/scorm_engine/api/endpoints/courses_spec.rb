@@ -1,6 +1,12 @@
 RSpec.describe ScormEngine::Api::Endpoints::Courses do
   let(:subject) { scorm_engine_client }
 
+  before do
+    against_real_scorm_engine do
+      ensure_course_exists(client: subject, course_id: "testing-golf-explained")
+    end
+  end
+
   describe "#courses" do
     let(:courses) { subject.courses }
 
@@ -9,34 +15,31 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
     end
 
     describe "results" do
-      it "is an array of Course models" do
-        expect(courses.results).to be_a Array
+      it "is an enumerator of Course models" do
+        expect(courses.results).to be_a Enumerator
         expect(courses.results.first).to be_a ScormEngine::Models::Course
       end
 
       it "sucessfully creates the Course attributes" do
         aggregate_failures do
-          course = courses.results.first
-          expect(course.id).to eq "687b9565-fed2-4281-ba0a-0ddb72468e6b"
+          course = courses.results.detect {|c| c.id == "testing-golf-explained" }
           expect(course.version).to eq 0
           expect(course.title).to eq "Golf Explained - Run-time Basic Calls"
-          expect(course.registration_count).to eq 1
-          expect(course.updated).to eq Time.parse("2018-05-31 18:00:17.000000000 +0000")
+          expect(course.registration_count).to eq 0
+          expect(course.updated).to be_a Time
           expect(course.description).to eq nil
         end
       end
     end
 
-    describe ":id option" do
-      it "fetches a single course" do
-        response = subject.courses(id: "687b9565-fed2-4281-ba0a-0ddb72468e6b")
-        course = response.results.first
-        expect(course.id).to eq "687b9565-fed2-4281-ba0a-0ddb72468e6b"
-        expect(course.title).to eq "Golf Explained - Run-time Basic Calls"
+    describe ":course_id option" do
+      it "fetches a single course, but perhaps multiple versions" do
+        response = subject.courses(course_id: "testing-golf-explained")
+        expect(response.results.all? { |c| c.title == "Golf Explained - Run-time Basic Calls" }).to eq true
       end
 
       it "returns 404 when ID is invalid" do
-        response = subject.courses(id: "invalid-bogus")
+        response = subject.courses(course_id: "invalid-bogus")
         expect(response.success?).to eq false
         expect(response.status).to eq 404
         expect(response.message).to match(/External Package ID 'invalid-bogus'/)
@@ -48,7 +51,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
         courses = subject.courses(since: Time.parse("2000-01-1 00:00:00 UTC"))
         aggregate_failures do
           expect(courses.success?).to eq true
-          expect(courses.results.size).to be >= 0
+          expect(courses.results.to_a.size).to be >= 0
         end
       end
 
@@ -57,7 +60,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
         aggregate_failures do
           expect(courses.success?).to eq false
           expect(courses.status).to eq 400
-          expect(courses.results).to eq []
+          expect(courses.results.to_a).to eq []
           expect(courses.message).to match(/'invalid' is either not a timestamp or seems to be not formatted according to ISO 8601/)
         end
       end
@@ -69,23 +72,24 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
   end
 
   describe "#delete_course" do
-    it "works" do
-      import = subject.course_import(course: "course-to-be-deleted", url: "https://github.com/phallstrom/scorm_engine/raw/master/spec/fixtures/zip/RuntimeBasicCalls_SCORM20043rdEdition.zip", may_create_new_version: true)
-      sleep 20 if recording_vcr?
-      import_status = subject.course_import_status(id: import.result.id)
-      raise "Course failed to import successfully" unless import_status.result.complete?
+    before do
+      against_real_scorm_engine do
+        ensure_course_exists(client: subject, course_id: "course-to-be-deleted")
+      end
+    end
 
-      response = subject.delete_course(id: "course-to-be-deleted")
+    it "works" do
+      response = subject.delete_course(course_id: "course-to-be-deleted")
       expect(response.success?).to eq true
       expect(response.status).to eq 204
     end
 
-    it "raises ArgumentError when :id is missing" do
-      expect { subject.delete_course }.to raise_error(ArgumentError, /:id missing/)
+    it "raises ArgumentError when :course_id is missing" do
+      expect { subject.delete_course }.to raise_error(ArgumentError, /:course_id missing/)
     end
 
     it "fails when id is invalid" do
-      response = subject.delete_course(id: "nonexistent-course")
+      response = subject.delete_course(course_id: "nonexistent-course")
       expect(response.success?).to eq false
       expect(response.status).to eq 404
         expect(response.message).to match(/External Package ID 'nonexistent-course'/)
@@ -94,33 +98,33 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
 
   describe "#course_import" do
     it "raises ArgumentError when :course is missing" do
-      expect { subject.course_import }.to raise_error(ArgumentError, /:course missing/)
+      expect { subject.course_import }.to raise_error(ArgumentError, /:course_id missing/)
     end
 
     it "raises ArgumentError when :url is missing" do
-      expect { subject.course_import(course: "id123") }.to raise_error(ArgumentError, /:url missing/)
+      expect { subject.course_import(course_id: "id123") }.to raise_error(ArgumentError, /:url missing/)
     end
 
     describe "arguments posted to the api" do
       it "works in the general case" do
         expect(subject).to receive(:post).with("courses/importJobs", {course: "id123", mayCreateNewVersion: false}, {url: "http://path.to/scorm.zip", courseName: "id123"})
-        subject.course_import(course: "id123", url: "http://path.to/scorm.zip")
+        subject.course_import(course_id: "id123", url: "http://path.to/scorm.zip")
       end
 
       it "allows creating a new version" do
         expect(subject).to receive(:post).with("courses/importJobs", {course: "id123", mayCreateNewVersion: true}, {url: "http://path.to/scorm.zip", courseName: "id123"})
-        subject.course_import(course: "id123", url: "http://path.to/scorm.zip", may_create_new_version: true)
+        subject.course_import(course_id: "id123", url: "http://path.to/scorm.zip", may_create_new_version: true)
       end
 
       it "allows overriding course name" do
         expect(subject).to receive(:post).with("courses/importJobs", {course: "id123", mayCreateNewVersion: false}, {url: "http://path.to/scorm.zip", courseName: "the name"})
-        subject.course_import(course: "id123", url: "http://path.to/scorm.zip", name: "the name")
+        subject.course_import(course_id: "id123", url: "http://path.to/scorm.zip", name: "the name")
       end
     end
 
     describe "successful imports" do
       it "works" do
-        import = subject.course_import(course: "testing123", url: "https://github.com/phallstrom/scorm_engine/raw/master/spec/fixtures/zip/RuntimeBasicCalls_SCORM20043rdEdition.zip", may_create_new_version: true)
+        import = subject.course_import(course_id: "testing123", url: "https://github.com/phallstrom/scorm_engine/raw/master/spec/fixtures/zip/RuntimeBasicCalls_SCORM20043rdEdition.zip", may_create_new_version: true)
 
         aggregate_failures do
           expect(import.success?).to eq true
@@ -132,13 +136,13 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
 
     describe "unsuccessful imports" do
       it "fails to import a previously existing course" do
-        subject.course_import(course: "testing123", url: "https://github.com/phallstrom/scorm_engine/raw/master/spec/fixtures/zip/RuntimeBasicCalls_SCORM20043rdEdition.zip", may_create_new_version: true)
-        import = subject.course_import(course: "testing123", url: "https://github.com/phallstrom/scorm_engine/raw/master/spec/fixtures/zip/RuntimeBasicCalls_SCORM20043rdEdition.zip", may_create_new_version: false)
+        against_real_scorm_engine { ensure_course_exists(client: subject, course_id: "a-previously-existing-course", may_create_new_version: true) }
+        import = import_course(client: subject, course_id: "a-previously-existing-course", may_create_new_version: false)
 
         aggregate_failures do
           expect(import.success?).to eq false
           expect(import.result).to eq nil
-          expect(import.message).to match(/A course already exists with the specified id: .*\|testing123!/)
+          expect(import.message).to match(/A course already exists with the specified id: .*\|a-previously-existing-course!/)
         end
       end
     end
@@ -147,23 +151,21 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
   describe "#course_import_status" do
     describe "successful imports" do
       it "works" do
-        import = subject.course_import(course: "valid123", url: "https://github.com/phallstrom/scorm_engine/raw/master/spec/fixtures/zip/RuntimeBasicCalls_SCORM20043rdEdition.zip", may_create_new_version: true)
-        sleep 20 if recording_vcr?
+        import = import_course(client: subject, course_id: "a-valid-course-url")
         import_status = subject.course_import_status(id: import.result.id)
 
         aggregate_failures do
           expect(import_status.success?).to eq true
           expect(import_status.result.complete?).to eq true
           expect(import_status.result.course).to be_a ScormEngine::Models::Course
-          expect(import_status.result.course.id).to eq "valid123"
+          expect(import_status.result.course.id).to eq "a-valid-course-url"
         end
       end
     end
 
     describe "unsuccessful imports" do
       it "fails to import given an invalid url" do
-        import = subject.course_import(course: "invalid123", url: "https://github.com/phallstrom/scorm_engine/raw/master/spec/fixtures/zip/invalid.zip", may_create_new_version: true)
-        sleep 20 if recording_vcr?
+        import = import_course(client: subject, course_id: "an-invalid-course-url", key: "non-existent-key")
         import_status = subject.course_import_status(id: import.result.id)
 
         aggregate_failures do

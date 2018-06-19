@@ -21,7 +21,7 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Thu, 31 May 2018 19:14:22 GMT
+      - Tue, 19 Jun 2018 20:12:25 GMT
       server:
       - nginx
       vary:
@@ -32,7 +32,7 @@ http_interactions:
       - Close
     body:
       encoding: ASCII-8BIT
-      string: '{"result":"7242de09-10ff-41ca-8be7-218e052cf335","importResult":{"status":"RUNNING","parserWarnings":[],"courseLanguages":[]}}'
+      string: '{"result":"92550cc9-0170-451d-816f-a30bd9d1e8ac","importResult":{"status":"RUNNING","parserWarnings":[],"courseLanguages":[]}}'
     http_version: 
-  recorded_at: Thu, 31 May 2018 19:14:22 GMT
+  recorded_at: Tue, 19 Jun 2018 20:12:25 GMT
 recorded_with: VCR 4.0.0

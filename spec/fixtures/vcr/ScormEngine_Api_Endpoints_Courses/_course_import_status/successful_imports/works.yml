@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses/importJobs?course=valid123&mayCreateNewVersion=true
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses/importJobs?course=a-valid-course-url&mayCreateNewVersion=true
     body:
       encoding: UTF-8
-      string: '{"url":"https://github.com/phallstrom/scorm_engine/raw/master/spec/fixtures/zip/RuntimeBasicCalls_SCORM20043rdEdition.zip","courseName":"valid123"}'
+      string: '{"url":"https://github.com/phallstrom/scorm_engine/raw/master/spec/fixtures/zip/RuntimeBasicCalls_SCORM20043rdEdition.zip","courseName":"a-valid-course-url"}'
     headers:
       Content-Type:
       - application/json
@@ -21,23 +21,23 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Thu, 31 May 2018 19:13:33 GMT
+      - Tue, 19 Jun 2018 20:48:44 GMT
       server:
       - nginx
       vary:
       - Accept-Encoding
       content-length:
-      - '132'
+      - '133'
       connection:
       - Close
     body:
       encoding: ASCII-8BIT
-      string: '{"result":"08639b1a-f2dd-4bc1-b88e-c3e4f034eff0","importResult":{"status":"RUNNING","parserWarnings":[],"courseLanguages":[]}}'
+      string: '{"result":"5ed42890-d664-4783-a729-3b03d900b137","importResult":{"status":"RUNNING","parserWarnings":[],"courseLanguages":[]}}'
     http_version: 
-  recorded_at: Thu, 31 May 2018 19:13:33 GMT
+  recorded_at: Tue, 19 Jun 2018 20:48:44 GMT
 - request:
     method: get
-    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses/importJobs/08639b1a-f2dd-4bc1-b88e-c3e4f034eff0
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses/importJobs/5ed42890-d664-4783-a729-3b03d900b137
     body:
       encoding: US-ASCII
       string: ''
@@ -56,20 +56,92 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Thu, 31 May 2018 19:13:54 GMT
+      - Tue, 19 Jun 2018 20:48:44 GMT
       server:
       - nginx
       vary:
       - Accept-Encoding
       content-length:
-      - '322'
+      - '75'
       connection:
       - Close
     body:
       encoding: ASCII-8BIT
-      string: '{"jobId":"08639b1a-f2dd-4bc1-b88e-c3e4f034eff0","status":"COMPLETE","message":"Import
-        Successful","courseTitle":"Golf Explained - Run-time Basic Calls - NEW VERSION","webPathToCourse":"/courses/defaultID/valid123/4","parserWarnings":[],"courseLanguages":[],"course":{"id":"valid123","version":4,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-05-31T19:13:36.274Z"}}'
+      string: '{"status":"RUNNING","parserWarnings":[],"courseLanguages":[]}'
     http_version: 
-  recorded_at: Thu, 31 May 2018 19:13:54 GMT
+  recorded_at: Tue, 19 Jun 2018 20:48:44 GMT
+- request:
+    method: get
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses/importJobs/5ed42890-d664-4783-a729-3b03d900b137
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - ScormEngine Ruby Gem 0.1.0
+      Authorization:
+      - Basic <BASIC_AUTH>
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      content-type:
+      - application/json
+      date:
+      - Tue, 19 Jun 2018 20:48:50 GMT
+      server:
+      - nginx
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '342'
+      connection:
+      - Close
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jobId":"5ed42890-d664-4783-a729-3b03d900b137","status":"COMPLETE","message":"Import
+        Successful","courseTitle":"Golf Explained - Run-time Basic Calls - NEW VERSION","webPathToCourse":"/courses/ScormEngineGemTesting-default/a-valid-course-url/1","parserWarnings":[],"courseLanguages":[],"course":{"id":"a-valid-course-url","version":1,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-06-19T20:48:47.985Z"}}'
+    http_version: 
+  recorded_at: Tue, 19 Jun 2018 20:48:50 GMT
+- request:
+    method: get
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses/importJobs/5ed42890-d664-4783-a729-3b03d900b137
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - ScormEngine Ruby Gem 0.1.0
+      Authorization:
+      - Basic <BASIC_AUTH>
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      content-type:
+      - application/json
+      date:
+      - Tue, 19 Jun 2018 20:48:50 GMT
+      server:
+      - nginx
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '342'
+      connection:
+      - Close
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jobId":"5ed42890-d664-4783-a729-3b03d900b137","status":"COMPLETE","message":"Import
+        Successful","courseTitle":"Golf Explained - Run-time Basic Calls - NEW VERSION","webPathToCourse":"/courses/ScormEngineGemTesting-default/a-valid-course-url/1","parserWarnings":[],"courseLanguages":[],"course":{"id":"a-valid-course-url","version":1,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-06-19T20:48:47.985Z"}}'
+    http_version: 
+  recorded_at: Tue, 19 Jun 2018 20:48:50 GMT
 recorded_with: VCR 4.0.0
