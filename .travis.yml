@@ -8,3 +8,4 @@ env:
     - SCORM_ENGINE_HOST=scorm.engine.net
     - SCORM_ENGINE_USERNAME=username
     - SCORM_ENGINE_PASSWORD=password
+    - SCORM_ENGINE_IS_AVAILABLE=false
