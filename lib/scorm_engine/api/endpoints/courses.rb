@@ -43,6 +43,32 @@ module ScormEngine
         end
 
         #
+        # Get the details of a course
+        #
+        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__courses__courseId__detail_get
+        #
+        # @param [Hash] options
+        #
+        # @option options [String] :course_id
+        #   The ID of the course to get.
+        #
+        # @option options [Integer] :version (nil)
+        #   The version of this course to use. If not provided, the latest
+        #   version will be used.
+        #
+        # @returns [ScormEngine::Response]
+        #
+        def course_detail(options = {})
+          course_id = options.delete(:course_id)
+          raise ArgumentError.new('Required arguments :course_id missing') if course_id.nil?
+          response = get("courses/#{course_id}/detail", options)
+          result = if response.success?
+                     ScormEngine::Models::Course.new_from_api(response.body)
+                   end
+          Response.new(raw_response: response, result: result)
+        end
+
+        #
         # Delete a course
         #
         # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__courses__courseId__delete

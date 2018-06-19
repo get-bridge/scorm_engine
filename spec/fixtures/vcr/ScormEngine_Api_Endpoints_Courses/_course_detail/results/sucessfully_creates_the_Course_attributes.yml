@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses/testing-golf-explained/detail
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - ScormEngine Ruby Gem 0.1.0
+      Authorization:
+      - Basic <BASIC_AUTH>
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      content-type:
+      - application/json
+      date:
+      - Tue, 19 Jun 2018 21:21:19 GMT
+      server:
+      - nginx
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '316'
+      connection:
+      - Close
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"testing-golf-explained","version":0,"title":"Golf Explained
+        - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","webPath":"/courses/ScormEngineGemTesting-default/testing-golf-explained/0","rootActivity":{"externalIdentifier":"golf_sample_default_org","itemIdentifier":"golf_sample_default_org","resourceIdentifier":"","activityType":"AGGREGATION","href":"","title":"Golf
+        Explained - Run-time Basic Calls","children":[{"externalIdentifier":"item_1","itemIdentifier":"item_1","resourceIdentifier":"resource_1","activityType":"SCO","href":"shared/launchpage.html","title":"Golf
+        Explained","children":[]}]}}'
+    http_version: 
+  recorded_at: Tue, 19 Jun 2018 21:21:19 GMT
+recorded_with: VCR 4.0.0

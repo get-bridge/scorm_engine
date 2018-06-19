@@ -23,7 +23,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
       it "sucessfully creates the Course attributes" do
         aggregate_failures do
           course = courses.results.detect {|c| c.id == "testing-golf-explained" }
-          expect(course.version).to eq 0
+          expect(course.version).to be >= 0
           expect(course.title).to eq "Golf Explained - Run-time Basic Calls"
           expect(course.registration_count).to eq 0
           expect(course.updated).to be_a Time
@@ -81,6 +81,28 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
 
       it "returns all the courses" do
         expect(subject.courses.results.to_a.size).to be >= 11 # there may be other ones beyond those we just added
+      end
+    end
+  end
+
+  describe "#course_detail" do
+    let(:response) { subject.course_detail(course_id: "testing-golf-explained") }
+
+    it "is successful" do
+      expect(response.success?).to eq true
+    end
+
+    describe "results" do
+      it "sucessfully creates the Course attributes" do
+        aggregate_failures do
+          course = response.result
+          expect(course.version).to be >= 0
+          expect(course.title).to eq "Golf Explained - Run-time Basic Calls"
+          # See https://basecamp.com/2819363/projects/15019959/messages/78805588
+          # expect(course.registration_count).to eq 0
+          # expect(course.updated).to be_a Time
+          expect(course.description).to eq nil
+        end
       end
     end
   end
