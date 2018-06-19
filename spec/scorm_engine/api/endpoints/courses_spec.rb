@@ -66,8 +66,22 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
       end
     end
 
-    describe ":more option" do
-      pending "Can't test until we have enough results to paginate. I think?"
+    describe ":more option (pagination)" do
+      before do
+        against_real_scorm_engine do
+          11.times do |idx|
+            ensure_course_exists(client: subject, course_id: "paginated-course-#{idx}")
+          end
+        end
+      end
+
+      it "returns the :more key in the raw response" do
+        expect(subject.courses.raw_response.body["more"]).to match(%r{https?://.*&more=.+})
+      end
+
+      it "returns all the courses" do
+        expect(subject.courses.results.to_a.size).to be >= 11 # there may be other ones beyond those we just added
+      end
     end
   end
 
