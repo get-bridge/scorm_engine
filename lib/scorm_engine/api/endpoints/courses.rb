@@ -21,7 +21,7 @@ module ScormEngine
         #   (inclusive) are included.  If a time zone is not specified, the
         #   server's time zone will be used.
         #
-        # @return [Array<ScormEngine::Models::Course>] in the result
+        # @return [Enumerator<ScormEngine::Models::Course>] in the result
         #
         def courses(options = {})
           path = "courses"
