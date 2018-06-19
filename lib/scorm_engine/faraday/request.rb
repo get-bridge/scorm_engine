@@ -20,7 +20,8 @@ module ScormEngine
       private
 
       def request(method, path, options, body = nil)
-        path = "#{tenant}/#{path}"
+        # "more" pagination urls are fully qualified
+        path = "#{tenant}/#{path}" unless path =~ %r{\Ahttps?://}
 
         options = coerce_options(options)
 
