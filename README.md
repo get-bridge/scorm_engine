@@ -2,7 +2,7 @@
 
 # ScormEngine
 
-A ruby client for Rustici's SCORM Engine 2007.1 API .
+A ruby client for Rustici's SCORM Engine 2017.1 API .
 
 - http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/index.html
 - https://support.scorm.com/hc/en-us/sections/115000043974-Release-Notes
