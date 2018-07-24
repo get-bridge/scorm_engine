@@ -1,6 +1,6 @@
 RSpec.describe ScormEngine::Api::Endpoints::About do
-  describe "#about" do
-    let(:subject) { scorm_engine_client.about }
+  describe "#get_about" do
+    let(:subject) { scorm_engine_client.get_about }
 
     it "is successful" do
       expect(subject.success?).to eq true
@@ -15,8 +15,8 @@ RSpec.describe ScormEngine::Api::Endpoints::About do
     end
   end
 
-  describe "#about_user_count" do
-    let(:subject) { scorm_engine_client.about_user_count }
+  describe "#get_about_user_count" do
+    let(:subject) { scorm_engine_client.get_about_user_count }
 
     it "is successful" do
       expect(subject.success?).to eq true
@@ -41,7 +41,7 @@ RSpec.describe ScormEngine::Api::Endpoints::About do
     end
 
     it "accepts :before option" do
-      subject = scorm_engine_client.about_user_count(before: Time.parse("1901-01-1 00:00:00 UTC"))
+      subject = scorm_engine_client.get_about_user_count(before: Time.parse("1901-01-1 00:00:00 UTC"))
       aggregate_failures do
         expect(subject.success?).to eq true
         expect(subject.result.total).to eq 0
@@ -49,7 +49,7 @@ RSpec.describe ScormEngine::Api::Endpoints::About do
     end
 
     it "accepts :since option" do
-      subject = scorm_engine_client.about_user_count(since: Time.parse("2031-01-1 00:00:00 UTC"))
+      subject = scorm_engine_client.get_about_user_count(since: Time.parse("2031-01-1 00:00:00 UTC"))
       aggregate_failures do
         expect(subject.success?).to eq true
         expect(subject.result.total).to eq 0

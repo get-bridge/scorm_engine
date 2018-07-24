@@ -9,7 +9,7 @@ module ScormEngine
         #
         # @returns [ScormEngine::Response]
         #
-        def about
+        def get_about
           response = get("about")
           result = OpenStruct.new(response.body)
           Response.new(raw_response: response, result: result)
@@ -32,7 +32,7 @@ module ScormEngine
         #
         # @returns [ScormEngine::Response]
         #
-        def about_user_count(options = {})
+        def get_about_user_count(options = {})
           response = get("about/userCount", options)
 
           result = OpenStruct.new

@@ -23,7 +23,7 @@ module ScormEngine
         #
         # @return [Enumerator<ScormEngine::Models::Course>] in the result
         #
-        def courses(options = {})
+        def get_courses(options = {})
           path = "courses"
           path = "courses/#{options.delete(:course_id)}" if options[:course_id]
 
@@ -76,7 +76,7 @@ module ScormEngine
         #
         # @returns [ScormEngine::Response]
         #
-        def course_detail(options = {})
+        def get_course_detail(options = {})
           course_id = options.delete(:course_id)
           raise ArgumentError.new('Required arguments :course_id missing') if course_id.nil?
           response = get("courses/#{course_id}/detail", options)
@@ -110,7 +110,7 @@ module ScormEngine
         #
         # @returns [ScormEngine::Response]
         #
-        def course_preview(options = {})
+        def get_course_preview(options = {})
           course_id = options.delete(:course_id)
           raise ArgumentError.new('Required arguments :course_id missing') if course_id.nil?
           options[:redirectOnExitUrl] = options.delete(:redirect_on_exit_url)
@@ -167,7 +167,7 @@ module ScormEngine
         #
         # @returns [ScormEngine::Response]
         #
-        def set_course_configuration(options = {})
+        def post_course_configuration(options = {})
           course_id = options.delete(:course_id)
           settings = options.delete(:settings)
           raise ArgumentError.new('Required arguments :course_id missing') if course_id.nil?
@@ -207,7 +207,7 @@ module ScormEngine
         #
         # @return [ScormEngine::Models::CourseImport] in the result
         #
-        def course_import(options = {})
+        def post_course_import(options = {})
           raise ArgumentError.new('Required arguments :course_id missing') if options[:course_id].nil?
           raise ArgumentError.new('Required arguments :url missing') if options[:url].nil?
 
@@ -242,7 +242,7 @@ module ScormEngine
         #
         # @return [ScormEngine::Models::CourseImport] in the result
         #
-        def course_import_status(options = {})
+        def get_course_import(options = {})
           raise ArgumentError.new('Required arguments :id missing') if options[:id].nil?
 
           response = get("courses/importJobs/#{options[:id]}")

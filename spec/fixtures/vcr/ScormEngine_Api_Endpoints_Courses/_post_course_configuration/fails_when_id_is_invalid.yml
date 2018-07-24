@@ -1,11 +1,11 @@
 ---
 http_interactions:
 - request:
-    method: get
+    method: post
     uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses/nonexistent-course/configuration
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: '{"settings":[]}'
     headers:
       Content-Type:
       - application/json
@@ -21,7 +21,7 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Jul 2018 20:22:47 GMT
+      - Tue, 24 Jul 2018 20:22:25 GMT
       server:
       - nginx
       vary:
@@ -34,5 +34,5 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"message":"External Package ID ''nonexistent-course''"}'
     http_version: 
-  recorded_at: Tue, 24 Jul 2018 20:22:47 GMT
+  recorded_at: Tue, 24 Jul 2018 20:22:25 GMT
 recorded_with: VCR 4.0.0

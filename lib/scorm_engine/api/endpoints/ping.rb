@@ -9,7 +9,7 @@ module ScormEngine
         #
         # @returns [ScormEngine::Response]
         #
-        def ping
+        def get_ping
           response = get("ping")
           Response.new(raw_response: response)
         end
