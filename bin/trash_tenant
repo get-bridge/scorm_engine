@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "scorm_engine"
+require "dotenv/load"
+
+tenant = ARGV[0].chomp
+
+puts
+puts "This will remove all courses, registrations, etc from the tenant '#{tenant}'."
+puts "To continue type this exact phrase: I DO WHAT I WANT"
+printf "> "
+phrase = STDIN.gets.chomp
+exit unless phrase == "I DO WHAT I WANT"
+puts ""
+
+client = ScormEngine::Client.new(tenant: tenant)
+
+client.get_courses.result.each do |course|
+  puts "- deleting course #{course.id}"
+  client.delete_course(course_id: course.id)
+end
