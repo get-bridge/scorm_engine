@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses/testing-golf-explained/configuration/NonExistentSettingTotesBogus
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - ScormEngine Ruby Gem 0.1.0
+      Authorization:
+      - Basic <BASIC_AUTH>
+  response:
+    status:
+      code: 400
+      message: ''
+    headers:
+      content-type:
+      - application/json
+      date:
+      - Tue, 24 Jul 2018 20:52:23 GMT
+      server:
+      - nginx
+      content-length:
+      - '86'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      string: '{"message":"No configuration setting found with id: \"NonExistentSettingTotesBogus\""}'
+    http_version: 
+  recorded_at: Tue, 24 Jul 2018 20:52:23 GMT
+recorded_with: VCR 4.0.0

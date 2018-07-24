@@ -77,4 +77,67 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Configuration do
       expect(response.message).to match(/No configuration setting found with id.*NonExistentSettingTotesBogus/)
     end
   end
+
+  describe "#get_course_configuration_setting" do
+    let(:response) { 
+      subject.put_course_configuration_setting(course_id: "testing-golf-explained", setting_id: "PlayerStatusRollupModeThresholdScore", value: 42)
+      subject.get_course_configuration_setting(course_id: "testing-golf-explained", setting_id: "PlayerStatusRollupModeThresholdScore")
+    }
+
+    it "is successful" do
+      expect(response.success?).to eq true
+    end
+
+    describe "results" do
+      it "returns the value as a string" do
+        expect(response.result).to eq "42"
+      end
+    end
+
+    it "fails when course_id is invalid" do
+      response = subject.get_course_configuration_setting(course_id: "nonexistent-course", setting_id: "PlayerStatusRollupModeThresholdScore")
+      expect(response.success?).to eq false
+      expect(response.status).to eq 404
+      expect(response.message).to match(/External Package ID 'nonexistent-course'/)
+    end
+
+    it "fails when setting_id is invalid" do
+      response = subject.get_course_configuration_setting(course_id: "testing-golf-explained", setting_id: "NonExistentSettingTotesBogus")
+      expect(response.success?).to eq false
+      expect(response.status).to eq 400
+      expect(response.message).to match(/No configuration setting found with id.*NonExistentSettingTotesBogus/)
+    end
+  end
+
+  describe "#put_course_configuration_setting" do
+    let(:value) { subject.get_course_configuration_setting(course_id: "testing-golf-explained", setting_id: "PlayerStatusRollupModeThresholdScore").result }
+    let(:new_value) { (value.to_i + 1).to_s }
+    let(:response) { subject.put_course_configuration_setting(course_id: "testing-golf-explained", setting_id: "PlayerStatusRollupModeThresholdScore", value: new_value) }
+
+    it "is successful" do
+      expect(response.success?).to eq true
+    end
+
+    describe "results" do
+      it "persists the changes" do
+        response # trigger the api
+        new_response = subject.get_course_configuration_setting(course_id: "testing-golf-explained", setting_id: "PlayerStatusRollupModeThresholdScore")
+        expect(new_response.result).to eq new_value
+      end
+    end
+
+    it "fails when course_id is invalid" do
+      response = subject.put_course_configuration_setting(course_id: "nonexistent-course", setting_id: "PlayerStatusRollupModeThresholdScore", value: "42")
+      expect(response.success?).to eq false
+      expect(response.status).to eq 404
+      expect(response.message).to match(/External Package ID 'nonexistent-course'/)
+    end
+
+    it "fails when setting_id is invalid" do
+      response = subject.get_course_configuration_setting(course_id: "testing-golf-explained", setting_id: "NonExistentSettingTotesBogus", value: "42")
+      expect(response.success?).to eq false
+      expect(response.status).to eq 400
+      expect(response.message).to match(/No configuration setting found with id.*NonExistentSettingTotesBogus/)
+    end
+  end
 end
