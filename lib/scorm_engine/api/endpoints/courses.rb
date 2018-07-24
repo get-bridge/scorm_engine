@@ -69,6 +69,41 @@ module ScormEngine
         end
 
         #
+        # Returns the launch link to use to preview this course
+        #
+        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__courses__courseId__preview_get
+        #
+        # @param [Hash] options
+        #
+        # @option options [String] :course_id
+        #   The ID of the course to get.
+        #
+        # @option options [Integer] :version (nil)
+        #   The version of this course to use. If not provided, the latest
+        #   version will be used.
+        #
+        # @option options [Integer] :expiry (0)
+        #   Number of seconds from now this link will expire in. Use 0 for no
+        #   expiration.
+        #
+        # @option options [String] :redirect_on_exit_url
+        #   The URL the application should redirect to when the learner exits a
+        #   course. If not specified, configured value will be used.
+        #
+        # @returns [ScormEngine::Response]
+        #
+        def course_preview(options = {})
+          course_id = options.delete(:course_id)
+          raise ArgumentError.new('Required arguments :course_id missing') if course_id.nil?
+          options[:redirectOnExitUrl] = options.delete(:redirect_on_exit_url)
+          response = get("courses/#{course_id}/preview", options)
+          result = if response.success?
+                     response.body["launchLink"]
+                   end
+          Response.new(raw_response: response, result: result)
+        end
+
+        #
         # Delete a course
         #
         # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__courses__courseId__delete

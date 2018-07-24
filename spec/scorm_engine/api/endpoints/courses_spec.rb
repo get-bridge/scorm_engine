@@ -107,6 +107,21 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
     end
   end
 
+  describe "#course_preview" do
+    let(:response) { subject.course_preview(course_id: "testing-golf-explained", redirect_on_exit_url: "https://example.com")}
+
+    it "is successful" do
+      expect(response.success?).to eq true
+    end
+
+    describe "results" do
+      it "returns a URL string" do
+        url = response.result
+        expect(url).to match(%r{/defaultui/launch.jsp\?.*testing-golf-explained.*RedirectOnExitUrl=https%3A%2F%2Fexample.com})
+      end
+    end
+  end
+
   describe "#delete_course" do
     before do
       against_real_scorm_engine do
