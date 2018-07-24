@@ -41,6 +41,24 @@ module ScormEngine
 
           Response.new(raw_response: response, result: result)
         end
+        
+        #
+        # Delete a course
+        #
+        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__courses__courseId__delete
+        #
+        # @param [Hash] options
+        #
+        # @option options [String] :course_id
+        #   The ID of the course to delete.
+        #
+        # @returns [ScormEngine::Response]
+        #
+        def delete_course(options = {})
+          raise ArgumentError.new('Required arguments :course_id missing') if options[:course_id].nil?
+          response = delete("courses/#{options[:course_id]}")
+          Response.new(raw_response: response)
+        end
 
         #
         # Get the details of a course
@@ -101,24 +119,6 @@ module ScormEngine
                      response.body["launchLink"]
                    end
           Response.new(raw_response: response, result: result)
-        end
-
-        #
-        # Delete a course
-        #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__courses__courseId__delete
-        #
-        # @param [Hash] options
-        #
-        # @option options [String] :course_id
-        #   The ID of the course to delete.
-        #
-        # @returns [ScormEngine::Response]
-        #
-        def delete_course(options = {})
-          raise ArgumentError.new('Required arguments :course_id missing') if options[:course_id].nil?
-          response = delete("courses/#{options[:course_id]}")
-          Response.new(raw_response: response)
         end
 
         #
