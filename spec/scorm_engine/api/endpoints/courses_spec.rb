@@ -85,6 +85,31 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
     end
   end
 
+  describe "#delete_course" do
+    before do
+      against_real_scorm_engine do
+        ensure_course_exists(client: subject, course_id: "course-to-be-deleted")
+      end
+    end
+
+    it "works" do
+      response = subject.delete_course(course_id: "course-to-be-deleted")
+      expect(response.success?).to eq true
+      expect(response.status).to eq 204
+    end
+
+    it "raises ArgumentError when :course_id is missing" do
+      expect { subject.delete_course }.to raise_error(ArgumentError, /:course_id missing/)
+    end
+
+    it "fails when id is invalid" do
+      response = subject.delete_course(course_id: "nonexistent-course")
+      expect(response.success?).to eq false
+      expect(response.status).to eq 404
+      expect(response.message).to match(/External Package ID 'nonexistent-course'/)
+    end
+  end
+
   describe "#course_detail" do
     let(:response) { subject.course_detail(course_id: "testing-golf-explained") }
 
@@ -108,7 +133,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
   end
 
   describe "#course_preview" do
-    let(:response) { subject.course_preview(course_id: "testing-golf-explained", redirect_on_exit_url: "https://example.com")}
+    let(:response) { subject.course_preview(course_id: "testing-golf-explained", redirect_on_exit_url: "https://example.com") }
 
     it "is successful" do
       expect(response.success?).to eq true
@@ -120,30 +145,38 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
         expect(url).to match(%r{/defaultui/launch.jsp\?.*testing-golf-explained.*RedirectOnExitUrl=https%3A%2F%2Fexample.com})
       end
     end
+
+    it "fails when id is invalid" do
+      response = subject.course_preview(course_id: "nonexistent-course")
+      expect(response.success?).to eq false
+      expect(response.status).to eq 404
+      expect(response.message).to match(/External Package ID 'nonexistent-course'/)
+    end
   end
 
-  describe "#delete_course" do
-    before do
-      against_real_scorm_engine do
-        ensure_course_exists(client: subject, course_id: "course-to-be-deleted")
+  describe "#course_configuration" do
+    let(:response) { subject.course_configuration(course_id: "testing-golf-explained") }
+
+    it "is successful" do
+      expect(response.success?).to eq true
+    end
+
+    describe "results" do
+      it "makes settings available as key/value pairs" do
+        settings = response.result.settings
+        aggregate_failures do
+          # just a sampling
+          expect(settings.key?("PlayerStatusRollupModeValue")).to be_truthy
+          expect(settings.key?("PlayerLaunchType")).to be_truthy
+        end
       end
     end
 
-    it "works" do
-      response = subject.delete_course(course_id: "course-to-be-deleted")
-      expect(response.success?).to eq true
-      expect(response.status).to eq 204
-    end
-
-    it "raises ArgumentError when :course_id is missing" do
-      expect { subject.delete_course }.to raise_error(ArgumentError, /:course_id missing/)
-    end
-
     it "fails when id is invalid" do
-      response = subject.delete_course(course_id: "nonexistent-course")
+      response = subject.course_configuration(course_id: "nonexistent-course")
       expect(response.success?).to eq false
       expect(response.status).to eq 404
-        expect(response.message).to match(/External Package ID 'nonexistent-course'/)
+      expect(response.message).to match(/External Package ID 'nonexistent-course'/)
     end
   end
 
