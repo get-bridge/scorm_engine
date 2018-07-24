@@ -18,7 +18,7 @@ module ScormEngine
         #   The version of this course to use. If not provided, the latest
         #   version will be used.
         #
-        # @returns [ScormEngine::Response]
+        # @return [ScormEngine::Models::CourseConfiguration]
         #
         def get_course_configuration(options = {})
           course_id = options.delete(:course_id)
@@ -47,7 +47,7 @@ module ScormEngine
         # @option options [Hash] :settings
         #   Key/value pairs of configuration options to set.
         #
-        # @returns [ScormEngine::Response]
+        # @return [ScormEngine::Response]
         #
         def post_course_configuration(options = {})
           course_id = options.delete(:course_id)
@@ -76,7 +76,7 @@ module ScormEngine
         #   The version of this course to use. If not provided, the latest
         #   version will be used.
         #
-        # @returns [ScormEngine::Response]
+        # @return [String]
         #
         def get_course_configuration_setting(options = {})
           course_id = options.delete(:course_id)
@@ -110,7 +110,7 @@ module ScormEngine
         #   The version of this course to use. If not provided, the latest
         #   version will be used.
         #
-        # @returns [ScormEngine::Response]
+        # @return [ScormEngine::Response]
         #
         def put_course_configuration_setting(options = {})
           course_id = options.delete(:course_id)

@@ -7,7 +7,7 @@ module ScormEngine
         #
         # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__about_get
         #
-        # @returns [ScormEngine::Response]
+        # @return [ScormEngine::Response]
         #
         def get_about
           response = get("about")
@@ -30,7 +30,7 @@ module ScormEngine
         #   Only userCount updated since the specified time (inclusive) are included.
         #   If a time zone is not specified, the server's time zone will be used.
         #
-        # @returns [ScormEngine::Response]
+        # @return [ScormEngine::Response]
         #
         def get_about_user_count(options = {})
           response = get("about/userCount", options)

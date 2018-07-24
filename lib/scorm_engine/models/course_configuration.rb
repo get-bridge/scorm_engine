@@ -25,7 +25,7 @@ module ScormEngine
       # @param [Hash] options
       #   The API options hash
       #
-      # @returns [Hash]
+      # @return [Hash]
       #   A hash of key/value pairs.
       #
       def self.get_settings_from_api(options = {})

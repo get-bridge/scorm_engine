@@ -21,7 +21,7 @@ module ScormEngine
         #   (inclusive) are included.  If a time zone is not specified, the
         #   server's time zone will be used.
         #
-        # @return [Enumerator<ScormEngine::Models::Course>] in the result
+        # @return [Enumerator<ScormEngine::Models::Course>]
         #
         def get_courses(options = {})
           path = "courses"
@@ -52,7 +52,7 @@ module ScormEngine
         # @option options [String] :course_id
         #   The ID of the course to delete.
         #
-        # @returns [ScormEngine::Response]
+        # @return [ScormEngine::Response]
         #
         def delete_course(options = {})
           raise ArgumentError.new('Required arguments :course_id missing') if options[:course_id].nil?
@@ -74,7 +74,7 @@ module ScormEngine
         #   The version of this course to use. If not provided, the latest
         #   version will be used.
         #
-        # @returns [ScormEngine::Response]
+        # @return [ScormEngine::Models::Course]
         #
         def get_course_detail(options = {})
           course_id = options.delete(:course_id)
@@ -108,7 +108,7 @@ module ScormEngine
         #   The URL the application should redirect to when the learner exits a
         #   course. If not specified, configured value will be used.
         #
-        # @returns [ScormEngine::Response]
+        # @return [String]
         #
         def get_course_preview(options = {})
           course_id = options.delete(:course_id)

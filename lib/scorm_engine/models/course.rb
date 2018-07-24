@@ -38,7 +38,7 @@ module ScormEngine
       # @param [Hash] options
       #   The API options hash
       #
-      # @returns [String]
+      # @return [String]
       #
       def self.get_title_from_api(options = {})
         title = ScormEngine::Utils.sanitized_text(options["title"])
@@ -52,7 +52,7 @@ module ScormEngine
       # @param [Hash] options
       #   The API options hash
       #
-      # @returns [Integer]
+      # @return [Integer]
       #   An integer between 0 and 100 or nil if undefined.
       #
       def self.get_scaled_passing_score_from_api(options = {})

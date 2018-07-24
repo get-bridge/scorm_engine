@@ -47,7 +47,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Configuration do
     end
 
     it "persists the settings" do
-      response # trigger the setting
+      response # trigger the api
       configuration = subject.get_course_configuration(course_id: "testing-golf-explained").result
       expect(configuration.settings["PlayerCaptureHistoryDetailed"]).to eq "NO"
       expect(configuration.settings["PlayerStatusRollupModeThresholdScore"]).to eq "80"
