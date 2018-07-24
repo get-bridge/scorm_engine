@@ -1,0 +1,32 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses/testing-golf-explained/configuration
+    body:
+      encoding: UTF-8
+      string: '{"settings":[{"settingId":"PlayerCaptureHistoryDetailed","value":"NO"},{"settingId":"PlayerStatusRollupModeThresholdScore","value":"80"}]}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - ScormEngine Ruby Gem 0.1.0
+      Authorization:
+      - Basic <BASIC_AUTH>
+  response:
+    status:
+      code: 204
+      message: ''
+    headers:
+      date:
+      - Tue, 24 Jul 2018 20:37:00 GMT
+      server:
+      - nginx
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Tue, 24 Jul 2018 20:37:00 GMT
+recorded_with: VCR 4.0.0

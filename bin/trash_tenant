@@ -12,7 +12,7 @@ puts "To continue type this exact phrase: I DO WHAT I WANT"
 printf "> "
 phrase = STDIN.gets.chomp
 exit unless phrase == "I DO WHAT I WANT"
-puts ""
+puts
 
 client = ScormEngine::Client.new(tenant: tenant)
 

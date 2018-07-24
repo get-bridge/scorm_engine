@@ -31,7 +31,7 @@ RSpec.configure do |config|
       unless files.empty?
         puts "\nThe following VCR cassettes are no longer in use:\n\n"
         gem_directory = File.expand_path("#{File.dirname(__FILE__)}/../../")
-        files.each_with_index do |expanded_path, idx|
+        files.uniq.each_with_index do |expanded_path, idx|
           relative_path = expanded_path.sub(%r{^#{gem_directory}/}, "")
           backslash = (idx == files.size - 1) ? "" : "\\"
           if idx.zero?
