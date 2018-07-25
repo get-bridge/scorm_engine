@@ -57,6 +57,14 @@ module ScormEngine
         #
         # Get all the instances of this the registration specified by the registration ID
         #
+        # Multiple instances of a registration are created based on the value
+        # you have for the setting "WhenToRestartRegistration". By default,
+        # Engine will "restart" a registration once that registration is
+        # completed and there is a newer version of that registration's package
+        # is available. If both of those conditions are met when the
+        # registration is launched, then Engine will create a new instance for
+        # that registration. 
+        #
         # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__instances_get
         #
         # @param [Hash] options
