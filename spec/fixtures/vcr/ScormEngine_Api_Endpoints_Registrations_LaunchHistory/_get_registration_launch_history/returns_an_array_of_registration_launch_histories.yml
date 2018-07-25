@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/registrations/testing-golf-explained-registration-1/launchHistory
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - ScormEngine Ruby Gem 0.1.0
+      Authorization:
+      - Basic <BASIC_AUTH>
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      content-type:
+      - application/json
+      date:
+      - Wed, 25 Jul 2018 20:42:43 GMT
+      server:
+      - nginx
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '321'
+      connection:
+      - Close
+    body:
+      encoding: ASCII-8BIT
+      string: '{"launchHistory":[{"id":"testing-golf-explained-registration-1","instanceId":0.0,"launchTime":"07/25/2018
+        20:41:26 PM","launchTimeUtc":"07/25/2018 20:41:26 PM","exitTime":"07/25/2018
+        20:41:36 PM","exitTimeUtc":"07/25/2018 20:41:36 PM","completionStatus":"Incomplete","successStatus":"Failed","totalSecondsTracked
+        ":25.7,"lastRuntimeUpdate":"07/25/2018 20:41:36 PM","lastRuntimeUpdateUtc":"07/25/2018
+        20:41:36 PM"},{"id":"testing-golf-explained-registration-1","instanceId":0.0,"launchTime":"07/25/2018
+        20:02:14 PM","launchTimeUtc":"07/25/2018 20:02:14 PM","exitTime":"07/25/2018
+        20:02:24 PM","exitTimeUtc":"07/25/2018 20:02:24 PM","completionStatus":"Incomplete","successStatus":"Failed","totalSecondsTracked
+        ":19.3,"lastRuntimeUpdate":"07/25/2018 20:02:24 PM","lastRuntimeUpdateUtc":"07/25/2018
+        20:02:24 PM"},{"id":"testing-golf-explained-registration-1","instanceId":0.0,"launchTime":"07/25/2018
+        20:02:02 PM","launchTimeUtc":"07/25/2018 20:02:02 PM","exitTime":"07/25/2018
+        20:02:14 PM","exitTimeUtc":"07/25/2018 20:02:14 PM","completionStatus":"Incomplete","successStatus":"Failed","totalSecondsTracked
+        ":13.94,"lastRuntimeUpdate":"07/25/2018 20:02:14 PM","lastRuntimeUpdateUtc":"07/25/2018
+        20:02:14 PM"},{"id":"testing-golf-explained-registration-1","instanceId":0.0,"launchTime":"07/25/2018
+        20:01:49 PM","launchTimeUtc":"07/25/2018 20:01:49 PM","exitTime":"07/25/2018
+        20:01:59 PM","exitTimeUtc":"07/25/2018 20:01:59 PM","completionStatus":"Incomplete","successStatus":"Failed","totalSecondsTracked
+        ":6.77,"lastRuntimeUpdate":"07/25/2018 20:01:59 PM","lastRuntimeUpdateUtc":"07/25/2018
+        20:01:59 PM"}]}'
+    http_version: 
+  recorded_at: Wed, 25 Jul 2018 20:42:43 GMT
+recorded_with: VCR 4.0.0

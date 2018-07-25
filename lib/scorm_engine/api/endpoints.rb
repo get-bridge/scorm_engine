@@ -5,6 +5,7 @@ require_relative "endpoints/courses/import"
 require_relative "endpoints/ping"
 require_relative "endpoints/registrations"
 require_relative "endpoints/registrations/configuration"
+require_relative "endpoints/registrations/launch_history"
 
 module ScormEngine
   module Api
@@ -16,6 +17,7 @@ module ScormEngine
       include Ping
       include Registrations
       include Registrations::Configuration
+      include Registrations::LaunchHistory
     end
   end
 end

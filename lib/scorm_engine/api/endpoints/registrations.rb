@@ -147,7 +147,7 @@ module ScormEngine
         #   latest instance will be used.
         #
         # @option options [Boolean] :detail (false)
-        #   Whether or not to populate 'activityDetails'. Defaults to false.
+        #   Whether or not to populate 'activityDetails'.
         #
         # @return [ScormEngine::Models::Registration]
         #
