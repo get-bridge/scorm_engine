@@ -123,9 +123,8 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
           course = response.result
           expect(course.version).to be >= 0
           expect(course.title).to eq "Golf Explained - Run-time Basic Calls"
-          # See https://basecamp.com/2819363/projects/15019959/messages/78805588
-          # expect(course.registration_count).to eq 0
-          # expect(course.updated).to be_a Time
+          expect(course.registration_count).to be >= 0
+          expect(course.updated).to be_a Time
           expect(course.description).to eq nil
         end
       end

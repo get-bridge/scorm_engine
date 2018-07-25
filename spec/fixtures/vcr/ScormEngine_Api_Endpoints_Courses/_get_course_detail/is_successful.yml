@@ -21,21 +21,21 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Jul 2018 20:22:44 GMT
+      - Wed, 25 Jul 2018 17:46:15 GMT
       server:
       - nginx
       vary:
       - Accept-Encoding
       content-length:
-      - '316'
+      - '358'
       connection:
       - Close
     body:
       encoding: ASCII-8BIT
       string: '{"id":"testing-golf-explained","version":0,"title":"Golf Explained
-        - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","webPath":"/courses/ScormEngineGemTesting-default/testing-golf-explained/0","rootActivity":{"externalIdentifier":"golf_sample_default_org","itemIdentifier":"golf_sample_default_org","resourceIdentifier":"","activityType":"AGGREGATION","href":"","title":"Golf
+        - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":2,"updated":"2018-07-24T20:22:19.000Z","webPath":"/courses/ScormEngineGemTesting-default/testing-golf-explained/0","rootActivity":{"externalIdentifier":"golf_sample_default_org","itemIdentifier":"golf_sample_default_org","resourceIdentifier":"","activityType":"AGGREGATION","href":"","title":"Golf
         Explained - Run-time Basic Calls","children":[{"externalIdentifier":"item_1","itemIdentifier":"item_1","resourceIdentifier":"resource_1","activityType":"SCO","href":"shared/launchpage.html","title":"Golf
         Explained","children":[]}]}}'
     http_version: 
-  recorded_at: Tue, 24 Jul 2018 20:22:44 GMT
+  recorded_at: Wed, 25 Jul 2018 17:46:16 GMT
 recorded_with: VCR 4.0.0
