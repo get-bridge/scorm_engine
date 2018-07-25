@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses/testing-golf-explained/configuration
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/registrations
     body:
       encoding: UTF-8
-      string: '{"settings":[{"settingId":"NonExistentSettingTotesBogus","value":"YES"}]}'
+      string: '{"courseId":"testing-golf-explained","registrationId":"testing-golf-explained-registration-1","learner":{"id":"testing-golf-explained-learner-1","firstName":"Arnold","lastName":"Palmer"}}'
     headers:
       Content-Type:
       - application/json
@@ -21,16 +21,16 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Jul 2018 20:22:24 GMT
+      - Wed, 25 Jul 2018 17:18:59 GMT
       server:
       - nginx
       content-length:
-      - '86'
+      - '52'
       connection:
       - Close
     body:
       encoding: UTF-8
-      string: '{"message":"No configuration setting found with id: \"NonExistentSettingTotesBogus\""}'
+      string: '{"message":"This RegistrationId is already in use."}'
     http_version: 
-  recorded_at: Tue, 24 Jul 2018 20:22:24 GMT
+  recorded_at: Wed, 25 Jul 2018 17:18:59 GMT
 recorded_with: VCR 4.0.0

@@ -55,6 +55,16 @@ module ScormEngineHelpers
 
     import
   end
+
+  #
+  # Ensure that the specified registration exists in SCORM engine. Course
+  # must exist first.
+  #
+  def ensure_registration_exists(options = {})
+    response = options[:client].get_registration_exists(registration_id: options[:registration_id])
+    return if response&.result
+    options[:client].post_registration(options)
+  end
 end
 
 RSpec.configure do |c| 

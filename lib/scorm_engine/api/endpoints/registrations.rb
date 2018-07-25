@@ -26,10 +26,10 @@ module ScormEngine
         #   are included. If a time zone is not specified, the server's time zone will be
         #   used.
         #
-        # @option options [Integer] :course_id
+        # @option options [String] :course_id
         #   Only registrations for the specified course id will be included.
         #
-        # @option options [Integer] :learner_id
+        # @option options [String] :learner_id
         #   Only registrations for the specified learner id will be included.
         #
         # @return [Enumerator<ScormEngine::Models::Registration>]
@@ -53,7 +53,143 @@ module ScormEngine
 
           Response.new(raw_response: response, result: result)
         end
+
+        #
+        # Does this registration exist? You can also use the 'instance'
+        # parameter to check if a particular instance of a registrations
+        # exists.
+        #
+        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__get
+        #
+        # @param [Hash] options
+        #
+        # @option options [String] :registration_id
+        #   ID for the registration.
+        #
+        # @option options [String] :instance ()
+        #   The instance of this registration to use. If not provided, the
+        #   latest instance will be used.
+        #
+        # @return [ScormEngine::Response]
+        #
+        def get_registration_exists(options = {})
+          options = options.dup
+          registration_id = options.delete(:registration_id)
+          raise ArgumentError.new('Required option :registration_id missing') if registration_id.nil?
+          response = get("registrations/#{registration_id}", options)
+          result = response.success? && response.body["exists"]
+          Response.new(raw_response: response, result: result)
+        end
+
+        #
+        # Delete a registration.
+        #
+        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__delete
+        #
+        # @param [Hash] options
+        #
+        # @option options [String] :registration_id
+        #   ID for the registration.
+        #
+        # @return [ScormEngine::Response]
+        #
+        def delete_registration(options = {})
+          options = options.dup
+          registration_id = options.delete(:registration_id)
+          raise ArgumentError.new('Required option :registration_id missing') if registration_id.nil?
+          response = delete("registrations/#{registration_id}")
+          Response.new(raw_response: response)
+        end
         
+        #
+        # Create a registration.
+        #
+        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations_post
+        #
+        # @param [Hash] options
+        #
+        # @option options [String] :course_id
+        #   The course ID.
+        #
+        # @option options [String] :registration_id
+        #   The registration's ID. Must be unique.
+        #
+        # @option options [String] :learner/:id
+        #   The learner's ID.
+        #
+        # @option options [String] :learner/:first_name
+        #   The learner's first name.
+        #
+        # @option options [String] :learner/:last_name
+        #   The learner's last name.
+        #
+        # @option options [String] :post_back/:url ()
+        #   Specifies an optional override URL for which to post activity and
+        #   status data in real time as the course is completed. By default all
+        #   of these settings are read from your configuration, so only specify
+        #   this if you need to control it on a per-registration basis.
+        #   
+        # @option options [String] :post_back/:auth_type ("form")
+        #   Optional parameter to specify how to authorize against the given
+        #   postbackurl, can be 'form' or 'httpbasic'. If form authentication,
+        #   the username and password for authentication are submitted as form
+        #   fields 'username' and 'password', and the registration data as the
+        #   form field 'data'. If HTTP Basic Authentication is used, the
+        #   username and password are placed in the standard Authorization HTTP
+        #   header, and the registration data is the body of the message (sent
+        #   as application/json content type).
+        #
+        # @option options [String] :post_back/:user_name ()
+        #   The user name to be used in authorizing the postback of data to the
+        #   URL specified by postback url.
+        #
+        # @option options [String] :post_back/:password ()
+        #   The password to be used in authorizing the postback of data to the
+        #   URL specified by postback url.
+        #
+        # @option options [String] :post_back/:results_format ("course")
+        #   This parameter allows you to specify a level of detail in the
+        #   information that is posted back while the course is being taken. It
+        #   may be one of three values: 'course' (course summary), 'activity'
+        #   (activity summary), or 'full' (full detail), and is set to 'course'
+        #   by default. The information will be posted as JSON using the same
+        #   schema as what is returned in the /progress and /progress/detail
+        #   endpoints.
+        #   
+        # @return [ScormEngine::Response]
+        #
+        def post_registration(options = {})
+          options = options.dup
+
+          raise ArgumentError.new('Required option :course_id missing') if options[:course_id].nil?
+          raise ArgumentError.new('Required option :registration_id missing') if options[:registration_id].nil?
+          raise ArgumentError.new('Required option :learner missing') if options[:learner].nil?
+          raise ArgumentError.new('Required option :learner/:id missing') if options[:learner][:id].nil?
+          raise ArgumentError.new('Required option :learner/:first_name missing') if options[:learner][:first_name].nil?
+          raise ArgumentError.new('Required option :learner/:last_name missing') if options[:learner][:last_name].nil?
+
+          body = {
+            courseId: options[:course_id],
+            registrationId: options[:registration_id],
+            learner: {
+              id: options[:learner][:id],
+              firstName: options[:learner][:first_name],
+              lastName: options[:learner][:last_name],
+            },
+          }
+
+          if options[:post_back]
+            body[:postBack] = {
+              authType: options[:post_back][:auth_type],
+              userName: options[:post_back][:user_name],
+              password: options[:post_back][:password],
+              resultsFormat: options[:post_back][:results_format],
+            }.reject { |k, v| v.nil? }
+          end
+
+          response = post("registrations", {}, body)
+          Response.new(raw_response: response)
+        end
       end
     end
   end

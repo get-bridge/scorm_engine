@@ -55,7 +55,7 @@ module ScormEngine
         # @return [ScormEngine::Response]
         #
         def delete_course(options = {})
-          raise ArgumentError.new('Required arguments :course_id missing') if options[:course_id].nil?
+          raise ArgumentError.new('Required option :course_id missing') if options[:course_id].nil?
           response = delete("courses/#{options[:course_id]}")
           Response.new(raw_response: response)
         end
@@ -78,7 +78,7 @@ module ScormEngine
         #
         def get_course_detail(options = {})
           course_id = options.delete(:course_id)
-          raise ArgumentError.new('Required arguments :course_id missing') if course_id.nil?
+          raise ArgumentError.new('Required option :course_id missing') if course_id.nil?
           response = get("courses/#{course_id}/detail", options)
           result = if response.success?
                      ScormEngine::Models::Course.new_from_api(response.body)
@@ -112,7 +112,7 @@ module ScormEngine
         #
         def get_course_preview(options = {})
           course_id = options.delete(:course_id)
-          raise ArgumentError.new('Required arguments :course_id missing') if course_id.nil?
+          raise ArgumentError.new('Required option :course_id missing') if course_id.nil?
           options[:redirectOnExitUrl] = options.delete(:redirect_on_exit_url)
           response = get("courses/#{course_id}/preview", options)
           result = if response.success?

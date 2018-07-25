@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/registrations/testing-golf-explained-registration-1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - ScormEngine Ruby Gem 0.1.0
+      Authorization:
+      - Basic <BASIC_AUTH>
+  response:
+    status:
+      code: 204
+      message: ''
+    headers:
+      date:
+      - Wed, 25 Jul 2018 17:18:55 GMT
+      server:
+      - nginx
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Wed, 25 Jul 2018 17:18:55 GMT
+- request:
+    method: post
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/registrations
+    body:
+      encoding: UTF-8
+      string: '{"courseId":"testing-golf-explained","registrationId":"testing-golf-explained-registration-1","learner":{"id":"testing-golf-explained-learner-1","firstName":"Arnold","lastName":"Palmer"}}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - ScormEngine Ruby Gem 0.1.0
+      Authorization:
+      - Basic <BASIC_AUTH>
+  response:
+    status:
+      code: 204
+      message: ''
+    headers:
+      date:
+      - Wed, 25 Jul 2018 17:18:56 GMT
+      server:
+      - nginx
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Wed, 25 Jul 2018 17:18:56 GMT
+recorded_with: VCR 4.0.0

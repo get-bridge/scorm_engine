@@ -34,8 +34,8 @@ module ScormEngine
         # @return [ScormEngine::Models::CourseImport]
         #
         def post_course_import(options = {})
-          raise ArgumentError.new('Required arguments :course_id missing') if options[:course_id].nil?
-          raise ArgumentError.new('Required arguments :url missing') if options[:url].nil?
+          raise ArgumentError.new('Required option :course_id missing') if options[:course_id].nil?
+          raise ArgumentError.new('Required option :url missing') if options[:url].nil?
 
           query_params = {
             course: options[:course_id],
@@ -69,7 +69,7 @@ module ScormEngine
         # @return [ScormEngine::Models::CourseImport]
         #
         def get_course_import(options = {})
-          raise ArgumentError.new('Required arguments :id missing') if options[:id].nil?
+          raise ArgumentError.new('Required option :id missing') if options[:id].nil?
 
           response = get("courses/importJobs/#{options[:id]}")
 

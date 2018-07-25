@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/registrations
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/registrations?courseId=testing-golf-explained
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 25 Jul 2018 17:19:00 GMT
+      - Wed, 25 Jul 2018 17:35:16 GMT
       server:
       - nginx
       vary:
@@ -36,5 +36,5 @@ http_interactions:
         Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":2,"updated":"2018-07-24T20:22:19.000Z"},"learner":{"id":"learner-1","firstName":"Philip","lastName":"Hallstrom"},"globalObjectives":[],"sharedData":[]},{"id":"testing-golf-explained-registration-1","instance":0,"updated":"2018-07-25T17:18:56.000Z","registrationCompletion":"UNKNOWN","registrationSuccess":"Unknown","totalSecondsTracked":0.0,"lastAccessDate":"2018-07-25T17:18:56.000Z","createdDate":"2018-07-25T17:18:56.000Z","course":{"id":"testing-golf-explained","version":0,"title":"Golf
         Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":2,"updated":"2018-07-24T20:22:19.000Z"},"learner":{"id":"testing-golf-explained-learner-1","firstName":"Arnold","lastName":"Palmer"},"globalObjectives":[],"sharedData":[]}]}'
     http_version: 
-  recorded_at: Wed, 25 Jul 2018 17:19:01 GMT
+  recorded_at: Wed, 25 Jul 2018 17:35:16 GMT
 recorded_with: VCR 4.0.0

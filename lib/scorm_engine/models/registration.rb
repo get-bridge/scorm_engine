@@ -42,7 +42,6 @@ module ScormEngine
       # @return [Float]
       #   A float between 0 and 100 or nil if undefined.
       #
-      # TODO: hash also contains a "additionalProperties". Figure out what this is.
       def self.get_score_from_api(options = {})
         score = options.fetch("score", {})["scaled"]
         return if score.nil?
