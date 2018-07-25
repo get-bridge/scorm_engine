@@ -110,4 +110,26 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
       end
     end
   end
+
+  describe "#get_registration_launch_link" do
+    let(:response) { subject.get_registration_launch_link(registration_id: registration_options[:registration_id], redirect_on_exit_url: "https://example.com") }
+
+    it "is successful" do
+      expect(response.success?).to eq true
+    end
+
+    describe "results" do
+      it "returns a URL string" do
+        url = response.result
+        expect(url).to match(%r{/defaultui/launch.jsp\?.*registration=#{registration_options[:registration_id]}.*RedirectOnExitUrl=https%3A%2F%2Fexample.com})
+      end
+    end
+
+    it "fails when id is invalid" do
+      response = subject.get_registration_launch_link(registration_id: "nonexistent-registration")
+      expect(response.success?).to eq false
+      expect(response.status).to eq 404
+      expect(response.message).to match(/External Registration ID 'nonexistent-registration'/)
+    end
+  end
 end

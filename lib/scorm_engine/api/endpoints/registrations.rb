@@ -191,6 +191,37 @@ module ScormEngine
           Response.new(raw_response: response)
         end
       end
+
+      #
+      # Returns the link to use to launch this registration
+      #
+      # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__launchLink_get
+      #
+      # @param [Hash] options
+      #
+      # @option options [String] :registration_id
+      #   The ID of the registration.
+      #
+      # @option options [Integer] :expiry (0)
+      #   Number of seconds from now this link will expire in. Use 0 for no
+      #   expiration.
+      #
+      # @option options [String] :redirect_on_exit_url
+      #   The URL the application should redirect to when the learner exits a
+      #   course. If not specified, configured value will be used.
+      #
+      # @return [String]
+      #
+      def get_registration_launch_link(options = {})
+        registration_id = options.delete(:registration_id)
+        raise ArgumentError.new('Required option :registration_id missing') if registration_id.nil?
+        options[:redirectOnExitUrl] = options.delete(:redirect_on_exit_url)
+        response = get("registrations/#{registration_id}/launchLink", options)
+        result = if response.success?
+                   response.body["launchLink"]
+                 end
+        Response.new(raw_response: response, result: result)
+      end
     end
   end
 end
