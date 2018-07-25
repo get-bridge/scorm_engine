@@ -22,16 +22,18 @@ module ScormEngine
         # @return [Array<ScormEngine::Models::RegistrationLaunchHistory>]
         #
         def get_registration_launch_history(options = {})
+          require_options(options, :registration_id)
+
           options = options.dup
           registration_id = options.delete(:registration_id)
           detail = !!options.delete(:detail)
-          raise ArgumentError.new('Required option :registration_id missing') if registration_id.nil?
+
           response = get("registrations/#{registration_id}/launchHistory", options)
-          result = if response.success?
-                     response.body["launchHistory"].map do |history|
-                       ScormEngine::Models::RegistrationLaunchHistory.new_from_api(history)
-                     end
-                   end
+
+          result = response.success? && response.body["launchHistory"].map do |history|
+            ScormEngine::Models::RegistrationLaunchHistory.new_from_api(history)
+          end
+
           Response.new(raw_response: response, result: result)
         end
       end

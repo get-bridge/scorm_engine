@@ -1,3 +1,7 @@
+# 
+# TODO: Consider consolidating this and Registrations::Configuration, but only
+#       after we're sure they are really 99.9% the same in terms of functionality.
+#
 module ScormEngine
   module Api
     module Endpoints
@@ -21,12 +25,15 @@ module ScormEngine
         # @return [ScormEngine::Models::CourseConfiguration]
         #
         def get_course_configuration(options = {})
+          require_options(options, :course_id)
+
+          options = options.dup
           course_id = options.delete(:course_id)
-          raise ArgumentError.new('Required option :course_id missing') if course_id.nil?
+
           response = get("courses/#{course_id}/configuration", options)
-          result = if response.success?
-                     ScormEngine::Models::CourseConfiguration.new_from_api(response.body)
-                   end
+
+          result = response.success? && ScormEngine::Models::CourseConfiguration.new_from_api(response.body)
+
           Response.new(raw_response: response, result: result)
         end
 
@@ -50,12 +57,16 @@ module ScormEngine
         # @return [ScormEngine::Response]
         #
         def post_course_configuration(options = {})
+          require_options(options, :course_id, :settings)
+
+          options = options.dup
           course_id = options.delete(:course_id)
           settings = options.delete(:settings)
-          raise ArgumentError.new('Required option :course_id missing') if course_id.nil?
-          raise ArgumentError.new('Required option :settings missing') if settings.nil?
+
           body = {settings: settings.map { |k, v| { "settingId" => k, "value" => v.to_s } }}
+
           response = post("courses/#{course_id}/configuration", options, body)
+
           Response.new(raw_response: response)
         end
 
@@ -79,14 +90,16 @@ module ScormEngine
         # @return [String]
         #
         def get_course_configuration_setting(options = {})
+          require_options(options, :course_id, :setting_id)
+
+          options = options.dup
           course_id = options.delete(:course_id)
           setting_id = options.delete(:setting_id)
-          raise ArgumentError.new('Required option :course_id missing') if course_id.nil?
-          raise ArgumentError.new('Required option :setting_id missing') if setting_id.nil?
+
           response = get("courses/#{course_id}/configuration/#{setting_id}", options)
-          result = if response.success?
-                     response.body["value"]
-                   end
+
+          result = response.success? && response.body["value"]
+
           Response.new(raw_response: response, result: result)
         end
 
@@ -103,7 +116,7 @@ module ScormEngine
         # @option options [String] :setting_id
         #   The ID of the setting to set.
         # 
-        # @option options [String] :value
+        # @option options [String] :value ("")
         #   The value of the setting to set.
         # 
         # @option options [Integer] :version (nil)
@@ -113,14 +126,18 @@ module ScormEngine
         # @return [ScormEngine::Response]
         #
         def put_course_configuration_setting(options = {})
+          require_options(options, :course_id, :setting_id)
+
+          options = options.dup
           course_id = options.delete(:course_id)
           setting_id = options.delete(:setting_id)
-          value = options.delete(:value)
-          raise ArgumentError.new('Required option :course_id missing') if course_id.nil?
-          raise ArgumentError.new('Required option :setting_id missing') if setting_id.nil?
-          raise ArgumentError.new('Required option :value missing') if value.nil?
-          body = {value: value.to_s}
+
+          body = { 
+            value: options.delete(:value).to_s
+          }
+
           response = put("courses/#{course_id}/configuration/#{setting_id}", options, body)
+
           Response.new(raw_response: response)
         end
       end

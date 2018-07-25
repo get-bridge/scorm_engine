@@ -37,7 +37,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations::Configuration do
     end
 
     it "fails when id is invalid" do
-      response = subject.get_registration_configuration(registration_id: "nonexistent-registration")
+      response = subject.get_registration_configuration(registration_id: "nonexistent-registration", settings: {})
       expect(response.success?).to eq false
       expect(response.status).to eq 404
       expect(response.message).to match(/External Registration ID 'nonexistent-registration'/)

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/registrations/nonexistent-registration/launchLink?redirectOnExitUrl
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/registrations/nonexistent-registration/launchLink
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 25 Jul 2018 17:56:29 GMT
+      - Wed, 25 Jul 2018 23:02:17 GMT
       server:
       - nginx
       vary:
@@ -34,5 +34,5 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"message":"External Registration ID ''nonexistent-registration''"}'
     http_version: 
-  recorded_at: Wed, 25 Jul 2018 17:56:29 GMT
+  recorded_at: Wed, 25 Jul 2018 23:02:17 GMT
 recorded_with: VCR 4.0.0

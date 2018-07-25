@@ -8,12 +8,14 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Import do
   end
 
   describe "#post_course_import" do
-    it "raises ArgumentError when :course is missing" do
-      expect { subject.post_course_import }.to raise_error(ArgumentError, /:course_id missing/)
-    end
+    context "raising ArgumentError" do
+      it "when :course is missing" do
+        expect { subject.post_course_import }.to raise_error(ArgumentError, /course_id missing/)
+      end
 
-    it "raises ArgumentError when :url is missing" do
-      expect { subject.post_course_import(course_id: "id123") }.to raise_error(ArgumentError, /:url missing/)
+      it "when :url is missing" do
+        expect { subject.post_course_import(course_id: "id123") }.to raise_error(ArgumentError, /url missing/)
+      end
     end
 
     describe "arguments posted to the api" do
@@ -52,7 +54,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Import do
 
         aggregate_failures do
           expect(import.success?).to eq false
-          expect(import.result).to eq nil
+          expect(import.result).to be_falsey
           expect(import.message).to match(/A course already exists with the specified id: .*\|a-previously-existing-course!/)
         end
       end

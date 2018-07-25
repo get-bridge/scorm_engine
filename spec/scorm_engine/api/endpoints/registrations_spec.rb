@@ -114,7 +114,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
       aggregate_failures do
         expect(response.success?).to eq false
         expect(response.status).to eq 404
-        expect(response.result).to eq nil
+        expect(response.result).to be_falsey
       end
     end
 

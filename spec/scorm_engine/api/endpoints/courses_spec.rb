@@ -99,7 +99,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
     end
 
     it "raises ArgumentError when :course_id is missing" do
-      expect { subject.delete_course }.to raise_error(ArgumentError, /:course_id missing/)
+      expect { subject.delete_course }.to raise_error(ArgumentError, /course_id missing/)
     end
 
     it "fails when id is invalid" do

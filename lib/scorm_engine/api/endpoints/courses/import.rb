@@ -34,8 +34,7 @@ module ScormEngine
         # @return [ScormEngine::Models::CourseImport]
         #
         def post_course_import(options = {})
-          raise ArgumentError.new('Required option :course_id missing') if options[:course_id].nil?
-          raise ArgumentError.new('Required option :url missing') if options[:url].nil?
+          require_options(options, :course_id, :url)
 
           query_params = {
             course: options[:course_id],
@@ -49,9 +48,7 @@ module ScormEngine
 
           response = post("courses/importJobs", query_params, body)
 
-          result = if response&.success?
-                     ScormEngine::Models::CourseImport.new_from_api(response.body)
-                   end
+          result = response&.success? && ScormEngine::Models::CourseImport.new_from_api(response.body)
 
           Response.new(raw_response: response, result: result)
         end
@@ -69,14 +66,12 @@ module ScormEngine
         # @return [ScormEngine::Models::CourseImport]
         #
         def get_course_import(options = {})
-          raise ArgumentError.new('Required option :id missing') if options[:id].nil?
+          require_options(options, :id)
 
           response = get("courses/importJobs/#{options[:id]}")
 
-          result = if response&.success?
-                     # jobId is not always returned. :why:
-                     ScormEngine::Models::CourseImport.new_from_api({"jobId" => options[:id]}.merge(response.body))
-                   end
+          # jobId is not always returned. :why:
+          result = response&.success? && ScormEngine::Models::CourseImport.new_from_api({"jobId" => options[:id]}.merge(response.body))
 
           Response.new(raw_response: response, result: result)
         end

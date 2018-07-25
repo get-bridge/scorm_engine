@@ -11,7 +11,9 @@ module ScormEngine
         #
         def get_about
           response = get("about")
+
           result = OpenStruct.new(response.body)
+
           Response.new(raw_response: response, result: result)
         end
 
@@ -40,6 +42,7 @@ module ScormEngine
           result.dispatched = response.body["combinedTenants"]["dispatched"]
           result.non_dispatched = response.body["combinedTenants"]["nonDispatched"]
           result.by_tenant = {}
+
           response.body["byTenant"].each do |tenant|
             result.by_tenant[tenant["tenantName"]] = OpenStruct.new(
               total: tenant["total"],

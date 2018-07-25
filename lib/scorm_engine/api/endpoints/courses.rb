@@ -24,6 +24,8 @@ module ScormEngine
         # @return [Enumerator<ScormEngine::Models::Course>]
         #
         def get_courses(options = {})
+          options = options.dup
+
           path = "courses"
           path = "courses/#{options.delete(:course_id)}" if options[:course_id]
 
@@ -55,8 +57,10 @@ module ScormEngine
         # @return [ScormEngine::Response]
         #
         def delete_course(options = {})
-          raise ArgumentError.new('Required option :course_id missing') if options[:course_id].nil?
+          require_options(options, :course_id)
+
           response = delete("courses/#{options[:course_id]}")
+
           Response.new(raw_response: response)
         end
 
@@ -77,12 +81,15 @@ module ScormEngine
         # @return [ScormEngine::Models::Course]
         #
         def get_course_detail(options = {})
+          require_options(options, :course_id)
+
+          options = options.dup
           course_id = options.delete(:course_id)
-          raise ArgumentError.new('Required option :course_id missing') if course_id.nil?
+
           response = get("courses/#{course_id}/detail", options)
-          result = if response.success?
-                     ScormEngine::Models::Course.new_from_api(response.body)
-                   end
+
+          result = response.success? && ScormEngine::Models::Course.new_from_api(response.body)
+
           Response.new(raw_response: response, result: result)
         end
 
@@ -111,13 +118,16 @@ module ScormEngine
         # @return [String]
         #
         def get_course_preview(options = {})
+          require_options(options, :course_id)
+
+          options = options.dup
           course_id = options.delete(:course_id)
-          raise ArgumentError.new('Required option :course_id missing') if course_id.nil?
-          options[:redirectOnExitUrl] = options.delete(:redirect_on_exit_url)
+          options[:redirectOnExitUrl] = options.delete(:redirect_on_exit_url) if options.key?(:redirect_on_exit_url)
+
           response = get("courses/#{course_id}/preview", options)
-          result = if response.success?
-                     response.body["launchLink"]
-                   end
+
+          result = response.success? && response.body["launchLink"]
+
           Response.new(raw_response: response, result: result)
         end
       end

@@ -85,9 +85,10 @@ module ScormEngine
         # @return [Enumerator<ScormEngine::Models::Registration>]
         #
         def get_registration_instances(options = {})
+          require_options(options, :registration_id)
+
           options = options.dup
           registration_id = options.delete(:registration_id)
-          raise ArgumentError.new('Required option :registration_id missing') if registration_id.nil?
 
           response = get("registrations/#{registration_id}/instances", options)
 
@@ -123,11 +124,15 @@ module ScormEngine
         # @return [ScormEngine::Response]
         #
         def get_registration_exists(options = {})
+          require_options(options, :registration_id)
+
           options = options.dup
           registration_id = options.delete(:registration_id)
-          raise ArgumentError.new('Required option :registration_id missing') if registration_id.nil?
+          
           response = get("registrations/#{registration_id}", options)
+
           result = response.success? && response.body["exists"]
+
           Response.new(raw_response: response, result: result)
         end
 
@@ -152,16 +157,19 @@ module ScormEngine
         # @return [ScormEngine::Models::Registration]
         #
         def get_registration_progress(options = {})
+          require_options(options, :registration_id)
+
           options = options.dup
           registration_id = options.delete(:registration_id)
           detail = !!options.delete(:detail)
-          raise ArgumentError.new('Required option :registration_id missing') if registration_id.nil?
+          
           url = "registrations/#{registration_id}/progress"
           url += "/detail" if detail
+
           response = get(url, options)
-          result = if response.success?
-                     ScormEngine::Models::Registration.new_from_api(response.body)
-                   end
+
+          result = response.success? && ScormEngine::Models::Registration.new_from_api(response.body)
+
           Response.new(raw_response: response, result: result)
         end
 
@@ -178,10 +186,13 @@ module ScormEngine
         # @return [ScormEngine::Response]
         #
         def delete_registration(options = {})
+          require_options(options, :registration_id)
+
           options = options.dup
           registration_id = options.delete(:registration_id)
-          raise ArgumentError.new('Required option :registration_id missing') if registration_id.nil?
+          
           response = delete("registrations/#{registration_id}")
+
           Response.new(raw_response: response)
         end
         
@@ -243,14 +254,9 @@ module ScormEngine
         # @return [ScormEngine::Response]
         #
         def post_registration(options = {})
-          options = options.dup
+          require_options(options, :course_id, :registration_id, [:learner, :id], [:learner, :first_name], [:learner, :last_name])
 
-          raise ArgumentError.new('Required option :course_id missing') if options[:course_id].nil?
-          raise ArgumentError.new('Required option :registration_id missing') if options[:registration_id].nil?
-          raise ArgumentError.new('Required option :learner missing') if options[:learner].nil?
-          raise ArgumentError.new('Required option :learner/:id missing') if options[:learner][:id].nil?
-          raise ArgumentError.new('Required option :learner/:first_name missing') if options[:learner][:first_name].nil?
-          raise ArgumentError.new('Required option :learner/:last_name missing') if options[:learner][:last_name].nil?
+          options = options.dup
 
           body = {
             courseId: options[:course_id],
@@ -272,6 +278,7 @@ module ScormEngine
           end
 
           response = post("registrations", {}, body)
+
           Response.new(raw_response: response)
         end
       end
@@ -297,13 +304,16 @@ module ScormEngine
       # @return [String]
       #
       def get_registration_launch_link(options = {})
+        require_options(options, :registration_id)
+
+        options = options.dup
         registration_id = options.delete(:registration_id)
-        raise ArgumentError.new('Required option :registration_id missing') if registration_id.nil?
-        options[:redirectOnExitUrl] = options.delete(:redirect_on_exit_url)
+        options[:redirectOnExitUrl] = options.delete(:redirect_on_exit_url) if options.key?(:redirect_on_exit_url)
+
         response = get("registrations/#{registration_id}/launchLink", options)
-        result = if response.success?
-                   response.body["launchLink"]
-                 end
+
+        result = response.success? && response.body["launchLink"]
+
         Response.new(raw_response: response, result: result)
       end
     end

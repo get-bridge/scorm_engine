@@ -11,6 +11,7 @@ module ScormEngine
         #
         def get_ping
           response = get("ping")
+
           Response.new(raw_response: response)
         end
       end
