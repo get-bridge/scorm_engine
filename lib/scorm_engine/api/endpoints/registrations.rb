@@ -16,20 +16,20 @@ module ScormEngine
         #
         # @param [Hash] options
         #
-        # @option options [DateTime] :before
+        # @option options [DateTime] :before ()
         #   Only registrations updated before the specified ISO 8601 TimeStamp (inclusive)
         #   are included. If a time zone is not specified, the server's time zone will be
         #   used.
         #
-        # @option options [DateTime] :since
+        # @option options [DateTime] :since ()
         #   Only registrations updated since the specified ISO 8601 TimeStamp (inclusive)
         #   are included. If a time zone is not specified, the server's time zone will be
         #   used.
         #
-        # @option options [String] :course_id
+        # @option options [String] :course_id ()
         #   Only registrations for the specified course id will be included.
         #
-        # @option options [String] :learner_id
+        # @option options [String] :learner_id ()
         #   Only registrations for the specified learner id will be included.
         #
         # @return [Enumerator<ScormEngine::Models::Registration>]
@@ -40,6 +40,48 @@ module ScormEngine
           options[:learnerId] = options.delete(:learner_id) if options.key?(:learner_id)
 
           response = get("registrations", options)
+
+          result = Enumerator.new do |enum|
+            loop do
+              response.success? && response.body["registrations"].each do |registration|
+                enum << ScormEngine::Models::Registration.new_from_api(registration)
+              end
+              break if !response.success? || response.body["more"].nil?
+              response = get(response.body["more"])
+            end
+          end
+
+          Response.new(raw_response: response, result: result)
+        end
+
+        #
+        # Get all the instances of this the registration specified by the registration ID
+        #
+        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__instances_get
+        #
+        # @param [Hash] options
+        #
+        # @option options [String] :registration_id
+        #   ID for the registration.
+        #
+        # @option options [DateTime] :before ()
+        #   Only registrations updated before the specified ISO 8601 TimeStamp (inclusive)
+        #   are included. If a time zone is not specified, the server's time zone will be
+        #   used.
+        #
+        # @option options [DateTime] :since ()
+        #   Only registrations updated since the specified ISO 8601 TimeStamp (inclusive)
+        #   are included. If a time zone is not specified, the server's time zone will be
+        #   used.
+        #
+        # @return [Enumerator<ScormEngine::Models::Registration>]
+        #
+        def get_registration_instances(options = {})
+          options = options.dup
+          registration_id = options.delete(:registration_id)
+          raise ArgumentError.new('Required option :registration_id missing') if registration_id.nil?
+
+          response = get("registrations/#{registration_id}/instances", options)
 
           result = Enumerator.new do |enum|
             loop do

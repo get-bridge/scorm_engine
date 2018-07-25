@@ -64,6 +64,23 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
     end
   end
 
+  describe "#get_registration_instances" do
+    let(:registrations) { subject.get_registration_instances(registration_id: registration_options[:registration_id]) }
+
+    it "is successful" do
+      expect(registrations.success?).to eq true
+    end
+
+    it "returns an array of registrations" do
+      expect(registrations.result.all? {|r| r.is_a?(ScormEngine::Models::Registration)}).to eq true
+    end
+
+    it "includes results we expect" do
+      reg = registrations.result.detect { |r| r.id == registration_options[:registration_id] }
+      expect(reg).not_to be nil
+    end
+  end
+
   describe "#get_registration_exists" do
     it "is true when registration exists" do
       response = subject.get_registration_exists(registration_id: registration_options[:registration_id])
