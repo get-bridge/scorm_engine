@@ -99,6 +99,55 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
     end
   end
 
+  describe "#get_registration_progress" do
+    it "returns a registration when it exists" do
+      response = subject.get_registration_progress(registration_id: registration_options[:registration_id])
+      aggregate_failures do
+        expect(response.success?).to eq true
+        expect(response.result).to be_a ScormEngine::Models::Registration
+        expect(response.result.id).to eq registration_options[:registration_id]
+      end
+    end
+
+    it "fails when registration does not exist" do
+      response = subject.get_registration_progress(registration_id: "reg-does-not-exist")
+      aggregate_failures do
+        expect(response.success?).to eq false
+        expect(response.status).to eq 404
+        expect(response.result).to eq nil
+      end
+    end
+
+    context "detail" do
+      it "does not return activity_details by default" do
+        response = subject.get_registration_progress(registration_id: registration_options[:registration_id])
+        expect(response.result.activity_details).to eq nil
+      end
+
+      it "returns activity_details if requested" do
+        response = subject.get_registration_progress(registration_id: registration_options[:registration_id], detail: true)
+        expect(response.result.activity_details).to be_a Hash
+      end
+    end
+  end
+
+  describe "#delete_registration" do
+    it "is successful when registration exists" do
+      response = subject.delete_registration(registration_id: registration_options[:registration_id])
+      aggregate_failures do
+        expect(response.success?).to eq true
+      end
+    end
+
+    it "is failure when registration does not exist" do
+      response = subject.delete_registration(registration_id: "reg-does-not-exist")
+      aggregate_failures do
+        expect(response.success?).to eq false
+        expect(response.status).to eq 404
+      end
+    end
+  end
+
   describe "#post_registration" do
     it "is successful" do
       subject.delete_registration(registration_options)

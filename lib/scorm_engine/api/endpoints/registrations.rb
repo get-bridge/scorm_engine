@@ -132,6 +132,40 @@ module ScormEngine
         end
 
         #
+        # Get registration summary
+        #
+        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__progress_get
+        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__progress_detail_get
+        #
+        # @param [Hash] options
+        #
+        # @option options [String] :registration_id
+        #   ID for the registration.
+        #
+        # @option options [String] :instance ()
+        #   The instance of this registration to use. If not provided, the
+        #   latest instance will be used.
+        #
+        # @option options [Boolean] :detail (false)
+        #   Whether or not to populate 'activityDetails'. Defaults to false.
+        #
+        # @return [ScormEngine::Models::Registration]
+        #
+        def get_registration_progress(options = {})
+          options = options.dup
+          registration_id = options.delete(:registration_id)
+          detail = !!options.delete(:detail)
+          raise ArgumentError.new('Required option :registration_id missing') if registration_id.nil?
+          url = "registrations/#{registration_id}/progress"
+          url += "/detail" if detail
+          response = get(url, options)
+          result = if response.success?
+                     ScormEngine::Models::Registration.new_from_api(response.body)
+                   end
+          Response.new(raw_response: response, result: result)
+        end
+
+        #
         # Delete a registration.
         #
         # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__delete

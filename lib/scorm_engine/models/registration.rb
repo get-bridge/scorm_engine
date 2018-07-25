@@ -1,3 +1,8 @@
+# 
+# TODO: Incorporate all the activity props from:
+#   http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__progress_get
+#   http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__progress_detail_get
+#
 module ScormEngine
   module Models
     class Registration
@@ -8,7 +13,8 @@ module ScormEngine
       # about creating/updating records. For now it makes it easier to create
       # instances from API options hash.
       attr_accessor :id, :instance, :updated, :registration_completion, :registration_success,
-        :total_seconds_tracked, :first_access_date, :last_access_date, :score, :course, :learner
+        :total_seconds_tracked, :first_access_date, :last_access_date, :score, :course, :learner,
+        :activity_details
 
       def self.new_from_api(options = {})
         this = new
@@ -24,6 +30,9 @@ module ScormEngine
         this.last_access_date = Time.parse(options["lastAccessDate"]) if options.key?("lastAccessDate")
 
         this.score = get_score_from_api(options)
+
+        # TODO: This will almost certainly need to be a model
+        this.activity_details = options["activityDetails"]
 
         this.course = Course.new_from_api(options["course"]) if options.key?("course")
         this.learner = Learner.new_from_api(options["learner"]) if options.key?("learner")
