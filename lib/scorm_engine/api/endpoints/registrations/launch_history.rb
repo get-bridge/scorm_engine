@@ -17,7 +17,10 @@ module ScormEngine
         #   latest instance will be used.
         #
         # @option options [Boolean] :include_history_log (false)
-        #   Whether to include the history log in the launch history.
+        #   Whether to include the history log in the launch history. The
+        #   history log is a blob of XML that shows all of the SCORM-related
+        #   calls inside the course. Depending on the course itself, these logs
+        #   can get very large if a lot of calls are being made.
         #
         # @return [Array<ScormEngine::Models::RegistrationLaunchHistory>]
         #
