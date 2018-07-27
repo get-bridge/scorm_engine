@@ -3,6 +3,7 @@ language: ruby
 rvm:
   - 2.5.1
 before_install: gem install bundler -v 1.16.1
+before_script: bundle exec rubocop
 env:
   global:
     - SCORM_ENGINE_HOST=scorm.engine.net
