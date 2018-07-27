@@ -126,7 +126,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
 
       it "returns activity_details if requested" do
         response = subject.get_registration_progress(registration_id: registration_options[:registration_id], detail: true)
-        expect(response.result.activity_details).to be_a Hash
+        expect(response.result.activity_details).to be_a ScormEngine::Models::RegistrationActivityDetail
       end
     end
   end
