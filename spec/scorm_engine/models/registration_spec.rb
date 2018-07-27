@@ -1,6 +1,6 @@
 RSpec.describe ScormEngine::Models::Registration do
   describe ".new_from_api" do
-    let(:registration) { described_class.new_from_api(
+    let(:options) {{
       "id" => "registration-456",
       "score" => {
         "scaled" => "3.14159",
@@ -15,7 +15,9 @@ RSpec.describe ScormEngine::Models::Registration do
         "firstName" => "Bobby",
         "lastName" => "Jones",
       },
-    )}
+    }}
+
+    let(:registration) { described_class.new_from_api(options) }
 
     describe ":id" do
       it "is set properly" do
@@ -32,6 +34,24 @@ RSpec.describe ScormEngine::Models::Registration do
       it "is left unset if not present" do
         registration = described_class.new_from_api({})
         expect(registration.score).to eq nil
+      end
+    end
+
+    describe ":completed_date" do
+      it "is set properly when key is in root level" do
+        registration = described_class.new_from_api(options.merge("completedDate" => "2018-05-24T00:01:02.000Z"))
+        expect(registration.completed_date).to be_a Time
+        expect(registration.completed_date.iso8601).to eq "2018-05-24T00:01:02Z"
+      end
+
+      it "is set properly when key is in score object" do
+        registration = described_class.new_from_api(options.merge("score" => {"completedDate" => "2018-05-24T00:01:02.000Z"}))
+        expect(registration.completed_date).to be_a Time
+        expect(registration.completed_date.iso8601).to eq "2018-05-24T00:01:02Z"
+      end
+
+      it "is left unset if not present" do
+        expect(registration.completed_date).to eq nil
       end
     end
 
@@ -58,6 +78,5 @@ RSpec.describe ScormEngine::Models::Registration do
         expect(registration.learner).to eq nil
       end
     end
-
   end
 end
