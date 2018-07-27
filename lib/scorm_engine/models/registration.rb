@@ -18,7 +18,8 @@ module ScormEngine
       # instances from API options hash.
       attr_accessor :id, :instance, :updated, :registration_completion, :registration_success,
         :total_seconds_tracked, :score, :course, :learner, :activity_details,
-        :first_access_date, :last_access_date, :completed_date, :created_date, :updated
+        :first_access_date, :last_access_date, :completed_date, :created_date, :updated,
+        :registration_completion_amount
 
       def self.new_from_api(options = {})
         this = new
@@ -34,6 +35,7 @@ module ScormEngine
         this.last_access_date = Time.parse(options["lastAccessDate"]) if options.key?("lastAccessDate")
         this.created_date = Time.parse(options["createdDate"]) if options.key?("createdDate")
         this.updated = Time.parse(options["updated"]) if options.key?("updated")
+        this.registration_completion_amount = options["registrationCompletionAmount"].to_f # Sometimes it returns "NaN"
 
         this.score = get_score_from_api(options)
         this.completed_date = get_completed_at_from_api(options)
