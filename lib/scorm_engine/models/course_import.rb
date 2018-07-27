@@ -12,7 +12,7 @@ module ScormEngine
       def self.new_from_api(options = {})
         this = new
         this.options = options.dup
-        
+
         if options.key?("importResult")
           this.id = options["result"]
           this.status = options.fetch("importResult", {})["status"]

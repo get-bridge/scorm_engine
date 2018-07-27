@@ -1,4 +1,4 @@
-# 
+#
 # TODO: Incorporate all the activity props from:
 #   http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__progress_get
 #   http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__progress_detail_get
@@ -18,7 +18,7 @@ module ScormEngine
       # instances from API options hash.
       attr_accessor :id, :instance, :updated, :registration_completion, :registration_success,
         :total_seconds_tracked, :score, :course, :learner, :activity_details,
-        :first_access_date, :last_access_date, :completed_date, :created_date, :updated,
+        :first_access_date, :last_access_date, :completed_date, :created_date,
         :registration_completion_amount
 
       def self.new_from_api(options = {})
@@ -46,8 +46,6 @@ module ScormEngine
 
         this
       end
-
-      private
 
       #
       # Extract and normalize the scaled passing score from the API options.

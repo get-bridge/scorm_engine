@@ -23,10 +23,8 @@ module ScormEngine
       end
 
       def all_runtime_interactions
-        (runtime_interactions + children.map { |c| c.all_runtime_interactions }).flatten
+        (runtime_interactions + children.map(&:all_runtime_interactions)).flatten
       end
-
-      private
 
       def self.get_runtime_interactions_from_api(options)
         options

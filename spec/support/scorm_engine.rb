@@ -31,7 +31,7 @@ module ScormEngineHelpers
   #
   def ensure_course_exists(options = {})
     response = options[:client].get_courses(course_id: options[:course_id])
-    return if response&.results.first&.id == options[:course_id]
+    return if response&.results&.first&.id == options[:course_id]
     import_course(options)
   end
 
@@ -39,7 +39,7 @@ module ScormEngineHelpers
   # Attempt to import a course to SCORM engine.
   #
   def import_course(options = {})
-    options = {key: "RuntimeBasicCalls_SCORM20043rdEdition", may_create_new_version: true}.merge(options)
+    options = { key: "RuntimeBasicCalls_SCORM20043rdEdition", may_create_new_version: true }.merge(options)
 
     url = "https://github.com/phallstrom/scorm_engine/raw/master/spec/fixtures/zip/#{options[:key]}.zip"
 
@@ -67,6 +67,6 @@ module ScormEngineHelpers
   end
 end
 
-RSpec.configure do |c| 
+RSpec.configure do |c|
   c.include ScormEngineHelpers
 end

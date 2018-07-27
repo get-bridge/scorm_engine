@@ -33,27 +33,27 @@ RSpec.describe ScormEngine::Models::RegistrationLaunchHistory do
 
     describe ":total_seconds_tracked" do
       it "is set properly when set in the root level with a trailing space" do
-        launch_history = described_class.new_from_api({"totalSecondsTracked " => 123})
+        launch_history = described_class.new_from_api("totalSecondsTracked " => 123)
         expect(launch_history.total_seconds_tracked).to eq 123
       end
 
       it "is set properly when set in the root level without a trailing space" do
-        launch_history = described_class.new_from_api({"totalSecondsTracked" => 123})
+        launch_history = described_class.new_from_api("totalSecondsTracked" => 123)
         expect(launch_history.total_seconds_tracked).to eq 123
       end
 
       it "is set properly when set in the score object with a trailing space" do
-        launch_history = described_class.new_from_api({"score" => {"totalSecondsTracked " => 123}})
+        launch_history = described_class.new_from_api("score" => { "totalSecondsTracked " => 123 })
         expect(launch_history.total_seconds_tracked).to eq 123
       end
 
       it "is set properly when set in the score object without a trailing space" do
-        launch_history = described_class.new_from_api({"score" => {"totalSecondsTracked" => 123}})
+        launch_history = described_class.new_from_api("score" => { "totalSecondsTracked" => 123 })
         expect(launch_history.total_seconds_tracked).to eq 123
       end
 
       it "is set to zero when it's negative" do
-        launch_history = described_class.new_from_api({"totalSecondsTracked" => -9.223372036854776e+16})
+        launch_history = described_class.new_from_api("totalSecondsTracked" => -9.223372036854776e+16)
         expect(launch_history.total_seconds_tracked).to eq 0
       end
 
@@ -84,4 +84,3 @@ RSpec.describe ScormEngine::Models::RegistrationLaunchHistory do
     end
   end
 end
-

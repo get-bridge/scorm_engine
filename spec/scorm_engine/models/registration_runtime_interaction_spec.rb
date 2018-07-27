@@ -1,13 +1,13 @@
 RSpec.describe ScormEngine::Models::RegistrationRuntimeInteraction do
   describe ".new_from_api" do
-    let(:options) {{
+    let(:options) { {
       "id" => "interaction-123",
       "description" => "  foo \t bar \n baz  ",
       "timestampUtc" => "2018-05-24T00:01:02.00Z",
-      "correctResponses" => ["one", "two"],
+      "correctResponses" => %w[one two],
       "learnerResponse" => "one",
       "result" => "correct",
-    }}
+    } }
 
     let(:interaction) { described_class.new_from_api(options) }
 

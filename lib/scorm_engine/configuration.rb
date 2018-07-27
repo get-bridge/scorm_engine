@@ -12,7 +12,7 @@ module ScormEngine
   class Configuration
     # http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html
     attr_accessor :host, :path_prefix
-    
+
     # http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/Architecture-API.html#api-authentication
     attr_accessor :username, :password
 
@@ -33,10 +33,10 @@ module ScormEngine
 
       @logger = ::Logger.new(ENV.fetch("SCORM_ENGINE_LOGFILE", "/dev/null"))
 
-      @log_options = begin 
-                       JSON.parse(ENV.fetch("SCORM_ENGINE_LOG_OPTIONS")) 
+      @log_options = begin
+                       JSON.parse(ENV.fetch("SCORM_ENGINE_LOG_OPTIONS"))
                      rescue KeyError, JSON::ParserError
-                       {headers: false, bodies: false}
+                       { headers: false, bodies: false }
                      end
     end
   end

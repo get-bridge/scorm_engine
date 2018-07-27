@@ -24,6 +24,6 @@ RSpec.describe ScormEngine::Configuration do
   end
 
   it "knows its log options" do
-    expect(ScormEngine.configuration.log_options).to eq({headers: false, bodies: false})
+    expect(ScormEngine.configuration.log_options).to eq({ headers: false, bodies: false })
   end
 end

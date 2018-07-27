@@ -29,7 +29,7 @@ module ScormEngine
 
           options = options.dup
           registration_id = options.delete(:registration_id)
-          detail = !!options.delete(:detail)
+          options[:includeHistoryLog] = !!options.delete(:include_history_log)
 
           response = get("registrations/#{registration_id}/launchHistory", options)
 
@@ -43,4 +43,3 @@ module ScormEngine
     end
   end
 end
-

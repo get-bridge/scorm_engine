@@ -24,11 +24,11 @@ module ScormEngine
         #
         # @param [Hash] options
         #
-        # @option options [DateTime] :before 
-        #   Only userCount updated before the specified time (inclusive) are included. 
+        # @option options [DateTime] :before
+        #   Only userCount updated before the specified time (inclusive) are included.
         #   If a time zone is not specified, the server's time zone will be used.
         #
-        # @option options [DateTime] :since 
+        # @option options [DateTime] :since
         #   Only userCount updated since the specified time (inclusive) are included.
         #   If a time zone is not specified, the server's time zone will be used.
         #

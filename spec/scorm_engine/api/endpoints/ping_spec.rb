@@ -7,7 +7,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Ping do
     end
 
     it "reports the api is up" do
-      expect(subject.message).to match /API is up/
+      expect(subject.message).to match(/API is up/)
     end
 
     context "with invalid password" do

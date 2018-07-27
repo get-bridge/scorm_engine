@@ -61,14 +61,14 @@ RSpec.describe ScormEngine::Models::Course do
 
       it "is nil when rootActivity/children is blank" do
         course = described_class.new_from_api(
-          "id" => "test", "rootActivity" => {"children" => []}
+          "id" => "test", "rootActivity" => { "children" => [] }
         )
         expect(course.scaled_passing_score).to eq nil
       end
 
       it "is nil when rootActivity/children/scaledPassingScore is blank" do
         course = described_class.new_from_api(
-          "id" => "test", "rootActivity" => {"children" => [{"scaledPassingScore" => nil}]}
+          "id" => "test", "rootActivity" => { "children" => [{ "scaledPassingScore" => nil }] }
         )
         expect(course.scaled_passing_score).to eq nil
       end
@@ -82,7 +82,7 @@ RSpec.describe ScormEngine::Models::Course do
       }.each do |value, score|
         it "is #{score} when rootActivity/children/scaledPassingScore is '#{value}'" do
           course = described_class.new_from_api(
-            "id" => "test", "rootActivity" => {"children" => [{"scaledPassingScore" => value}]}
+            "id" => "test", "rootActivity" => { "children" => [{ "scaledPassingScore" => value }] }
           )
           expect(course.scaled_passing_score).to eq score
         end

@@ -4,8 +4,8 @@ RSpec.describe ScormEngine::Models::CourseConfiguration do
       it "a hash built from configurationItems" do
         config = described_class.new_from_api(
           "configurationItems" => [
-            {"id" => "Foo", "value" => "YES"},
-            {"id" => "Bar", "value" => "123"},
+            { "id" => "Foo", "value" => "YES" },
+            { "id" => "Bar", "value" => "123" },
           ]
         )
         expect(config.settings["Foo"]).to eq "YES"

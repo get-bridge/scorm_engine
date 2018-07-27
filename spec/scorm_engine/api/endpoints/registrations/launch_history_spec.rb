@@ -1,7 +1,7 @@
 RSpec.describe ScormEngine::Api::Endpoints::Registrations::LaunchHistory do
   let(:subject) { scorm_engine_client }
 
-  let(:registration_options) {{
+  let(:registration_options) { {
     course_id: "testing-golf-explained",
     registration_id: "testing-golf-explained-registration-1",
     learner: {
@@ -9,7 +9,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations::LaunchHistory do
       first_name: "Arnold",
       last_name: "Palmer",
     }
-  }}
+  } }
 
   before do
     against_real_scorm_engine do
@@ -32,7 +32,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations::LaunchHistory do
     end
 
     it "returns an array of registration launch histories" do
-      expect(histories.result.all? {|r| r.is_a?(ScormEngine::Models::RegistrationLaunchHistory)}).to eq true
+      expect(histories.result.all? { |r| r.is_a?(ScormEngine::Models::RegistrationLaunchHistory) }).to eq true
     end
 
     it "fails when registration does not exist" do
@@ -44,4 +44,3 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations::LaunchHistory do
     end
   end
 end
-

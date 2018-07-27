@@ -1,6 +1,6 @@
 RSpec.describe ScormEngine::Models::Registration do
   describe ".new_from_api" do
-    let(:options) {{
+    let(:options) { {
       "id" => "registration-456",
       "score" => {
         "scaled" => "3.14159",
@@ -15,7 +15,7 @@ RSpec.describe ScormEngine::Models::Registration do
         "firstName" => "Bobby",
         "lastName" => "Jones",
       },
-    }}
+    } }
 
     let(:registration) { described_class.new_from_api(options) }
 
@@ -45,7 +45,7 @@ RSpec.describe ScormEngine::Models::Registration do
       end
 
       it "is set properly when key is in score object" do
-        registration = described_class.new_from_api(options.merge("score" => {"completedDate" => "2018-05-24T00:01:02.000Z"}))
+        registration = described_class.new_from_api(options.merge("score" => { "completedDate" => "2018-05-24T00:01:02.000Z" }))
         expect(registration.completed_date).to be_a Time
         expect(registration.completed_date.iso8601).to eq "2018-05-24T00:01:02Z"
       end

@@ -42,6 +42,6 @@ RSpec.configure do |config|
 end
 
 # Require every spec support file
-Dir[File.join(File.dirname(__FILE__), 'support', '**/*.rb')].each do |file|
+Dir[File.join(File.dirname(__FILE__), "support", "**/*.rb")].each do |file|
   require file
 end

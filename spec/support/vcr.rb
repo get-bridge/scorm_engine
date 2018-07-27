@@ -33,7 +33,7 @@ RSpec.configure do |config|
         gem_directory = File.expand_path("#{File.dirname(__FILE__)}/../../")
         files.uniq.each_with_index do |expanded_path, idx|
           relative_path = expanded_path.sub(%r{^#{gem_directory}/}, "")
-          backslash = (idx == files.size - 1) ? "" : "\\"
+          backslash = idx == files.size - 1 ? "" : "\\"
           if idx.zero?
             puts "  git rm -f #{relative_path} #{backslash}"
           else

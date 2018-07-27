@@ -4,10 +4,10 @@ require "yard"
 
 RSpec::Core::RakeTask.new(:spec)
 
-task :default => :spec
+task default: :spec
 
 YARD::Rake::YardocTask.new do |t|
- t.files = ['lib/**/*.rb']
- t.options = []
- t.stats_options = ['--list-undoc']
+  t.files = ["lib/**/*.rb"]
+  t.options = []
+  t.stats_options = ["--list-undoc"]
 end

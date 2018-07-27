@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/registrations/testing-golf-explained-registration-1/launchHistory
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/registrations/testing-golf-explained-registration-1/launchHistory?includeHistoryLog=false
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 25 Jul 2018 20:42:45 GMT
+      - Fri, 27 Jul 2018 23:29:55 GMT
       server:
       - nginx
       vary:
@@ -50,5 +50,5 @@ http_interactions:
         ":6.77,"lastRuntimeUpdate":"07/25/2018 20:01:59 PM","lastRuntimeUpdateUtc":"07/25/2018
         20:01:59 PM"}]}'
     http_version: 
-  recorded_at: Wed, 25 Jul 2018 20:42:45 GMT
+  recorded_at: Fri, 27 Jul 2018 23:29:55 GMT
 recorded_with: VCR 4.0.0

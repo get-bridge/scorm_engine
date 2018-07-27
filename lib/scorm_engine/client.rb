@@ -13,6 +13,5 @@ module ScormEngine
     def initialize(tenant:)
       @tenant = tenant
     end
-
   end
 end

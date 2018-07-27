@@ -1,7 +1,7 @@
 RSpec.describe ScormEngine::Models::CourseImport do
-  describe ".new_from_api" do 
+  describe ".new_from_api" do
     describe "when :importResult is present" do
-      let(:subject) { described_class.new_from_api("result" => "id123", "importResult" => {"status" => "RUNNING", "parserWarnings" => "watch out"}) }
+      let(:subject) { described_class.new_from_api("result" => "id123", "importResult" => { "status" => "RUNNING", "parserWarnings" => "watch out" }) }
 
       it "sets the id" do
         expect(subject.id).to eq "id123"
@@ -26,7 +26,7 @@ RSpec.describe ScormEngine::Models::CourseImport do
     end
 
     describe "when :importResult is absent" do
-      let(:subject) { described_class.new_from_api("jobId" => "id123", "status" => "COMPLETE", "course" => {"id" => "course123"}) }
+      let(:subject) { described_class.new_from_api("jobId" => "id123", "status" => "COMPLETE", "course" => { "id" => "course123" }) }
 
       it "sets the id" do
         expect(subject.id).to eq "id123"
@@ -84,4 +84,3 @@ RSpec.describe ScormEngine::Models::CourseImport do
     end
   end
 end
-

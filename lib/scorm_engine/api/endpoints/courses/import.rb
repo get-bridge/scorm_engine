@@ -43,7 +43,7 @@ module ScormEngine
 
           body = {
             url: options[:url],
-            courseName: options[:name] || options[:course_id],
+            courseName: options[:name] || options[:course_id]
           }
 
           response = post("courses/importJobs", query_params, body)
@@ -71,7 +71,7 @@ module ScormEngine
           response = get("courses/importJobs/#{options[:id]}")
 
           # jobId is not always returned. :why:
-          result = response&.success? && ScormEngine::Models::CourseImport.new_from_api({"jobId" => options[:id]}.merge(response.body))
+          result = response&.success? && ScormEngine::Models::CourseImport.new_from_api({ "jobId" => options[:id] }.merge(response.body))
 
           Response.new(raw_response: response, result: result)
         end
@@ -79,4 +79,3 @@ module ScormEngine
     end
   end
 end
-

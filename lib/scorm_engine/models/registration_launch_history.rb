@@ -35,8 +35,6 @@ module ScormEngine
         this
       end
 
-      private 
-
       #
       # Extract and convert various time formats.
       #
@@ -50,7 +48,7 @@ module ScormEngine
       def self.parse_time(string)
         return nil if string.nil? || string.empty?
         Time.strptime("#{string} UTC", "%m/%d/%Y %H:%M:%S %p %Z")
-      rescue
+      rescue StandardError
         Time.parse(string)
       end
 
@@ -77,7 +75,7 @@ module ScormEngine
       #
       # @return [Time]
       #   a date/time or nil if undefined.
-
+      #
       #
       def self.get_total_seconds_tracked_from_api(options = {})
         # for why we check trailing spaces see https://basecamp.com/2819363/projects/15019959/messages/79573438
@@ -87,8 +85,7 @@ module ScormEngine
         seconds ||= score["totalSecondsTracked"]
         seconds ||= score["totalSecondsTracked "]
         return if seconds.nil?
-        seconds = seconds.to_f
-        return [seconds, 0].max
+        [seconds.to_f, 0].max
       end
     end
   end

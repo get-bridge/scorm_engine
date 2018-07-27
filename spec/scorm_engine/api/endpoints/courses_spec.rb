@@ -22,7 +22,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
 
       it "sucessfully creates the Course attributes" do
         aggregate_failures do
-          course = courses.results.detect {|c| c.id == "testing-golf-explained" }
+          course = courses.results.detect { |c| c.id == "testing-golf-explained" }
           expect(course.version).to be >= 0
           expect(course.title).to eq "Golf Explained - Run-time Basic Calls"
           expect(course.registration_count).to eq 0

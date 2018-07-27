@@ -1,7 +1,7 @@
 RSpec.describe ScormEngine::Api::Endpoints::Registrations::Configuration do
   let(:subject) { scorm_engine_client }
 
-  let(:registration_options) {{
+  let(:registration_options) { {
     course_id: "testing-golf-explained",
     registration_id: "testing-golf-explained-registration-1",
     learner: {
@@ -9,7 +9,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations::Configuration do
       first_name: "Arnold",
       last_name: "Palmer",
     }
-  }}
+  } }
 
   before do
     against_real_scorm_engine do
@@ -45,11 +45,11 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations::Configuration do
   end
 
   describe "#post_registration_configuration" do
-    let(:response) { 
+    let(:response) {
       subject.post_registration_configuration(
         registration_id: registration_options[:registration_id],
-        settings: {"PlayerCaptureHistoryDetailed" => "NO",
-                   "PlayerStatusRollupModeThresholdScore" => 80}
+        settings: { "PlayerCaptureHistoryDetailed" => "NO",
+                    "PlayerStatusRollupModeThresholdScore" => 80 }
       )
     }
 
@@ -65,8 +65,8 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations::Configuration do
 
       subject.post_registration_configuration(
         registration_id: registration_options[:registration_id],
-        settings: {"PlayerCaptureHistoryDetailed" => "YES",
-                   "PlayerStatusRollupModeThresholdScore" => 42}
+        settings: { "PlayerCaptureHistoryDetailed" => "YES",
+                    "PlayerStatusRollupModeThresholdScore" => 42 }
       )
 
       configuration = subject.get_registration_configuration(registration_id: registration_options[:registration_id]).result
@@ -82,7 +82,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations::Configuration do
     end
 
     it "fails when settings are invalid" do
-      response = subject.post_registration_configuration(registration_id: registration_options[:registration_id], settings: {"NonExistentSettingTotesBogus" => "YES"})
+      response = subject.post_registration_configuration(registration_id: registration_options[:registration_id], settings: { "NonExistentSettingTotesBogus" => "YES" })
       expect(response.success?).to eq false
       expect(response.status).to eq 400
       expect(response.message).to match(/No configuration setting found with id.*NonExistentSettingTotesBogus/)
@@ -90,7 +90,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations::Configuration do
   end
 
   describe "#get_registration_configuration_setting" do
-    let(:response) { 
+    let(:response) {
       subject.put_registration_configuration_setting(registration_id: registration_options[:registration_id], setting_id: "PlayerStatusRollupModeThresholdScore", value: 42)
       subject.get_registration_configuration_setting(registration_id: registration_options[:registration_id], setting_id: "PlayerStatusRollupModeThresholdScore")
     }

@@ -1,4 +1,4 @@
-# 
+#
 # TODO: Consider consolidating this and Courses::Configuration, but only after we're
 #       sure they are really 99.9% the same in terms of functionality.
 #
@@ -63,7 +63,7 @@ module ScormEngine
           registration_id = options.delete(:registration_id)
           settings = options.delete(:settings)
 
-          body = {settings: settings.map { |k, v| { "settingId" => k, "value" => v.to_s } }}
+          body = { settings: settings.map { |k, v| { "settingId" => k, "value" => v.to_s } } }
 
           response = post("registrations/#{registration_id}/configuration", options, body)
 
@@ -82,7 +82,7 @@ module ScormEngine
         #
         # @option options [String] :setting_id
         #   The ID of the setting to get.
-        # 
+        #
         # @option options [Integer] :instance (nil)
         #   The instance of this registration to use. If not provided, the
         #   latest instance will be used.
@@ -115,10 +115,10 @@ module ScormEngine
         #
         # @option options [String] :setting_id
         #   The ID of the setting to set.
-        # 
+        #
         # @option options [String] :value ("")
         #   The value of the setting to set.
-        # 
+        #
         # @option options [Integer] :instance (nil)
         #   The instance of this registration to use. If not provided, the
         #   latest instance will be used.
@@ -132,9 +132,7 @@ module ScormEngine
           registration_id = options.delete(:registration_id)
           setting_id = options.delete(:setting_id)
 
-          body = {
-            value: options.delete(:value).to_s
-          }
+          body = { value: options.delete(:value).to_s }
 
           response = put("registrations/#{registration_id}/configuration/#{setting_id}", options, body)
 

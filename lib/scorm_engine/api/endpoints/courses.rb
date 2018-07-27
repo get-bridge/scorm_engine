@@ -43,7 +43,7 @@ module ScormEngine
 
           Response.new(raw_response: response, result: result)
         end
-        
+
         #
         # Delete a course
         #

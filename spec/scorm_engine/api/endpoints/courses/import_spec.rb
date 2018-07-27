@@ -20,17 +20,17 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Import do
 
     describe "arguments posted to the api" do
       it "works in the general case" do
-        expect(subject).to receive(:post).with("courses/importJobs", {course: "id123", mayCreateNewVersion: false}, {url: "http://path.to/scorm.zip", courseName: "id123"})
+        expect(subject).to receive(:post).with("courses/importJobs", { course: "id123", mayCreateNewVersion: false }, { url: "http://path.to/scorm.zip", courseName: "id123" })
         subject.post_course_import(course_id: "id123", url: "http://path.to/scorm.zip")
       end
 
       it "allows creating a new version" do
-        expect(subject).to receive(:post).with("courses/importJobs", {course: "id123", mayCreateNewVersion: true}, {url: "http://path.to/scorm.zip", courseName: "id123"})
+        expect(subject).to receive(:post).with("courses/importJobs", { course: "id123", mayCreateNewVersion: true }, { url: "http://path.to/scorm.zip", courseName: "id123" })
         subject.post_course_import(course_id: "id123", url: "http://path.to/scorm.zip", may_create_new_version: true)
       end
 
       it "allows overriding course name" do
-        expect(subject).to receive(:post).with("courses/importJobs", {course: "id123", mayCreateNewVersion: false}, {url: "http://path.to/scorm.zip", courseName: "the name"})
+        expect(subject).to receive(:post).with("courses/importJobs", { course: "id123", mayCreateNewVersion: false }, { url: "http://path.to/scorm.zip", courseName: "the name" })
         subject.post_course_import(course_id: "id123", url: "http://path.to/scorm.zip", name: "the name")
       end
     end

@@ -4,7 +4,7 @@ RSpec.describe ScormEngine::Models::Learner do
       "id" => "learner-123",
       "firstName" => "Bobby",
       "lastName" => "Jones",
-    )}
+    ) }
 
     describe ":id" do
       it "is set properly" do

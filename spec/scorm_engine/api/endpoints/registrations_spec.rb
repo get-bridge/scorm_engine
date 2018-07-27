@@ -1,7 +1,7 @@
 RSpec.describe ScormEngine::Api::Endpoints::Registrations do
   let(:subject) { scorm_engine_client }
 
-  let(:registration_options) {{
+  let(:registration_options) { {
     course_id: "testing-golf-explained",
     registration_id: "testing-golf-explained-registration-1",
     learner: {
@@ -9,7 +9,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
       first_name: "Arnold",
       last_name: "Palmer",
     }
-  }}
+  } }
 
   before do
     against_real_scorm_engine do
@@ -27,7 +27,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
     end
 
     it "returns an array of registrations" do
-      expect(registrations.result.all? {|r| r.is_a?(ScormEngine::Models::Registration)}).to eq true
+      expect(registrations.result.all? { |r| r.is_a?(ScormEngine::Models::Registration) }).to eq true
     end
 
     it "includes results we expect" do
@@ -72,7 +72,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
     end
 
     it "returns an array of registrations" do
-      expect(registrations.result.all? {|r| r.is_a?(ScormEngine::Models::Registration)}).to eq true
+      expect(registrations.result.all? { |r| r.is_a?(ScormEngine::Models::Registration) }).to eq true
     end
 
     it "includes results we expect" do

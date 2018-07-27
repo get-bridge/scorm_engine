@@ -34,11 +34,11 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Configuration do
   end
 
   describe "#post_course_configuration" do
-    let(:response) { 
+    let(:response) {
       subject.post_course_configuration(
-        course_id: "testing-golf-explained", 
-        settings: {"PlayerCaptureHistoryDetailed" => "NO",
-                   "PlayerStatusRollupModeThresholdScore" => 80}
+        course_id: "testing-golf-explained",
+        settings: { "PlayerCaptureHistoryDetailed" => "NO",
+                    "PlayerStatusRollupModeThresholdScore" => 80 }
       )
     }
 
@@ -53,9 +53,9 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Configuration do
       expect(configuration.settings["PlayerStatusRollupModeThresholdScore"]).to eq "80"
 
       subject.post_course_configuration(
-        course_id: "testing-golf-explained", 
-        settings: {"PlayerCaptureHistoryDetailed" => "YES",
-                   "PlayerStatusRollupModeThresholdScore" => 42}
+        course_id: "testing-golf-explained",
+        settings: { "PlayerCaptureHistoryDetailed" => "YES",
+                    "PlayerStatusRollupModeThresholdScore" => 42 }
       )
 
       configuration = subject.get_course_configuration(course_id: "testing-golf-explained").result
@@ -71,7 +71,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Configuration do
     end
 
     it "fails when settings are invalid" do
-      response = subject.post_course_configuration(course_id: "testing-golf-explained", settings: {"NonExistentSettingTotesBogus" => "YES"})
+      response = subject.post_course_configuration(course_id: "testing-golf-explained", settings: { "NonExistentSettingTotesBogus" => "YES" })
       expect(response.success?).to eq false
       expect(response.status).to eq 400
       expect(response.message).to match(/No configuration setting found with id.*NonExistentSettingTotesBogus/)
@@ -79,7 +79,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Configuration do
   end
 
   describe "#get_course_configuration_setting" do
-    let(:response) { 
+    let(:response) {
       subject.put_course_configuration_setting(course_id: "testing-golf-explained", setting_id: "PlayerStatusRollupModeThresholdScore", value: 42)
       subject.get_course_configuration_setting(course_id: "testing-golf-explained", setting_id: "PlayerStatusRollupModeThresholdScore")
     }

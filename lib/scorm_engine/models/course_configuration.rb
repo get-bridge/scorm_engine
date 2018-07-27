@@ -17,8 +17,6 @@ module ScormEngine
         this
       end
 
-      private
-
       #
       # Extract and normalize the settings from the API options.
       #

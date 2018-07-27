@@ -5,7 +5,7 @@ module ScormEngine
 
         #
         # Gets a list of registrations including a summary of the status of
-        # each registration. 
+        # each registration.
         #
         # @note Note the "since" parameter exists to allow
         #       retreiving only registrations that have changed, and the
@@ -63,7 +63,7 @@ module ScormEngine
         # completed and there is a newer version of that registration's package
         # is available. If both of those conditions are met when the
         # registration is launched, then Engine will create a new instance for
-        # that registration. 
+        # that registration.
         #
         # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__instances_get
         #
@@ -128,7 +128,7 @@ module ScormEngine
 
           options = options.dup
           registration_id = options.delete(:registration_id)
-          
+
           response = get("registrations/#{registration_id}", options)
 
           result = response.success? && response.body["exists"]
@@ -162,7 +162,7 @@ module ScormEngine
           options = options.dup
           registration_id = options.delete(:registration_id)
           detail = !!options.delete(:detail)
-          
+
           url = "registrations/#{registration_id}/progress"
           url += "/detail" if detail
 
@@ -190,12 +190,12 @@ module ScormEngine
 
           options = options.dup
           registration_id = options.delete(:registration_id)
-          
+
           response = delete("registrations/#{registration_id}")
 
           Response.new(raw_response: response)
         end
-        
+
         #
         # Create a registration.
         #
@@ -223,7 +223,7 @@ module ScormEngine
         #   status data in real time as the course is completed. By default all
         #   of these settings are read from your configuration, so only specify
         #   this if you need to control it on a per-registration basis.
-        #   
+        #
         # @option options [String] :post_back/:auth_type ("form")
         #   Optional parameter to specify how to authorize against the given
         #   postbackurl, can be 'form' or 'httpbasic'. If form authentication,
@@ -250,7 +250,7 @@ module ScormEngine
         #   by default. The information will be posted as JSON using the same
         #   schema as what is returned in the /progress and /progress/detail
         #   endpoints.
-        #   
+        #
         # @return [ScormEngine::Response]
         #
         def post_registration(options = {})
@@ -274,7 +274,7 @@ module ScormEngine
               userName: options[:post_back][:user_name],
               password: options[:post_back][:password],
               resultsFormat: options[:post_back][:results_format],
-            }.reject { |k, v| v.nil? }
+            }.reject { |_k, v| v.nil? }
           end
 
           response = post("registrations", {}, body)

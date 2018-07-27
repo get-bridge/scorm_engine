@@ -25,16 +25,14 @@ module ScormEngine
         this
       end
 
-      private
-
       def self.get_description_from_api(options)
-        description = options["description"].to_s.gsub(/\s+/, ' ').strip
+        description = options["description"].to_s.gsub(/\s+/, " ").strip
         description = nil if description.empty? || description == "null"
         description
       end
 
       def self.get_learner_response_from_api(options)
-        options["learnerResponse"].to_s.gsub(/\s+/, ' ').strip
+        options["learnerResponse"].to_s.gsub(/\s+/, " ").strip
       end
 
       def self.get_timestamp_from_api(options)

@@ -21,7 +21,7 @@ module ScormEngine
 
       private
 
-      # 
+      #
       # Ensure that all of the keys are present in the hash passed and raise an error if not.
       #
       # @example
@@ -43,7 +43,7 @@ module ScormEngine
       def require_option(haystack, *needles)
         value = needles.reduce(haystack) { |m, o| m[o.to_sym] || m[o.to_s] }
         return unless value.nil? # || (value.respond_to?(:empty?) && value.empty?)
-        raise ArgumentError.new("Required option #{needles.join("/")} missing")
+        raise ArgumentError, "Required option #{needles.join("/")} missing"
       end
     end
   end

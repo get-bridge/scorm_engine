@@ -27,8 +27,6 @@ module ScormEngine
         this
       end
 
-      private
-
       #
       # Extract and sanitize the title from the API options.
       #

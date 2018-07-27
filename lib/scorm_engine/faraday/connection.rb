@@ -16,7 +16,7 @@ module ScormEngine
           faraday.request :multipart
           faraday.request :json
 
-          faraday.response :json, :content_type => /\bjson$/
+          faraday.response :json, content_type: /\bjson$/
           faraday.response :logger, ScormEngine.configuration.logger, ScormEngine.configuration.log_options
 
           faraday.adapter ::Faraday.default_adapter
