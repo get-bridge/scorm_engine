@@ -40,9 +40,7 @@ module ScormEngine
         this.score = get_score_from_api(options)
         this.completed_date = get_completed_at_from_api(options)
 
-        # TODO: This will almost certainly need to be a model
-        this.activity_details = options["activityDetails"]
-
+        this.activity_details = RegistrationActivityDetail.new_from_api(options["activityDetails"]) if options.key?("activityDetails")
         this.course = Course.new_from_api(options["course"]) if options.key?("course")
         this.learner = Learner.new_from_api(options["learner"]) if options.key?("learner")
 
