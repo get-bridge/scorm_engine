@@ -3,7 +3,7 @@
 #   http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__progress_get
 #   http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__progress_detail_get
 #
-# TODO: Confirm these are the only possible values:
+# TODO: Confirmed they are the only values. Integrate them into the model.
 #       registrationCompletion: ["COMPLETED", "INCOMPLETE", "UNKNOWN"]
 #       registrationSuccess: ["Unknown", "Passed", "Failed"]
 #
