@@ -8,7 +8,7 @@ module ScormEngine
       # about creating/updating records. For now it makes it easier to create
       # instances from API options hash.
       attr_accessor :id, :type, :description, :timestamp, :correct_responses, :learner_response,
-        :result
+        :result, :weighting
 
       def self.new_from_api(options = {})
         this = new
@@ -21,6 +21,7 @@ module ScormEngine
         this.correct_responses = options["correctResponses"]
         this.learner_response = get_learner_response_from_api(options)
         this.result = options["result"]
+        this.weighting = options["weighting"] # TODO: Coerce to numeric? see https://basecamp.com/2819363/projects/15019959/messages/79802980
 
         this
       end

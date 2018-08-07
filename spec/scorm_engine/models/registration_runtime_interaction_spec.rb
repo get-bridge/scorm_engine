@@ -7,6 +7,7 @@ RSpec.describe ScormEngine::Models::RegistrationRuntimeInteraction do
       "correctResponses" => %w[one two],
       "learnerResponse" => "one",
       "result" => "correct",
+      "weighting" => "3",
     } }
 
     let(:interaction) { described_class.new_from_api(options) }
@@ -59,6 +60,12 @@ RSpec.describe ScormEngine::Models::RegistrationRuntimeInteraction do
     describe ":result" do
       it "is set properly" do
         expect(interaction.result).to eq "correct"
+      end
+    end
+
+    describe ":weighting" do
+      it "is set properly" do
+        expect(interaction.weighting).to eq "3"
       end
     end
   end
