@@ -8,7 +8,7 @@ module ScormEngine
       # about creating/updating records. For now it makes it easier to create
       # instances from API options hash.
       attr_accessor :id, :type, :description, :timestamp, :correct_responses, :learner_response,
-        :result, :weighting
+        :result, :weighting, :latency
 
       def self.new_from_api(options = {})
         this = new
@@ -22,6 +22,7 @@ module ScormEngine
         this.learner_response = get_learner_response_from_api(options)
         this.result = options["result"]
         this.weighting = options["weighting"] # TODO: Coerce to numeric? see https://basecamp.com/2819363/projects/15019959/messages/79802980
+        this.latency = options["latency"]
 
         this
       end
@@ -40,6 +41,11 @@ module ScormEngine
         timestamp = options["timestampUtc"]
         return if timestamp.nil? || timestamp.empty?
         Time.parse(timestamp)
+      end
+
+      def latency_in_seconds
+        h, m, s = latency.split(":")
+        h.to_i * 3600 + m.to_i * 60 + s.to_i
       end
     end
   end

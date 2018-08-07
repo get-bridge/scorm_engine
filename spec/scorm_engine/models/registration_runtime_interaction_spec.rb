@@ -8,6 +8,7 @@ RSpec.describe ScormEngine::Models::RegistrationRuntimeInteraction do
       "learnerResponse" => "one",
       "result" => "correct",
       "weighting" => "3",
+      "latency" => "0012:34:59"
     } }
 
     let(:interaction) { described_class.new_from_api(options) }
@@ -66,6 +67,24 @@ RSpec.describe ScormEngine::Models::RegistrationRuntimeInteraction do
     describe ":weighting" do
       it "is set properly" do
         expect(interaction.weighting).to eq "3"
+      end
+    end
+
+    describe ":latency" do
+      it "is set properly" do
+        expect(interaction.latency).to eq "0012:34:59"
+      end
+    end
+
+    describe "#latency_in_seconds" do
+      it "parses valid values" do
+        interaction = described_class.new_from_api("latency" => "0012:34:59")
+        expect(interaction.latency_in_seconds).to eq 45_299
+      end
+
+      it "returns zero for invalid values" do
+        interaction = described_class.new_from_api("latency" => "wat")
+        expect(interaction.latency_in_seconds).to eq 0
       end
     end
   end
