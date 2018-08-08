@@ -7,7 +7,7 @@ RSpec.describe ScormEngine::Models::RegistrationRuntimeInteraction do
       "correctResponses" => %w[one two],
       "learnerResponse" => "one",
       "result" => "correct",
-      "weighting" => "3",
+      "weighting" => "3.14",
       "latency" => "0012:34:59"
     } }
 
@@ -66,7 +66,7 @@ RSpec.describe ScormEngine::Models::RegistrationRuntimeInteraction do
 
     describe ":weighting" do
       it "is set properly" do
-        expect(interaction.weighting).to eq "3"
+        expect(interaction.weighting).to eq 3.14
       end
     end
 

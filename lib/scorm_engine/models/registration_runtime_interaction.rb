@@ -21,7 +21,7 @@ module ScormEngine
         this.correct_responses = options["correctResponses"]
         this.learner_response = get_learner_response_from_api(options)
         this.result = options["result"]
-        this.weighting = options["weighting"] # TODO: Coerce to numeric? see https://basecamp.com/2819363/projects/15019959/messages/79802980
+        this.weighting = options["weighting"].to_f
         this.latency = options["latency"]
 
         this
