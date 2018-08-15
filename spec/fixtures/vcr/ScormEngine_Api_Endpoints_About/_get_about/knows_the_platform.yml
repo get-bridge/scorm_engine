@@ -10,7 +10,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - ScormEngine Ruby Gem 0.1.0
+      - ScormEngine Ruby Gem 0.2.0
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -21,18 +21,18 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 25 Jul 2018 17:42:35 GMT
+      - Wed, 15 Aug 2018 23:29:15 GMT
       server:
       - nginx
       vary:
       - Accept-Encoding
       content-length:
-      - '65'
+      - '63'
       connection:
       - Close
     body:
       encoding: ASCII-8BIT
-      string: '{"version":"2017.1.44.1251","platform":"Java"}'
+      string: '{"version":"2017.1.47.1282","platform":"Java"}'
     http_version: 
-  recorded_at: Wed, 25 Jul 2018 17:42:35 GMT
+  recorded_at: Wed, 15 Aug 2018 23:29:15 GMT
 recorded_with: VCR 4.0.0
