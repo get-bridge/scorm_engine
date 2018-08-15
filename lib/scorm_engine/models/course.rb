@@ -12,6 +12,11 @@ module ScormEngine
       attr_accessor :id, :version, :title, :registration_count, :updated, :description,
                     :scaled_passing_score
 
+      # @attr
+      # The course's learning standard.
+      # @return [String] (SCORM_11, SCORM_12, SCORM_2004_2ND_EDITION, SCORM_2004_3RD_EDITION, SCORM_2004_4TH_EDITION, AICC, XAPI, CMI5)
+      attr_accessor :course_learning_standard
+
       def self.new_from_api(options = {})
         this = new
 
@@ -23,6 +28,7 @@ module ScormEngine
         this.updated = Time.parse(options["updated"]) if options.key?("updated")
         this.description = options.fetch("metadata", {})["description"]
         this.scaled_passing_score = get_scaled_passing_score_from_api(options)
+        this.course_learning_standard = options["courseLearningStandard"]
 
         this
       end

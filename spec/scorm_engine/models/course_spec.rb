@@ -88,5 +88,14 @@ RSpec.describe ScormEngine::Models::Course do
         end
       end
     end
+
+    describe ":course_learning_standard" do
+      it "is set properly" do
+        course = described_class.new_from_api(
+          "courseLearningStandard" => "SCORM_2004_4TH_EDITION"
+        )
+        expect(course.course_learning_standard).to eq "SCORM_2004_4TH_EDITION"
+      end
+    end
   end
 end
