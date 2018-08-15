@@ -88,7 +88,7 @@ module ScormEngine
 
           response = get("courses/#{course_id}/detail", options)
 
-          result = response.success? && ScormEngine::Models::Course.new_from_api(response.body)
+          result = response.success? ? ScormEngine::Models::Course.new_from_api(response.body) : nil
 
           Response.new(raw_response: response, result: result)
         end
@@ -126,7 +126,7 @@ module ScormEngine
 
           response = get("courses/#{course_id}/preview", options)
 
-          result = response.success? && response.body["launchLink"]
+          result = response.success? ? response.body["launchLink"] : nil
 
           Response.new(raw_response: response, result: result)
         end

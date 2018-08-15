@@ -54,7 +54,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Import do
 
         aggregate_failures do
           expect(import.success?).to eq false
-          expect(import.result).to be_falsey
+          expect(import.result).to eq nil
           expect(import.message).to match(/A course already exists with the specified id: .*\|a-previously-existing-course!/)
         end
       end

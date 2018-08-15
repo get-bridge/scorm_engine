@@ -33,7 +33,7 @@ module ScormEngine
 
             response = get("registrations/#{registration_id}/configuration", options)
 
-            result = response.success? && ScormEngine::Models::RegistrationConfiguration.new_from_api(response.body)
+            result = response.success? ? ScormEngine::Models::RegistrationConfiguration.new_from_api(response.body) : nil
 
             Response.new(raw_response: response, result: result)
           end
@@ -99,7 +99,7 @@ module ScormEngine
 
             response = get("registrations/#{registration_id}/configuration/#{setting_id}", options)
 
-            result = response.success? && response.body["value"]
+            result = response.success? ? response.body["value"] : nil
 
             Response.new(raw_response: response, result: result)
           end

@@ -129,6 +129,14 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
         end
       end
     end
+
+    it "fails when id is invalid" do
+      response = subject.get_course_preview(course_id: "nonexistent-course")
+      expect(response.success?).to eq false
+      expect(response.status).to eq 404
+      expect(response.message).to match(/External Package ID 'nonexistent-course'/)
+      expect(response.result).to eq nil
+    end
   end
 
   describe "#get_course_preview" do
@@ -150,6 +158,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
       expect(response.success?).to eq false
       expect(response.status).to eq 404
       expect(response.message).to match(/External Package ID 'nonexistent-course'/)
+      expect(response.result).to eq nil
     end
   end
 end

@@ -93,7 +93,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
     it "is false when registration does not exist" do
       response = subject.get_registration_exists(registration_id: "reg-does-not-exist")
       aggregate_failures do
-        expect(response.result).to eq false
+        expect(response.result).to eq nil
         expect(response.status).to eq 404
       end
     end
@@ -114,7 +114,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
       aggregate_failures do
         expect(response.success?).to eq false
         expect(response.status).to eq 404
-        expect(response.result).to be_falsey
+        expect(response.result).to eq nil
       end
     end
 
@@ -144,6 +144,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
       aggregate_failures do
         expect(response.success?).to eq false
         expect(response.status).to eq 404
+        expect(response.result).to eq nil
       end
     end
   end
@@ -196,6 +197,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
       expect(response.success?).to eq false
       expect(response.status).to eq 404
       expect(response.message).to match(/External Registration ID 'nonexistent-registration'/)
+      expect(response.result).to eq nil
     end
   end
 end

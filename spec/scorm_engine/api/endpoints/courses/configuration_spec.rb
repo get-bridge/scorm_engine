@@ -30,6 +30,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Configuration do
       expect(response.success?).to eq false
       expect(response.status).to eq 404
       expect(response.message).to match(/External Package ID 'nonexistent-course'/)
+      expect(response.result).to eq nil
     end
   end
 
@@ -99,6 +100,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Configuration do
       expect(response.success?).to eq false
       expect(response.status).to eq 404
       expect(response.message).to match(/External Package ID 'nonexistent-course'/)
+      expect(response.result).to eq nil
     end
 
     it "fails when setting_id is invalid" do
@@ -106,6 +108,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Configuration do
       expect(response.success?).to eq false
       expect(response.status).to eq 400
       expect(response.message).to match(/No configuration setting found with id.*NonExistentSettingTotesBogus/)
+      expect(response.result).to eq nil
     end
   end
 

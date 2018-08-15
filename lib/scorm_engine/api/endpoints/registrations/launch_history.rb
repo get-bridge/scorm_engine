@@ -34,9 +34,11 @@ module ScormEngine
 
             response = get("registrations/#{registration_id}/launchHistory", options)
 
-            result = response.success? && response.body["launchHistory"].map do |history|
-              ScormEngine::Models::RegistrationLaunchHistory.new_from_api(history)
-            end
+            result = if response.success?
+                       response.body["launchHistory"].map do |history|
+                         ScormEngine::Models::RegistrationLaunchHistory.new_from_api(history)
+                       end
+                     end
 
             Response.new(raw_response: response, result: result)
           end

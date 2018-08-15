@@ -41,6 +41,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations::Configuration do
       expect(response.success?).to eq false
       expect(response.status).to eq 404
       expect(response.message).to match(/External Registration ID 'nonexistent-registration'/)
+      expect(response.result).to eq nil
     end
   end
 
@@ -79,6 +80,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations::Configuration do
       expect(response.success?).to eq false
       expect(response.status).to eq 404
       expect(response.message).to match(/External Registration ID 'nonexistent-registration'/)
+      expect(response.result).to eq nil
     end
 
     it "fails when settings are invalid" do
@@ -110,6 +112,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations::Configuration do
       expect(response.success?).to eq false
       expect(response.status).to eq 404
       expect(response.message).to match(/External Registration ID 'nonexistent-registration'/)
+      expect(response.result).to eq nil
     end
 
     it "fails when setting_id is invalid" do
@@ -142,6 +145,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations::Configuration do
       expect(response.success?).to eq false
       expect(response.status).to eq 404
       expect(response.message).to match(/External Registration ID 'nonexistent-registration'/)
+      expect(response.result).to eq nil
     end
 
     it "fails when setting_id is invalid" do
