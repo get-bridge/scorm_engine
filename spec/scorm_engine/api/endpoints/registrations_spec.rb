@@ -159,6 +159,18 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
       end
     end
 
+    it "is successful even when given a UTF8/slashed username" do
+      options = registration_options.dup
+      options[:learner][:first_name] = "Släshy"
+      options[:learner][:last_name] = "Mč/Slásh\Facę"
+      subject.delete_registration(options)
+      response = subject.post_registration(options)
+      aggregate_failures do
+        expect(response.success?).to eq true
+        expect(response.status).to eq 204
+      end
+    end
+
     it "fails if course_id is invalid" do
       response = subject.post_registration(registration_options.merge(course_id: "invalid-bogus"))
       aggregate_failures do
