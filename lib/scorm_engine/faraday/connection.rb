@@ -8,7 +8,6 @@ module ScormEngine
 
       def connection
         @connection ||= ::Faraday.new(url: base_uri.to_s) do |faraday|
-          faraday.headers["Content-Type"] = "application/json"
           faraday.headers["User-Agent"] = "ScormEngine Ruby Gem #{ScormEngine::VERSION}"
 
           faraday.basic_auth(ScormEngine.configuration.username, ScormEngine.configuration.password)
