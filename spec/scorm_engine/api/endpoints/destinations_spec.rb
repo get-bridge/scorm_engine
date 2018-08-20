@@ -213,4 +213,3 @@ RSpec.describe ScormEngine::Api::Endpoints::Destinations do
     end
   end
 end
-

@@ -50,9 +50,9 @@ module ScormEngine
         raise ArgumentError, "Required option #{needles.join("/")} missing"
       end
 
-      def value_for_key(m, o)
-        return m[o.to_sym] if m.key?(o.to_sym)
-        return m[o.to_s] if m.key?(o.to_s)
+      def value_for_key(memo, obj)
+        return memo[obj.to_sym] if memo.key?(obj.to_sym)
+        return memo[obj.to_s] if memo.key?(obj.to_s)
         nil
       end
     end

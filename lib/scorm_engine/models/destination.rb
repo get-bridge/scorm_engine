@@ -17,11 +17,11 @@ module ScormEngine
 
         # get_destinations (plural) returns values in a nested 'data' field.
         # get_destination (singular) does not.
-        if options.key?("data")
-          this.name = options["data"]["name"]
-        else
-          this.name = options["name"]
-        end
+        this.name = if options.key?("data")
+                      options["data"]["name"]
+                    else
+                      options["name"]
+                    end
 
         this
       end
