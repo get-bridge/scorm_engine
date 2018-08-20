@@ -78,6 +78,14 @@ module ScormEngineHelpers
     end
   end
 
+  #
+  # Ensure that the specified dispatch exists in SCORM engine.
+  #
+  def ensure_dispatch_exists(options = {})
+    response = options[:client].get_dispatch(dispatch_id: options[:dispatch_id])
+    options[:client].post_dispatch(options) if response&.result.nil?
+  end
+
 end
 
 RSpec.configure do |c|

@@ -78,8 +78,7 @@ module ScormEngine
         # @return [ScormEngine::Response]
         #
         def post_dispatch(options = {})
-          require_options(options, :dispatch_id, :destination_id, :course_id, :allow_new_registrations,
-                          :instanced, :registration_cap, :expiration_date, :external_config)
+          require_options(options, :dispatch_id, :destination_id, :course_id)
 
           options = options.dup
 
@@ -89,7 +88,7 @@ module ScormEngine
           options[:expiration_date] = begin
                                         date = options[:expiration_date]
                                         date = date.is_a?(String) ? Date.parse(date) : date
-                                        date.iso8601
+                                        date&.iso8601 # might be nil
                                       rescue ArgumentError
                                         "none"
                                       end
@@ -176,8 +175,7 @@ module ScormEngine
         # @return [ScormEngine::Response]
         #
         def put_dispatch(options = {})
-          require_options(options, :dispatch_id, :destination_id, :course_id, :allow_new_registrations,
-                          :instanced, :registration_cap, :expiration_date, :external_config)
+          require_options(options, :dispatch_id, :destination_id, :course_id)
 
           body = {
             destinationId: options[:destination_id],
@@ -227,9 +225,9 @@ module ScormEngine
         # @return [ScormEngine::Response]
         #
         def get_dispatch_enabled(options = {})
-          require_options(options, :destination_id)
+          require_options(options, :dispatch_id)
 
-          response = post("dispatches/#{options[:dispatch_id]}/enabled")
+          response = get("dispatches/#{options[:dispatch_id]}/enabled")
 
           result = response.success? ? response.body : nil
 
@@ -254,9 +252,9 @@ module ScormEngine
         def put_dispatch_enabled(options = {})
           require_options(options, :dispatch_id, :enabled)
 
-          body = options[:enabled]
+          body = options[:enabled].to_s
 
-          response = post("dispatchs/#{options[:dispatch_id]}/enabled", {}, body)
+          response = put("dispatches/#{options[:dispatch_id]}/enabled", {}, body)
 
           Response.new(raw_response: response)
         end
@@ -277,7 +275,7 @@ module ScormEngine
         # @return [TODO?? Raw data? Zip IO? String?]
         #
         def get_dispatch_zip(options = {})
-          require_options(options, :destination_id)
+          require_options(options, :dispatch_id)
 
           response = get("dispatches/#{options[:dispatch_id]}/zip")
 

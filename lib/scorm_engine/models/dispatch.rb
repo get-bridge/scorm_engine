@@ -17,15 +17,17 @@ module ScormEngine
 
         this.options = options.dup
         this.id = options["id"]
-        if options.key?("data")
-          this.destination_id = options["data"]["destinationId"]
-          this.course_id = options["data"]["courseId"]
-          this.allow_new_registrations = options["data"]["allowNewRegistrations"]
-          this.instanced = options["data"]["instanced"]
-          this.registration_cap = options["data"]["registrationCap"]&.to_i
-          this.expiration_date = get_expiration_date(options)
-          this.external_config = options["data"]["externalConfig"]
-        end
+
+        # get_dispatches (plural) returns values in a nested 'data' field.
+        # get_dispatches (singular) does not.
+        data = options["data"] || options
+        this.destination_id = data["destinationId"]
+        this.course_id = data["courseId"]
+        this.allow_new_registrations = data["allowNewRegistrations"]
+        this.instanced = data["instanced"]
+        this.registration_cap = data["registrationCap"]&.to_i
+        this.expiration_date = get_expiration_date(data)
+        this.external_config = data["externalConfig"]
 
         this
       end
@@ -40,9 +42,9 @@ module ScormEngine
       #   a date/time or nil if undefined.
       #
       def self.get_expiration_date(options = {})
-        expiration_date = options.fetch("data", {})["expirationDate"]
-        return if expiration_date.nil?
-        Date.parse(expiration_date)
+        expiration_date = options["expirationDate"]
+        return if expiration_date.nil? || expiration_date == "none"
+        Time.parse(expiration_date)
       end
     end
   end

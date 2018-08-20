@@ -62,7 +62,7 @@ RSpec.describe ScormEngine::Models::Dispatch do
             "expirationDate" => "2018-05-24"
           }
         )
-        expect(dispatch.expiration_date).to eq Date.new(2018, 5, 24)
+        expect(dispatch.expiration_date.to_date).to eq Date.new(2018, 5, 24)
       end
 
       it "is set to nil if blank" do
