@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/phallstrom/scorm_engine.svg?branch=master)](https://travis-ci.org/phallstrom/scorm_engine)
 [![Gem Version](https://badge.fury.io/rb/scorm_engine.svg)](https://badge.fury.io/rb/scorm_engine)
+[![Yard Docs](http://img.shields.io/badge/yard-docs-blue.svg)](https://www.rubydoc.info/gems/scorm_engine)
 
 # ScormEngine
 
