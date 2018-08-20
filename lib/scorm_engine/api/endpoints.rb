@@ -41,9 +41,15 @@ module ScormEngine
       end
 
       def require_option(haystack, *needles)
-        value = needles.reduce(haystack) { |m, o| m[o.to_sym] || m[o.to_s] }
-        return unless value.nil? # || (value.respond_to?(:empty?) && value.empty?)
+        value = needles.reduce(haystack) { |m, o| value_for_key(m, o) }
+        return unless value.nil?
         raise ArgumentError, "Required option #{needles.join("/")} missing"
+      end
+
+      def value_for_key(m, o)
+        return m[o.to_sym] if m.key?(o.to_sym)
+        return m[o.to_s] if m.key?(o.to_s)
+        nil
       end
     end
   end
