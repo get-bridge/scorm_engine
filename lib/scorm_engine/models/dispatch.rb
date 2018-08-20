@@ -17,13 +17,15 @@ module ScormEngine
 
         this.options = options.dup
         this.id = options["id"]
-        this.destination_id = options["data"]["destinationId"]
-        this.course_id = options["data"]["courseId"]
-        this.allow_new_registrations = options["data"]["allowNewRegistrations"]
-        this.instanced = options["data"]["instanced"]
-        this.registration_cap = options["data"]["registrationCap"]&.to_i
-        this.expiration_date = get_expiration_date(options)
-        this.external_config = options["data"]["externalConfig"]
+        if options.key?("data")
+          this.destination_id = options["data"]["destinationId"]
+          this.course_id = options["data"]["courseId"]
+          this.allow_new_registrations = options["data"]["allowNewRegistrations"]
+          this.instanced = options["data"]["instanced"]
+          this.registration_cap = options["data"]["registrationCap"]&.to_i
+          this.expiration_date = get_expiration_date(options)
+          this.external_config = options["data"]["externalConfig"]
+        end
 
         this
       end
