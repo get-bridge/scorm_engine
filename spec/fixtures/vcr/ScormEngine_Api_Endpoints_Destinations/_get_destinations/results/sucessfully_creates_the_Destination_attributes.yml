@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/destinations
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - ScormEngine Ruby Gem 0.3.0
+      Authorization:
+      - Basic <BASIC_AUTH>
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      content-type:
+      - application/json
+      date:
+      - Mon, 20 Aug 2018 21:19:33 GMT
+      server:
+      - nginx
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '287'
+      connection:
+      - Close
+    body:
+      encoding: ASCII-8BIT
+      string: '{"destinations":[{"id":"testing-golf-club","data":{"name":"Golf Club"}},{"id":"destination-to-be-deleted","data":{"name":"destination-to-be-deleted"}},{"id":"paginated-destination-0","data":{"name":"paginated-destination-0"}},{"id":"paginated-destination-1","data":{"name":"paginated-destination-1"}},{"id":"paginated-destination-2","data":{"name":"paginated-destination-2"}},{"id":"paginated-destination-3","data":{"name":"paginated-destination-3"}},{"id":"paginated-destination-4","data":{"name":"paginated-destination-4"}},{"id":"paginated-destination-5","data":{"name":"paginated-destination-5"}},{"id":"paginated-destination-6","data":{"name":"paginated-destination-6"}},{"id":"paginated-destination-7","data":{"name":"paginated-destination-7"}}],"more":"https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/scormenginegemtesting-default/destinations?configuration=ScormEngineGemTesting-default&more=AAABZVk035AAAAEA"}'
+    http_version: 
+  recorded_at: Mon, 20 Aug 2018 21:19:33 GMT
+recorded_with: VCR 4.0.0

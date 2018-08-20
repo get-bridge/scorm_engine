@@ -1,0 +1,32 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/destinations/testing-golf-club
+    body:
+      encoding: UTF-8
+      string: '{"name":"Golf & Country Club"}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - ScormEngine Ruby Gem 0.3.0
+      Authorization:
+      - Basic <BASIC_AUTH>
+  response:
+    status:
+      code: 204
+      message: ''
+    headers:
+      date:
+      - Mon, 20 Aug 2018 21:19:35 GMT
+      server:
+      - nginx
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Mon, 20 Aug 2018 21:19:35 GMT
+recorded_with: VCR 4.0.0

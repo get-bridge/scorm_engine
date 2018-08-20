@@ -65,6 +65,19 @@ module ScormEngineHelpers
     return if response&.result
     options[:client].post_registration(options)
   end
+
+  #
+  # Ensure that the specified destination exists in SCORM engine.
+  #
+  def ensure_destination_exists(options = {})
+    response = options[:client].get_destination(destination_id: options[:destination_id])
+    if response&.result.nil?
+      options[:client].post_destination(options)
+    elsif options.key?(:name) && response&.result&.name != options[:name]
+      options[:client].put_destination(options)
+    end
+  end
+
 end
 
 RSpec.configure do |c|

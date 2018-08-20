@@ -2,6 +2,8 @@ require_relative "endpoints/about"
 require_relative "endpoints/courses"
 require_relative "endpoints/courses/configuration"
 require_relative "endpoints/courses/import"
+require_relative "endpoints/destinations"
+require_relative "endpoints/dispatches"
 require_relative "endpoints/ping"
 require_relative "endpoints/registrations"
 require_relative "endpoints/registrations/configuration"
@@ -14,6 +16,8 @@ module ScormEngine
       include Courses
       include Courses::Configuration
       include Courses::Import
+      include Destinations
+      include Dispatches
       include Ping
       include Registrations
       include Registrations::Configuration

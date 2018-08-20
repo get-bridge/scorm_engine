@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/destinations/testing-golf-club/dispatches/registrationInstancing
+    body:
+      encoding: UTF-8
+      string: oops
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - ScormEngine Ruby Gem 0.3.0
+      Authorization:
+      - Basic <BASIC_AUTH>
+  response:
+    status:
+      code: 400
+      message: ''
+    headers:
+      content-type:
+      - text/plain
+      date:
+      - Mon, 20 Aug 2018 21:19:05 GMT
+      server:
+      - nginx
+      content-length:
+      - '198'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      string: |-
+        Unrecognized token 'oops': was expecting ('true', 'false' or 'null')
+         at [Source: org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream@6f73cd8b; line: 1, column: 9]
+    http_version: 
+  recorded_at: Mon, 20 Aug 2018 21:19:05 GMT
+recorded_with: VCR 4.0.0
