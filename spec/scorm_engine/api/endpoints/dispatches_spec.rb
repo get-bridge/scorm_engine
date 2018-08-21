@@ -240,7 +240,6 @@ RSpec.describe ScormEngine::Api::Endpoints::Dispatches do
       end
     end
 
-
     it "works when type is SCORM20043RDEDITION" do
       pending "https://basecamp.com/2819363/projects/15019959/messages/80053329"
       response = subject.get_dispatch_zip(dispatch_id: dispatch_options[:dispatch_id], type: "SCORM20043RDEDITION")
