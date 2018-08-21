@@ -240,12 +240,11 @@ RSpec.describe ScormEngine::Api::Endpoints::Dispatches do
       end
     end
 
-    it "works when type is SCORM20043RDEDITION" do
-      pending "https://basecamp.com/2819363/projects/15019959/messages/80053329"
-      response = subject.get_dispatch_zip(dispatch_id: dispatch_options[:dispatch_id], type: "SCORM20043RDEDITION")
+    it "works when type is SCORM2004-3RD" do
+      response = subject.get_dispatch_zip(dispatch_id: dispatch_options[:dispatch_id], type: "SCORM2004-3RD")
       aggregate_failures do
         expect(response.success?).to eq true
-        expect(response.result.type).to eq "SCORM20043RDEDITION"
+        expect(response.result.type).to eq "SCORM2004-3RD"
 
         zip_contents = Zip::File.open_buffer(StringIO.new(response.result.body)).each_entry.map(&:name)
         expect(zip_contents).to include("blank.html", "configuration.js", "dispatch.html", "goodbye.html") # sampling

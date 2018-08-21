@@ -270,7 +270,7 @@ module ScormEngine
         #   The ID of the dispatch to delete.
         #
         # @option options [String] :type (SCORM12)
-        #   The type of dispatch package to export (SCORM12, SCORM20043RDEDITION or AICC)
+        #   The type of dispatch package to export (SCORM12, SCORM2004-3RD or AICC)
         #
         # @return [ScormEngine::Models::DispatchZip]
         #
