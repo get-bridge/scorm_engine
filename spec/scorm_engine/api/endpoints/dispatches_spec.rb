@@ -1,3 +1,5 @@
+require "zip"
+
 RSpec.describe ScormEngine::Api::Endpoints::Dispatches do
   let(:subject) { scorm_engine_client }
 
@@ -213,6 +215,73 @@ RSpec.describe ScormEngine::Api::Endpoints::Dispatches do
   end
 
   describe "#get_dispatch_zip" do
-    pending "https://basecamp.com/2819363/projects/15019959/messages/80059610"
+    it "works" do
+      response = subject.get_dispatch_zip(dispatch_id: dispatch_options[:dispatch_id])
+      aggregate_failures do
+        expect(response.success?).to eq true
+        expect(response.status).to eq 200
+        expect(response.result.dispatch_id).to eq dispatch_options[:dispatch_id]
+        expect(response.result.type).to eq "SCORM12"
+        expect(response.result.filename).to end_with("golf_club_dispatch_testing-dispatch-id.zip")
+
+        zip_contents = Zip::File.open_buffer(StringIO.new(response.result.body)).each_entry.map(&:name)
+        expect(zip_contents).to include("blank.html", "configuration.js", "dispatch.html", "goodbye.html") # sampling
+      end
+    end
+
+    it "works when type is SCORM12" do
+      response = subject.get_dispatch_zip(dispatch_id: dispatch_options[:dispatch_id], type: "SCORM12")
+      aggregate_failures do
+        expect(response.success?).to eq true
+        expect(response.result.type).to eq "SCORM12"
+
+        zip_contents = Zip::File.open_buffer(StringIO.new(response.result.body)).each_entry.map(&:name)
+        expect(zip_contents).to include("blank.html", "configuration.js", "dispatch.html", "goodbye.html") # sampling
+      end
+    end
+
+
+    it "works when type is SCORM20043RDEDITION" do
+      pending "https://basecamp.com/2819363/projects/15019959/messages/80053329"
+      response = subject.get_dispatch_zip(dispatch_id: dispatch_options[:dispatch_id], type: "SCORM20043RDEDITION")
+      aggregate_failures do
+        expect(response.success?).to eq true
+        expect(response.result.type).to eq "SCORM20043RDEDITION"
+
+        zip_contents = Zip::File.open_buffer(StringIO.new(response.result.body)).each_entry.map(&:name)
+        expect(zip_contents).to include("blank.html", "configuration.js", "dispatch.html", "goodbye.html") # sampling
+      end
+    end
+
+    it "works when type is AICC" do
+      response = subject.get_dispatch_zip(dispatch_id: dispatch_options[:dispatch_id], type: "AICC")
+      aggregate_failures do
+        expect(response.success?).to eq true
+        expect(response.result.type).to eq "AICC"
+
+        zip_contents = Zip::File.open_buffer(StringIO.new(response.result.body)).each_entry.map(&:name)
+        expect(zip_contents).to include("blank.html", "configuration.js", "dispatch.html", "goodbye.html") # sampling
+      end
+    end
+
+    it "fails given an invalid id" do
+      response = subject.get_dispatch_zip(dispatch_id: "nonexistent-dispatch")
+      aggregate_failures do
+        expect(response.success?).to eq false
+        expect(response.status).to eq 404
+        expect(response.result).to eq nil
+        expect(response.message).to eq "No dispatches found with ID: nonexistent-dispatch"
+      end
+    end
+
+    it "fails given an invalid type" do
+      response = subject.get_dispatch_zip(dispatch_id: dispatch_options[:dispatch_id], type: "OOPS")
+      aggregate_failures do
+        expect(response.success?).to eq false
+        expect(response.status).to eq 500
+        expect(response.result).to eq nil
+        expect(response.message).to eq "The value 'OOPS' is not a valid Dispatch Type."
+      end
+    end
   end
 end

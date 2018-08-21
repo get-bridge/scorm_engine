@@ -269,17 +269,28 @@ module ScormEngine
         # @option options [String] :dispatch_id
         #   The ID of the dispatch to delete.
         #
-        # @option options [String] :type
+        # @option options [String] :type (SCORM12)
         #   The type of dispatch package to export (SCORM12, SCORM20043RDEDITION or AICC)
         #
-        # @return [TODO?? Raw data? Zip IO? String?]
+        # @return [ScormEngine::Models::DispatchZip]
         #
         def get_dispatch_zip(options = {})
           require_options(options, :dispatch_id)
 
-          response = get("dispatches/#{options[:dispatch_id]}/zip")
+          options = options.dup
+          dispatch_id = options.delete(:dispatch_id)
+          options[:type] ||= "SCORM12"
 
-          result = response.success? ? response.body : nil
+          response = get("dispatches/#{dispatch_id}/zip", options)
+
+          result = if response.success?
+                     ScormEngine::Models::DispatchZip.new(
+                       dispatch_id: dispatch_id,
+                       type: options[:type],
+                       filename: response.headers["content-disposition"].match(/; filename="(.*?)"/)&.captures&.first,
+                       body: response.body,
+                     )
+                   end
 
           Response.new(raw_response: response, result: result)
         end
