@@ -78,7 +78,9 @@ module ScormEngine
       #
       #
       def self.get_total_seconds_tracked_from_api(options = {})
-        # for why we check trailing spaces see https://basecamp.com/2819363/projects/15019959/messages/79573438
+        # There is a bug in the API that returns a trailing space sometimes.
+        # I swear I also saw `totalSecondsTracked` as part of `score`, but can't find it now.
+        # However, since I intentionally did it I'm going to leave it for now.
         seconds = options["totalSecondsTracked"]
         seconds ||= options["totalSecondsTracked "]
         score = options.fetch("score", {})
