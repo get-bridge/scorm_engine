@@ -4,6 +4,15 @@ require "faraday_middleware"
 module ScormEngine
   module Faraday
     module Connection
+
+      def base_uri
+        uri = URI("")
+        uri.scheme = "https" # TODO: Make configurable
+        uri.host = ScormEngine.configuration.host
+        uri.path = ScormEngine.configuration.path_prefix
+        uri
+      end
+
       private
 
       def connection
@@ -20,14 +29,6 @@ module ScormEngine
 
           faraday.adapter ::Faraday.default_adapter
         end
-      end
-
-      def base_uri
-        uri = URI("")
-        uri.scheme = "https" # TODO: Make configurable
-        uri.host = ScormEngine.configuration.host
-        uri.path = ScormEngine.configuration.path_prefix
-        uri
       end
     end
   end
