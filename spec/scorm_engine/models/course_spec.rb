@@ -97,5 +97,14 @@ RSpec.describe ScormEngine::Models::Course do
         expect(course.course_learning_standard).to eq "SCORM_2004_4TH_EDITION"
       end
     end
+
+    describe ":web_path" do
+      it "is set properly" do
+        course = described_class.new_from_api(
+          "webPath" => "/courses/tenant/courseid/0"
+        )
+        expect(course.course_learning_standard).to eq "/courses/tenant/courseid/0"
+      end
+    end
   end
 end

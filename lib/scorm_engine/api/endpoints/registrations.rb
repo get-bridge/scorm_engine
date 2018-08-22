@@ -224,9 +224,9 @@ module ScormEngine
         #   of these settings are read from your configuration, so only specify
         #   this if you need to control it on a per-registration basis.
         #
-        # @option options [String] :post_back/:auth_type ("form")
+        # @option options [String] :post_back/:auth_type ("FORM")
         #   Optional parameter to specify how to authorize against the given
-        #   postbackurl, can be 'form' or 'httpbasic'. If form authentication,
+        #   postbackurl, can be 'FORM' or 'HTTPBASIC'. If form authentication,
         #   the username and password for authentication are submitted as form
         #   fields 'username' and 'password', and the registration data as the
         #   form field 'data'. If HTTP Basic Authentication is used, the

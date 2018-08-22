@@ -126,6 +126,8 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
           expect(course.registration_count).to be >= 0
           expect(course.updated).to be_a Time
           expect(course.description).to eq nil
+          expect(course.course_learning_standard).to eq "SCORM_2004_3RD_EDITION"
+          expect(course.web_path).to eq "/courses/ScormEngineGemTesting-default/testing-golf-explained/0"
         end
       end
     end
