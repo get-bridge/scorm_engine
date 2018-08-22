@@ -10,7 +10,7 @@ module ScormEngine
         uri.scheme = "https" # TODO: Make configurable
         uri.host = ScormEngine.configuration.host
         uri.path = ScormEngine.configuration.path_prefix
-        uri
+        URI(uri.to_s) # convert URI::Generic to URI:HTTPS
       end
 
       private
