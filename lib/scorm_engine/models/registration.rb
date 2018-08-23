@@ -44,6 +44,10 @@ module ScormEngine
         this
       end
 
+      def progress
+        activity_details.activity_count(only_completed: true).to_f / activity_details.activity_count
+      end
+
       #
       # Extract and normalize the scaled passing score from the API options.
       #
