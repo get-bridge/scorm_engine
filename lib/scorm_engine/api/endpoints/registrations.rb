@@ -270,6 +270,7 @@ module ScormEngine
 
           if options[:post_back]
             body[:postBack] = {
+              url: options[:post_back][:url],
               authType: options[:post_back][:auth_type],
               userName: options[:post_back][:user_name],
               password: options[:post_back][:password],
