@@ -5,10 +5,7 @@
 #
 module ScormEngine
   module Models
-    class RegistrationLaunchHistory
-      attr_accessor :options
-      private :options
-
+    class RegistrationLaunchHistory < Base
       # TODO: Not sure we want this to be settable. Will depend on how we go
       # about creating/updating records. For now it makes it easier to create
       # instances from API options hash.

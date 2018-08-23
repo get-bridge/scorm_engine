@@ -1,9 +1,6 @@
 module ScormEngine
   module Models
-    class DispatchZip
-      attr_accessor :options
-      private :options
-
+    class DispatchZip < Base
       attr_accessor :dispatch_id, :type, :filename, :body
 
       def initialize(options = {})
