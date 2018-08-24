@@ -40,7 +40,7 @@ module ScormEngine
       # @attr
       # The weight this interaction carries relative to the other interactions
       # in the SCO.
-      # @return [String]
+      # @return [Float]
       attr_accessor :weighting
 
       # @attr
