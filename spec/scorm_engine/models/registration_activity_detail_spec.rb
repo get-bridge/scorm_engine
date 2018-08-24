@@ -97,5 +97,107 @@ RSpec.describe ScormEngine::Models::RegistrationActivityDetail do
         ]
       end
     end
+
+    describe "#complete?" do
+      it "is nil when completion is UNKNOWN" do
+        activity = described_class.new_from_api("activityCompletion" => "UNKNOWN")
+        expect(activity.complete?).to eq nil
+      end
+
+      it "is false when completion is INCOMPLETE" do
+        activity = described_class.new_from_api("activityCompletion" => "INCOMPLETE")
+        expect(activity.complete?).to eq false
+      end
+
+      it "is true when completion is COMPLETED" do
+        activity = described_class.new_from_api("activityCompletion" => "COMPLETED")
+        expect(activity.complete?).to eq true
+      end
+    end
+
+    describe "#incomplete?" do
+      it "is nil when completion is UNKNOWN" do
+        activity = described_class.new_from_api("activityCompletion" => "UNKNOWN")
+        expect(activity.incomplete?).to eq nil
+      end
+
+      it "is true when completion is INCOMPLETE" do
+        activity = described_class.new_from_api("activityCompletion" => "INCOMPLETE")
+        expect(activity.incomplete?).to eq true
+      end
+
+      it "is false when completion is COMPLETED" do
+        activity = described_class.new_from_api("activityCompletion" => "COMPLETED")
+        expect(activity.incomplete?).to eq false
+      end
+    end
+
+    describe "#previous_attempt_complete?" do
+      it "is nil when completion is Unknown" do
+        activity = described_class.new_from_api("previousAttemptCompletion" => "Unknown")
+        expect(activity.previous_attempt_complete?).to eq nil
+      end
+
+      it "is false when completion is Incomplete" do
+        activity = described_class.new_from_api("previousAttemptCompletion" => "Incomplete")
+        expect(activity.previous_attempt_complete?).to eq false
+      end
+
+      it "is true when completion is Completed" do
+        activity = described_class.new_from_api("previousAttemptCompletion" => "Completed")
+        expect(activity.previous_attempt_complete?).to eq true
+      end
+    end
+
+    describe "#previous_atempt_incomplete?" do
+      it "is nil when completion is Unknown" do
+        activity = described_class.new_from_api("previousAttemptCompletion" => "Unknown")
+        expect(activity.previous_attempt_incomplete?).to eq nil
+      end
+
+      it "is true when completion is Incomplete" do
+        activity = described_class.new_from_api("previousAttemptCompletion" => "Incomplete")
+        expect(activity.previous_attempt_incomplete?).to eq true
+      end
+
+      it "is false when completion is Completed" do
+        activity = described_class.new_from_api("previousAttemptCompletion" => "Completed")
+        expect(activity.previous_attempt_incomplete?).to eq false
+      end
+    end
+
+    describe "#passed?" do
+      it "is nil when completion is UNKNOWN" do
+        activity = described_class.new_from_api("activitySuccess" => "UNKNOWN")
+        expect(activity.passed?).to eq nil
+      end
+
+      it "is false when completion is FAILED" do
+        activity = described_class.new_from_api("activitySuccess" => "FAILED")
+        expect(activity.passed?).to eq false
+      end
+
+      it "is true when completion is PASSED" do
+        activity = described_class.new_from_api("activitySuccess" => "PASSED")
+        expect(activity.passed?).to eq true
+      end
+    end
+
+    describe "#failed?" do
+      it "is nil when completion is UNKNOWN" do
+        activity = described_class.new_from_api("activitySuccess" => "UNKNOWN")
+        expect(activity.failed?).to eq nil
+      end
+
+      it "is true when completion is FAILED" do
+        activity = described_class.new_from_api("activitySuccess" => "FAILED")
+        expect(activity.failed?).to eq true
+      end
+
+      it "is false when completion is PASSED" do
+        activity = described_class.new_from_api("activitySuccess" => "PASSED")
+        expect(activity.failed?).to eq false
+      end
+    end
   end
 end

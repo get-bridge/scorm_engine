@@ -96,7 +96,7 @@ RSpec.describe ScormEngine::Models::Registration do
       end
     end
 
-    describe "#incomplete??" do
+    describe "#incomplete?" do
       it "is nil when completion is UNKNOWN" do
         registration = described_class.new_from_api("registrationCompletion" => "UNKNOWN")
         expect(registration.incomplete?).to eq nil
