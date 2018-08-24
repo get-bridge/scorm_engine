@@ -44,6 +44,18 @@ module ScormEngine
         this
       end
 
+      def complete?
+        return nil if registration_completion == "UNKNOWN"
+        registration_completion == "COMPLETED"
+      end
+
+      def incomplete?
+        return nil if registration_completion == "UNKNOWN"
+        registration_completion == "INCOMPLETE"
+      end
+
+      private
+
       #
       # Extract and normalize the scaled passing score from the API options.
       #

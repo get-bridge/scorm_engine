@@ -78,5 +78,39 @@ RSpec.describe ScormEngine::Models::Registration do
         expect(registration.learner).to eq nil
       end
     end
+
+    describe "#complete?" do
+      it "is nil when completion is UNKNOWN" do
+        registration = described_class.new_from_api("registrationCompletion" => "UNKNOWN")
+        expect(registration.complete?).to eq nil
+      end
+
+      it "is false when completion is INCOMPLETE" do
+        registration = described_class.new_from_api("registrationCompletion" => "INCOMPLETE")
+        expect(registration.complete?).to eq false
+      end
+
+      it "is true when completion is COMPLETED" do
+        registration = described_class.new_from_api("registrationCompletion" => "COMPLETED")
+        expect(registration.complete?).to eq true
+      end
+    end
+
+    describe "#incomplete??" do
+      it "is nil when completion is UNKNOWN" do
+        registration = described_class.new_from_api("registrationCompletion" => "UNKNOWN")
+        expect(registration.incomplete?).to eq nil
+      end
+
+      it "is true when completion is INCOMPLETE" do
+        registration = described_class.new_from_api("registrationCompletion" => "INCOMPLETE")
+        expect(registration.incomplete?).to eq true
+      end
+
+      it "is false when completion is COMPLETED" do
+        registration = described_class.new_from_api("registrationCompletion" => "COMPLETED")
+        expect(registration.incomplete?).to eq false
+      end
+    end
   end
 end
