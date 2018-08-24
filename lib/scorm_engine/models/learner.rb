@@ -1,10 +1,20 @@
 module ScormEngine
   module Models
     class Learner < Base
-      # TODO: Not sure we want this to be settable. Will depend on how we go
-      # about creating/updating records. For now it makes it easier to create
-      # instances from API options hash.
-      attr_accessor :id, :first_name, :last_name
+      # @attr
+      # The external identification of the learner.
+      # @return [String]
+      attr_accessor :id
+
+      # @attr
+      # The learner's first name.
+      # @return [String]
+      attr_accessor :first_name
+
+      # @attr
+      # The learner's last name.
+      # @return [String]
+      attr_accessor :last_name
 
       def self.new_from_api(options = {})
         this = new

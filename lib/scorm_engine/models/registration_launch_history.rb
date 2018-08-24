@@ -1,17 +1,50 @@
-#
-# TODO: Confirmed they are the only values. Integrate them into the model.
-#   completionStatus: ["Completed", "Incomplete", "Unknown"]
-#   successStatus: ["Failed", "Passed", "Unknown"]
-#
 module ScormEngine
   module Models
     class RegistrationLaunchHistory < Base
-      # TODO: Not sure we want this to be settable. Will depend on how we go
-      # about creating/updating records. For now it makes it easier to create
-      # instances from API options hash.
-      attr_accessor :id, :instance_id, :launch_time, :exit_time,
-                    :completion_status, :success_status, :total_seconds_tracked,
-                    :last_runtime_update, :score
+      # @attr
+      # The external identification of the registration.
+      # @return [String]
+      attr_accessor :id
+
+      # @attr
+      #
+      # @return [String]
+      attr_accessor :instance_id
+
+      # @attr
+      #
+      # @return [Time]
+      attr_accessor :launch_time
+
+      # @attr
+      #
+      # @return [Time]
+      attr_accessor :exit_time
+
+      # @attr
+      #
+      # @return [String] (COMPLETED, INCOMPLETE, UNKNOWN)
+      attr_accessor :completion_status
+
+      # @attr
+      #
+      # @return [String] (FAILED, PASSED, UNKNOWN)
+      attr_accessor :success_status
+
+      # @attr
+      #
+      # @return [Integer]
+      attr_accessor :total_seconds_tracked
+
+      # @attr
+      #
+      # @return [Time]
+      attr_accessor :last_runtime_update
+
+      # @attr
+      #
+      # @return [Float]
+      attr_accessor :score
 
       def self.new_from_api(options = {})
         this = new

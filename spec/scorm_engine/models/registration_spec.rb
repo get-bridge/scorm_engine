@@ -15,6 +15,7 @@ RSpec.describe ScormEngine::Models::Registration do
         "firstName" => "Bobby",
         "lastName" => "Jones",
       },
+      "totalSecondsTracked" => "456",
     } }
 
     let(:registration) { described_class.new_from_api(options) }
@@ -76,6 +77,12 @@ RSpec.describe ScormEngine::Models::Registration do
       it "is left unset if not present" do
         registration = described_class.new_from_api({})
         expect(registration.learner).to eq nil
+      end
+    end
+
+    describe ":total_seconds_tracked" do
+      it "is set properly" do
+        expect(registration.total_seconds_tracked).to eq 456
       end
     end
 

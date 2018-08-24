@@ -1,7 +1,25 @@
 module ScormEngine
   module Models
     class DispatchZip < Base
-      attr_accessor :dispatch_id, :type, :filename, :body
+      # @attr
+      # The external identification of the dispatch.
+      # @return [String]
+      attr_accessor :dispatch_id
+
+      # @attr
+      # The type of ZIP package to generate.
+      # @return [String] (SCORM12, SCORM2004-3RD, AICC)
+      attr_accessor :type
+
+      # @attr
+      #
+      # @return [String]
+      attr_accessor :filename
+
+      # @attr
+      #
+      # @return [String]
+      attr_accessor :body
 
       def initialize(options = {})
         @options = options.dup

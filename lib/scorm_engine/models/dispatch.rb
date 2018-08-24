@@ -3,11 +3,50 @@ require "date"
 module ScormEngine
   module Models
     class Dispatch < Base
-      # TODO: Not sure we want this to be settable. Will depend on how we go
-      # about creating/updating records. For now it makes it easier to create
-      # instances from API options hash.
-      attr_accessor :id, :destination_id, :course_id, :allow_new_registrations,
-                    :instanced, :registration_cap, :expiration_date, :external_config
+      # @attr
+      # The external identification of this dispatch.
+      # @return [String]
+      attr_accessor :id
+
+      # @attr
+      # The external identification of the destination.
+      # @return [String]
+      attr_accessor :destination_id
+
+      # @attr
+      # The external identification of the course.
+      # @return [String]
+      attr_accessor :course_id
+
+      # @attr
+      # If true, then new registrations can be created for this dispatch.
+      # @return [Boolean]
+      attr_accessor :allow_new_registrations
+
+      # @attr
+      # If true, then a new registration instance will be created if the client
+      # LMS doesn't provide launch data for an existing one. Otherwise, the
+      # same instance will always be used for the given cmi.learner_id.
+      # @return [Boolean]
+      attr_accessor :instanced
+
+      # @attr
+      # The maximum number of registrations that can be created for this
+      # dispatch, where '0' means 'unlimited registrations'.
+      # @return [Integer]
+      attr_accessor :registration_cap
+
+      # @attr
+      # The date after which this dispatch will be disabled as an ISO 8601
+      # string, or "none" for no expiration date.
+      # @return [Time]
+      attr_accessor :expiration_date
+
+      # @attr
+      # Serialized external configuration information to include when launching
+      # the dispatched package.
+      # @return [String]
+      attr_accessor :external_config
 
       def self.new_from_api(options = {})
         this = new

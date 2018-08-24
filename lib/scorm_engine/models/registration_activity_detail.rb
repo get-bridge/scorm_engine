@@ -1,10 +1,20 @@
 module ScormEngine
   module Models
     class RegistrationActivityDetail < Base
-      # TODO: Not sure we want this to be settable. Will depend on how we go
-      # about creating/updating records. For now it makes it easier to create
-      # instances from API options hash.
-      attr_accessor :id, :children, :runtime_interactions
+      # @attr
+      # The external identification of the registration.
+      # @return [String]
+      attr_accessor :id
+
+      # @attr
+      # A nested array of activity details
+      # @return [Array<ScormEngine::Models::RegistrationActivityDetail>]
+      attr_accessor :children
+
+      # @attr
+      #
+      # @return [Array<ScormEngine::Models::RegistrationRuntimeInteraction>]
+      attr_accessor :runtime_interactions
 
       # @attr
       # Represents whether the current attempt on the activity has been completed.

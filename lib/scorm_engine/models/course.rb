@@ -3,11 +3,40 @@ require "time"
 module ScormEngine
   module Models
     class Course < Base
-      # TODO: Not sure we want this to be settable. Will depend on how we go
-      # about creating/updating records. For now it makes it easier to create
-      # instances from API options hash.
-      attr_accessor :id, :version, :title, :registration_count, :updated, :description,
-                    :scaled_passing_score
+      # @attr
+      # The external identification of this course.
+      # @return [String]
+      attr_accessor :id
+
+      # @attr
+      # The version of this course.
+      # @return [Integer]
+      attr_accessor :version
+
+      # @attr
+      # The title of this course.
+      # @return [String]
+      attr_accessor :title
+
+      # @attr
+      #
+      # @return [Integer]
+      attr_accessor :registration_count
+
+      # @attr
+      #
+      # @return [Time]
+      attr_accessor :updated
+
+      # @attr
+      # The description of this course.
+      # @return [String]
+      attr_accessor :description
+
+      # @attr
+      # The score required of a learner to pass this course.
+      # @return [Integer]
+      attr_accessor :scaled_passing_score
 
       # @attr
       # The course's learning standard.

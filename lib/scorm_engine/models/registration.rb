@@ -1,21 +1,10 @@
-#
-# TODO: Incorporate all the activity props from:
-#   http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__progress_get
-#   http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__progress_detail_get
-#
-# TODO: Confirmed they are the only values. Integrate them into the model.
-#       registrationCompletion: ["COMPLETED", "INCOMPLETE", "UNKNOWN"]
-#       registrationSuccess: ["Unknown", "Passed", "Failed"]
-#
 module ScormEngine
   module Models
     class Registration < Base
-      # TODO: Not sure we want this to be settable. Will depend on how we go
-      # about creating/updating records. For now it makes it easier to create
-      # instances from API options hash.
-      attr_accessor :id, :instance, :updated,
-        :total_seconds_tracked, :score, :course, :learner, :activity_details,
-        :first_access_date, :last_access_date, :completed_date, :created_date
+      # @attr
+      # The external identification of the registration.
+      # @return [String]
+      attr_accessor :id
 
       # @attr
       # Has this registration been completed?
@@ -37,6 +26,62 @@ module ScormEngine
       # @return [Float] (Unknown Passed Failed)
       attr_accessor :registration_completion_amount
 
+      # @attr
+      # Instance of this registration (typically used for reoccurring training), starts at 0.
+
+      # @return [String]
+      attr_accessor :instance
+
+      # @attr
+      #
+      # @return [Time]
+      attr_accessor :updated
+
+      # @attr
+      # How long the learner spent taking this registration, in seconds.
+      # @return [Integer]
+      attr_accessor :total_seconds_tracked
+
+      # @attr
+      # Scaled score between 0 and 100.
+      # @return [Float]
+      attr_accessor :score
+
+      # @attr
+      #
+      # @return [ScormEngine::Models::Course]
+      attr_accessor :course
+
+      # @attr
+      #
+      # @return [ScormEngine::Models::Learner]
+      attr_accessor :learner
+
+      # @attr
+      #
+      # @return [ScormEngine::Models::RegistrationActivityDetail]
+      attr_accessor :activity_details
+
+      # @attr
+      # Time of the learner's first interaction with this registration.
+      # @return [Time]
+      attr_accessor :first_access_date
+
+      # @attr
+      # Time of the learner's last interaction with this registration.
+      # @return [Time]
+      attr_accessor :last_access_date
+
+      # @attr
+      # Time of the learner's first completion of this registration.
+      # @return [Time]
+      attr_accessor :completed_date
+
+      # @attr
+      # Time of the creation of this registration.
+      # @return [Time]
+      attr_accessor :created_date
+
       def self.new_from_api(options = {})
         this = new
 
@@ -46,7 +91,7 @@ module ScormEngine
         this.updated = Time.parse(options["updated"]) if options.key?("updated")
         this.registration_completion = options["registrationCompletion"]&.upcase
         this.registration_success = options["registrationSuccess"]&.upcase
-        this.total_seconds_tracked = options["totalSecondsTracked"]
+        this.total_seconds_tracked = options["totalSecondsTracked"]&.to_i
         this.first_access_date = Time.parse(options["firstAccessDate"]) if options.key?("firstAccessDate")
         this.last_access_date = Time.parse(options["lastAccessDate"]) if options.key?("lastAccessDate")
         this.created_date = Time.parse(options["createdDate"]) if options.key?("createdDate")

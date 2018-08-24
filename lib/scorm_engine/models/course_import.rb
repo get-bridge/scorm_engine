@@ -1,10 +1,26 @@
 module ScormEngine
   module Models
     class CourseImport < Base
-      # TODO: Not sure we want this to be settable. Will depend on how we go
-      # about creating/updating records. For now it makes it easier to create
-      # instances from API options hash.
-      attr_accessor :id, :status, :parser_warnings, :course
+
+      # @attr
+      # The ID of this course import (not the course id)
+      # @return [String]
+      attr_accessor :id
+
+      # @attr
+      #
+      # @return [String] (RUNNING, COMPLETE, ERROR)
+      attr_accessor :status
+
+      # @attr
+      #
+      # @return [Array<String>]
+      attr_accessor :parser_warnings
+
+      # @attr
+      #
+      # @return [ScormEngine::Models::Course]
+      attr_accessor :course
 
       def self.new_from_api(options = {})
         this = new

@@ -1,9 +1,9 @@
 module ScormEngine
   module Models
     class RegistrationConfiguration < Base
-      # TODO: Not sure we want this to be settable. Will depend on how we go
-      # about creating/updating records. For now it makes it easier to create
-      # instances from API options hash.
+      # @attr
+      #
+      # @return [Hash]
       attr_accessor :settings
 
       def self.new_from_api(options = {})
