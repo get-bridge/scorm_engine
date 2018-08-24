@@ -15,8 +15,7 @@ module ScormEngine
       # instances from API options hash.
       attr_accessor :id, :instance, :updated,
         :total_seconds_tracked, :score, :course, :learner, :activity_details,
-        :first_access_date, :last_access_date, :completed_date, :created_date,
-        :registration_completion_amount
+        :first_access_date, :last_access_date, :completed_date, :created_date
 
       # @attr
       # Has this registration been completed?
@@ -27,6 +26,16 @@ module ScormEngine
       # Has this registration been passed?
       # @return [String] (Unknown Passed Failed)
       attr_accessor :registration_success
+
+      # @attr
+      # A decimal value between 0 and 1 representing the percentage of this
+      # course that the learner has completed so far, if known. Note: for
+      # learning standards other than SCORM 2004 4th Edition, this value is
+      # based on the percentage of activities completed/passed. This means that
+      # single-activity courses in those standards will always return either 0
+      # or 1.
+      # @return [Float] (Unknown Passed Failed)
+      attr_accessor :registration_completion_amount
 
       def self.new_from_api(options = {})
         this = new
