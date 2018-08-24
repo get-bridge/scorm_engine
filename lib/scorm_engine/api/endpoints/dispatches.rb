@@ -280,6 +280,7 @@ module ScormEngine
           options = options.dup
           dispatch_id = options.delete(:dispatch_id)
           options[:type] ||= "SCORM12"
+          options[:type]&.upcase!
 
           response = get("dispatches/#{dispatch_id}/zip", options)
 

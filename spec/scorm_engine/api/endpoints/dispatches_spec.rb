@@ -230,7 +230,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Dispatches do
     end
 
     it "works when type is SCORM12" do
-      response = subject.get_dispatch_zip(dispatch_id: dispatch_options[:dispatch_id], type: "SCORM12")
+      response = subject.get_dispatch_zip(dispatch_id: dispatch_options[:dispatch_id], type: "scorm12")
       aggregate_failures do
         expect(response.success?).to eq true
         expect(response.result.type).to eq "SCORM12"

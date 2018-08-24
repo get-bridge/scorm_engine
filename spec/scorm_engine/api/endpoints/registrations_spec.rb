@@ -8,7 +8,14 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
       id: "testing-golf-explained-learner-1",
       first_name: "Arnold",
       last_name: "Palmer",
-    }
+    },
+    post_back: {
+      url: "http://playtronics.com/passback/",
+      auth_type: "form",
+      user_name: "werner_brandes",
+      password: "passport",
+      results_format: "activity",
+    },
   } }
 
   before do

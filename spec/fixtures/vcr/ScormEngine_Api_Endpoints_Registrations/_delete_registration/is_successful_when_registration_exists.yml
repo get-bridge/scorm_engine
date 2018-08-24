@@ -7,10 +7,8 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Content-Type:
-      - application/json
       User-Agent:
-      - ScormEngine Ruby Gem 0.1.0
+      - ScormEngine Ruby Gem 0.6.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -19,7 +17,7 @@ http_interactions:
       message: ''
     headers:
       date:
-      - Wed, 25 Jul 2018 19:35:33 GMT
+      - Fri, 24 Aug 2018 21:33:45 GMT
       server:
       - nginx
       connection:
@@ -28,5 +26,5 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Wed, 25 Jul 2018 19:35:33 GMT
+  recorded_at: Fri, 24 Aug 2018 21:33:45 GMT
 recorded_with: VCR 4.0.0

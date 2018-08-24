@@ -7,10 +7,8 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Content-Type:
-      - application/json
       User-Agent:
-      - ScormEngine Ruby Gem 0.1.0
+      - ScormEngine Ruby Gem 0.6.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -19,7 +17,7 @@ http_interactions:
       message: ''
     headers:
       date:
-      - Wed, 25 Jul 2018 17:18:55 GMT
+      - Fri, 24 Aug 2018 21:33:11 GMT
       server:
       - nginx
       connection:
@@ -28,27 +26,27 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Wed, 25 Jul 2018 17:18:55 GMT
+  recorded_at: Fri, 24 Aug 2018 21:33:11 GMT
 - request:
     method: post
     uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/registrations
     body:
       encoding: UTF-8
-      string: '{"courseId":"testing-golf-explained","registrationId":"testing-golf-explained-registration-1","learner":{"id":"testing-golf-explained-learner-1","firstName":"Arnold","lastName":"Palmer"}}'
+      string: '{"courseId":"testing-golf-explained","registrationId":"testing-golf-explained-registration-1","learner":{"id":"testing-golf-explained-learner-1","firstName":"Arnold","lastName":"Palmer"},"postBack":{"url":"http://playtronics.com/passback/","authType":"FORM","userName":"werner_brandes","password":"passport","resultsFormat":"ACTIVITY"}}'
     headers:
-      Content-Type:
-      - application/json
       User-Agent:
-      - ScormEngine Ruby Gem 0.1.0
+      - ScormEngine Ruby Gem 0.6.2
       Authorization:
       - Basic <BASIC_AUTH>
+      Content-Type:
+      - application/json
   response:
     status:
       code: 204
       message: ''
     headers:
       date:
-      - Wed, 25 Jul 2018 17:18:56 GMT
+      - Fri, 24 Aug 2018 21:33:12 GMT
       server:
       - nginx
       connection:
@@ -57,5 +55,5 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Wed, 25 Jul 2018 17:18:56 GMT
+  recorded_at: Fri, 24 Aug 2018 21:33:12 GMT
 recorded_with: VCR 4.0.0

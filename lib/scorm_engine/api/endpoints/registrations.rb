@@ -242,11 +242,11 @@ module ScormEngine
         #   The password to be used in authorizing the postback of data to the
         #   URL specified by postback url.
         #
-        # @option options [String] :post_back/:results_format ("course")
+        # @option options [String] :post_back/:results_format ("COURSE")
         #   This parameter allows you to specify a level of detail in the
         #   information that is posted back while the course is being taken. It
-        #   may be one of three values: 'course' (course summary), 'activity'
-        #   (activity summary), or 'full' (full detail), and is set to 'course'
+        #   may be one of three values: 'COURSE' (course summary), 'ACTIVITY'
+        #   (activity summary), or 'FULL' (full detail), and is set to 'COURSE'
         #   by default. The information will be posted as JSON using the same
         #   schema as what is returned in the /progress and /progress/detail
         #   endpoints.
@@ -271,10 +271,10 @@ module ScormEngine
           if options[:post_back]
             body[:postBack] = {
               url: options[:post_back][:url],
-              authType: options[:post_back][:auth_type],
+              authType: options[:post_back][:auth_type]&.upcase,
               userName: options[:post_back][:user_name],
               password: options[:post_back][:password],
-              resultsFormat: options[:post_back][:results_format],
+              resultsFormat: options[:post_back][:results_format]&.upcase,
             }.reject { |_k, v| v.nil? }
           end
 
