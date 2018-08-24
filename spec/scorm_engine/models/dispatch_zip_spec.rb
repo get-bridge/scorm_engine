@@ -3,7 +3,7 @@ RSpec.describe ScormEngine::Models::DispatchZip do
     it "set the attributes correctly" do
       dispatch_zip = described_class.new(
         dispatch_id: 123,
-        type: "SCORM12",
+        type: "scorm12",
         filename: "dispatch.zip",
         body: "raw zip string",
       )

@@ -6,7 +6,7 @@ module ScormEngine
       def initialize(options = {})
         @options = options.dup
         @dispatch_id = options[:dispatch_id]
-        @type = options[:type]
+        @type = options[:type]&.upcase
         @filename = options[:filename]
         @body = options[:body]
       end

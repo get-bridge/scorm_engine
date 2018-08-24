@@ -1,7 +1,7 @@
 RSpec.describe ScormEngine::Models::CourseImport do
   describe ".new_from_api" do
     describe "when :importResult is present" do
-      let(:subject) { described_class.new_from_api("result" => "id123", "importResult" => { "status" => "RUNNING", "parserWarnings" => "watch out" }) }
+      let(:subject) { described_class.new_from_api("result" => "id123", "importResult" => { "status" => "running", "parserWarnings" => "watch out" }) }
 
       it "sets the id" do
         expect(subject.id).to eq "id123"
@@ -78,7 +78,7 @@ RSpec.describe ScormEngine::Models::CourseImport do
       expect(subject.complete?).to eq true
     end
 
-    it "is false when status is not COMPLETTE" do
+    it "is false when status is not COMPLETE" do
       subject = described_class.new_from_api("status" => "OOPS")
       expect(subject.complete?).to eq false
     end

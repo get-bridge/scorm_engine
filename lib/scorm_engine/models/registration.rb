@@ -44,8 +44,8 @@ module ScormEngine
         this.id = options["id"]
         this.instance = options["instance"]
         this.updated = Time.parse(options["updated"]) if options.key?("updated")
-        this.registration_completion = options["registrationCompletion"]
-        this.registration_success = options["registrationSuccess"]
+        this.registration_completion = options["registrationCompletion"]&.upcase
+        this.registration_success = options["registrationSuccess"]&.upcase
         this.total_seconds_tracked = options["totalSecondsTracked"]
         this.first_access_date = Time.parse(options["firstAccessDate"]) if options.key?("firstAccessDate")
         this.last_access_date = Time.parse(options["lastAccessDate"]) if options.key?("lastAccessDate")
@@ -92,8 +92,8 @@ module ScormEngine
       #   Returns true, false or nil if success status is unknown.
       #
       def passed?
-        return nil if registration_success == "Unknown"
-        registration_success == "Passed"
+        return nil if registration_success == "UNKNOWN"
+        registration_success == "PASSED"
       end
 
       #
@@ -103,8 +103,8 @@ module ScormEngine
       #   Returns true, false or nil if success status is unknown.
       #
       def failed?
-        return nil if registration_success == "Unknown"
-        registration_success == "Failed"
+        return nil if registration_success == "UNKNOWN"
+        registration_success == "FAILED"
       end
 
       #

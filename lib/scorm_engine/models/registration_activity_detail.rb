@@ -26,9 +26,9 @@ module ScormEngine
 
         this.options = options.dup
         this.id = options["id"]
-        this.activity_completion = options["activityCompletion"]
-        this.previous_attempt_completion = options["previousAttemptCompletion"]
-        this.activity_success = options["activitySuccess"]
+        this.activity_completion = options["activityCompletion"]&.upcase
+        this.previous_attempt_completion = options["previousAttemptCompletion"]&.upcase
+        this.activity_success = options["activitySuccess"]&.upcase
 
         this.runtime_interactions = get_runtime_interactions_from_api(options)
 
@@ -82,8 +82,8 @@ module ScormEngine
       #   Returns true, false or nil if completion status is unknown.
       #
       def previous_attempt_complete?
-        return nil if previous_attempt_completion == "Unknown"
-        previous_attempt_completion == "Completed"
+        return nil if previous_attempt_completion == "UNKNOWN"
+        previous_attempt_completion == "COMPLETED"
       end
 
       #
@@ -93,8 +93,8 @@ module ScormEngine
       #   Returns true, false or nil if completion status is unknown.
       #
       def previous_attempt_incomplete?
-        return nil if previous_attempt_completion == "Unknown"
-        previous_attempt_completion == "Incomplete"
+        return nil if previous_attempt_completion == "UNKNOWN"
+        previous_attempt_completion == "INCOMPLETE"
       end
 
       #

@@ -1,6 +1,7 @@
 RSpec.describe ScormEngine::Models::RegistrationRuntimeInteraction do
   describe ".new_from_api" do
     let(:options) { {
+      "type" => "TrueFalse",
       "id" => "interaction-123",
       "description" => "  foo \t bar \n baz  ",
       "timestampUtc" => "2018-05-24T00:01:02.00Z",
@@ -12,6 +13,12 @@ RSpec.describe ScormEngine::Models::RegistrationRuntimeInteraction do
     } }
 
     let(:interaction) { described_class.new_from_api(options) }
+
+    describe ":type" do
+      it "is set properly" do
+        expect(interaction.type).to eq "TRUEFALSE"
+      end
+    end
 
     describe ":id" do
       it "is set properly" do

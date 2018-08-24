@@ -32,7 +32,7 @@ module ScormEngine
         this.updated = Time.parse(options["updated"]) if options.key?("updated")
         this.description = options.fetch("metadata", {})["description"]
         this.scaled_passing_score = get_scaled_passing_score_from_api(options)
-        this.course_learning_standard = options["courseLearningStandard"]
+        this.course_learning_standard = options["courseLearningStandard"]&.upcase
         this.web_path = options["webPath"]
 
         this

@@ -22,8 +22,8 @@ module ScormEngine
         this.instance_id = options["instanceId"].to_i
         this.launch_time = parse_time(options["launchTimeUtc"])
         this.exit_time = parse_time(options["exitTimeUtc"])
-        this.completion_status = options["completionStatus"]
-        this.success_status = options["successStatus"]
+        this.completion_status = options["completionStatus"]&.upcase
+        this.success_status = options["successStatus"]&.upcase
         this.last_runtime_update = parse_time(options["lastRuntimeUpdateUtc"])
 
         this.score = get_score_from_api(options)

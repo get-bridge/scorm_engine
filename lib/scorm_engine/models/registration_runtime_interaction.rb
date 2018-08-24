@@ -12,7 +12,7 @@ module ScormEngine
 
         this.options = options.dup
         this.id = options["id"]
-        this.type = options["type"]
+        this.type = options["type"]&.upcase
         this.description = get_description_from_api(options)
         this.timestamp = get_timestamp_from_api(options)
         this.correct_responses = options["correctResponses"]

@@ -90,9 +90,9 @@ RSpec.describe ScormEngine::Models::Course do
     end
 
     describe ":course_learning_standard" do
-      it "is set properly" do
+      it "is set properly as uppercase" do
         course = described_class.new_from_api(
-          "courseLearningStandard" => "SCORM_2004_4TH_EDITION"
+          "courseLearningStandard" => "scorm_2004_4th_edition"
         )
         expect(course.course_learning_standard).to eq "SCORM_2004_4TH_EDITION"
       end
