@@ -112,5 +112,39 @@ RSpec.describe ScormEngine::Models::Registration do
         expect(registration.incomplete?).to eq false
       end
     end
+
+    describe "#passed?" do
+      it "is nil when completion is Unknown" do
+        registration = described_class.new_from_api("registrationSuccess" => "Unknown")
+        expect(registration.passed?).to eq nil
+      end
+
+      it "is false when completion is Failed" do
+        registration = described_class.new_from_api("registrationSuccess" => "Failed")
+        expect(registration.passed?).to eq false
+      end
+
+      it "is true when completion is Passed" do
+        registration = described_class.new_from_api("registrationSuccess" => "Passed")
+        expect(registration.passed?).to eq true
+      end
+    end
+
+    describe "#failed?" do
+      it "is nil when completion is Unknown" do
+        registration = described_class.new_from_api("registrationSuccess" => "Unknown")
+        expect(registration.failed?).to eq nil
+      end
+
+      it "is true when completion is Failed" do
+        registration = described_class.new_from_api("registrationSuccess" => "Failed")
+        expect(registration.failed?).to eq true
+      end
+
+      it "is false when completion is Passed" do
+        registration = described_class.new_from_api("registrationSuccess" => "Passed")
+        expect(registration.failed?).to eq false
+      end
+    end
   end
 end

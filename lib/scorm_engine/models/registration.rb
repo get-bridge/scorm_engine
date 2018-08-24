@@ -13,10 +13,20 @@ module ScormEngine
       # TODO: Not sure we want this to be settable. Will depend on how we go
       # about creating/updating records. For now it makes it easier to create
       # instances from API options hash.
-      attr_accessor :id, :instance, :updated, :registration_completion, :registration_success,
+      attr_accessor :id, :instance, :updated,
         :total_seconds_tracked, :score, :course, :learner, :activity_details,
         :first_access_date, :last_access_date, :completed_date, :created_date,
         :registration_completion_amount
+
+      # @attr
+      # Has this registration been completed?
+      # @return [String] (UNKNOWN COMPLETED INCOMPLETE)
+      attr_accessor :registration_completion
+
+      # @attr
+      # Has this registration been passed?
+      # @return [String] (Unknown Passed Failed)
+      attr_accessor :registration_success
 
       def self.new_from_api(options = {})
         this = new
@@ -44,17 +54,49 @@ module ScormEngine
         this
       end
 
+      #
+      # Has this registration been completed?
+      #
+      # @return [Boolean]
+      #   Returns true, false or nil if completion status is unknown.
+      #
       def complete?
         return nil if registration_completion == "UNKNOWN"
         registration_completion == "COMPLETED"
       end
 
+      #
+      # Is this registration incomplete?
+      #
+      # @return [Boolean]
+      #   Returns true, false or nil if completion status is unknown.
+      #
       def incomplete?
         return nil if registration_completion == "UNKNOWN"
         registration_completion == "INCOMPLETE"
       end
 
-      private
+      #
+      # Has this registration been passed?
+      #
+      # @return [Boolean]
+      #   Returns true, false or nil if success status is unknown.
+      #
+      def passed?
+        return nil if registration_success == "Unknown"
+        registration_success == "Passed"
+      end
+
+      #
+      # Has this registration failed?
+      #
+      # @return [Boolean]
+      #   Returns true, false or nil if success status is unknown.
+      #
+      def failed?
+        return nil if registration_success == "Unknown"
+        registration_success == "Failed"
+      end
 
       #
       # Extract and normalize the scaled passing score from the API options.
