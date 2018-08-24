@@ -7,7 +7,7 @@ module ScormEngine
 
       def base_uri
         uri = URI("")
-        uri.scheme = "https" # TODO: Make configurable
+        uri.scheme = ScormEngine.configuration.protocol
         uri.host = ScormEngine.configuration.host
         uri.path = ScormEngine.configuration.path_prefix
         URI(uri.to_s) # convert URI::Generic to URI:HTTPS

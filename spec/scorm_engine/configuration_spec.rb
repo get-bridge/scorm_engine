@@ -26,4 +26,26 @@ RSpec.describe ScormEngine::Configuration do
   it "knows its log options" do
     expect(ScormEngine.configuration.log_options).to eq({ headers: false, bodies: false })
   end
+
+  describe "path_prefix" do
+    it "knows the default" do
+      expect(ScormEngine.configuration.path_prefix).to eq "/ScormEngineInterface/api/v1/"
+    end
+
+    it "can be overridden" do
+      ScormEngine.configure { |c| c.path_prefix = "/foo/bar/" }
+      expect(ScormEngine.configuration.path_prefix).to eq "/foo/bar/"
+    end
+  end
+
+  describe "protocol" do
+    it "knows the default" do
+      expect(ScormEngine.configuration.protocol).to eq "https"
+    end
+
+    it "can be overridden" do
+      ScormEngine.configure { |c| c.protocol = "http" }
+      expect(ScormEngine.configuration.protocol).to eq "http"
+    end
+  end
 end

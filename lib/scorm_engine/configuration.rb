@@ -11,7 +11,7 @@ module ScormEngine
 
   class Configuration
     # http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html
-    attr_accessor :host, :path_prefix
+    attr_accessor :protocol, :host, :path_prefix
 
     # http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/Architecture-API.html#api-authentication
     attr_accessor :username, :password
@@ -25,8 +25,9 @@ module ScormEngine
     end
 
     def reset
+      @protocol = ENV.fetch("SCORM_ENGINE_PROTOCOL", "https")
       @host = ENV["SCORM_ENGINE_HOST"]
-      @path_prefix = "/ScormEngineInterface/api/v1/"
+      @path_prefix = ENV.fetch("SCORM_ENGINE_PATH_PREFIX", "/ScormEngineInterface/api/v1/")
 
       @username = ENV["SCORM_ENGINE_USERNAME"]
       @password = ENV["SCORM_ENGINE_PASSWORD"]
