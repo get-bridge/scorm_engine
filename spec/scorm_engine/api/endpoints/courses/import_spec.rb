@@ -13,8 +13,12 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Import do
         expect { subject.post_course_import }.to raise_error(ArgumentError, /course_id missing/)
       end
 
-      it "when :url is missing" do
-        expect { subject.post_course_import(course_id: "id123") }.to raise_error(ArgumentError, /url missing/)
+      it "when :url and :pathname are missing" do
+        expect { subject.post_course_import(course_id: "id123") }.to raise_error(ArgumentError, /Exclusive option required. One of: url, pathname/)
+      end
+
+      it "when :url and :pathname are both present" do
+        expect { subject.post_course_import(course_id: "id123", url: "http://path.to/scorm.zip", pathname: "/path/to/scorm.zip") }.to raise_error(ArgumentError, /Exclusive option required. One of: url, pathname/)
       end
     end
 
@@ -36,8 +40,19 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Import do
     end
 
     describe "successful imports" do
-      it "works" do
+      it "works with a :url" do
         import = subject.post_course_import(course_id: "testing123", url: "https://github.com/phallstrom/scorm_engine/raw/master/spec/fixtures/zip/RuntimeBasicCalls_SCORM20043rdEdition.zip", may_create_new_version: true)
+
+        aggregate_failures do
+          expect(import.success?).to eq true
+          expect(import.result.running?).to eq true
+          expect(import.result.id).to match(/^[-a-f0-9]+$/)
+        end
+      end
+
+      it "works with a :pathname" do
+        pathname = "#{__dir__}/../../../../fixtures/zip/RuntimeBasicCalls_SCORM20043rdEdition.zip"
+        import = subject.post_course_import(course_id: "testing123", pathname: pathname, may_create_new_version: true)
 
         aggregate_failures do
           expect(import.success?).to eq true

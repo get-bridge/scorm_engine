@@ -14,14 +14,20 @@ module ScormEngine
           #
           # @param [Hash] options
           #
-          # @option options [String] :url
-          #   URL path to the .zip package representing the course or the manifest file defining the course.
-          #
           # @option options [String] :course_id
           #   A unique identifier your application will use to identify the
           #   course after import. Your application is responsible both for
           #   generating this unique ID and for keeping track of the ID for later
           #   use.
+          #
+          # @option options [String] :url
+          #   URL path to the .zip package representing the course or the
+          #   manifest file defining the course. Mutually exclusive with
+          #   :pathname.
+          #
+          # @option options [String] :pathname
+          #   Local file path to the .zip package representing the course.
+          #   Mutually exclusive with :url.
           #
           # @option options [Boolean] :may_create_new_version (false)
           #   Is it OK to create a new version of this course? If this is set to
@@ -35,7 +41,8 @@ module ScormEngine
           # @return [ScormEngine::Models::CourseImport]
           #
           def post_course_import(options = {})
-            require_options(options, :course_id, :url)
+            require_options(options, :course_id)
+            require_exclusive_option(options, :url, :pathname)
 
             query_params = {
               course: options[:course_id],
@@ -43,9 +50,14 @@ module ScormEngine
             }
 
             body = {
-              url: options[:url],
               courseName: options[:name] || options[:course_id]
             }
+
+            body[:url] = if options[:url]
+                           options[:url]
+                         elsif options[:pathname]
+                           ::Faraday::UploadIO.new(options[:pathname], "application/zip")
+                         end
 
             response = post("courses/importJobs", query_params, body)
 
