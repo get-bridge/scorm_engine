@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Philip Hallstrom"]
   spec.email         = ["phallstrom@instructure.com"]
 
-  spec.summary       = "Ruby Client for Rustici's SCORM Engine 2007.1 API"
-  spec.description   = "Ruby Client for Rustici's SCORM Engine 2007.1 API"
+  spec.summary       = "Ruby Client for Rustici's SCORM Engine 2017.1 API"
+  spec.description   = "Ruby Client for Rustici's SCORM Engine 2017.1 API"
   spec.homepage      = "https://github.com/phallstrom/scorm_engine"
   spec.license       = "MIT"
 
