@@ -41,7 +41,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Import do
 
     describe "successful imports" do
       it "works with a :url" do
-        import = subject.post_course_import(course_id: "testing123", url: "https://github.com/phallstrom/scorm_engine/raw/master/spec/fixtures/zip/RuntimeBasicCalls_SCORM20043rdEdition.zip", may_create_new_version: true)
+        import = subject.post_course_import(course_id: "testing-url-123", url: "https://github.com/phallstrom/scorm_engine/raw/master/spec/fixtures/zip/RuntimeBasicCalls_SCORM20043rdEdition.zip", may_create_new_version: true)
 
         aggregate_failures do
           expect(import.success?).to eq true
@@ -52,7 +52,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Import do
 
       it "works with a :pathname" do
         pathname = "#{__dir__}/../../../../fixtures/zip/RuntimeBasicCalls_SCORM20043rdEdition.zip"
-        import = subject.post_course_import(course_id: "testing123", pathname: pathname, may_create_new_version: true)
+        import = subject.post_course_import(course_id: "testing-pathname-123", pathname: pathname, may_create_new_version: true)
 
         aggregate_failures do
           expect(import.success?).to eq true

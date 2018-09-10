@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses/importJobs?course=testing-url-123&mayCreateNewVersion=true
+    body:
+      encoding: UTF-8
+      string: '{"courseName":"testing-url-123","url":"https://github.com/phallstrom/scorm_engine/raw/master/spec/fixtures/zip/RuntimeBasicCalls_SCORM20043rdEdition.zip"}'
+    headers:
+      User-Agent:
+      - ScormEngine Ruby Gem 0.6.3
+      Authorization:
+      - Basic <BASIC_AUTH>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      content-type:
+      - application/json
+      date:
+      - Mon, 10 Sep 2018 17:33:50 GMT
+      server:
+      - nginx
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '133'
+      connection:
+      - Close
+    body:
+      encoding: ASCII-8BIT
+      string: '{"result":"3aafb4b1-0277-4414-b46c-83669d9d3173","importResult":{"status":"RUNNING","parserWarnings":[],"courseLanguages":[]}}'
+    http_version: 
+  recorded_at: Mon, 10 Sep 2018 17:33:50 GMT
+recorded_with: VCR 4.0.0
