@@ -96,6 +96,20 @@ RSpec.describe ScormEngine::Api::Endpoints::Dispatches do
         expect(response.status).to eq 204
       end
     end
+
+    it "is updates if same dispatch_id" do
+      response = subject.get_dispatch(dispatch_id: dispatch_options[:dispatch_id])
+      expect(response.result.expiration_date).to eq nil
+
+      response = subject.post_dispatch(dispatch_options.merge(expiration_date: Date.new(2030, 1, 1)))
+      aggregate_failures do
+        expect(response.success?).to eq true
+        expect(response.status).to eq 204
+      end
+
+      response = subject.get_dispatch(dispatch_id: dispatch_options[:dispatch_id])
+      expect(response.result.expiration_date).to be_a Time
+    end
   end
 
   describe "#get_dispatch" do
