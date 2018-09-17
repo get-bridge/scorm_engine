@@ -130,7 +130,8 @@ module ScormEngine
 
           response = get("dispatches/#{options[:dispatch_id]}")
 
-          result = response.success? ? ScormEngine::Models::Dispatch.new_from_api(response.body) : nil
+          # merge options to pick up dispatch_id which isn't passed back in the response
+          result = response.success? ? ScormEngine::Models::Dispatch.new_from_api({ "id" => options[:dispatch_id] }.merge(response.body)) : nil
 
           Response.new(raw_response: response, result: result)
         end

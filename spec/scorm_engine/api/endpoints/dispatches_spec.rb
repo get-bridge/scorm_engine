@@ -123,6 +123,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Dispatches do
       it "sucessfully creates the dispatch attributes" do
         dispatch = response.result
         aggregate_failures do
+          expect(dispatch.id).to eq dispatch_options[:dispatch_id]
           expect(dispatch.destination_id).to eq dispatch_options[:destination_id]
           expect(dispatch.course_id).to eq dispatch_options[:course_id]
         end
