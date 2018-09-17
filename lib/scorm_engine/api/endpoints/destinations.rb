@@ -91,7 +91,7 @@ module ScormEngine
           response = get("destinations/#{options[:destination_id]}")
 
           # merge options to pick up destination_id which isn't passed back in the response
-          result = response.success? ? ScormEngine::Models::Destination.new_from_api(options.merge(response.body)) : nil
+          result = response.success? ? ScormEngine::Models::Destination.new_from_api({"id" => options[:destination_id]}.merge(response.body)) : nil
 
           Response.new(raw_response: response, result: result)
         end

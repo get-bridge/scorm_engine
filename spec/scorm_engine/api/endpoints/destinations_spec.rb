@@ -102,6 +102,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Destinations do
       it "sucessfully creates the destination attributes" do
         aggregate_failures do
           destination = response.result
+          expect(destination.id).to eq destination_options[:destination_id]
           expect(destination.name).to eq destination_options[:name]
         end
       end
