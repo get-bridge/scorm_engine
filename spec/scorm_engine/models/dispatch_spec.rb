@@ -100,6 +100,17 @@ RSpec.describe ScormEngine::Models::Dispatch do
       end
     end
 
+    describe ":enabled" do
+      it "is set" do
+        dispatch = described_class.new_from_api(
+          "data" => {
+            "enabled" => true
+          }
+        )
+        expect(dispatch.enabled).to eq true
+      end
+    end
+
     describe ":external_config" do
       it "is set" do
         dispatch = described_class.new_from_api(

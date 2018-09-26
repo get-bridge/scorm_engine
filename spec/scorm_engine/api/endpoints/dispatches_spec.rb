@@ -44,6 +44,9 @@ RSpec.describe ScormEngine::Api::Endpoints::Dispatches do
         aggregate_failures do
           expect(dispatch.destination_id).to eq dispatch_options[:destination_id]
           expect(dispatch.course_id).to eq dispatch_options[:course_id]
+          expect(dispatch.registration_cap).to be_a Integer
+          expect(dispatch.registration_count).to be_a Integer
+          expect(dispatch.enabled).to eq true
         end
       end
     end
@@ -128,6 +131,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Dispatches do
           expect(dispatch.course_id).to eq dispatch_options[:course_id]
           expect(dispatch.registration_cap).to be_a Integer
           expect(dispatch.registration_count).to be_a Integer
+          expect(dispatch.enabled).to eq true
         end
       end
     end

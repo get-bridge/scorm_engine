@@ -48,6 +48,11 @@ module ScormEngine
       attr_accessor :expiration_date
 
       # @attr
+      # If true, then this dispatch can be launched.
+      # @return [Boolean]
+      attr_accessor :enabled
+
+      # @attr
       # Serialized external configuration information to include when launching
       # the dispatched package.
       # @return [String]
@@ -69,6 +74,7 @@ module ScormEngine
         this.registration_cap = data["registrationCap"]&.to_i
         this.registration_count = data["registrationCount"]&.to_i
         this.expiration_date = get_expiration_date(data)
+        this.enabled = data["enabled"]
         this.external_config = data["externalConfig"]
 
         this
