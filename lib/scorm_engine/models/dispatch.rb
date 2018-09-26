@@ -37,6 +37,11 @@ module ScormEngine
       attr_accessor :registration_cap
 
       # @attr
+      # The number of registrations created for this dispatch.
+      # @return [Integer]
+      attr_accessor :registration_count
+
+      # @attr
       # The date after which this dispatch will be disabled as an ISO 8601
       # string, or "none" for no expiration date.
       # @return [Time]
@@ -62,6 +67,7 @@ module ScormEngine
         this.allow_new_registrations = data["allowNewRegistrations"]
         this.instanced = data["instanced"]
         this.registration_cap = data["registrationCap"]&.to_i
+        this.registration_count = data["registrationCount"]&.to_i
         this.expiration_date = get_expiration_date(data)
         this.external_config = data["externalConfig"]
 

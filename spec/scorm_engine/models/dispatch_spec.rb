@@ -53,6 +53,35 @@ RSpec.describe ScormEngine::Models::Dispatch do
         )
         expect(dispatch.registration_cap).to eq 123
       end
+
+      it "is set to zero when not an integer" do
+        dispatch = described_class.new_from_api(
+          "data" => {
+            "registrationCap" => "oops"
+          }
+        )
+        expect(dispatch.registration_cap).to eq 0
+      end
+    end
+
+    describe ":registration_count" do
+      it "is set" do
+        dispatch = described_class.new_from_api(
+          "data" => {
+            "registrationCount" => "456"
+          }
+        )
+        expect(dispatch.registration_count).to eq 456
+      end
+
+      it "is set to zero when not an integer" do
+        dispatch = described_class.new_from_api(
+          "data" => {
+            "registrationCount" => "oops"
+          }
+        )
+        expect(dispatch.registration_count).to eq 0
+      end
     end
 
     describe ":expiration_date" do

@@ -126,6 +126,8 @@ RSpec.describe ScormEngine::Api::Endpoints::Dispatches do
           expect(dispatch.id).to eq dispatch_options[:dispatch_id]
           expect(dispatch.destination_id).to eq dispatch_options[:destination_id]
           expect(dispatch.course_id).to eq dispatch_options[:course_id]
+          expect(dispatch.registration_cap).to be_a Integer
+          expect(dispatch.registration_count).to be_a Integer
         end
       end
     end
