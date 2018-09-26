@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    scorm_engine (0.6.8)
-      faraday (~> 0.12)
+    scorm_engine (0.6.9)
+      faraday (~> 0.12.2)
       faraday_middleware (~> 0.12)
 
 GEM
