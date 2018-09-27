@@ -41,9 +41,18 @@ module ScormEngineHelpers
   def import_course(options = {})
     options = { key: "RuntimeBasicCalls_SCORM20043rdEdition", may_create_new_version: true }.merge(options)
 
-    url = "https://github.com/phallstrom/scorm_engine/raw/master/spec/fixtures/zip/#{options[:key]}.zip"
+    import_options = {
+      course_id: options[:course_id],
+      may_create_new_version: options[:may_create_new_version],
+    }
 
-    import = options[:client].post_course_import(course_id: options[:course_id], url: url, may_create_new_version: options[:may_create_new_version])
+    if options[:pathname]
+      import_options[:pathname] = options[:pathname]
+    else
+      import_options[:url] = "https://github.com/phallstrom/scorm_engine/raw/master/spec/fixtures/zip/#{options[:key]}.zip"
+    end
+
+    import = options[:client].post_course_import(import_options)
 
     if import.success?
       loop do

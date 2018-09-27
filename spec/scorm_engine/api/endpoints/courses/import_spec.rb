@@ -41,22 +41,9 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Import do
 
     describe "successful imports" do
       it "works with a :url" do
-        import = subject.post_course_import(course_id: "testing-url-123", url: "https://github.com/phallstrom/scorm_engine/raw/master/spec/fixtures/zip/RuntimeBasicCalls_SCORM20043rdEdition.zip", may_create_new_version: true)
-
-        aggregate_failures do
-          expect(import.success?).to eq true
-          expect(import.result.running?).to eq true
-          expect(import.result.id).to match(/^[-a-f0-9]+$/)
-        end
-
-        # This is necessary because SCORM will immediately accept anything sent
-        # to it even if invalid.  We need to ensure that SCORM successfully
-        # processes the import.
+        import = nil
         against_real_scorm_engine do
-          loop do
-            import = subject.get_course_import(id: import.result.id)
-            break unless import.result.running?
-          end
+          import = import_course(client: subject, course_id: "testing-url-123", url: "https://github.com/phallstrom/scorm_engine/raw/master/spec/fixtures/zip/RuntimeBasicCalls_SCORM20043rdEdition.zip")
         end
 
         aggregate_failures do
@@ -67,23 +54,10 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Import do
       end
 
       it "works with a :pathname" do
-        pathname = "#{__dir__}/../../../../fixtures/zip/RuntimeBasicCalls_SCORM20043rdEdition.zip"
-        import = subject.post_course_import(course_id: "testing-pathname-123", pathname: pathname, may_create_new_version: true)
-
-        aggregate_failures do
-          expect(import.success?).to eq true
-          expect(import.result.running?).to eq true
-          expect(import.result.id).to match(/^[-a-f0-9]+$/)
-        end
-
-        # This is necessary because SCORM will immediately accept anything sent
-        # to it even if invalid.  We need to ensure that SCORM successfully
-        # processes the import.
+        import = nil
         against_real_scorm_engine do
-          loop do
-            import = subject.get_course_import(id: import.result.id)
-            break unless import.result.running?
-          end
+          pathname = "#{__dir__}/../../../../fixtures/zip/RuntimeBasicCalls_SCORM20043rdEdition.zip"
+          import = import_course(client: subject, course_id: "testing-pathname-123", pathname: pathname)
         end
 
         aggregate_failures do
