@@ -39,35 +39,31 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Import do
       end
     end
 
+    # Unfortunately these tests can't be done without a real scorm engine
+    # available as there is no way to import a course, then later check it's
+    # _final_ import status.
     describe "successful imports" do
       it "works with a :url" do
-        import = nil
         against_real_scorm_engine do
           import = import_course(client: subject, course_id: "testing-url-123", url: "https://github.com/phallstrom/scorm_engine/raw/master/spec/fixtures/zip/RuntimeBasicCalls_SCORM20043rdEdition.zip")
-        end
-
-        import = subject.get_course_import(id: import.result.id)
-
-        aggregate_failures do
-          expect(import.success?).to eq true
-          expect(import.result.complete?).to eq true
-          expect(import.result.id).to match(/^[-a-f0-9]+$/)
+          aggregate_failures do
+            expect(import.success?).to eq true
+            expect(import.result.complete?).to eq true
+            expect(import.result.id).to match(/^[-a-f0-9]+$/)
+          end
         end
       end
 
       it "works with a :pathname" do
-        import = nil
         against_real_scorm_engine do
           pathname = "#{__dir__}/../../../../fixtures/zip/RuntimeBasicCalls_SCORM20043rdEdition.zip"
           import = import_course(client: subject, course_id: "testing-pathname-123", pathname: pathname)
-        end
 
-        import = subject.get_course_import(id: import.result.id)
-
-        aggregate_failures do
-          expect(import.success?).to eq true
-          expect(import.result.complete?).to eq true
-          expect(import.result.id).to match(/^[-a-f0-9]+$/)
+          aggregate_failures do
+            expect(import.success?).to eq true
+            expect(import.result.complete?).to eq true
+            expect(import.result.id).to match(/^[-a-f0-9]+$/)
+          end
         end
       end
     end
