@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses/importJobs/07ad8e1f-e355-4a4f-9f26-b5bc472dc2a5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - ScormEngine Ruby Gem 0.6.9
+      Authorization:
+      - Basic <BASIC_AUTH>
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      content-type:
+      - application/json
+      date:
+      - Thu, 27 Sep 2018 19:58:44 GMT
+      server:
+      - nginx
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '337'
+      connection:
+      - Close
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jobId":"07ad8e1f-e355-4a4f-9f26-b5bc472dc2a5","status":"COMPLETE","message":"Import
+        Successful","courseTitle":"Golf Explained - Run-time Basic Calls - NEW VERSION","webPathToCourse":"/courses/ScormEngineGemTesting-default/testing-url-123/3","parserWarnings":[],"courseLanguages":[],"course":{"id":"testing-url-123","version":3,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-09-27T19:58:41.340Z"}}'
+    http_version: 
+  recorded_at: Thu, 27 Sep 2018 19:58:44 GMT
+recorded_with: VCR 4.0.0

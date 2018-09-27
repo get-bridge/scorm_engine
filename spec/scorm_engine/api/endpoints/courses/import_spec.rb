@@ -46,6 +46,8 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Import do
           import = import_course(client: subject, course_id: "testing-url-123", url: "https://github.com/phallstrom/scorm_engine/raw/master/spec/fixtures/zip/RuntimeBasicCalls_SCORM20043rdEdition.zip")
         end
 
+        import = subject.get_course_import(id: import.result.id)
+
         aggregate_failures do
           expect(import.success?).to eq true
           expect(import.result.complete?).to eq true
@@ -59,6 +61,8 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Import do
           pathname = "#{__dir__}/../../../../fixtures/zip/RuntimeBasicCalls_SCORM20043rdEdition.zip"
           import = import_course(client: subject, course_id: "testing-pathname-123", pathname: pathname)
         end
+
+        import = subject.get_course_import(id: import.result.id)
 
         aggregate_failures do
           expect(import.success?).to eq true

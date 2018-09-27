@@ -21,7 +21,7 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Thu, 27 Sep 2018 19:53:59 GMT
+      - Thu, 27 Sep 2018 19:58:55 GMT
       server:
       - nginx
       content-length:
@@ -32,5 +32,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"message":"A course already exists with the specified id: ApiCourseId|a-previously-existing-course!VersionId|0"}'
     http_version: 
-  recorded_at: Thu, 27 Sep 2018 19:53:59 GMT
+  recorded_at: Thu, 27 Sep 2018 19:58:55 GMT
 recorded_with: VCR 4.0.0
