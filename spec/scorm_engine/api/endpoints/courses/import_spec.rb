@@ -48,6 +48,22 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Import do
           expect(import.result.running?).to eq true
           expect(import.result.id).to match(/^[-a-f0-9]+$/)
         end
+
+        # This is necessary because SCORM will immediately accept anything sent
+        # to it even if invalid.  We need to ensure that SCORM successfully
+        # processes the import.
+        against_real_scorm_engine do
+          loop do
+            import = subject.get_course_import(id: import.result.id)
+            break unless import.result.running?
+          end
+        end
+
+        aggregate_failures do
+          expect(import.success?).to eq true
+          expect(import.result.complete?).to eq true
+          expect(import.result.id).to match(/^[-a-f0-9]+$/)
+        end
       end
 
       it "works with a :pathname" do
@@ -57,6 +73,22 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Import do
         aggregate_failures do
           expect(import.success?).to eq true
           expect(import.result.running?).to eq true
+          expect(import.result.id).to match(/^[-a-f0-9]+$/)
+        end
+
+        # This is necessary because SCORM will immediately accept anything sent
+        # to it even if invalid.  We need to ensure that SCORM successfully
+        # processes the import.
+        against_real_scorm_engine do
+          loop do
+            import = subject.get_course_import(id: import.result.id)
+            break unless import.result.running?
+          end
+        end
+
+        aggregate_failures do
+          expect(import.success?).to eq true
+          expect(import.result.complete?).to eq true
           expect(import.result.id).to match(/^[-a-f0-9]+$/)
         end
       end

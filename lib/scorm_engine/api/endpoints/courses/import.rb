@@ -49,15 +49,11 @@ module ScormEngine
               mayCreateNewVersion: !!options[:may_create_new_version]
             }
 
-            body = {
-              courseName: options[:name] || options[:course_id]
-            }
-
-            body[:url] = if options[:url]
-                           options[:url]
-                         elsif options[:pathname]
-                           ::Faraday::UploadIO.new(options[:pathname], "application/zip")
-                         end
+            body = if options[:url]
+                     { url: options[:url], courseName: options[:name] || options[:course_id] }
+                   elsif options[:pathname]
+                     { file: ::Faraday::UploadIO.new(options[:pathname], "application/zip") }
+                   end
 
             response = post("courses/importJobs", query_params, body)
 
