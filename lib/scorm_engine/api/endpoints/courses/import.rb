@@ -49,6 +49,11 @@ module ScormEngine
               mayCreateNewVersion: !!options[:may_create_new_version]
             }
 
+            # When loading from a URL, we pass the URL and course name in the
+            # body as JSON. When loading from a file, the file's contents get
+            # placed in the body. In the latter case we can't pass in any other
+            # parameters, because the SCORM server doesn't know how to deal
+            # with multipart bodies and will become confused.
             body = if options[:url]
                      { url: options[:url], courseName: options[:name] || options[:course_id] }
                    elsif options[:pathname]
