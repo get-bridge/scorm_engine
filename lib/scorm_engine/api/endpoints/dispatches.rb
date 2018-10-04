@@ -303,8 +303,8 @@ module ScormEngine
           return date if date == "none"
           date = date.is_a?(String) ? Date.parse(date) : date
           date&.iso8601 # might be nil
-        rescue ArgumentError
-          "none"
+        rescue ArgumentError # unparsable date string
+          raise(ArgumentError, "Invalid option expiration_date")
         end
       end
     end

@@ -104,7 +104,13 @@ RSpec.describe ScormEngine::Api::Endpoints::Dispatches do
       end
     end
 
-    it "is updates if same dispatch_id" do
+    it "raises ArgumentError when :expiration_date is invalid string" do
+      expect {
+        subject.post_dispatch(dispatch_options.merge(expiration_date: "not-a-parsable-date"))
+      }.to raise_error(ArgumentError, /Invalid option expiration_date/)
+    end
+
+    it "updates if same dispatch_id" do
       response = subject.get_dispatch(dispatch_id: dispatch_options[:dispatch_id])
       expect(response.result.expiration_date.to_date).to eq Date.new(2018, 1, 1)
 
