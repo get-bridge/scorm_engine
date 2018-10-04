@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.3.0
+      - ScormEngine Ruby Gem 0.6.10
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -19,7 +19,7 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Mon, 20 Aug 2018 23:05:17 GMT
+      - Thu, 04 Oct 2018 20:50:50 GMT
       server:
       - nginx
       content-length:
@@ -31,5 +31,5 @@ http_interactions:
       string: '{"message":"''invalid'' is either not a timestamp or seems to be not
         formatted according to ISO 8601"}'
     http_version: 
-  recorded_at: Mon, 20 Aug 2018 23:05:17 GMT
+  recorded_at: Thu, 04 Oct 2018 20:50:50 GMT
 recorded_with: VCR 4.0.0

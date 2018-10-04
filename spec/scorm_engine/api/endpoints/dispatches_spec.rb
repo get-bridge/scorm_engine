@@ -15,7 +15,11 @@ RSpec.describe ScormEngine::Api::Endpoints::Dispatches do
   let(:dispatch_options) { {
     destination_id: destination_options[:destination_id],
     course_id: course_options[:course_id],
-    dispatch_id: "testing-dispatch-id",
+    dispatch_id: "testing-dispatch-id-1",
+    allow_new_registrations: false,
+    instanced: false,
+    registration_cap: 123,
+    expiration_date: "2018-01-01",
   } }
 
   before do
@@ -102,7 +106,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Dispatches do
 
     it "is updates if same dispatch_id" do
       response = subject.get_dispatch(dispatch_id: dispatch_options[:dispatch_id])
-      expect(response.result.expiration_date).to eq nil
+      expect(response.result.expiration_date.to_date).to eq Date.new(2018, 1, 1)
 
       response = subject.post_dispatch(dispatch_options.merge(expiration_date: Date.new(2030, 1, 1)))
       aggregate_failures do
@@ -148,16 +152,15 @@ RSpec.describe ScormEngine::Api::Endpoints::Dispatches do
   end
 
   describe "#put_dispatch" do
-    let(:put_dispatch_options) { dispatch_options.merge(allow_new_registrations: false, instanced: false, registration_cap: 123, expiration_date: "2018-01-01") }
-    let(:response) { subject.put_dispatch(put_dispatch_options) }
+    let(:response) { subject.put_dispatch(dispatch_options) }
 
     %i[
       dispatch_id destination_id course_id allow_new_registrations
       instanced registration_cap expiration_date
     ].each do |arg|
       it "raises ArgumentError when :#{arg} is missing" do
-        put_dispatch_options.delete(arg)
-        expect { subject.put_dispatch(put_dispatch_options) }.to raise_error(ArgumentError, /#{arg} missing/)
+        dispatch_options.delete(arg)
+        expect { subject.put_dispatch(dispatch_options) }.to raise_error(ArgumentError, /#{arg} missing/)
       end
     end
 
@@ -168,7 +171,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Dispatches do
     describe "results" do
       it "sucessfully creates the dispatch attributes" do
         response # trigger the put
-        response = subject.get_dispatch(dispatch_id: put_dispatch_options[:dispatch_id])
+        response = subject.get_dispatch(dispatch_id: dispatch_options[:dispatch_id])
         dispatch = response.result
         aggregate_failures do
           expect(dispatch.allow_new_registrations).to eq false
@@ -254,7 +257,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Dispatches do
         expect(response.status).to eq 200
         expect(response.result.dispatch_id).to eq dispatch_options[:dispatch_id]
         expect(response.result.type).to eq "SCORM12"
-        expect(response.result.filename).to end_with("golf_club_dispatch_testing-dispatch-id.zip")
+        expect(response.result.filename).to end_with("golf_club_dispatch_testing-dispatch-id-1.zip")
 
         zip_contents = Zip::File.open_buffer(StringIO.new(response.result.body)).each_entry.map(&:name)
         expect(zip_contents).to include("blank.html", "configuration.js", "dispatch.html", "goodbye.html") # sampling

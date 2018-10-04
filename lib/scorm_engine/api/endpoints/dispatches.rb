@@ -69,7 +69,7 @@ module ScormEngine
         #
         # @option options [Date] :expiration_date ("none")
         #   The date after which this dispatch will be disabled as an ISO 8601
-        #   string, or \"none\" for no expiration date.
+        #   string, or "none" for no expiration date.
         #
         # @option options [String] :external_config ("")
         #   Serialized external configuration information to include when
@@ -80,18 +80,7 @@ module ScormEngine
         def post_dispatch(options = {})
           require_options(options, :dispatch_id, :destination_id, :course_id)
 
-          options = options.dup
-
-          options[:allow_new_registrations] = false unless options[:allow_new_registrations]
-          options[:instanced] = false unless options[:instanced]
-          options[:registration_cap] = [0, options[:registration_cap].to_i].max
-          options[:expiration_date] = begin
-                                        date = options[:expiration_date]
-                                        date = date.is_a?(String) ? Date.parse(date) : date
-                                        date&.iso8601 # might be nil
-                                      rescue ArgumentError
-                                        "none"
-                                      end
+          options = coerce_dispatch_options(options.dup)
 
           body = {
             dispatches: [
@@ -167,7 +156,7 @@ module ScormEngine
         #
         # @option options [Date] :expiration_date
         #   The date after which this dispatch will be disabled as an ISO 8601
-        #   string, or \"none\" for no expiration date.
+        #   string, or "none" for no expiration date.
         #
         # @option options [String] :external_config ("")
         #   Serialized external configuration information to include when
@@ -178,6 +167,8 @@ module ScormEngine
         def put_dispatch(options = {})
           require_options(options, :dispatch_id, :destination_id, :course_id,
                           :allow_new_registrations, :instanced, :registration_cap, :expiration_date)
+
+          options = coerce_dispatch_options(options.dup)
 
           body = {
             destinationId: options[:destination_id],
@@ -298,6 +289,23 @@ module ScormEngine
           Response.new(raw_response: response, result: result)
         end
 
+        private
+
+        def coerce_dispatch_options(options = {})
+          options[:allow_new_registrations] = !!options[:allow_new_registrations]
+          options[:instanced] = !!options[:instanced]
+          options[:registration_cap] = [0, options[:registration_cap].to_i].max
+          options[:expiration_date] = coerce_expiration_date(options[:expiration_date])
+          options
+        end
+
+        def coerce_expiration_date(date)
+          return date if date == "none"
+          date = date.is_a?(String) ? Date.parse(date) : date
+          date&.iso8601 # might be nil
+        rescue ArgumentError
+          "none"
+        end
       end
     end
   end
