@@ -92,7 +92,11 @@ module ScormEngineHelpers
   #
   def ensure_dispatch_exists(options = {})
     response = options[:client].get_dispatch(dispatch_id: options[:dispatch_id])
-    options[:client].post_dispatch(options) if response&.result.nil?
+    if response&.result.nil?
+      options[:client].post_dispatch(options)
+    else
+      options[:client].put_dispatch(options)
+    end
   end
 
 end

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/dispatches/testing-dispatch-id-1
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/dispatches/testing-dispatch-id-2
     body:
       encoding: US-ASCII
       string: ''
@@ -19,7 +19,7 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Thu, 04 Oct 2018 20:51:11 GMT
+      - Thu, 04 Oct 2018 21:23:08 GMT
       server:
       - nginx
       vary:
@@ -32,13 +32,13 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":123,"expirationDate":"2018-01-01T00:00:00Z","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"none"}'
     http_version: 
-  recorded_at: Thu, 04 Oct 2018 20:51:11 GMT
+  recorded_at: Thu, 04 Oct 2018 21:23:08 GMT
 - request:
     method: post
     uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/dispatches
     body:
       encoding: UTF-8
-      string: '{"dispatches":[{"id":"testing-dispatch-id-1","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":123,"expirationDate":"2030-01-01","externalConfig":null}}]}'
+      string: '{"dispatches":[{"id":"testing-dispatch-id-2","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":123,"expirationDate":"2030-01-01","externalConfig":null}}]}'
     headers:
       User-Agent:
       - ScormEngine Ruby Gem 0.6.10
@@ -52,7 +52,7 @@ http_interactions:
       message: ''
     headers:
       date:
-      - Thu, 04 Oct 2018 20:51:11 GMT
+      - Thu, 04 Oct 2018 21:23:08 GMT
       server:
       - nginx
       connection:
@@ -61,10 +61,10 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Thu, 04 Oct 2018 20:51:11 GMT
+  recorded_at: Thu, 04 Oct 2018 21:23:08 GMT
 - request:
     method: get
-    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/dispatches/testing-dispatch-id-1
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/dispatches/testing-dispatch-id-2
     body:
       encoding: US-ASCII
       string: ''
@@ -81,7 +81,7 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Thu, 04 Oct 2018 20:51:12 GMT
+      - Thu, 04 Oct 2018 21:23:08 GMT
       server:
       - nginx
       vary:
@@ -94,5 +94,5 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":123,"expirationDate":"2030-01-01T00:00:00Z","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"none"}'
     http_version: 
-  recorded_at: Thu, 04 Oct 2018 20:51:12 GMT
+  recorded_at: Thu, 04 Oct 2018 21:23:09 GMT
 recorded_with: VCR 4.0.0

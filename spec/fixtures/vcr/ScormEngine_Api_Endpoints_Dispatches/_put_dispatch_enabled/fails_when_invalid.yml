@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/dispatches/testing-dispatch-id-1/enabled
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/dispatches/testing-dispatch-id-2/enabled
     body:
       encoding: UTF-8
       string: oops
@@ -21,7 +21,7 @@ http_interactions:
       content-type:
       - text/plain
       date:
-      - Thu, 04 Oct 2018 20:50:33 GMT
+      - Thu, 04 Oct 2018 21:22:30 GMT
       server:
       - nginx
       content-length:
@@ -32,7 +32,7 @@ http_interactions:
       encoding: UTF-8
       string: |-
         Unrecognized token 'oops': was expecting ('true', 'false' or 'null')
-         at [Source: org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream@6ef7f14d; line: 1, column: 9]
+         at [Source: org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream@57adebb3; line: 1, column: 9]
     http_version: 
-  recorded_at: Thu, 04 Oct 2018 20:50:33 GMT
+  recorded_at: Thu, 04 Oct 2018 21:22:30 GMT
 recorded_with: VCR 4.0.0

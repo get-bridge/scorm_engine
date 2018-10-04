@@ -19,7 +19,7 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Thu, 04 Oct 2018 20:50:50 GMT
+      - Thu, 04 Oct 2018 21:22:40 GMT
       server:
       - nginx
       content-length:
@@ -31,5 +31,5 @@ http_interactions:
       string: '{"message":"''invalid'' is either not a timestamp or seems to be not
         formatted according to ISO 8601"}'
     http_version: 
-  recorded_at: Thu, 04 Oct 2018 20:50:50 GMT
+  recorded_at: Thu, 04 Oct 2018 21:22:40 GMT
 recorded_with: VCR 4.0.0

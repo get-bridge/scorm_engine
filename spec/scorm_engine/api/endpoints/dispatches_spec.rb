@@ -15,7 +15,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Dispatches do
   let(:dispatch_options) { {
     destination_id: destination_options[:destination_id],
     course_id: course_options[:course_id],
-    dispatch_id: "testing-dispatch-id-1",
+    dispatch_id: "testing-dispatch-id-2",
     allow_new_registrations: false,
     instanced: false,
     registration_cap: 123,
@@ -263,7 +263,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Dispatches do
         expect(response.status).to eq 200
         expect(response.result.dispatch_id).to eq dispatch_options[:dispatch_id]
         expect(response.result.type).to eq "SCORM12"
-        expect(response.result.filename).to end_with("golf_club_dispatch_testing-dispatch-id-1.zip")
+        expect(response.result.filename).to end_with("golf_club_dispatch_testing-dispatch-id-2.zip")
 
         zip_contents = Zip::File.open_buffer(StringIO.new(response.result.body)).each_entry.map(&:name)
         expect(zip_contents).to include("blank.html", "configuration.js", "dispatch.html", "goodbye.html") # sampling

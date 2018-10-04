@@ -19,7 +19,7 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Thu, 04 Oct 2018 20:50:10 GMT
+      - Thu, 04 Oct 2018 21:22:21 GMT
       server:
       - nginx
       vary:
@@ -32,5 +32,5 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"message":"No dispatches found with ID: nonexistent-dispatch"}'
     http_version: 
-  recorded_at: Thu, 04 Oct 2018 20:50:10 GMT
+  recorded_at: Thu, 04 Oct 2018 21:22:21 GMT
 recorded_with: VCR 4.0.0
