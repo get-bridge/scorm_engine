@@ -12,6 +12,8 @@ Naming/AccessorMethodName:
   Enabled: false
 Metrics/LineLength:
   Enabled: false
+Metrics/ModuleLength:
+  Enabled: false
 Style/AccessModifierDeclarations:
   Enabled: false
 Style/Documentation:
