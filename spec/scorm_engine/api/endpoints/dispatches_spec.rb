@@ -151,8 +151,9 @@ RSpec.describe ScormEngine::Api::Endpoints::Dispatches do
     let(:put_dispatch_options) { dispatch_options.merge(allow_new_registrations: false, instanced: false, registration_cap: 123, expiration_date: "2018-01-01") }
     let(:response) { subject.put_dispatch(put_dispatch_options) }
 
-    %i[dispatch_id destination_id course_id allow_new_registrations
-       instanced registration_cap expiration_date
+    %i[
+      dispatch_id destination_id course_id allow_new_registrations
+      instanced registration_cap expiration_date
     ].each do |arg|
       it "raises ArgumentError when :#{arg} is missing" do
         put_dispatch_options.delete(arg)
