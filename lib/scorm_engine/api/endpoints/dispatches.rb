@@ -152,20 +152,20 @@ module ScormEngine
         # @option options [String] :course_id
         #   The course ID.
         #
-        # @option options [Boolean] :allow_new_registrations (false)
+        # @option options [Boolean] :allow_new_registrations
         #   If true, then new registrations can be created for this dispatch.
         #
-        # @option options [Boolean] :instanced (false)
+        # @option options [Boolean] :instanced
         #   If true, then a new registration instance will be created if the
         #   client LMS doesn't provide launch data for an existing one.
         #   Otherwise, the same instance will always be used for the given
         #   cmi.learner_id.
         #
-        # @option options [Integer] :registration_cap (0)
+        # @option options [Integer] :registration_cap
         #   The maximum number of registrations that can be created for this
         #   dispatch, where '0' means 'unlimited registrations'.
         #
-        # @option options [Date] :expiration_date ("none")
+        # @option options [Date] :expiration_date
         #   The date after which this dispatch will be disabled as an ISO 8601
         #   string, or \"none\" for no expiration date.
         #
@@ -176,7 +176,8 @@ module ScormEngine
         # @return [ScormEngine::Response]
         #
         def put_dispatch(options = {})
-          require_options(options, :dispatch_id, :destination_id, :course_id)
+          require_options(options, :dispatch_id, :destination_id, :course_id,
+                          :allow_new_registrations, :instanced, :registration_cap, :expiration_date)
 
           body = {
             destinationId: options[:destination_id],
