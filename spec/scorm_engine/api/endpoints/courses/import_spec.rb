@@ -45,7 +45,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Import do
     describe "successful imports" do
       it "works with a :url" do
         against_real_scorm_engine do
-          import = import_course(client: subject, course_id: "testing-url-123", url: "https://github.com/phallstrom/scorm_engine/raw/master/spec/fixtures/zip/RuntimeBasicCalls_SCORM20043rdEdition.zip")
+          import = import_course(client: subject, course_id: "testing-url-123", url: "https://github.com/instructure-bridge/scorm_engine/raw/master/spec/fixtures/zip/RuntimeBasicCalls_SCORM20043rdEdition.zip")
           aggregate_failures do
             expect(import.success?).to eq true
             expect(import.result.complete?).to eq true

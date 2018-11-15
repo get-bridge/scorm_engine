@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/phallstrom/scorm_engine.svg?branch=master)](https://travis-ci.org/phallstrom/scorm_engine)
+[![Build Status](https://travis-ci.org/instructure-bridge/scorm_engine.svg?branch=master)](https://travis-ci.org/instructure-bridge/scorm_engine)
 [![Gem Version](https://badge.fury.io/rb/scorm_engine.svg)](https://badge.fury.io/rb/scorm_engine)
 [![Yard Docs](http://img.shields.io/badge/yard-docs-blue.svg)](https://www.rubydoc.info/gems/scorm_engine)
 
@@ -33,7 +33,7 @@ TODO: Write usage instructions here
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at
-https://github.com/phallstrom/scorm_engine.
+https://github.com/instructure-bridge/scorm_engine.
 
 ## License
 
