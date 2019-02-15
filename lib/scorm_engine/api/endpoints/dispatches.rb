@@ -288,6 +288,49 @@ module ScormEngine
           Response.new(raw_response: response, result: result)
         end
 
+        #
+        # Get the registration count and last reset time of a dispatch.
+        #
+        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__dispatches__dispatchId__registrationCount_get
+        #
+        # @param [Hash] options
+        #
+        # @option options [String] :dispatch_id
+        #   The ID of the dispatch to get.
+        #
+        # @return [ScormEngine::Models::DispatchRegistrationCount]
+        #
+        def get_dispatch_registration_count(options = {})
+          require_options(options, :dispatch_id)
+
+          response = get("dispatches/#{options[:dispatch_id]}/registrationCount")
+
+          # merge options to pick up dispatch_id which isn't passed back in the response
+          result = response.success? ? ScormEngine::Models::DispatchRegistrationCount.new_from_api({ "id" => options[:dispatch_id] }.merge(response.body)) : nil
+
+          Response.new(raw_response: response, result: result)
+        end
+
+        #
+        # Reset the registration count and last reset time of a dispatch.
+        #
+        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__dispatches__dispatchId__registrationCount_delete
+        #
+        # @param [Hash] options
+        #
+        # @option options [String] :dispatch_id
+        #   The ID of the dispatch to get.
+        #
+        # @return [ScormEngine::Response]
+        #
+        def delete_dispatch_registration_count(options = {})
+          require_options(options, :dispatch_id)
+
+          response = delete("dispatches/#{options[:dispatch_id]}/registrationCount")
+
+          Response.new(raw_response: response)
+        end
+
         private
 
         def coerce_dispatch_options(options = {})
@@ -300,6 +343,7 @@ module ScormEngine
 
         def coerce_expiration_date(date)
           return date if date == "none"
+
           date = date.is_a?(String) ? Date.parse(date) : date
           date&.iso8601 # might be nil
         rescue ArgumentError # unparsable date string

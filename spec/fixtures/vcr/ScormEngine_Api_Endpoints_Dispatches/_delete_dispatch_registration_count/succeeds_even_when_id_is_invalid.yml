@@ -1,0 +1,30 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/dispatches/nonexistent-dispatch/registrationCount
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - ScormEngine Ruby Gem 0.7.1
+      Authorization:
+      - Basic <BASIC_AUTH>
+  response:
+    status:
+      code: 204
+      message: ''
+    headers:
+      date:
+      - Fri, 15 Feb 2019 22:00:32 GMT
+      server:
+      - nginx
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Fri, 15 Feb 2019 22:00:32 GMT
+recorded_with: VCR 4.0.0

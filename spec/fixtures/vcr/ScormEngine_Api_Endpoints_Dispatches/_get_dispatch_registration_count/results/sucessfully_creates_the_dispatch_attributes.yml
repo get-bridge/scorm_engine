@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/dispatches/testing-dispatch-id-2/registrationCount
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - ScormEngine Ruby Gem 0.7.1
+      Authorization:
+      - Basic <BASIC_AUTH>
+  response:
+    status:
+      code: 204
+      message: ''
+    headers:
+      date:
+      - Fri, 15 Feb 2019 22:00:41 GMT
+      server:
+      - nginx
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Fri, 15 Feb 2019 22:00:41 GMT
+- request:
+    method: get
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/dispatches/testing-dispatch-id-2/registrationCount
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - ScormEngine Ruby Gem 0.7.1
+      Authorization:
+      - Basic <BASIC_AUTH>
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      content-type:
+      - application/json
+      date:
+      - Fri, 15 Feb 2019 22:00:41 GMT
+      server:
+      - nginx
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '86'
+      connection:
+      - Close
+    body:
+      encoding: ASCII-8BIT
+      string: '{"registrationCount":0,"lastResetTime":"2019-02-15T22:00:41.000Z"}'
+    http_version: 
+  recorded_at: Fri, 15 Feb 2019 22:00:41 GMT
+recorded_with: VCR 4.0.0

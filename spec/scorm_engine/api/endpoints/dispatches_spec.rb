@@ -323,4 +323,50 @@ RSpec.describe ScormEngine::Api::Endpoints::Dispatches do
       end
     end
   end
+
+  describe "#get_dispatch_registration_count" do
+    before do
+      subject.delete_dispatch_registration_count(dispatch_id: dispatch_options[:dispatch_id])
+    end
+
+    let(:response) { subject.get_dispatch_registration_count(dispatch_id: dispatch_options[:dispatch_id]) }
+
+    it "is successful" do
+      expect(response.success?).to eq true
+    end
+
+    describe "results" do
+      it "sucessfully creates the dispatch attributes" do
+        dispatch = response.result
+        aggregate_failures do
+          expect(dispatch.id).to eq dispatch_options[:dispatch_id]
+          expect(dispatch.registration_count).to eq 0
+          expect(dispatch.last_reset_at).to be_a(Time)
+        end
+      end
+    end
+
+    it "fails when id is invalid" do
+      response = subject.get_dispatch_registration_count(dispatch_id: "nonexistent-dispatch")
+      aggregate_failures do
+        expect(response.success?).to eq false
+        expect(response.status).to eq 404
+        expect(response.message).to match(/No dispatches found with ID: nonexistent-dispatch/)
+        expect(response.result).to eq nil
+      end
+    end
+  end
+
+  describe "#delete_dispatch_registration_count" do
+    let(:response) { subject.delete_dispatch_registration_count(dispatch_id: dispatch_options[:dispatch_id]) }
+
+    it "is successful" do
+      expect(response.success?).to eq true
+    end
+
+    it "succeeds even when id is invalid" do
+      response = subject.delete_dispatch_registration_count(dispatch_id: "nonexistent-dispatch")
+      expect(response.success?).to eq true
+    end
+  end
 end
