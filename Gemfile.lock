@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    scorm_engine (0.7.1)
+    scorm_engine (0.7.2)
       faraday (~> 0.12.2)
       faraday_middleware (~> 0.12)
 
@@ -14,7 +14,7 @@ GEM
     dotenv (2.4.0)
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
-    faraday_middleware (0.12.2)
+    faraday_middleware (0.13.1)
       faraday (>= 0.7.4, < 1.0)
     jaro_winkler (1.5.1)
     method_source (0.9.0)
@@ -71,4 +71,4 @@ DEPENDENCIES
   yard (~> 0.9)
 
 BUNDLED WITH
-   1.17.1
+   1.17.3
