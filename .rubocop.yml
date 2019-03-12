@@ -4,8 +4,6 @@ Layout/EmptyLinesAroundClassBody:
   Enabled: false
 Layout/AlignParameters:
   Enabled: false
-Layout/EmptyLinesAroundClassBody:
-  Enabled: false
 Layout/EmptyLinesAroundModuleBody:
   Enabled: false
 Naming/AccessorMethodName:
@@ -43,6 +41,9 @@ Style/BlockDelimiters:
     - subject
     - watch
     - expect
+  Exclude:
+    - "spec/**/*"
+    - "Gemfile"
 Layout/MultilineBlockLayout:
   Exclude:
     - "spec/**/*"
@@ -53,15 +54,10 @@ Metrics/BlockLength:
   Exclude:
     - "spec/**/*"
     - "scorm_engine.gemspec"
-Style/BlockDelimiters:
-  Exclude:
-    - "spec/**/*"
 Style/StringLiteralsInInterpolation:
   Enabled: false
 Metrics/MethodLength:
   Max: 50
-Metrics/AbcSize:
-  Max: 25
 Style/BracesAroundHashParameters:
   Enabled: false
 Metrics/CyclomaticComplexity:
@@ -71,4 +67,6 @@ Metrics/PerceivedComplexity:
 Metrics/AbcSize:
   Max: 50
 Style/EachWithObject:
+  Enabled: false
+Layout/EmptyLineAfterGuardClause:
   Enabled: false
