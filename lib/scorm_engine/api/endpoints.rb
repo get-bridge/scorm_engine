@@ -8,6 +8,7 @@ require_relative "endpoints/ping"
 require_relative "endpoints/registrations"
 require_relative "endpoints/registrations/configuration"
 require_relative "endpoints/registrations/launch_history"
+require_relative "endpoints/tenants/configuration"
 
 module ScormEngine
   module Api
@@ -22,6 +23,7 @@ module ScormEngine
       include Registrations
       include Registrations::Configuration
       include Registrations::LaunchHistory
+      include Tenants::Configuration
 
       private
 

@@ -18,6 +18,7 @@ end
 INSERTED_CASSETTES = Set.new
 module CassetteReporter
   def insert_cassette(name, options = {})
+    return unless VCR.turned_on?
     INSERTED_CASSETTES << VCR::Cassette.new(name, options).file
     super
   end

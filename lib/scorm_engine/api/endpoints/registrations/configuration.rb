@@ -1,5 +1,5 @@
 #
-# TODO: Consider consolidating this and Courses::Configuration, but only after we're
+# TODO: Consider consolidating this and [Courses|Tenants]::Configuration, but only after we're
 #       sure they are really 99.9% the same in terms of functionality.
 #
 module ScormEngine
