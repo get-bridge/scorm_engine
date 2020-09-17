@@ -53,7 +53,7 @@ GEM
     rubyzip (1.2.2)
     unicode-display_width (1.4.0)
     vcr (4.0.0)
-    yard (0.9.12)
+    yard (0.9.25)
 
 PLATFORMS
   ruby
