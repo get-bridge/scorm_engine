@@ -5,18 +5,24 @@ module ScormEngine
   module Faraday
     module Connection
 
-      def base_uri
+      def base_uri(version: 1)
         uri = URI("")
         uri.scheme = ScormEngine.configuration.protocol
         uri.host = ScormEngine.configuration.host
-        uri.path = ScormEngine.configuration.path_prefix
+
+        if version == 2
+          uri.path = ScormEngine.configuration.v2_path_prefix
+        else
+          uri.path = ScormEngine.configuration.path_prefix
+        end
+
         URI(uri.to_s) # convert URI::Generic to URI:HTTPS
       end
 
       private
 
-      def connection
-        @connection ||= ::Faraday.new(url: base_uri.to_s) do |faraday|
+      def connection(version: 1)
+        @connection ||= ::Faraday.new(url: base_uri(version: version).to_s) do |faraday|
           faraday.headers["User-Agent"] = "ScormEngine Ruby Gem #{ScormEngine::VERSION}"
 
           faraday.basic_auth(ScormEngine.configuration.username, ScormEngine.configuration.password)

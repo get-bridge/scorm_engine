@@ -10,8 +10,9 @@ module ScormEngine
   end
 
   class Configuration
-    # http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html
-    attr_accessor :protocol, :host, :path_prefix
+    # Legacy v1 API: http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html
+    # Latest v2 API: https://rustici-docs.s3.amazonaws.com/engine/20.1.x/api/apiV2.html
+    attr_accessor :protocol, :host, :path_prefix, :v2_path_prefix
 
     # http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/Architecture-API.html#api-authentication
     attr_accessor :username, :password
@@ -28,6 +29,7 @@ module ScormEngine
       @protocol = ENV.fetch("SCORM_ENGINE_PROTOCOL", "https")
       @host = ENV["SCORM_ENGINE_HOST"]
       @path_prefix = ENV.fetch("SCORM_ENGINE_PATH_PREFIX", "/ScormEngineInterface/api/v1/")
+      @v2_path_prefix = ENV.fetch("SCORM_ENGINE_V2_PATH_PREFIX", "/ScormEngineInterface/api/v2/")
 
       @username = ENV["SCORM_ENGINE_USERNAME"]
       @password = ENV["SCORM_ENGINE_PASSWORD"]

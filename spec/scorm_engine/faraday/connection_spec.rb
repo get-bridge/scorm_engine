@@ -8,14 +8,32 @@ RSpec.describe ScormEngine::Faraday::Connection do
   end
 
   describe "#base_uri" do
-    let(:uri) { scorm_engine_client.base_uri }
+    {
+      1 => "https://scorm.engine/ScormEngineInterface/api/v1/",
+      2 => "https://scorm.engine/ScormEngineInterface/api/v2/",
+    }.each do |version, expected_url|
+      context "with version #{version}" do
+        let(:uri) { scorm_engine_client.base_uri(version: version) }
 
-    it "returns a URI::HTTPS instance" do
-      expect(uri).to be_a(URI::HTTPS)
+        it "returns a URI::HTTPS instance" do
+          expect(uri).to be_a(URI::HTTPS)
+        end
+
+        it "is correct given the configuration" do
+          expect(uri.to_s).to eq expected_url
+        end
+      end
     end
+  end
 
-    it "is correct given the configuration" do
-      expect(uri.to_s).to eq "https://scorm.engine/ScormEngineInterface/api/v1/"
+  describe "#connection" do
+    describe "version" do
+      it "passes on to #base_uri" do
+        client = ScormEngine::Client.new(tenant: "test")
+
+        expect(client).to receive(:base_uri).with(version: 2).and_call_original
+        client.send(:connection, { version: 2 })
+      end
     end
   end
 end

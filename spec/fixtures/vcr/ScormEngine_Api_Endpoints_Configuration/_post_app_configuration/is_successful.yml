@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v2/appManagement/configuration
+    body:
+      encoding: UTF-8
+      string: '{"settings":[{"settingId":"UserCountReportLookBackDays","value":"90"},{"settingId":"UserCountReportDaysBetweenReports","value":"20"}]}'
+    headers:
+      User-Agent:
+      - ScormEngine Ruby Gem 0.7.3
+      Authorization:
+      - Basic <BASIC_AUTH>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      connection:
+      - keep-alive
+      date:
+      - Thu, 17 Sep 2020 23:45:45 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Miss from cloudfront
+      via:
+      - 1.1 8bd27032f0d38908fbe32b696e45c288.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - DEN50-C2
+      x-amz-cf-id:
+      - YD3BizTv1dWVit-vVVQB-cADMh4Z1BbgeDrg-ebUCi7zu-t9Z-gQPw==
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 17 Sep 2020 23:45:45 GMT
+recorded_with: VCR 4.0.0

@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v2/appManagement/configuration
+    body:
+      encoding: UTF-8
+      string: '{"settings":[{"settingId":"NonExistentSettingTotesBogus","value":"YES"}]}'
+    headers:
+      User-Agent:
+      - ScormEngine Ruby Gem 0.7.3
+      Authorization:
+      - Basic <BASIC_AUTH>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      content-type:
+      - application/json
+      content-length:
+      - '68'
+      connection:
+      - keep-alive
+      date:
+      - Thu, 17 Sep 2020 23:45:45 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Error from cloudfront
+      via:
+      - 1.1 91f1c114eac2b00f07286bc49dddd7e5.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - DEN50-C2
+      x-amz-cf-id:
+      - YkJQpN-loCuS4CGPb9DyS8o-LByaSVj0-Gk_XE88Va9Ke9RPRIG8iw==
+    body:
+      encoding: UTF-8
+      string: '{"message":"NonExistentSettingTotesBogus is not a valid setting ID"}'
+    http_version: 
+  recorded_at: Thu, 17 Sep 2020 23:45:45 GMT
+recorded_with: VCR 4.0.0

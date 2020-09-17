@@ -17,15 +17,30 @@ module ScormEngine
         request(:delete, path, options)
       end
 
+      def api_v2(without_tenant: false)
+        begin
+          @api_version = 2
+          @without_tenant = without_tenant
+
+          yield
+        ensure
+          @api_version = 1
+        end
+      end
+
       private
 
       def request(method, path, options, body = nil)
-        # "more" pagination urls are fully qualified
-        path = "#{tenant}/#{path}" unless path =~ %r{\Ahttps?://}
+        connection(version: @api_version).send(method) do |request|
+          if @api_version == 2
+            request.headers["engineTenantName"] = tenant unless @without_tenant
+          else
+            # "more" pagination urls are fully qualified
+            path = "#{tenant}/#{path}" unless path =~ %r{\Ahttps?://}
+          end
 
-        options = coerce_options(options)
+          options = coerce_options(options)
 
-        connection.send(method) do |request|
           case method
           when :get, :delete
             request.url(path, options)

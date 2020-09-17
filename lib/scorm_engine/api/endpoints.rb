@@ -1,4 +1,5 @@
 require_relative "endpoints/about"
+require_relative "endpoints/configuration"
 require_relative "endpoints/courses"
 require_relative "endpoints/courses/configuration"
 require_relative "endpoints/courses/import"
@@ -14,6 +15,7 @@ module ScormEngine
   module Api
     module Endpoints
       include About
+      include Configuration
       include Courses
       include Courses::Configuration
       include Courses::Import
