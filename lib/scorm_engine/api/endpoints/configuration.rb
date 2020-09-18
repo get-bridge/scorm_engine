@@ -15,8 +15,8 @@ module ScormEngine
         #
         # @return [ScormEngine::Response]
         #
-        def get_app_configuration(for_tenant: false)
-          api_v2(without_tenant: !for_tenant) do
+        def get_app_configuration(options = {})
+          api_v2(without_tenant: !options.fetch(:for_tenant, false)) do
             response = get("appManagement/configuration")
 
             result = OpenStruct.new
