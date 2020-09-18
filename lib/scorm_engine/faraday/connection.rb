@@ -10,11 +10,11 @@ module ScormEngine
         uri.scheme = ScormEngine.configuration.protocol
         uri.host = ScormEngine.configuration.host
 
-        if version == 2
-          uri.path = ScormEngine.configuration.v2_path_prefix
-        else
-          uri.path = ScormEngine.configuration.path_prefix
-        end
+        uri.path = if version == 2
+                     ScormEngine.configuration.v2_path_prefix
+                   else
+                     ScormEngine.configuration.path_prefix
+                   end
 
         URI(uri.to_s) # convert URI::Generic to URI:HTTPS
       end

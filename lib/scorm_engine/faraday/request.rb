@@ -18,14 +18,12 @@ module ScormEngine
       end
 
       def api_v2(without_tenant: false)
-        begin
-          @api_version = 2
-          @without_tenant = without_tenant
+        @api_version = 2
+        @without_tenant = without_tenant
 
-          yield
-        ensure
-          @api_version = 1
-        end
+        yield
+      ensure
+        @api_version = 1
       end
 
       private
