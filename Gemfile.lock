@@ -1,9 +1,9 @@
 PATH
   remote: .
   specs:
-    scorm_engine (0.7.3)
-      faraday (~> 1.0.1)
-      faraday_middleware (~> 1.0.0)
+    scorm_engine (0.8.0)
+      faraday (~> 1.0)
+      faraday_middleware (~> 1.0)
 
 GEM
   remote: https://rubygems.org/
