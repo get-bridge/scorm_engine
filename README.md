@@ -4,9 +4,10 @@
 
 # ScormEngine
 
-A ruby client for Rustici's SCORM Engine 2017.1 API .
+A ruby client for Rustici's SCORM Engine 2017.1 API and limited support for the Engine 20.1 API v2.
 
 - https://rustici-docs.s3.amazonaws.com/engine/2017.1.x/index.html
+- https://rustici-docs.s3.amazonaws.com/engine/20.1.x/api/apiV2.html
 - https://support.scorm.com/hc/en-us/sections/115000043974-Release-Notes
 - https://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html
 - https://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html
