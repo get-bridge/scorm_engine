@@ -50,7 +50,7 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.9.0)
-    rubyzip (1.2.2)
+    rubyzip (2.3.0)
     unicode-display_width (1.4.0)
     vcr (4.0.0)
     yard (0.9.25)
@@ -65,7 +65,7 @@ DEPENDENCIES
   rake (~> 10.0)
   rspec (~> 3.0)
   rubocop (~> 0.56)
-  rubyzip (~> 1.2)
+  rubyzip (~> 2.3)
   scorm_engine!
   vcr (~> 4.0)
   yard (~> 0.9)

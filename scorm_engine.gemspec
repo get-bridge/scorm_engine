@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "rubocop", "~> 0.56"
-  spec.add_development_dependency "rubyzip", "~> 1.2"
+  spec.add_development_dependency "rubyzip", "~> 2.3"
   spec.add_development_dependency "vcr", "~> 4.0"
   spec.add_development_dependency "yard", "~> 0.9"
 end
