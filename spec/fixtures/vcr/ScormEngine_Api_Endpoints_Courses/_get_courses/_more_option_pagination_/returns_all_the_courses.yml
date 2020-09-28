@@ -7,83 +7,148 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Content-Type:
-      - application/json
       User-Agent:
-      - ScormEngine Ruby Gem 0.1.0
+      - ScormEngine Ruby Gem 0.8.1
       Authorization:
       - Basic <BASIC_AUTH>
   response:
     status:
       code: 200
-      message: ''
+      message: OK
     headers:
       content-type:
       - application/json
-      date:
-      - Tue, 24 Jul 2018 20:24:46 GMT
-      server:
-      - nginx
-      vary:
-      - Accept-Encoding
       content-length:
-      - '429'
+      - '2138'
       connection:
-      - Close
+      - close
+      date:
+      - Mon, 28 Sep 2020 21:19:30 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Miss from cloudfront
+      via:
+      - 1.1 48ea53c7edffa2cdbdc32f7d94966344.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - DEN50-C2
+      x-amz-cf-id:
+      - CfOd-j1bdjoyxkuPpVNSYjY26bkN6WpEXx5gXQFe6mzQcaa3V-fDzA==
     body:
-      encoding: ASCII-8BIT
+      encoding: UTF-8
       string: '{"courses":[{"id":"testing-golf-explained","version":0,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-07-24T20:22:19.000Z"},{"id":"testing123","version":0,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-07-24T20:22:31.000Z"},{"id":"a-previously-existing-course","version":0,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-07-24T20:22:33.000Z"},{"id":"course-to-be-deleted","version":0,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-07-24T20:22:59.000Z"},{"id":"a-valid-course-url","version":0,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-07-24T20:23:06.000Z"},{"id":"paginated-course-0","version":0,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-07-24T20:23:25.000Z"},{"id":"paginated-course-1","version":0,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-07-24T20:23:32.000Z"},{"id":"paginated-course-2","version":0,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-07-24T20:23:38.000Z"},{"id":"paginated-course-3","version":0,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-07-24T20:23:45.000Z"},{"id":"paginated-course-4","version":0,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-07-24T20:23:51.000Z"}],"more":"https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/scormenginegemtesting-default/courses?configuration=ScormEngineGemTesting-default&more=AAABZM32V9gAAGrI"}'
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2020-09-25T22:48:17.000Z"},{"id":"testing-url-123","version":0,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2020-09-25T22:48:40.000Z"},{"id":"testing-pathname-123","version":0,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2020-09-25T22:48:46.000Z"},{"id":"a-previously-existing-course","version":0,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2020-09-25T22:48:52.000Z"},{"id":"paginated-course-0","version":0,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2020-09-25T22:49:10.000Z"},{"id":"paginated-course-1","version":0,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2020-09-25T22:49:16.000Z"},{"id":"paginated-course-2","version":0,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2020-09-25T22:49:22.000Z"},{"id":"paginated-course-3","version":0,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2020-09-25T22:49:28.000Z"},{"id":"paginated-course-4","version":0,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2020-09-25T22:49:33.000Z"},{"id":"paginated-course-5","version":0,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2020-09-25T22:49:39.000Z"}],"more":"/ScormEngineInterface/api/v1/scormenginegemtesting-default/courses?configuration=ScormEngineGemTesting-default&more=AAABdMd1K7gAAABD"}'
     http_version: 
-  recorded_at: Tue, 24 Jul 2018 20:24:46 GMT
+  recorded_at: Mon, 28 Sep 2020 21:19:31 GMT
 - request:
     method: get
-    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/scormenginegemtesting-default/courses?configuration=ScormEngineGemTesting-default&more=AAABZM32V9gAAGrI
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/scormenginegemtesting-default/courses?configuration=ScormEngineGemTesting-default&more=AAABdMd1K7gAAABD
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Content-Type:
-      - application/json
       User-Agent:
-      - ScormEngine Ruby Gem 0.1.0
+      - ScormEngine Ruby Gem 0.8.1
       Authorization:
       - Basic <BASIC_AUTH>
   response:
     status:
       code: 200
-      message: ''
+      message: OK
     headers:
       content-type:
       - application/json
-      date:
-      - Tue, 24 Jul 2018 20:24:47 GMT
-      server:
-      - nginx
-      vary:
-      - Accept-Encoding
       content-length:
-      - '240'
+      - '2148'
       connection:
-      - Close
+      - close
+      date:
+      - Mon, 28 Sep 2020 21:19:31 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Miss from cloudfront
+      via:
+      - 1.1 c29390732f5bc4b2c7832623ae6e492f.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - DEN50-C2
+      x-amz-cf-id:
+      - bSS5sGvnWF7nPe-5QHBIYo0dIDNnxmRz2IhitxANBNOnmuJqp5G88w==
     body:
-      encoding: ASCII-8BIT
-      string: '{"courses":[{"id":"paginated-course-5","version":0,"title":"Golf Explained
-        - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-07-24T20:23:58.000Z"},{"id":"paginated-course-6","version":0,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-07-24T20:24:05.000Z"},{"id":"paginated-course-7","version":0,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-07-24T20:24:11.000Z"},{"id":"paginated-course-8","version":0,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-07-24T20:24:18.000Z"},{"id":"paginated-course-9","version":0,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-07-24T20:24:25.000Z"},{"id":"paginated-course-10","version":0,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2018-07-24T20:24:31.000Z"}]}'
+      encoding: UTF-8
+      string: '{"courses":[{"id":"paginated-course-6","version":0,"title":"Golf Explained
+        - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2020-09-25T22:49:45.000Z"},{"id":"paginated-course-7","version":0,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2020-09-25T22:49:52.000Z"},{"id":"paginated-course-8","version":0,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2020-09-25T22:49:58.000Z"},{"id":"paginated-course-9","version":0,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2020-09-25T22:50:04.000Z"},{"id":"paginated-course-10","version":0,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2020-09-25T22:50:10.000Z"},{"id":"testing-golf-explained-no-registrations","version":0,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2020-09-25T22:53:09.000Z"},{"id":"course-to-be-deleted","version":0,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2020-09-25T23:05:35.000Z"},{"id":"testing-pathname-123","version":1,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2020-09-25T23:08:43.000Z"},{"id":"testing-url-123","version":1,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2020-09-25T23:08:49.000Z"},{"id":"a-valid-course-url","version":0,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2020-09-25T23:09:03.000Z"}],"more":"/ScormEngineInterface/api/v1/scormenginegemtesting-default/courses?configuration=ScormEngineGemTesting-default&more=AAABdMeG7pgAAABN"}'
     http_version: 
-  recorded_at: Tue, 24 Jul 2018 20:24:47 GMT
+  recorded_at: Mon, 28 Sep 2020 21:19:32 GMT
+- request:
+    method: get
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/scormenginegemtesting-default/courses?configuration=ScormEngineGemTesting-default&more=AAABdMeG7pgAAABN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - ScormEngine Ruby Gem 0.8.1
+      Authorization:
+      - Basic <BASIC_AUTH>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json
+      content-length:
+      - '406'
+      connection:
+      - close
+      date:
+      - Mon, 28 Sep 2020 21:19:32 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Miss from cloudfront
+      via:
+      - 1.1 788f6ff13e09a712f5227945fa34a519.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - DEN50-C2
+      x-amz-cf-id:
+      - oTFULz9r9rLznW6mqDFjgifopSZGMMBWEbLlPoOjQrsChzxSZoblxg==
+    body:
+      encoding: UTF-8
+      string: '{"courses":[{"id":"testing-pathname-123","version":2,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2020-09-28T20:30:34.000Z"},{"id":"testing-url-123","version":2,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2020-09-28T20:30:41.000Z"}]}'
+    http_version: 
+  recorded_at: Mon, 28 Sep 2020 21:19:33 GMT
 recorded_with: VCR 4.0.0

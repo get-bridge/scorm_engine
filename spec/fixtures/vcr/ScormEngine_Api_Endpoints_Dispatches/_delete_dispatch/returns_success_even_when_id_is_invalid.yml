@@ -8,23 +8,35 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.6.10
+      - ScormEngine Ruby Gem 0.8.1
       Authorization:
       - Basic <BASIC_AUTH>
   response:
     status:
       code: 204
-      message: ''
+      message: No Content
     headers:
-      date:
-      - Thu, 04 Oct 2018 21:22:02 GMT
-      server:
-      - nginx
       connection:
-      - Close
+      - close
+      date:
+      - Fri, 25 Sep 2020 23:05:47 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Miss from cloudfront
+      via:
+      - 1.1 fa20ae3068db1bd7f33b9b9f40a36436.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SLC50-C1
+      x-amz-cf-id:
+      - Bn-m8fWbht9pUAKqDTKptRDenVMioEH2RKBo8ZaVxP75Sk7nx21PWw==
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Thu, 04 Oct 2018 21:22:02 GMT
+  recorded_at: Fri, 25 Sep 2020 23:05:47 GMT
 recorded_with: VCR 4.0.0

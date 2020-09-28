@@ -8,7 +8,7 @@ http_interactions:
       string: oops
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.6.10
+      - ScormEngine Ruby Gem 0.8.1
       Authorization:
       - Basic <BASIC_AUTH>
       Content-Type:
@@ -16,23 +16,35 @@ http_interactions:
   response:
     status:
       code: 400
-      message: ''
+      message: Bad Request
     headers:
       content-type:
       - text/plain
-      date:
-      - Thu, 04 Oct 2018 21:22:30 GMT
-      server:
-      - nginx
       content-length:
-      - '198'
+      - '191'
       connection:
-      - Close
+      - close
+      date:
+      - Fri, 25 Sep 2020 23:05:51 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Error from cloudfront
+      via:
+      - 1.1 9e19f7f2387eead34610d87abf26d1cd.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SLC50-C1
+      x-amz-cf-id:
+      - FaKWllYDPzyqg6yLcorPEaLBAUru3Ib0S2tGD_E9sgZaDGQPTErhgA==
     body:
       encoding: UTF-8
       string: |-
         Unrecognized token 'oops': was expecting ('true', 'false' or 'null')
-         at [Source: org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream@57adebb3; line: 1, column: 9]
+         at [Source: (org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream); line: 1, column: 9]
     http_version: 
-  recorded_at: Thu, 04 Oct 2018 21:22:30 GMT
+  recorded_at: Fri, 25 Sep 2020 23:05:51 GMT
 recorded_with: VCR 4.0.0

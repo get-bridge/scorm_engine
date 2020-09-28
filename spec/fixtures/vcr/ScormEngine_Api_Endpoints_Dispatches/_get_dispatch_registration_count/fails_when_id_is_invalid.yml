@@ -8,25 +8,37 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.7.1
+      - ScormEngine Ruby Gem 0.8.1
       Authorization:
       - Basic <BASIC_AUTH>
   response:
     status:
       code: 204
-      message: ''
+      message: No Content
     headers:
-      date:
-      - Fri, 15 Feb 2019 22:00:38 GMT
-      server:
-      - nginx
       connection:
-      - Close
+      - close
+      date:
+      - Fri, 25 Sep 2020 23:05:52 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Miss from cloudfront
+      via:
+      - 1.1 42388efa0b39dd5e33d371d553418dbf.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SLC50-C1
+      x-amz-cf-id:
+      - El9hr7o_DtWAY_-Tin0rurv0Jjhuy1QnydTJ3LthmMZHJvq8fXFYag==
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Fri, 15 Feb 2019 22:00:38 GMT
+  recorded_at: Fri, 25 Sep 2020 23:05:52 GMT
 - request:
     method: get
     uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/dispatches/nonexistent-dispatch/registrationCount
@@ -35,29 +47,39 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.7.1
+      - ScormEngine Ruby Gem 0.8.1
       Authorization:
       - Basic <BASIC_AUTH>
   response:
     status:
       code: 404
-      message: ''
+      message: Not Found
     headers:
       content-type:
       - application/json
-      date:
-      - Fri, 15 Feb 2019 22:00:38 GMT
-      server:
-      - nginx
-      vary:
-      - Accept-Encoding
       content-length:
-      - '77'
+      - '63'
       connection:
-      - Close
+      - close
+      date:
+      - Fri, 25 Sep 2020 23:05:52 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Error from cloudfront
+      via:
+      - 1.1 9e19f7f2387eead34610d87abf26d1cd.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SLC50-C1
+      x-amz-cf-id:
+      - 2pQzgwFZkR-_Zl1jZpJdLKzHeiUeQkAjob4deIjfbhBhZUfRHC4rvg==
     body:
-      encoding: ASCII-8BIT
+      encoding: UTF-8
       string: '{"message":"No dispatches found with ID: nonexistent-dispatch"}'
     http_version: 
-  recorded_at: Fri, 15 Feb 2019 22:00:39 GMT
+  recorded_at: Fri, 25 Sep 2020 23:05:52 GMT
 recorded_with: VCR 4.0.0

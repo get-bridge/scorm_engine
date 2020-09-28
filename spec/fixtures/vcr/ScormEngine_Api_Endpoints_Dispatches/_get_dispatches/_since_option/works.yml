@@ -8,29 +8,39 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.6.10
+      - ScormEngine Ruby Gem 0.8.1
       Authorization:
       - Basic <BASIC_AUTH>
   response:
     status:
       code: 200
-      message: ''
+      message: OK
     headers:
       content-type:
       - application/json
-      date:
-      - Thu, 04 Oct 2018 21:22:38 GMT
-      server:
-      - nginx
-      vary:
-      - Accept-Encoding
       content-length:
-      - '333'
+      - '4486'
       connection:
-      - Close
+      - close
+      date:
+      - Fri, 25 Sep 2020 23:06:16 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Miss from cloudfront
+      via:
+      - 1.1 3a3c5f259ae7ff22c721cf2dd9f734af.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SLC50-C1
+      x-amz-cf-id:
+      - u8mBlDdUh78Ldfx1uy8WhuRE2tDRI37q_akxydhW1lFEXUbxGfm9GQ==
     body:
-      encoding: ASCII-8BIT
-      string: '{"dispatches":[{"id":"paginated-dispatch-0","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":0,"expirationDate":"none","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"none"}},{"id":"paginated-dispatch-1","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":0,"expirationDate":"none","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"none"}},{"id":"paginated-dispatch-2","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":0,"expirationDate":"none","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"none"}},{"id":"paginated-dispatch-3","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":0,"expirationDate":"none","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"none"}},{"id":"paginated-dispatch-4","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":0,"expirationDate":"none","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"none"}},{"id":"paginated-dispatch-5","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":0,"expirationDate":"none","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"none"}},{"id":"paginated-dispatch-6","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":0,"expirationDate":"none","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"none"}},{"id":"paginated-dispatch-7","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":0,"expirationDate":"none","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"none"}},{"id":"paginated-dispatch-8","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":0,"expirationDate":"none","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"none"}},{"id":"paginated-dispatch-9","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":0,"expirationDate":"none","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"none"}},{"id":"paginated-dispatch-10","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":0,"expirationDate":"none","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"none"}},{"id":"testing-dispatch-id","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":123,"expirationDate":"2018-01-01T00:00:00Z","externalConfig":"scormenginegemtesting-default","enabled":false,"registrationCount":0,"registrationResetDate":"none"}},{"id":"testing-dispatch-id-1","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":123,"expirationDate":"none","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"none"}},{"id":"testing-dispatch-id-2","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":123,"expirationDate":"2018-01-01T00:00:00Z","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"none"}}]}'
+      encoding: UTF-8
+      string: '{"dispatches":[{"id":"paginated-dispatch-0","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":123,"expirationDate":"2018-01-01T00:00:00.000Z","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"none"}},{"id":"paginated-dispatch-1","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":123,"expirationDate":"2018-01-01T00:00:00.000Z","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"none"}},{"id":"paginated-dispatch-2","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":123,"expirationDate":"2018-01-01T00:00:00.000Z","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"none"}},{"id":"paginated-dispatch-3","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":123,"expirationDate":"2018-01-01T00:00:00.000Z","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"none"}},{"id":"paginated-dispatch-4","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":123,"expirationDate":"2018-01-01T00:00:00.000Z","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"none"}},{"id":"paginated-dispatch-5","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":123,"expirationDate":"2018-01-01T00:00:00.000Z","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"none"}},{"id":"paginated-dispatch-6","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":123,"expirationDate":"2018-01-01T00:00:00.000Z","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"none"}},{"id":"paginated-dispatch-7","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":123,"expirationDate":"2018-01-01T00:00:00.000Z","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"none"}},{"id":"paginated-dispatch-8","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":123,"expirationDate":"2018-01-01T00:00:00.000Z","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"none"}},{"id":"paginated-dispatch-9","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":123,"expirationDate":"2018-01-01T00:00:00.000Z","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"none"}},{"id":"paginated-dispatch-10","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":123,"expirationDate":"2018-01-01T00:00:00.000Z","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"none"}},{"id":"testing-dispatch-id-2","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":123,"expirationDate":"2018-01-01T00:00:00.000Z","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"2020-09-25T23:06:11.000Z"}},{"id":"dispatch-to-be-deleted","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":123,"expirationDate":"2018-01-01T00:00:00.000Z","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"none"}}]}'
     http_version: 
-  recorded_at: Thu, 04 Oct 2018 21:22:38 GMT
+  recorded_at: Fri, 25 Sep 2020 23:06:16 GMT
 recorded_with: VCR 4.0.0

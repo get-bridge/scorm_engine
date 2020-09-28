@@ -7,35 +7,43 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Content-Type:
-      - application/json
       User-Agent:
-      - ScormEngine Ruby Gem 0.1.0
+      - ScormEngine Ruby Gem 0.8.1
       Authorization:
-      - Basic UmUzaWpFWU1xcXBOZXZlUDNBNFlLNkc6aW52YWxpZA==
+      - Basic UnVzdGljaUVuZ2luZTppbnZhbGlk
   response:
     status:
       code: 403
-      message: ''
+      message: Forbidden
     headers:
-      content-language:
-      - en
       content-type:
       - text/html;charset=utf-8
-      date:
-      - Tue, 24 Jul 2018 20:24:48 GMT
-      server:
-      - nginx
-      vary:
-      - Accept-Encoding
       content-length:
-      - '303'
+      - '650'
       connection:
-      - Close
+      - close
+      content-language:
+      - en
+      date:
+      - Fri, 25 Sep 2020 23:05:42 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Error from cloudfront
+      via:
+      - 1.1 794a3d3af21f401cf5ddf53187ea3030.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SLC50-C1
+      x-amz-cf-id:
+      - tguQ0J57352NitneKWcghsXmOBSc8RKNfHKngCqkzxkWbt_aMZpzFA==
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        PCFkb2N0eXBlIGh0bWw+PGh0bWwgbGFuZz0iZW4iPjxoZWFkPjx0aXRsZT5IVFRQIFN0YXR1cyA0MDMg4oCTIEZvcmJpZGRlbjwvdGl0bGU+PHN0eWxlIHR5cGU9InRleHQvY3NzIj5oMSB7Zm9udC1mYW1pbHk6VGFob21hLEFyaWFsLHNhbnMtc2VyaWY7Y29sb3I6d2hpdGU7YmFja2dyb3VuZC1jb2xvcjojNTI1RDc2O2ZvbnQtc2l6ZToyMnB4O30gaDIge2ZvbnQtZmFtaWx5OlRhaG9tYSxBcmlhbCxzYW5zLXNlcmlmO2NvbG9yOndoaXRlO2JhY2tncm91bmQtY29sb3I6IzUyNUQ3Njtmb250LXNpemU6MTZweDt9IGgzIHtmb250LWZhbWlseTpUYWhvbWEsQXJpYWwsc2Fucy1zZXJpZjtjb2xvcjp3aGl0ZTtiYWNrZ3JvdW5kLWNvbG9yOiM1MjVENzY7Zm9udC1zaXplOjE0cHg7fSBib2R5IHtmb250LWZhbWlseTpUYWhvbWEsQXJpYWwsc2Fucy1zZXJpZjtjb2xvcjpibGFjaztiYWNrZ3JvdW5kLWNvbG9yOndoaXRlO30gYiB7Zm9udC1mYW1pbHk6VGFob21hLEFyaWFsLHNhbnMtc2VyaWY7Y29sb3I6d2hpdGU7YmFja2dyb3VuZC1jb2xvcjojNTI1RDc2O30gcCB7Zm9udC1mYW1pbHk6VGFob21hLEFyaWFsLHNhbnMtc2VyaWY7YmFja2dyb3VuZDp3aGl0ZTtjb2xvcjpibGFjaztmb250LXNpemU6MTJweDt9IGEge2NvbG9yOmJsYWNrO30gYS5uYW1lIHtjb2xvcjpibGFjazt9IC5saW5lIHtoZWlnaHQ6MXB4O2JhY2tncm91bmQtY29sb3I6IzUyNUQ3Njtib3JkZXI6bm9uZTt9PC9zdHlsZT48L2hlYWQ+PGJvZHk+PGgxPkhUVFAgU3RhdHVzIDQwMyDigJMgRm9yYmlkZGVuPC9oMT48L2JvZHk+PC9odG1sPg==
+        PCFkb2N0eXBlIGh0bWw+PGh0bWwgbGFuZz0iZW4iPjxoZWFkPjx0aXRsZT5IVFRQIFN0YXR1cyA0MDMg4oCTIEZvcmJpZGRlbjwvdGl0bGU+PHN0eWxlIHR5cGU9InRleHQvY3NzIj5ib2R5IHtmb250LWZhbWlseTpUYWhvbWEsQXJpYWwsc2Fucy1zZXJpZjt9IGgxLCBoMiwgaDMsIGIge2NvbG9yOndoaXRlO2JhY2tncm91bmQtY29sb3I6IzUyNUQ3Njt9IGgxIHtmb250LXNpemU6MjJweDt9IGgyIHtmb250LXNpemU6MTZweDt9IGgzIHtmb250LXNpemU6MTRweDt9IHAge2ZvbnQtc2l6ZToxMnB4O30gYSB7Y29sb3I6YmxhY2s7fSAubGluZSB7aGVpZ2h0OjFweDtiYWNrZ3JvdW5kLWNvbG9yOiM1MjVENzY7Ym9yZGVyOm5vbmU7fTwvc3R5bGU+PC9oZWFkPjxib2R5PjxoMT5IVFRQIFN0YXR1cyA0MDMg4oCTIEZvcmJpZGRlbjwvaDE+PGhyIGNsYXNzPSJsaW5lIiAvPjxwPjxiPlR5cGU8L2I+IFN0YXR1cyBSZXBvcnQ8L3A+PHA+PGI+TWVzc2FnZTwvYj4gRm9yYmlkZGVuPC9wPjxwPjxiPkRlc2NyaXB0aW9uPC9iPiBUaGUgc2VydmVyIHVuZGVyc3Rvb2QgdGhlIHJlcXVlc3QgYnV0IHJlZnVzZXMgdG8gYXV0aG9yaXplIGl0LjwvcD48aHIgY2xhc3M9ImxpbmUiIC8+PGgzPkFwYWNoZSBUb21jYXQvNy4wLjEwMDwvaDM+PC9ib2R5PjwvaHRtbD4=
     http_version: 
-  recorded_at: Tue, 24 Jul 2018 20:24:48 GMT
+  recorded_at: Fri, 25 Sep 2020 23:05:42 GMT
 recorded_with: VCR 4.0.0

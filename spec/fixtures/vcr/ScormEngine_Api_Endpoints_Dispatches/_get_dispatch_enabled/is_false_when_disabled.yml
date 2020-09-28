@@ -8,7 +8,7 @@ http_interactions:
       string: 'false'
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.6.10
+      - ScormEngine Ruby Gem 0.8.1
       Authorization:
       - Basic <BASIC_AUTH>
       Content-Type:
@@ -16,19 +16,31 @@ http_interactions:
   response:
     status:
       code: 204
-      message: ''
+      message: No Content
     headers:
-      date:
-      - Thu, 04 Oct 2018 21:22:25 GMT
-      server:
-      - nginx
       connection:
-      - Close
+      - close
+      date:
+      - Fri, 25 Sep 2020 23:05:45 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Miss from cloudfront
+      via:
+      - 1.1 ed42e29cddf5cc10b8ba8ca7b99004ce.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SLC50-C1
+      x-amz-cf-id:
+      - 4HasoHYyuLlz2GY1cHch2GQb97svI0911hnTy3BTZhYRnZ2raa_HVg==
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Thu, 04 Oct 2018 21:22:25 GMT
+  recorded_at: Fri, 25 Sep 2020 23:05:45 GMT
 - request:
     method: get
     uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/dispatches/testing-dispatch-id-2/enabled
@@ -37,27 +49,39 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.6.10
+      - ScormEngine Ruby Gem 0.8.1
       Authorization:
       - Basic <BASIC_AUTH>
   response:
     status:
       code: 200
-      message: ''
+      message: OK
     headers:
       content-type:
       - application/json
-      date:
-      - Thu, 04 Oct 2018 21:22:26 GMT
-      server:
-      - nginx
       content-length:
       - '5'
       connection:
-      - Close
+      - close
+      date:
+      - Fri, 25 Sep 2020 23:05:45 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Miss from cloudfront
+      via:
+      - 1.1 9e19f7f2387eead34610d87abf26d1cd.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SLC50-C1
+      x-amz-cf-id:
+      - zTbt4SZorVr8l65rktrH8XVieJQXX5Tb_OjuAUpUVXgEAHLRYb6dVA==
     body:
       encoding: UTF-8
       string: 'false'
     http_version: 
-  recorded_at: Thu, 04 Oct 2018 21:22:26 GMT
+  recorded_at: Fri, 25 Sep 2020 23:05:45 GMT
 recorded_with: VCR 4.0.0

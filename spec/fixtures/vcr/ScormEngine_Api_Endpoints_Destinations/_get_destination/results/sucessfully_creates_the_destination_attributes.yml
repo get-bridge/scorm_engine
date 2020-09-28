@@ -7,32 +7,40 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Content-Type:
-      - application/json
       User-Agent:
-      - ScormEngine Ruby Gem 0.3.0
+      - ScormEngine Ruby Gem 0.8.1
       Authorization:
       - Basic <BASIC_AUTH>
   response:
     status:
       code: 200
-      message: ''
+      message: OK
     headers:
       content-type:
       - application/json
-      date:
-      - Mon, 20 Aug 2018 21:19:03 GMT
-      server:
-      - nginx
-      vary:
-      - Accept-Encoding
       content-length:
-      - '40'
+      - '20'
       connection:
-      - Close
+      - close
+      date:
+      - Fri, 25 Sep 2020 23:06:26 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Miss from cloudfront
+      via:
+      - 1.1 794a3d3af21f401cf5ddf53187ea3030.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SLC50-C1
+      x-amz-cf-id:
+      - aRO79P17awA9ghc1g0rXN3_4I-j4PRd8axqBWywWicsb8BrmYk-g_A==
     body:
-      encoding: ASCII-8BIT
+      encoding: UTF-8
       string: '{"name":"Golf Club"}'
     http_version: 
-  recorded_at: Mon, 20 Aug 2018 21:19:03 GMT
+  recorded_at: Fri, 25 Sep 2020 23:06:26 GMT
 recorded_with: VCR 4.0.0

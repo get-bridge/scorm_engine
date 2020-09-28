@@ -70,7 +70,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Tenants::Configuration do
       response = subject.post_tenant_configuration(settings: { "NonExistentSettingTotesBogus" => "YES" })
       expect(response.success?).to eq false
       expect(response.status).to eq 400
-      expect(response.message).to match(/No configuration setting found with id.*NonExistentSettingTotesBogus/)
+      expect(response.message).to match(/NonExistentSettingTotesBogus/)
     end
   end
 

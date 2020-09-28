@@ -33,8 +33,10 @@ module ScormEngine
           if @api_version == 2
             request.headers["engineTenantName"] = tenant unless @without_tenant
           else
-            # "more" pagination urls are fully qualified
-            path = "#{tenant}/#{path}" unless path =~ %r{\Ahttps?://}
+            # "more" pagination urls are fully or relatively qualified
+            unless path =~ %r{\Ahttps?://} || path.start_with?(base_uri.path)
+              path = "#{tenant}/#{path}"
+            end
           end
 
           options = coerce_options(options)

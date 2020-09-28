@@ -8,28 +8,40 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.6.10
+      - ScormEngine Ruby Gem 0.8.1
       Authorization:
       - Basic <BASIC_AUTH>
   response:
     status:
       code: 400
-      message: ''
+      message: Bad Request
     headers:
       content-type:
       - application/json
-      date:
-      - Thu, 04 Oct 2018 21:22:40 GMT
-      server:
-      - nginx
       content-length:
       - '100'
       connection:
-      - Close
+      - close
+      date:
+      - Fri, 25 Sep 2020 23:06:15 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Error from cloudfront
+      via:
+      - 1.1 be07bf9bf37f2e63b7b1c8863b7a11ca.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SLC50-C1
+      x-amz-cf-id:
+      - Hcsr0KZciWb82bI8t7qGUzq3Po2IyiHSitOGaqTBhfgLEFvctFlADA==
     body:
       encoding: UTF-8
       string: '{"message":"''invalid'' is either not a timestamp or seems to be not
         formatted according to ISO 8601"}'
     http_version: 
-  recorded_at: Thu, 04 Oct 2018 21:22:40 GMT
+  recorded_at: Fri, 25 Sep 2020 23:06:15 GMT
 recorded_with: VCR 4.0.0

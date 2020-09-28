@@ -7,32 +7,41 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Content-Type:
-      - application/json
       User-Agent:
-      - ScormEngine Ruby Gem 0.2.0
+      - ScormEngine Ruby Gem 0.8.1
       Authorization:
       - Basic <BASIC_AUTH>
   response:
     status:
       code: 200
-      message: ''
+      message: OK
     headers:
       content-type:
       - application/json
-      date:
-      - Wed, 15 Aug 2018 23:29:16 GMT
-      server:
-      - nginx
-      vary:
-      - Accept-Encoding
       content-length:
-      - '63'
+      - '94'
       connection:
-      - Close
+      - close
+      date:
+      - Fri, 25 Sep 2020 23:05:15 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Miss from cloudfront
+      via:
+      - 1.1 f8e91eeca584f530dcca3e3417221c89.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SLC50-C1
+      x-amz-cf-id:
+      - 5MjPqu8tKMVqCRbWOkSQswLAW6Vjjr1dL0v6CNpnUhtVvLN0Kqoj3g==
     body:
-      encoding: ASCII-8BIT
-      string: '{"version":"2017.1.47.1282","platform":"Java"}'
+      encoding: UTF-8
+      string: '{"version":"20.1.11.284","platform":"Java","distribution":"Rustici
+        Engine + Rustici Dispatch"}'
     http_version: 
-  recorded_at: Wed, 15 Aug 2018 23:29:16 GMT
+  recorded_at: Fri, 25 Sep 2020 23:05:15 GMT
 recorded_with: VCR 4.0.0

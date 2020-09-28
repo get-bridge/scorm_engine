@@ -8,7 +8,7 @@ http_interactions:
       string: '{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":123,"expirationDate":"2018-01-01","externalConfig":null}'
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.6.10
+      - ScormEngine Ruby Gem 0.8.1
       Authorization:
       - Basic <BASIC_AUTH>
       Content-Type:
@@ -16,19 +16,31 @@ http_interactions:
   response:
     status:
       code: 204
-      message: ''
+      message: No Content
     headers:
-      date:
-      - Thu, 04 Oct 2018 21:21:56 GMT
-      server:
-      - nginx
       connection:
-      - Close
+      - close
+      date:
+      - Fri, 25 Sep 2020 23:06:10 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Miss from cloudfront
+      via:
+      - 1.1 52271e90b57cafa189a2830b7c04a6f9.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SLC50-C1
+      x-amz-cf-id:
+      - YizfKKmGGA_qDKlLaNhGELQ-XsLbElmg7B0s7F7haW7ab1qiLPrKSg==
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Thu, 04 Oct 2018 21:21:56 GMT
+  recorded_at: Fri, 25 Sep 2020 23:06:10 GMT
 - request:
     method: get
     uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/dispatches/testing-dispatch-id-2
@@ -37,29 +49,39 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.6.10
+      - ScormEngine Ruby Gem 0.8.1
       Authorization:
       - Basic <BASIC_AUTH>
   response:
     status:
       code: 200
-      message: ''
+      message: OK
     headers:
       content-type:
       - application/json
-      date:
-      - Thu, 04 Oct 2018 21:21:56 GMT
-      server:
-      - nginx
-      vary:
-      - Accept-Encoding
       content-length:
-      - '196'
+      - '324'
       connection:
-      - Close
+      - close
+      date:
+      - Fri, 25 Sep 2020 23:06:10 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Miss from cloudfront
+      via:
+      - 1.1 dc11c8b7421c6da6c05e64d48aa3e898.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SLC50-C1
+      x-amz-cf-id:
+      - 7_5ztY0wq7yKjA4xFvr9EN0RblO2wikgQuVo82QYiuWk2qcB9ZblTA==
     body:
-      encoding: ASCII-8BIT
-      string: '{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":123,"expirationDate":"2018-01-01T00:00:00Z","externalConfig":"scormenginegemtesting-default","enabled":false,"registrationCount":0,"registrationResetDate":"none"}'
+      encoding: UTF-8
+      string: '{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":123,"expirationDate":"2018-01-01T00:00:00.000Z","externalConfig":"scormenginegemtesting-default","enabled":true,"registrationCount":0,"registrationResetDate":"2020-09-25T23:05:54.000Z"}'
     http_version: 
-  recorded_at: Thu, 04 Oct 2018 21:21:56 GMT
+  recorded_at: Fri, 25 Sep 2020 23:06:10 GMT
 recorded_with: VCR 4.0.0

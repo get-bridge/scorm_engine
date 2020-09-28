@@ -8,29 +8,39 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.6.2
+      - ScormEngine Ruby Gem 0.8.1
       Authorization:
       - Basic <BASIC_AUTH>
   response:
     status:
       code: 200
-      message: ''
+      message: OK
     headers:
       content-type:
       - application/json
-      date:
-      - Fri, 24 Aug 2018 21:33:31 GMT
-      server:
-      - nginx
-      vary:
-      - Accept-Encoding
       content-length:
-      - '40'
+      - '20'
       connection:
-      - Close
+      - close
+      date:
+      - Fri, 25 Sep 2020 23:09:22 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Miss from cloudfront
+      via:
+      - 1.1 ed42e29cddf5cc10b8ba8ca7b99004ce.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SLC50-C1
+      x-amz-cf-id:
+      - nYD0LE3zmXLR0Cm9KE4TZb4DzfrK2WA9h-A0Z482dJOl6kOsOM06ow==
     body:
-      encoding: ASCII-8BIT
+      encoding: UTF-8
       string: '{"registrations":[]}'
     http_version: 
-  recorded_at: Fri, 24 Aug 2018 21:33:31 GMT
+  recorded_at: Fri, 25 Sep 2020 23:09:22 GMT
 recorded_with: VCR 4.0.0

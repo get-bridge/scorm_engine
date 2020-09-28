@@ -85,7 +85,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Dispatches do
       end
 
       it "returns the :more key in the raw response" do
-        expect(subject.get_dispatches.raw_response.body["more"]).to match(%r{https?://.*&more=.+})
+        expect(subject.get_dispatches.raw_response.body["more"]).to match(%r{(https?://)?.*&more=.+})
       end
 
       it "returns all the dispatches" do

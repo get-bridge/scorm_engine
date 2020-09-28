@@ -40,7 +40,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations::Configuration do
       response = subject.get_registration_configuration(registration_id: "nonexistent-registration", settings: {})
       expect(response.success?).to eq false
       expect(response.status).to eq 404
-      expect(response.message).to match(/External Registration ID 'nonexistent-registration'/)
+      expect(response.message).to match(/Registration ID 'nonexistent-registration'/)
       expect(response.result).to eq nil
     end
   end
@@ -79,7 +79,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations::Configuration do
       response = subject.post_registration_configuration(registration_id: "nonexistent-registration", settings: {})
       expect(response.success?).to eq false
       expect(response.status).to eq 404
-      expect(response.message).to match(/External Registration ID 'nonexistent-registration'/)
+      expect(response.message).to match(/Registration ID 'nonexistent-registration'/)
       expect(response.result).to eq nil
     end
 
@@ -87,7 +87,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations::Configuration do
       response = subject.post_registration_configuration(registration_id: registration_options[:registration_id], settings: { "NonExistentSettingTotesBogus" => "YES" })
       expect(response.success?).to eq false
       expect(response.status).to eq 400
-      expect(response.message).to match(/No configuration setting found with id.*NonExistentSettingTotesBogus/)
+      expect(response.message).to match(/NonExistentSettingTotesBogus/)
     end
   end
 
@@ -111,7 +111,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations::Configuration do
       response = subject.get_registration_configuration_setting(registration_id: "nonexistent-registration", setting_id: "PlayerStatusRollupModeThresholdScore")
       expect(response.success?).to eq false
       expect(response.status).to eq 404
-      expect(response.message).to match(/External Registration ID 'nonexistent-registration'/)
+      expect(response.message).to match(/Registration ID 'nonexistent-registration'/)
       expect(response.result).to eq nil
     end
 
@@ -144,7 +144,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations::Configuration do
       response = subject.put_registration_configuration_setting(registration_id: "nonexistent-registration", setting_id: "PlayerStatusRollupModeThresholdScore", value: "42")
       expect(response.success?).to eq false
       expect(response.status).to eq 404
-      expect(response.message).to match(/External Registration ID 'nonexistent-registration'/)
+      expect(response.message).to match(/Registration ID 'nonexistent-registration'/)
       expect(response.result).to eq nil
     end
 

@@ -8,30 +8,42 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.6.2
+      - ScormEngine Ruby Gem 0.8.1
       Authorization:
       - Basic <BASIC_AUTH>
   response:
     status:
       code: 200
-      message: ''
+      message: OK
     headers:
       content-type:
       - application/json
-      date:
-      - Fri, 24 Aug 2018 21:33:24 GMT
-      server:
-      - nginx
-      vary:
-      - Accept-Encoding
       content-length:
-      - '354'
+      - '2496'
       connection:
-      - Close
+      - close
+      date:
+      - Fri, 25 Sep 2020 23:09:11 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Miss from cloudfront
+      via:
+      - 1.1 a2a145b915c6e207f03377a67fbebd5f.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SLC50-C1
+      x-amz-cf-id:
+      - 39pq4LCoIAQ2rzwfEwkSSPamjA8IBWHVUZiMSSIOuftql5Op3fbi4Q==
     body:
-      encoding: ASCII-8BIT
-      string: '{"registrations":[{"id":"testing-golf-explained-registration-1","instance":0,"updated":"2018-08-24T21:33:12.000Z","registrationCompletion":"UNKNOWN","registrationSuccess":"Unknown","totalSecondsTracked":0.0,"lastAccessDate":"2018-08-24T21:33:12.000Z","createdDate":"2018-08-24T21:33:12.000Z","course":{"id":"testing-golf-explained","version":0,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2018-08-15T23:19:49.000Z"},"learner":{"id":"testing-golf-explained-learner-1","firstName":"Arnold","lastName":"Palmer"},"globalObjectives":[],"sharedData":[]}]}'
+      encoding: UTF-8
+      string: '{"registrations":[{"id":"testing-golf-explained-registration-1","instance":0,"updated":"2020-09-25T22:50:54.000Z","registrationCompletion":"UNKNOWN","registrationSuccess":"Unknown","totalSecondsTracked":0.0,"lastAccessDate":"2020-09-25T22:50:54.000Z","createdDate":"2020-09-25T22:50:54.000Z","course":{"id":"testing-golf-explained","version":0,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":0,"updated":"2020-09-25T22:50:54.000Z"},"learner":{"id":"testing-golf-explained-learner-1","firstName":"Arnold","lastName":"Palmer"},"globalObjectives":[],"activityDetails":{"id":"golf_sample_default_org","title":"Golf
+        Explained - Run-time Basic Calls","activityProgressKnown":false,"attempts":0,"activityCompletion":"UNKNOWN","previousAttemptCompletion":"Unknown","activitySuccess":"UNKNOWN","attemptedDuringThisAttempt":false,"suspended":false,"active":false,"included":false,"ordinal":0,"selectedChildren":false,"randomizedChildren":false,"children":[{"id":"item_1","title":"Golf
+        Explained","activityProgressKnown":false,"attempts":0,"activityCompletion":"UNKNOWN","previousAttemptCompletion":"Unknown","activitySuccess":"UNKNOWN","timeTracked":"0000:00:00","attemptedDuringThisAttempt":false,"suspended":false,"active":false,"included":false,"ordinal":0,"selectedChildren":false,"randomizedChildren":false,"children":[],"objectives":[{"id":"","primary":true,"firstScoreScaled":0.0,"objectiveCompletion":"Unknown","objectiveSuccess":"UNKNOWN","previousObjectiveSuccess":"Unknown"}],"staticProperties":{"completionThreshold":"","launchData":"","maxTimeAllowed":"","scaledPassingScore":0.0,"scaledPassingScoreUsed":false,"timeLimitAction":""},"runtime":{"completionStatus":"unknown","credit":"credit","entry":"abinitio","exit":"Unknown","learnerPreference":{"audioLevel":1.0,"language":"","deliverySpeed":1.0,"audioCaptioning":0},"mode":"Normal","progressMeasure":"","scoreScaled":"","scoreRaw":"","scoreMin":"","scoreMax":"","totalTime":"0000:00:00","timeTracked":"0000:00:00","successStatus":"Unknown","suspendData":"","learnerComments":[],"lmsComments":[],"runtimeInteractions":[],"runtimeObjectives":[]}}],"objectives":[{"id":"","primary":true,"firstScoreScaled":0.0,"objectiveCompletion":"Unknown","objectiveSuccess":"UNKNOWN","previousObjectiveSuccess":"Unknown"}],"staticProperties":{"completionThreshold":"","launchData":"","maxTimeAllowed":"","scaledPassingScore":0.0,"scaledPassingScoreUsed":false,"timeLimitAction":""}}}]}'
     http_version: 
-  recorded_at: Fri, 24 Aug 2018 21:33:25 GMT
+  recorded_at: Fri, 25 Sep 2020 23:09:11 GMT
 recorded_with: VCR 4.0.0

@@ -7,59 +7,81 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Content-Type:
-      - application/json
       User-Agent:
-      - ScormEngine Ruby Gem 0.1.0
+      - ScormEngine Ruby Gem 0.8.1
       Authorization:
       - Basic <BASIC_AUTH>
   response:
     status:
       code: 200
-      message: ''
+      message: OK
     headers:
       content-type:
       - application/json
-      date:
-      - Wed, 25 Jul 2018 22:10:07 GMT
-      server:
-      - nginx
       content-length:
       - '14'
       connection:
-      - Close
+      - close
+      date:
+      - Fri, 25 Sep 2020 23:05:03 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Miss from cloudfront
+      via:
+      - 1.1 3beac575dd806b6224c0825634a28bc8.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SLC50-C1
+      x-amz-cf-id:
+      - XYbjVhz0uhrO1eKcY2ZC_KeBRjJXh78Dliscm-vG5_Fp8Xhj7E3CNg==
     body:
       encoding: UTF-8
-      string: '{"value":"80"}'
+      string: '{"value":"42"}'
     http_version: 
-  recorded_at: Wed, 25 Jul 2018 22:10:07 GMT
+  recorded_at: Fri, 25 Sep 2020 23:05:03 GMT
 - request:
     method: put
     uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/registrations/testing-golf-explained-registration-1/configuration/PlayerStatusRollupModeThresholdScore
     body:
       encoding: UTF-8
-      string: '{"value":"81"}'
+      string: '{"value":"43"}'
     headers:
-      Content-Type:
-      - application/json
       User-Agent:
-      - ScormEngine Ruby Gem 0.1.0
+      - ScormEngine Ruby Gem 0.8.1
       Authorization:
       - Basic <BASIC_AUTH>
+      Content-Type:
+      - application/json
   response:
     status:
       code: 204
-      message: ''
+      message: No Content
     headers:
-      date:
-      - Wed, 25 Jul 2018 22:10:08 GMT
-      server:
-      - nginx
       connection:
-      - Close
+      - close
+      date:
+      - Fri, 25 Sep 2020 23:05:03 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Miss from cloudfront
+      via:
+      - 1.1 34d83bdced2ff151ec8c14c89b681519.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SLC50-C1
+      x-amz-cf-id:
+      - AkTeeyMRhsmOltoy8RUNJPOxGY-D7ilNBnHj7qSj7MWJXSj-o0UtsQ==
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Wed, 25 Jul 2018 22:10:08 GMT
+  recorded_at: Fri, 25 Sep 2020 23:05:03 GMT
 recorded_with: VCR 4.0.0

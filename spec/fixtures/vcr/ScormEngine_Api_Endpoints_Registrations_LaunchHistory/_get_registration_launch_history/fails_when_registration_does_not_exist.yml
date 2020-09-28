@@ -7,32 +7,40 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Content-Type:
-      - application/json
       User-Agent:
-      - ScormEngine Ruby Gem 0.1.0
+      - ScormEngine Ruby Gem 0.8.1
       Authorization:
       - Basic <BASIC_AUTH>
   response:
     status:
       code: 404
-      message: ''
+      message: Not Found
     headers:
       content-type:
       - application/json
-      date:
-      - Fri, 27 Jul 2018 23:29:58 GMT
-      server:
-      - nginx
-      vary:
-      - Accept-Encoding
       content-length:
-      - '78'
+      - '65'
       connection:
-      - Close
+      - close
+      date:
+      - Fri, 25 Sep 2020 23:08:40 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Error from cloudfront
+      via:
+      - 1.1 9b5dfa5054d4b87503050003e7571c65.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SLC50-C1
+      x-amz-cf-id:
+      - 4FSLo8UnUGhA4NKI-xB_v1hWM9WHWSI9YwsFdvtlEbS_KonAbJpAQA==
     body:
-      encoding: ASCII-8BIT
-      string: '{"message":"External Registration ID ''reg-does-not-exist''"}'
+      encoding: UTF-8
+      string: '{"message":"Registration ID ''reg-does-not-exist'' does not exist"}'
     http_version: 
-  recorded_at: Fri, 27 Jul 2018 23:29:58 GMT
+  recorded_at: Fri, 25 Sep 2020 23:08:40 GMT
 recorded_with: VCR 4.0.0

@@ -7,26 +7,38 @@ http_interactions:
       encoding: UTF-8
       string: '{"settings":[{"settingId":"PlayerCaptureHistoryDetailed","value":"NO"},{"settingId":"PlayerStatusRollupModeThresholdScore","value":"80"}]}'
     headers:
-      Content-Type:
-      - application/json
       User-Agent:
-      - ScormEngine Ruby Gem 0.1.0
+      - ScormEngine Ruby Gem 0.8.1
       Authorization:
       - Basic <BASIC_AUTH>
+      Content-Type:
+      - application/json
   response:
     status:
       code: 204
-      message: ''
+      message: No Content
     headers:
-      date:
-      - Wed, 25 Jul 2018 22:18:22 GMT
-      server:
-      - nginx
       connection:
-      - Close
+      - close
+      date:
+      - Fri, 25 Sep 2020 23:05:05 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Miss from cloudfront
+      via:
+      - 1.1 be07bf9bf37f2e63b7b1c8863b7a11ca.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SLC50-C1
+      x-amz-cf-id:
+      - dcLJj3LLHasJHLXlsRvb3jgmGNX0nY-FT-tevwrFQ34O5ehAhUywZQ==
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Wed, 25 Jul 2018 22:18:23 GMT
+  recorded_at: Fri, 25 Sep 2020 23:05:06 GMT
 recorded_with: VCR 4.0.0

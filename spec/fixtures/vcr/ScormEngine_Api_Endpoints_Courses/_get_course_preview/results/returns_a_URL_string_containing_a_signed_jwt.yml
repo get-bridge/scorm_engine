@@ -19,11 +19,11 @@ http_interactions:
       content-type:
       - application/json
       content-length:
-      - '400'
+      - '241'
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:05:17 GMT
+      - Mon, 28 Sep 2020 20:29:44 GMT
       p3p:
       - CP="NOI"
       server:
@@ -33,14 +33,14 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 93602184543f38c8cb58276d2ff471a9.cloudfront.net (CloudFront)
+      - 1.1 b2e880ac67c1fba390623b9fc04bd63a.cloudfront.net (CloudFront)
       x-amz-cf-pop:
-      - SLC50-C1
+      - DEN50-C2
       x-amz-cf-id:
-      - doZXtF8IqZhuQvkV7rZcgSoao80x8cD0lKBf7MKL2o9RHkMNWPT6jg==
+      - 2SEzzNJym9sJS_gDUElR4FiwiFxUwm78gpD2njfiu8Iw7sQAvpodzA==
     body:
       encoding: UTF-8
-      string: '{"launchLink":"/ScormEngineInterface/defaultui/launch.jsp?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZWRpcmVjdE9uRXhpdFVybCI6Imh0dHBzOi8vZXhhbXBsZS5jb20iLCJwYWNrYWdlIjoiQXBpQ291cnNlSWR8dGVzdGluZy1nb2xmLWV4cGxhaW5lZCFWZXJzaW9uSWR8MCIsImNvbmZpZ3VyYXRpb24iOiJTY29ybUVuZ2luZUdlbVRlc3RpbmctZGVmYXVsdCIsInRyYWNraW5nIjoiZmFsc2UiLCJmb3JjZVJldmlldyI6ImZhbHNlIn0.hjR2UUHJx6zxGP-w8o2S1ucW365V4Q7mCu6zCoesPDo"}'
+      string: '{"launchLink":"/ScormEngineInterface/defaultui/launch.jsp?package=ApiCourseId%7Ctesting-golf-explained%21VersionId%7C0&configuration=ScormEngineGemTesting-default&tracking=false&RedirectOnExitUrl=https%3A%2F%2Fexample.com&forceReview=false"}'
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:05:18 GMT
+  recorded_at: Mon, 28 Sep 2020 20:29:44 GMT
 recorded_with: VCR 4.0.0

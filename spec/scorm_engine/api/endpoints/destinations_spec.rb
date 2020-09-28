@@ -48,7 +48,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Destinations do
           expect(destinations.success?).to eq false
           expect(destinations.status).to eq 400
           expect(destinations.results.to_a).to eq []
-          expect(destinations.message).to match(/'invalid' is either not a timestamp or seems to be not formatted according to ISO 8601/)
+          expect(destinations.message).to match(/'invalid'/)
         end
       end
     end
@@ -63,7 +63,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Destinations do
       end
 
       it "returns the :more key in the raw response" do
-        expect(subject.get_destinations.raw_response.body["more"]).to match(%r{https?://.*&more=.+})
+        expect(subject.get_destinations.raw_response.body["more"]).to match(%r{(https?://)?.*&more=.+})
       end
 
       it "returns all the destinations" do

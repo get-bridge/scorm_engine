@@ -25,7 +25,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
           course = courses.results.detect { |c| c.id == "testing-golf-explained" }
           expect(course.version).to be >= 0
           expect(course.title).to eq "Golf Explained - Run-time Basic Calls"
-          expect(course.registration_count).to eq 0
+          expect(course.registration_count).to eq 1
           expect(course.updated).to be_a Time
           expect(course.description).to eq nil
         end
@@ -42,7 +42,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
         response = subject.get_courses(course_id: "invalid-bogus")
         expect(response.success?).to eq false
         expect(response.status).to eq 404
-        expect(response.message).to match(/External Package ID 'invalid-bogus'/)
+        expect(response.message).to match(/'invalid-bogus'/)
       end
     end
 
@@ -76,7 +76,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
       end
 
       it "returns the :more key in the raw response" do
-        expect(subject.get_courses.raw_response.body["more"]).to match(%r{https?://.*&more=.+})
+        expect(subject.get_courses.raw_response.body["more"]).to match(%r{(https?://)?.*&more=.+})
       end
 
       it "returns all the courses" do
@@ -106,7 +106,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
       response = subject.delete_course(course_id: "nonexistent-course")
       expect(response.success?).to eq false
       expect(response.status).to eq 404
-      expect(response.message).to match(/External Package ID 'nonexistent-course'/)
+      expect(response.message).to match(/'nonexistent-course'/)
     end
   end
 
@@ -136,7 +136,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
       response = subject.get_course_preview(course_id: "nonexistent-course")
       expect(response.success?).to eq false
       expect(response.status).to eq 404
-      expect(response.message).to match(/External Package ID 'nonexistent-course'/)
+      expect(response.message).to match(/'nonexistent-course'/)
       expect(response.result).to eq nil
     end
   end
@@ -151,7 +151,8 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
     describe "results" do
       it "returns a URL string" do
         url = response.result
-        expect(url).to match(%r{/defaultui/launch.jsp\?.*testing-golf-explained.*RedirectOnExitUrl=https%3A%2F%2Fexample.com})
+        expect(url).to match(%r{/ScormEngineInterface/defaultui/launch.jsp\?jwt=.*})
+        # expect(url).to match(%r{/defaultui/launch.jsp\?.*testing-golf-explained.*RedirectOnExitUrl=https%3A%2F%2Fexample.com})
       end
     end
 
@@ -159,7 +160,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
       response = subject.get_course_preview(course_id: "nonexistent-course")
       expect(response.success?).to eq false
       expect(response.status).to eq 404
-      expect(response.message).to match(/External Package ID 'nonexistent-course'/)
+      expect(response.message).to match(/'nonexistent-course'/)
       expect(response.result).to eq nil
     end
   end

@@ -7,26 +7,38 @@ http_interactions:
       encoding: UTF-8
       string: '{"destinations":[{"id":"testing-golf-club","data":{"name":"Golf Club"}}]}'
     headers:
-      Content-Type:
-      - application/json
       User-Agent:
-      - ScormEngine Ruby Gem 0.3.0
+      - ScormEngine Ruby Gem 0.8.1
       Authorization:
       - Basic <BASIC_AUTH>
+      Content-Type:
+      - application/json
   response:
     status:
       code: 204
-      message: ''
+      message: No Content
     headers:
-      date:
-      - Mon, 20 Aug 2018 21:19:10 GMT
-      server:
-      - nginx
       connection:
-      - Close
+      - close
+      date:
+      - Fri, 25 Sep 2020 23:06:34 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Miss from cloudfront
+      via:
+      - 1.1 2a3b50173a77fe71ee16466542bd1fdd.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SLC50-C1
+      x-amz-cf-id:
+      - KTXTHuyNC_dqw6ytyR7Y5GztWNHxvrHBHbLETY1vGL2xAIsU8jqeOA==
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Mon, 20 Aug 2018 21:19:10 GMT
+  recorded_at: Fri, 25 Sep 2020 23:06:34 GMT
 recorded_with: VCR 4.0.0

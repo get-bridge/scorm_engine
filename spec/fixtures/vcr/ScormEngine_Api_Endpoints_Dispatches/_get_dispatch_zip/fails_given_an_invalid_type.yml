@@ -8,27 +8,39 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.6.10
+      - ScormEngine Ruby Gem 0.8.1
       Authorization:
       - Basic <BASIC_AUTH>
   response:
     status:
       code: 500
-      message: ''
+      message: Internal Server Error
     headers:
       content-type:
       - application/json
-      date:
-      - Thu, 04 Oct 2018 21:22:08 GMT
-      server:
-      - nginx
       content-length:
       - '60'
       connection:
-      - Close
+      - close
+      date:
+      - Fri, 25 Sep 2020 23:06:03 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Error from cloudfront
+      via:
+      - 1.1 794a3d3af21f401cf5ddf53187ea3030.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SLC50-C1
+      x-amz-cf-id:
+      - vLGjNMXna2BRMKqCJmqzRgOzS-fpHgYsi80aspPjgtNJn4XWca6zQw==
     body:
       encoding: UTF-8
       string: '{"message":"The value ''OOPS'' is not a valid Dispatch Type."}'
     http_version: 
-  recorded_at: Thu, 04 Oct 2018 21:22:08 GMT
+  recorded_at: Fri, 25 Sep 2020 23:06:03 GMT
 recorded_with: VCR 4.0.0

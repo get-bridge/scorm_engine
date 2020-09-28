@@ -7,32 +7,40 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Content-Type:
-      - application/json
       User-Agent:
-      - ScormEngine Ruby Gem 0.1.0
+      - ScormEngine Ruby Gem 0.8.1
       Authorization:
       - Basic <BASIC_AUTH>
   response:
     status:
       code: 200
-      message: ''
+      message: OK
     headers:
       content-type:
       - application/json
-      date:
-      - Tue, 24 Jul 2018 20:24:47 GMT
-      server:
-      - nginx
-      vary:
-      - Accept-Encoding
       content-length:
-      - '44'
+      - '74'
       connection:
-      - Close
+      - close
+      date:
+      - Fri, 25 Sep 2020 23:05:41 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Miss from cloudfront
+      via:
+      - 1.1 a2a145b915c6e207f03377a67fbebd5f.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SLC50-C1
+      x-amz-cf-id:
+      - RhcdNJaB7yN6L9BWSnGujqixNR7cP8JQjVxmy6A8m1SxcQdMauDt6g==
     body:
-      encoding: ASCII-8BIT
-      string: '{"message":"API is up."}'
+      encoding: UTF-8
+      string: '{"message":"API is up.\nCurrent System Time: 2020-09-25T23:05:41.839Z.\n"}'
     http_version: 
-  recorded_at: Tue, 24 Jul 2018 20:24:47 GMT
+  recorded_at: Fri, 25 Sep 2020 23:05:41 GMT
 recorded_with: VCR 4.0.0

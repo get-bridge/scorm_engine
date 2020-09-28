@@ -183,7 +183,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
       aggregate_failures do
         expect(response.success?).to eq false
         expect(response.status).to eq 400
-        expect(response.message).to match(/External Package ID 'invalid-bogus'/)
+        expect(response.message).to match(/'invalid-bogus'/)
       end
     end
 
@@ -215,7 +215,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
       response = subject.get_registration_launch_link(registration_id: "nonexistent-registration")
       expect(response.success?).to eq false
       expect(response.status).to eq 404
-      expect(response.message).to match(/External Registration ID 'nonexistent-registration'/)
+      expect(response.message).to match(/'nonexistent-registration'/)
       expect(response.result).to eq nil
     end
   end

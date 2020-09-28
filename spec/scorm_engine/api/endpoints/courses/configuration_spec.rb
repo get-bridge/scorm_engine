@@ -29,7 +29,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Configuration do
       response = subject.get_course_configuration(course_id: "nonexistent-course")
       expect(response.success?).to eq false
       expect(response.status).to eq 404
-      expect(response.message).to match(/External Package ID 'nonexistent-course'/)
+      expect(response.message).to match(/'nonexistent-course'/)
       expect(response.result).to eq nil
     end
   end
@@ -68,14 +68,14 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Configuration do
       response = subject.post_course_configuration(course_id: "nonexistent-course", settings: {})
       expect(response.success?).to eq false
       expect(response.status).to eq 404
-      expect(response.message).to match(/External Package ID 'nonexistent-course'/)
+      expect(response.message).to match(/'nonexistent-course'/)
     end
 
     it "fails when settings are invalid" do
       response = subject.post_course_configuration(course_id: "testing-golf-explained", settings: { "NonExistentSettingTotesBogus" => "YES" })
       expect(response.success?).to eq false
       expect(response.status).to eq 400
-      expect(response.message).to match(/No configuration setting found with id.*NonExistentSettingTotesBogus/)
+      expect(response.message).to match(/NonExistentSettingTotesBogus/)
     end
   end
 
@@ -99,7 +99,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Configuration do
       response = subject.get_course_configuration_setting(course_id: "nonexistent-course", setting_id: "PlayerStatusRollupModeThresholdScore")
       expect(response.success?).to eq false
       expect(response.status).to eq 404
-      expect(response.message).to match(/External Package ID 'nonexistent-course'/)
+      expect(response.message).to match(/'nonexistent-course'/)
       expect(response.result).to eq nil
     end
 
@@ -133,7 +133,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Configuration do
       response = subject.put_course_configuration_setting(course_id: "nonexistent-course", setting_id: "PlayerStatusRollupModeThresholdScore", value: "42")
       expect(response.success?).to eq false
       expect(response.status).to eq 404
-      expect(response.message).to match(/External Package ID 'nonexistent-course'/)
+      expect(response.message).to match(/'nonexistent-course'/)
     end
 
     it "fails when setting_id is invalid" do

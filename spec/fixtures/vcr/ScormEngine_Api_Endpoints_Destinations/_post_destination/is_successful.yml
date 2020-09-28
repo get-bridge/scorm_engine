@@ -7,28 +7,38 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Content-Type:
-      - application/json
       User-Agent:
-      - ScormEngine Ruby Gem 0.3.0
+      - ScormEngine Ruby Gem 0.8.1
       Authorization:
       - Basic <BASIC_AUTH>
   response:
     status:
       code: 204
-      message: ''
+      message: No Content
     headers:
-      date:
-      - Mon, 20 Aug 2018 21:19:09 GMT
-      server:
-      - nginx
       connection:
-      - Close
+      - close
+      date:
+      - Fri, 25 Sep 2020 23:06:34 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Miss from cloudfront
+      via:
+      - 1.1 0a35faf8a81bc2da87034be9b38a5c9a.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SLC50-C1
+      x-amz-cf-id:
+      - EGwbdypGn-4bIUp5-OMPxrFay2NFYrUh1IgX0bRiyePEnXTIDULVlg==
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Mon, 20 Aug 2018 21:19:09 GMT
+  recorded_at: Fri, 25 Sep 2020 23:06:34 GMT
 - request:
     method: post
     uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/destinations
@@ -36,26 +46,38 @@ http_interactions:
       encoding: UTF-8
       string: '{"destinations":[{"id":"testing-golf-club","data":{"name":"Golf Club"}}]}'
     headers:
-      Content-Type:
-      - application/json
       User-Agent:
-      - ScormEngine Ruby Gem 0.3.0
+      - ScormEngine Ruby Gem 0.8.1
       Authorization:
       - Basic <BASIC_AUTH>
+      Content-Type:
+      - application/json
   response:
     status:
       code: 204
-      message: ''
+      message: No Content
     headers:
-      date:
-      - Mon, 20 Aug 2018 21:19:09 GMT
-      server:
-      - nginx
       connection:
-      - Close
+      - close
+      date:
+      - Fri, 25 Sep 2020 23:06:34 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Miss from cloudfront
+      via:
+      - 1.1 52271e90b57cafa189a2830b7c04a6f9.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SLC50-C1
+      x-amz-cf-id:
+      - 9wLPOFBPkc_v9UJI3YEDt_gXb_znBcBy5UqYtvuZs540io8YusSwdQ==
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Mon, 20 Aug 2018 21:19:09 GMT
+  recorded_at: Fri, 25 Sep 2020 23:06:34 GMT
 recorded_with: VCR 4.0.0

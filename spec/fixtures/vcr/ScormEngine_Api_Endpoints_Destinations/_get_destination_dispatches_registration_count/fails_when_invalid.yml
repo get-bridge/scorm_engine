@@ -7,32 +7,40 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Content-Type:
-      - application/json
       User-Agent:
-      - ScormEngine Ruby Gem 0.3.0
+      - ScormEngine Ruby Gem 0.8.1
       Authorization:
       - Basic <BASIC_AUTH>
   response:
     status:
       code: 404
-      message: ''
+      message: Not Found
     headers:
       content-type:
       - application/json
-      date:
-      - Mon, 20 Aug 2018 21:19:00 GMT
-      server:
-      - nginx
-      vary:
-      - Accept-Encoding
       content-length:
-      - '79'
+      - '68'
       connection:
-      - Close
+      - close
+      date:
+      - Fri, 25 Sep 2020 23:06:27 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Error from cloudfront
+      via:
+      - 1.1 c9bc51c60922bd251aad1b28f0896cce.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SLC50-C1
+      x-amz-cf-id:
+      - 19qUY57FC4UIm3beRwcEYIjTSw3MBoSo_y3hmLakFrCS42uHvBzCmg==
     body:
-      encoding: ASCII-8BIT
+      encoding: UTF-8
       string: '{"message":"No destinations found with ID: nonexistent-destination"}'
     http_version: 
-  recorded_at: Mon, 20 Aug 2018 21:19:00 GMT
+  recorded_at: Fri, 25 Sep 2020 23:06:27 GMT
 recorded_with: VCR 4.0.0
