@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -19,11 +19,11 @@ http_interactions:
       content-type:
       - application/json
       content-length:
-      - '895'
+      - '915'
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:06:31 GMT
+      - Tue, 10 Nov 2020 22:58:17 GMT
       p3p:
       - CP="NOI"
       server:
@@ -33,14 +33,14 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 6fd49f86f210f7efc9603d6f872dd0cd.cloudfront.net (CloudFront)
+      - 1.1 fa20ae3068db1bd7f33b9b9f40a36436.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - _pbCGHEV1x3a6PiU2bmptyvS9VObQd8D63Voy5TEB-Inmup_iTeioQ==
+      - xV7iuuyBqRIIFHCu4ZNp3ocd3AJtP9NSpdJuh1gf3bmfYyJhAqmuhw==
     body:
       encoding: UTF-8
-      string: '{"destinations":[{"id":"testing-golf-club","data":{"name":"Golf Club"}},{"id":"paginated-destination-0","data":{"name":"paginated-destination-0"}},{"id":"paginated-destination-1","data":{"name":"paginated-destination-1"}},{"id":"paginated-destination-2","data":{"name":"paginated-destination-2"}},{"id":"paginated-destination-3","data":{"name":"paginated-destination-3"}},{"id":"paginated-destination-4","data":{"name":"paginated-destination-4"}},{"id":"paginated-destination-5","data":{"name":"paginated-destination-5"}},{"id":"paginated-destination-6","data":{"name":"paginated-destination-6"}},{"id":"paginated-destination-7","data":{"name":"paginated-destination-7"}},{"id":"paginated-destination-8","data":{"name":"paginated-destination-8"}}],"more":"/ScormEngineInterface/api/v1/scormenginegemtesting-default/destinations?configuration=ScormEngineGemTesting-default&more=AAABdMd4wbAAAAAN"}'
+      string: '{"destinations":[{"id":"paginated-destination-0","data":{"name":"paginated-destination-0"}},{"id":"paginated-destination-1","data":{"name":"paginated-destination-1"}},{"id":"paginated-destination-2","data":{"name":"paginated-destination-2"}},{"id":"paginated-destination-3","data":{"name":"paginated-destination-3"}},{"id":"paginated-destination-4","data":{"name":"paginated-destination-4"}},{"id":"paginated-destination-5","data":{"name":"paginated-destination-5"}},{"id":"paginated-destination-6","data":{"name":"paginated-destination-6"}},{"id":"paginated-destination-7","data":{"name":"paginated-destination-7"}},{"id":"paginated-destination-8","data":{"name":"paginated-destination-8"}},{"id":"paginated-destination-9","data":{"name":"paginated-destination-9"}}],"more":"/ScormEngineInterface/api/v1/scormenginegemtesting-default/destinations?configuration=ScormEngineGemTesting-default&more=AAABdOX7hGAAAAAk"}'
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:06:31 GMT
+  recorded_at: Tue, 10 Nov 2020 22:58:17 GMT
 recorded_with: VCR 4.0.0

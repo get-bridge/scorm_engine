@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -19,95 +19,11 @@ http_interactions:
       content-type:
       - application/json
       content-length:
-      - '13'
+      - '14'
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:05:09 GMT
-      p3p:
-      - CP="NOI"
-      server:
-      - Apache
-      x-xss-protection:
-      - 1; mode=block
-      x-cache:
-      - Miss from cloudfront
-      via:
-      - 1.1 34d83bdced2ff151ec8c14c89b681519.cloudfront.net (CloudFront)
-      x-amz-cf-pop:
-      - SLC50-C1
-      x-amz-cf-id:
-      - "-fanIbYvzGxeMlOJtEtpePGI3vX8ZzM1GXU8rMBK539wOJXSlHULuw=="
-    body:
-      encoding: UTF-8
-      string: '{"value":"1"}'
-    http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:05:09 GMT
-- request:
-    method: put
-    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses/testing-golf-explained/configuration/PlayerStatusRollupModeThresholdScore
-    body:
-      encoding: UTF-8
-      string: '{"value":"2"}'
-    headers:
-      User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
-      Authorization:
-      - Basic <BASIC_AUTH>
-      Content-Type:
-      - application/json
-  response:
-    status:
-      code: 204
-      message: No Content
-    headers:
-      connection:
-      - close
-      date:
-      - Fri, 25 Sep 2020 23:05:09 GMT
-      p3p:
-      - CP="NOI"
-      server:
-      - Apache
-      x-xss-protection:
-      - 1; mode=block
-      x-cache:
-      - Miss from cloudfront
-      via:
-      - 1.1 dc20c07954a9ed19de10771d33e5e35a.cloudfront.net (CloudFront)
-      x-amz-cf-pop:
-      - SLC50-C1
-      x-amz-cf-id:
-      - rlvnM1i2-rA07w72Mbw8lC3njAn9bo0OcBlmz0FuNQlx3bKopt_bBg==
-    body:
-      encoding: UTF-8
-      string: ''
-    http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:05:09 GMT
-- request:
-    method: get
-    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses/testing-golf-explained/configuration/PlayerStatusRollupModeThresholdScore
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
-      Authorization:
-      - Basic <BASIC_AUTH>
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      content-type:
-      - application/json
-      content-length:
-      - '13'
-      connection:
-      - close
-      date:
-      - Fri, 25 Sep 2020 23:05:09 GMT
+      - Tue, 10 Nov 2020 22:57:22 GMT
       p3p:
       - CP="NOI"
       server:
@@ -121,10 +37,94 @@ http_interactions:
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - rxCDMODiWuFv2K2snfw5tm2vWEUT9eiC0a1zdddkNC0nZtW7bKNVPg==
+      - m1br56xp3wHQkSfLnKAQSVtdfuCqzc6zC1Rm3ZZaw2IUn3ggci1tBg==
     body:
       encoding: UTF-8
-      string: '{"value":"2"}'
+      string: '{"value":"43"}'
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:05:09 GMT
+  recorded_at: Tue, 10 Nov 2020 22:57:22 GMT
+- request:
+    method: put
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses/testing-golf-explained/configuration/PlayerStatusRollupModeThresholdScore
+    body:
+      encoding: UTF-8
+      string: '{"value":"44"}'
+    headers:
+      User-Agent:
+      - ScormEngine Ruby Gem 0.8.2
+      Authorization:
+      - Basic <BASIC_AUTH>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      connection:
+      - close
+      date:
+      - Tue, 10 Nov 2020 22:57:22 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Miss from cloudfront
+      via:
+      - 1.1 b165299644482a8ffbc85462a8b9e7f1.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SLC50-C1
+      x-amz-cf-id:
+      - h_ccJrO8OU01GqUJI8BPFFaUKZxsPJffmHGGKw_Uthhb_x9shhxcFQ==
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Tue, 10 Nov 2020 22:57:22 GMT
+- request:
+    method: get
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses/testing-golf-explained/configuration/PlayerStatusRollupModeThresholdScore
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - ScormEngine Ruby Gem 0.8.2
+      Authorization:
+      - Basic <BASIC_AUTH>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json
+      content-length:
+      - '14'
+      connection:
+      - close
+      date:
+      - Tue, 10 Nov 2020 22:57:22 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Miss from cloudfront
+      via:
+      - 1.1 024f97192fe648974da2251fbcc71f39.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SLC50-C1
+      x-amz-cf-id:
+      - uUn4ISdro10suFwAn2JP0VDmvnm6krLRAk7a9vzjL7yokqhEuLIrFQ==
+    body:
+      encoding: UTF-8
+      string: '{"value":"44"}'
+    http_version: 
+  recorded_at: Tue, 10 Nov 2020 22:57:22 GMT
 recorded_with: VCR 4.0.0

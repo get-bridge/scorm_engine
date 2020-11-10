@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -23,7 +23,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:09:16 GMT
+      - Tue, 10 Nov 2020 22:54:50 GMT
       p3p:
       - CP="NOI"
       server:
@@ -33,14 +33,14 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 3a3c5f259ae7ff22c721cf2dd9f734af.cloudfront.net (CloudFront)
+      - 1.1 4459c2044bad72015f32a80513665f32.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - 0Rs-8qUi2T7Sh4yTTsqq3-vNV46S75_V4KnUCzDtDH3PFFa3RTfgyQ==
+      - hudDEpabMrmrYXreVN7GgaqiSRjvv91fhe0FJ-amPinPKzmzMS7bnA==
     body:
       encoding: UTF-8
       string: '{"launchLink":"/ScormEngineInterface/defaultui/launch.jsp?configuration=ScormEngineGemTesting-default&registration=testing-golf-explained-registration-1&RedirectOnExitUrl=https%3A%2F%2Fexample.com&forceReview=false"}'
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:09:16 GMT
+  recorded_at: Tue, 10 Nov 2020 22:54:50 GMT
 recorded_with: VCR 4.0.0

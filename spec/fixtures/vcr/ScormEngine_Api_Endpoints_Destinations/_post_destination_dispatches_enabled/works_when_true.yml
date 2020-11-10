@@ -8,7 +8,7 @@ http_interactions:
       string: 'true'
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
       Content-Type:
@@ -21,7 +21,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:06:24 GMT
+      - Tue, 10 Nov 2020 22:58:05 GMT
       p3p:
       - CP="NOI"
       server:
@@ -35,10 +35,10 @@ http_interactions:
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - GBfBWs1iFI9sG8mGS1RxpM5HutV70iLeR73oTsPh-i9xRvOlCdV1cA==
+      - tmN0Ai7DvI5fiLAmHyR5CmPbV83KoPsrQp5TqYyU7cI8j9u5K6fCEQ==
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:06:24 GMT
+  recorded_at: Tue, 10 Nov 2020 22:58:05 GMT
 recorded_with: VCR 4.0.0

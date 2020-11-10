@@ -8,7 +8,7 @@ http_interactions:
       string: '{"url":"https://github.com/instructure-bridge/scorm_engine/raw/master/spec/fixtures/zip/RuntimeBasicCalls_SCORM20043rdEdition.zip","courseName":"a-previously-existing-course"}'
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
       Content-Type:
@@ -25,7 +25,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:08:42 GMT
+      - Tue, 10 Nov 2020 22:57:37 GMT
       p3p:
       - CP="NOI"
       server:
@@ -35,14 +35,14 @@ http_interactions:
       x-cache:
       - Error from cloudfront
       via:
-      - 1.1 dc6b456d2b062aa3de2642bc312fc394.cloudfront.net (CloudFront)
+      - 1.1 8bb5b74069e9505becb1d7e84c9b94e8.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - QFsFISK7TQ9l284khP3AmtuCtehHzE64BQpygvVSWeqp1VV_c9a8jg==
+      - zKmALfMH7tKXZC4pY5xSQfP2qZb9KQOJbZes54lLqToMIIwjgcOhjw==
     body:
       encoding: UTF-8
       string: '{"message":"A course already exists with the specified id: ApiCourseId|a-previously-existing-course!VersionId|0"}'
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:08:42 GMT
+  recorded_at: Tue, 10 Nov 2020 22:57:37 GMT
 recorded_with: VCR 4.0.0

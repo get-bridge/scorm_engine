@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -23,7 +23,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:09:14 GMT
+      - Tue, 10 Nov 2020 22:54:48 GMT
       p3p:
       - CP="NOI"
       server:
@@ -33,17 +33,17 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 3046ef5af023075cfbd500968062319e.cloudfront.net (CloudFront)
+      - 1.1 c9bc51c60922bd251aad1b28f0896cce.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - IS237C1SoqKT7CYriS-q9JlbZHQXLljxpioIVXwE-MsZnddxaw0cBQ==
+      - z2H3C90nS1nwMmSl7GN3wHyxrXMDAo_TCEwj2eGgbOb5xl-oOvXNcA==
     body:
       encoding: UTF-8
-      string: '{"id":"testing-golf-explained-registration-1","instance":0,"updated":"2020-09-25T22:50:54.000Z","registrationCompletion":"UNKNOWN","registrationCompletionAmount":0.0,"registrationSuccess":"Unknown","totalSecondsTracked":0.0,"lastAccessDate":"2020-09-25T22:50:54.000Z","createdDate":"2020-09-25T22:50:54.000Z","course":{"id":"testing-golf-explained","version":0,"title":"Golf
-        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2020-09-25T22:48:17.000Z"},"learner":{"id":"testing-golf-explained-learner-1","firstName":"Arnold","lastName":"Palmer"},"globalObjectives":[],"sharedData":[],"activityDetails":{"id":"golf_sample_default_org","title":"Golf
+      string: '{"id":"testing-golf-explained-registration-1","instance":0,"updated":"2020-11-10T22:54:40.000Z","registrationCompletion":"UNKNOWN","registrationCompletionAmount":0.0,"registrationSuccess":"Unknown","totalSecondsTracked":0.0,"lastAccessDate":"2020-11-10T22:54:40.000Z","createdDate":"2020-11-10T22:54:40.000Z","course":{"id":"testing-golf-explained","version":0,"title":"Golf
+        Explained - Run-time Basic Calls","courseLearningStandard":"SCORM_2004_3RD_EDITION","registrationCount":1,"updated":"2020-09-25T22:59:25.000Z"},"learner":{"id":"testing-golf-explained-learner-1","firstName":"Arnold","lastName":"Palmer"},"globalObjectives":[],"sharedData":[],"activityDetails":{"id":"golf_sample_default_org","title":"Golf
         Explained - Run-time Basic Calls","activityProgressKnown":false,"attempts":0,"activityCompletion":"UNKNOWN","previousAttemptCompletion":"Unknown","activitySuccess":"UNKNOWN","activityAbsoluteDuration":"0000:00:00","attemptAbsoluteDuration":"0000:00:00","attemptedDuringThisAttempt":false,"suspended":false,"active":false,"included":true,"ordinal":0,"selectedChildren":false,"randomizedChildren":false,"children":[{"id":"item_1","title":"Golf
         Explained","activityProgressKnown":false,"attempts":0,"activityCompletion":"UNKNOWN","previousAttemptCompletion":"Unknown","activitySuccess":"UNKNOWN","timeTracked":"0000:00:00","activityAbsoluteDuration":"0000:00:00","attemptAbsoluteDuration":"0000:00:00","attemptedDuringThisAttempt":false,"suspended":false,"active":false,"included":true,"ordinal":0,"selectedChildren":false,"randomizedChildren":false,"children":[],"objectives":[{"id":"","primary":true,"firstScoreScaled":0.0,"objectiveCompletion":"Unknown","objectiveSuccess":"UNKNOWN","previousObjectiveSuccess":"Unknown"}],"staticProperties":{"completionThreshold":"","launchData":"","maxTimeAllowed":"","scaledPassingScore":0.0,"scaledPassingScoreUsed":false,"timeLimitAction":""},"runtime":{"completionStatus":"unknown","credit":"credit","entry":"abinitio","exit":"Unknown","learnerPreference":{"audioLevel":1.0,"language":"","deliverySpeed":1.0,"audioCaptioning":0},"mode":"Normal","progressMeasure":"","scoreScaled":"","scoreRaw":"","scoreMin":"","scoreMax":"","totalTime":"0000:00:00","timeTracked":"0000:00:00","successStatus":"Unknown","suspendData":"","learnerComments":[],"lmsComments":[],"runtimeInteractions":[],"runtimeObjectives":[]}}],"objectives":[{"id":"","primary":true,"firstScoreScaled":0.0,"objectiveCompletion":"Unknown","objectiveSuccess":"UNKNOWN","previousObjectiveSuccess":"Unknown"}],"staticProperties":{"completionThreshold":"","launchData":"","maxTimeAllowed":"","scaledPassingScore":0.0,"scaledPassingScoreUsed":false,"timeLimitAction":""}}}'
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:09:14 GMT
+  recorded_at: Tue, 10 Nov 2020 22:54:48 GMT
 recorded_with: VCR 4.0.0

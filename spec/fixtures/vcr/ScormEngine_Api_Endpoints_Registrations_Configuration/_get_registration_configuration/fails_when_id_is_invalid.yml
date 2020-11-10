@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -23,7 +23,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:04:58 GMT
+      - Tue, 10 Nov 2020 22:58:41 GMT
       p3p:
       - CP="NOI"
       server:
@@ -33,14 +33,14 @@ http_interactions:
       x-cache:
       - Error from cloudfront
       via:
-      - 1.1 892ff18443201978a8cd2296b3d38e18.cloudfront.net (CloudFront)
+      - 1.1 34d83bdced2ff151ec8c14c89b681519.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - 2euopD_OTyPVEDCI9Vpr1IPj8QjEce8jcJCdF-vM0cV2zqWjbTfUtg==
+      - U1t1WQLbiBBtrZFyKrTicJs0zvVDM5IAVd8q31jdDMRiPY7wH0iTSg==
     body:
       encoding: UTF-8
       string: '{"message":"Registration ID ''nonexistent-registration'' does not exist"}'
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:04:58 GMT
+  recorded_at: Tue, 10 Nov 2020 22:58:41 GMT
 recorded_with: VCR 4.0.0

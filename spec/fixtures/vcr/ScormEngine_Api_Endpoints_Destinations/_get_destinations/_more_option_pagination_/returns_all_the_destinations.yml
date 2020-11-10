@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -23,7 +23,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Mon, 28 Sep 2020 21:25:54 GMT
+      - Tue, 10 Nov 2020 22:58:19 GMT
       p3p:
       - CP="NOI"
       server:
@@ -33,25 +33,25 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 e4ca364cc5959e3bf697ae231c5b56b0.cloudfront.net (CloudFront)
+      - 1.1 fa20ae3068db1bd7f33b9b9f40a36436.cloudfront.net (CloudFront)
       x-amz-cf-pop:
-      - DEN50-C2
+      - SLC50-C1
       x-amz-cf-id:
-      - NMGge_mdot7PgyvavZ377q0M1_RZ0Wvkw2ZyJXtRGI4QjlIUJGUMHQ==
+      - Dqhry92luVgzfC8gGSnDJGUbYFc2tWKQ-ztfi4MyRuqXuecYSXU-KA==
     body:
       encoding: UTF-8
-      string: '{"destinations":[{"id":"paginated-destination-0","data":{"name":"paginated-destination-0"}},{"id":"paginated-destination-1","data":{"name":"paginated-destination-1"}},{"id":"paginated-destination-2","data":{"name":"paginated-destination-2"}},{"id":"paginated-destination-3","data":{"name":"paginated-destination-3"}},{"id":"paginated-destination-4","data":{"name":"paginated-destination-4"}},{"id":"paginated-destination-5","data":{"name":"paginated-destination-5"}},{"id":"paginated-destination-6","data":{"name":"paginated-destination-6"}},{"id":"paginated-destination-7","data":{"name":"paginated-destination-7"}},{"id":"paginated-destination-8","data":{"name":"paginated-destination-8"}},{"id":"paginated-destination-9","data":{"name":"paginated-destination-9"}}],"more":"/ScormEngineInterface/api/v1/scormenginegemtesting-default/destinations?configuration=ScormEngineGemTesting-default&more=AAABdMd4wbAAAAAO"}'
+      string: '{"destinations":[{"id":"paginated-destination-0","data":{"name":"paginated-destination-0"}},{"id":"paginated-destination-1","data":{"name":"paginated-destination-1"}},{"id":"paginated-destination-2","data":{"name":"paginated-destination-2"}},{"id":"paginated-destination-3","data":{"name":"paginated-destination-3"}},{"id":"paginated-destination-4","data":{"name":"paginated-destination-4"}},{"id":"paginated-destination-5","data":{"name":"paginated-destination-5"}},{"id":"paginated-destination-6","data":{"name":"paginated-destination-6"}},{"id":"paginated-destination-7","data":{"name":"paginated-destination-7"}},{"id":"paginated-destination-8","data":{"name":"paginated-destination-8"}},{"id":"paginated-destination-9","data":{"name":"paginated-destination-9"}}],"more":"/ScormEngineInterface/api/v1/scormenginegemtesting-default/destinations?configuration=ScormEngineGemTesting-default&more=AAABdOX7hGAAAAAk"}'
     http_version: 
-  recorded_at: Mon, 28 Sep 2020 21:25:54 GMT
+  recorded_at: Tue, 10 Nov 2020 22:58:19 GMT
 - request:
     method: get
-    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/scormenginegemtesting-default/destinations?configuration=ScormEngineGemTesting-default&more=AAABdMd4wbAAAAAO
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/scormenginegemtesting-default/destinations?configuration=ScormEngineGemTesting-default&more=AAABdOX7hGAAAAAk
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -66,7 +66,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Mon, 28 Sep 2020 21:25:54 GMT
+      - Tue, 10 Nov 2020 22:58:19 GMT
       p3p:
       - CP="NOI"
       server:
@@ -76,15 +76,15 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 91f1c114eac2b00f07286bc49dddd7e5.cloudfront.net (CloudFront)
+      - 1.1 aa3540758216629202cc04ae30ab5604.cloudfront.net (CloudFront)
       x-amz-cf-pop:
-      - DEN50-C2
+      - SLC50-C1
       x-amz-cf-id:
-      - HBVZ1oH4T8yVEEh-EAdckOZKVmWMP0Do9MfuQ9aBa9RgeEcO8Sc0KA==
+      - qCiEBc4qMYmaQL7kK7eDVlrPiIKjaeWQeGkyW2rBRTdz9KHJM_ci-A==
     body:
       encoding: UTF-8
       string: '{"destinations":[{"id":"paginated-destination-10","data":{"name":"paginated-destination-10"}},{"id":"destination-to-be-deleted","data":{"name":"destination-to-be-deleted"}},{"id":"testing-golf-club","data":{"name":"Golf
         Club"}}]}'
     http_version: 
-  recorded_at: Mon, 28 Sep 2020 21:25:54 GMT
+  recorded_at: Tue, 10 Nov 2020 22:58:19 GMT
 recorded_with: VCR 4.0.0

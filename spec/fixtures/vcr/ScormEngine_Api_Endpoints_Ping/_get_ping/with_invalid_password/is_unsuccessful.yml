@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic UnVzdGljaUVuZ2luZTppbnZhbGlk
   response:
@@ -25,7 +25,7 @@ http_interactions:
       content-language:
       - en
       date:
-      - Fri, 25 Sep 2020 23:05:42 GMT
+      - Tue, 10 Nov 2020 22:58:27 GMT
       p3p:
       - CP="NOI"
       server:
@@ -35,15 +35,15 @@ http_interactions:
       x-cache:
       - Error from cloudfront
       via:
-      - 1.1 c4ab6962f5d964707d14e1b456abda18.cloudfront.net (CloudFront)
+      - 1.1 2a3b50173a77fe71ee16466542bd1fdd.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - dlCc864TvVnF76jPDi5fmrJOrULM4cLz_oTTk3GhlhYwV8GzZhYs8g==
+      - 4zpVQeeBAtxxXot7_7dwLEYOtKniFEHv5JO-XE8GEKXhyekdKT0Lnw==
     body:
       encoding: ASCII-8BIT
       string: !binary |-
         PCFkb2N0eXBlIGh0bWw+PGh0bWwgbGFuZz0iZW4iPjxoZWFkPjx0aXRsZT5IVFRQIFN0YXR1cyA0MDMg4oCTIEZvcmJpZGRlbjwvdGl0bGU+PHN0eWxlIHR5cGU9InRleHQvY3NzIj5ib2R5IHtmb250LWZhbWlseTpUYWhvbWEsQXJpYWwsc2Fucy1zZXJpZjt9IGgxLCBoMiwgaDMsIGIge2NvbG9yOndoaXRlO2JhY2tncm91bmQtY29sb3I6IzUyNUQ3Njt9IGgxIHtmb250LXNpemU6MjJweDt9IGgyIHtmb250LXNpemU6MTZweDt9IGgzIHtmb250LXNpemU6MTRweDt9IHAge2ZvbnQtc2l6ZToxMnB4O30gYSB7Y29sb3I6YmxhY2s7fSAubGluZSB7aGVpZ2h0OjFweDtiYWNrZ3JvdW5kLWNvbG9yOiM1MjVENzY7Ym9yZGVyOm5vbmU7fTwvc3R5bGU+PC9oZWFkPjxib2R5PjxoMT5IVFRQIFN0YXR1cyA0MDMg4oCTIEZvcmJpZGRlbjwvaDE+PGhyIGNsYXNzPSJsaW5lIiAvPjxwPjxiPlR5cGU8L2I+IFN0YXR1cyBSZXBvcnQ8L3A+PHA+PGI+TWVzc2FnZTwvYj4gRm9yYmlkZGVuPC9wPjxwPjxiPkRlc2NyaXB0aW9uPC9iPiBUaGUgc2VydmVyIHVuZGVyc3Rvb2QgdGhlIHJlcXVlc3QgYnV0IHJlZnVzZXMgdG8gYXV0aG9yaXplIGl0LjwvcD48aHIgY2xhc3M9ImxpbmUiIC8+PGgzPkFwYWNoZSBUb21jYXQvNy4wLjEwMDwvaDM+PC9ib2R5PjwvaHRtbD4=
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:05:42 GMT
+  recorded_at: Tue, 10 Nov 2020 22:58:27 GMT
 recorded_with: VCR 4.0.0

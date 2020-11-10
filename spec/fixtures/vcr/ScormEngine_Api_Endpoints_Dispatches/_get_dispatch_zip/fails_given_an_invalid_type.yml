@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -23,7 +23,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:06:03 GMT
+      - Tue, 10 Nov 2020 22:59:26 GMT
       p3p:
       - CP="NOI"
       server:
@@ -33,14 +33,14 @@ http_interactions:
       x-cache:
       - Error from cloudfront
       via:
-      - 1.1 794a3d3af21f401cf5ddf53187ea3030.cloudfront.net (CloudFront)
+      - 1.1 fa20ae3068db1bd7f33b9b9f40a36436.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - vLGjNMXna2BRMKqCJmqzRgOzS-fpHgYsi80aspPjgtNJn4XWca6zQw==
+      - wCZccFhzM21JaJLe33cL0M9Ta9Hh_AkEHhKSDiIYz4n9qnXEtA4d4w==
     body:
       encoding: UTF-8
       string: '{"message":"The value ''OOPS'' is not a valid Dispatch Type."}'
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:06:03 GMT
+  recorded_at: Tue, 10 Nov 2020 22:59:26 GMT
 recorded_with: VCR 4.0.0

@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -23,7 +23,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:05:57 GMT
+      - Tue, 10 Nov 2020 22:59:27 GMT
       p3p:
       - CP="NOI"
       server:
@@ -33,14 +33,14 @@ http_interactions:
       x-cache:
       - Error from cloudfront
       via:
-      - 1.1 6fd49f86f210f7efc9603d6f872dd0cd.cloudfront.net (CloudFront)
+      - 1.1 bd6dc6ff7ea2e7a0c6202fdae4d38e80.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - IcPU42SL0jrR4TrOw9npz5A5BNghtvOVN2sY0fNJqG-kMVyI4c1h8A==
+      - 6M2K9KGKEXPo1SwW0YJQo3EsWFbfd_n1UqYGRts2am-Z74XZYIGLyQ==
     body:
       encoding: UTF-8
       string: '{"message":"No dispatches found with ID: nonexistent-dispatch"}'
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:05:57 GMT
+  recorded_at: Tue, 10 Nov 2020 22:59:28 GMT
 recorded_with: VCR 4.0.0

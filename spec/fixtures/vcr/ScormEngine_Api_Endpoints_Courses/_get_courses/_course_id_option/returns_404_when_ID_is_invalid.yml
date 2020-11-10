@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -23,7 +23,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:05:32 GMT
+      - Tue, 10 Nov 2020 22:54:26 GMT
       p3p:
       - CP="NOI"
       server:
@@ -33,14 +33,14 @@ http_interactions:
       x-cache:
       - Error from cloudfront
       via:
-      - 1.1 8c71f944838e56d18361877af4839d5f.cloudfront.net (CloudFront)
+      - 1.1 b165299644482a8ffbc85462a8b9e7f1.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - ln7UoPu3CUkL8nfP4UNiiknyXVCML60lNwMLElfuVbiS0Ss4WN5M8A==
+      - na93pydDo2SCLy10gONW_R1uMcEdj4bea6Si0wlID64HJlZQlAqFww==
     body:
       encoding: UTF-8
       string: '{"message":"Course ID ''invalid-bogus'' does not exist"}'
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:05:32 GMT
+  recorded_at: Tue, 10 Nov 2020 22:54:26 GMT
 recorded_with: VCR 4.0.0

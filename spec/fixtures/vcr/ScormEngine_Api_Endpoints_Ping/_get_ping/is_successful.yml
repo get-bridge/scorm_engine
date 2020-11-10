@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -23,7 +23,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:05:41 GMT
+      - Tue, 10 Nov 2020 22:58:26 GMT
       p3p:
       - CP="NOI"
       server:
@@ -33,14 +33,14 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 3a3c5f259ae7ff22c721cf2dd9f734af.cloudfront.net (CloudFront)
+      - 1.1 6fd49f86f210f7efc9603d6f872dd0cd.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - "-S3kYvmfr8QZhsKjdZHKCN4ZGZRiDeKYBD8iBfwFHJ0cS7-d6D9s-A=="
+      - Fqzns7briM5gwYFeTf0TmVCaNBoyJz6e4cPEWu60gdzGGLfvQgwgEQ==
     body:
       encoding: UTF-8
-      string: '{"message":"API is up.\nCurrent System Time: 2020-09-25T23:05:41.970Z.\n"}'
+      string: '{"message":"API is up.\nCurrent System Time: 2020-11-10T22:58:26.647Z.\n"}'
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:05:42 GMT
+  recorded_at: Tue, 10 Nov 2020 22:58:26 GMT
 recorded_with: VCR 4.0.0

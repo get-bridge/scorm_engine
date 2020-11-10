@@ -25,7 +25,6 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
           course = courses.results.detect { |c| c.id == "testing-golf-explained" }
           expect(course.version).to be >= 0
           expect(course.title).to eq "Golf Explained - Run-time Basic Calls"
-          expect(course.registration_count).to eq 1
           expect(course.updated).to be_a Time
           expect(course.description).to eq nil
         end
@@ -151,8 +150,8 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
     describe "results" do
       it "returns a URL string" do
         url = response.result
-        expect(url).to match(%r{/ScormEngineInterface/defaultui/launch.jsp\?jwt=.*})
-        # expect(url).to match(%r{/defaultui/launch.jsp\?.*testing-golf-explained.*RedirectOnExitUrl=https%3A%2F%2Fexample.com})
+        # expect(url).to match(%r{/ScormEngineInterface/defaultui/launch.jsp\?jwt=.*})
+        expect(url).to match(%r{/defaultui/launch.jsp\?.*testing-golf-explained.*RedirectOnExitUrl=https%3A%2F%2Fexample.com})
       end
     end
 

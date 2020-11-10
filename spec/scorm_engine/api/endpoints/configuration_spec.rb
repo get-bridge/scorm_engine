@@ -31,10 +31,12 @@ RSpec.describe ScormEngine::Api::Endpoints::Configuration do
       expect(configuration["UserCountReportLookBackDays"]).to eq "90"
       expect(configuration["UserCountReportDaysBetweenReports"]).to eq "20"
 
-      subject.post_app_configuration(
+      resp = subject.post_app_configuration(
         settings: { "UserCountReportLookBackDays" => "365",
                     "UserCountReportDaysBetweenReports" => 30 }
       )
+
+      sleep 3 # there seems to be a delay between posting new values and when they're updated frd
 
       configuration = subject.get_app_configuration.result
       expect(configuration["UserCountReportLookBackDays"]).to eq "365"

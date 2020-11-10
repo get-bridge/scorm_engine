@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -23,7 +23,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:05:17 GMT
+      - Tue, 10 Nov 2020 22:54:07 GMT
       p3p:
       - CP="NOI"
       server:
@@ -33,14 +33,14 @@ http_interactions:
       x-cache:
       - Error from cloudfront
       via:
-      - 1.1 27b097f1b9769d8459cc46b29d99a61b.cloudfront.net (CloudFront)
+      - 1.1 bd6dc6ff7ea2e7a0c6202fdae4d38e80.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - VVvPNElOcekRmhpn07NDHkEGazxGXZo7iiVIG08waOmR_gSfvGnKUg==
+      - EM7gYUcaOcM8_hgh9KZFEeOzEGRz0HyRo3HEzktV3YS3rytiM13k1g==
     body:
       encoding: UTF-8
       string: '{"message":"Course ID ''nonexistent-course'' does not exist"}'
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:05:17 GMT
+  recorded_at: Tue, 10 Nov 2020 22:54:09 GMT
 recorded_with: VCR 4.0.0

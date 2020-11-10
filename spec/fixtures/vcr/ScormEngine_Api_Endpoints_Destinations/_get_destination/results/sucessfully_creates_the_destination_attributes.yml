@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -23,7 +23,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:06:26 GMT
+      - Tue, 10 Nov 2020 22:58:02 GMT
       p3p:
       - CP="NOI"
       server:
@@ -33,14 +33,14 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 794a3d3af21f401cf5ddf53187ea3030.cloudfront.net (CloudFront)
+      - 1.1 8c71f944838e56d18361877af4839d5f.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - aRO79P17awA9ghc1g0rXN3_4I-j4PRd8axqBWywWicsb8BrmYk-g_A==
+      - N3ojcpWumKIP2aBwb7Gu5iaOCJ41mbiFa7it0flCNTNSz6bkv7jzOA==
     body:
       encoding: UTF-8
       string: '{"name":"Golf Club"}'
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:06:26 GMT
+  recorded_at: Tue, 10 Nov 2020 22:58:02 GMT
 recorded_with: VCR 4.0.0

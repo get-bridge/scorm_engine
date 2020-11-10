@@ -7,7 +7,7 @@ RSpec.describe ScormEngine::Api::Endpoints::About do
     end
 
     it "knows the version" do
-      expect(subject.result.version).to eq "20.1.11.284"
+      expect(subject.result.version).to eq "20.1.12.336"
     end
 
     it "knows the platform" do

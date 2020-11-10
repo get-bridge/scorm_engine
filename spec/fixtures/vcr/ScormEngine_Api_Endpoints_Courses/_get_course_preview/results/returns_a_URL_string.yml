@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -19,11 +19,11 @@ http_interactions:
       content-type:
       - application/json
       content-length:
-      - '400'
+      - '241'
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:05:18 GMT
+      - Tue, 10 Nov 2020 22:54:10 GMT
       p3p:
       - CP="NOI"
       server:
@@ -33,14 +33,14 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 df0a4ea7de0fa05190904df4271e5d1e.cloudfront.net (CloudFront)
+      - 1.1 f8e91eeca584f530dcca3e3417221c89.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - KdMI9y55xtWusJF-mGw-3w9dzJ4ET0ZatzhZN3tuoO-ZmCxuHUltYQ==
+      - pmZWM_4ODPpR6U8vo50viegy3rZhggWxh-4yahQUlaGNt6XpQgqgtg==
     body:
       encoding: UTF-8
-      string: '{"launchLink":"/ScormEngineInterface/defaultui/launch.jsp?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZWRpcmVjdE9uRXhpdFVybCI6Imh0dHBzOi8vZXhhbXBsZS5jb20iLCJwYWNrYWdlIjoiQXBpQ291cnNlSWR8dGVzdGluZy1nb2xmLWV4cGxhaW5lZCFWZXJzaW9uSWR8MCIsImNvbmZpZ3VyYXRpb24iOiJTY29ybUVuZ2luZUdlbVRlc3RpbmctZGVmYXVsdCIsInRyYWNraW5nIjoiZmFsc2UiLCJmb3JjZVJldmlldyI6ImZhbHNlIn0.hjR2UUHJx6zxGP-w8o2S1ucW365V4Q7mCu6zCoesPDo"}'
+      string: '{"launchLink":"/ScormEngineInterface/defaultui/launch.jsp?package=ApiCourseId%7Ctesting-golf-explained%21VersionId%7C0&configuration=ScormEngineGemTesting-default&tracking=false&RedirectOnExitUrl=https%3A%2F%2Fexample.com&forceReview=false"}'
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:05:18 GMT
+  recorded_at: Tue, 10 Nov 2020 22:54:10 GMT
 recorded_with: VCR 4.0.0

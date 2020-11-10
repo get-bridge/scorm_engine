@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -19,7 +19,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:05:54 GMT
+      - Tue, 10 Nov 2020 22:59:19 GMT
       p3p:
       - CP="NOI"
       server:
@@ -29,16 +29,16 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 ec99de6a8df96b4e008b942ab98e6595.cloudfront.net (CloudFront)
+      - 1.1 4459c2044bad72015f32a80513665f32.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - pDPushc9nRBqApV4fs2KLaACkCqRIxggg_5xDxfrjzgbS0WbyM4fvQ==
+      - Abp0QPaQKB4mkI2fw4Zv6skjZPKiprXde7xlh8Owj0BqH8rAM0cDgQ==
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:05:54 GMT
+  recorded_at: Tue, 10 Nov 2020 22:59:19 GMT
 - request:
     method: get
     uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/dispatches/testing-dispatch-id-2/registrationCount
@@ -47,7 +47,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -62,7 +62,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:05:54 GMT
+      - Tue, 10 Nov 2020 22:59:19 GMT
       p3p:
       - CP="NOI"
       server:
@@ -72,14 +72,14 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 c28e90c09fe72af9ef5e45a1bf85f0fc.cloudfront.net (CloudFront)
+      - 1.1 3a3c5f259ae7ff22c721cf2dd9f734af.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - 9IbaFzDU3eS8ks2vBpjfRMFBo0GiAlbmOM1Qx--3xvVWrMq2KCNcEg==
+      - YDn8yoU3tflLP0qWVkc4fg5Lr5Vp3ZeoM2jimA_91rfZ6O13xzPv_A==
     body:
       encoding: UTF-8
-      string: '{"registrationCount":0,"lastResetTime":"2020-09-25T23:05:54.000Z"}'
+      string: '{"registrationCount":0,"lastResetTime":"2020-11-10T22:59:19.000Z"}'
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:05:54 GMT
+  recorded_at: Tue, 10 Nov 2020 22:59:19 GMT
 recorded_with: VCR 4.0.0

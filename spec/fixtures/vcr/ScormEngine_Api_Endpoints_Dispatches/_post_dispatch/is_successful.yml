@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -19,7 +19,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:05:44 GMT
+      - Tue, 10 Nov 2020 22:59:21 GMT
       p3p:
       - CP="NOI"
       server:
@@ -29,16 +29,16 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 3046ef5af023075cfbd500968062319e.cloudfront.net (CloudFront)
+      - 1.1 6fd49f86f210f7efc9603d6f872dd0cd.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - azvMYeLabqJ5-a-4Gj1Q_jRHdvf16Qhi0l6w2kxsmlQ95Q8TVecm0Q==
+      - QKRKOarkaKIIrQSg57StTfngB9PjPRXTbyoPPg_WM4pziNAGWpWsOw==
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:05:44 GMT
+  recorded_at: Tue, 10 Nov 2020 22:59:21 GMT
 - request:
     method: post
     uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/dispatches
@@ -47,7 +47,7 @@ http_interactions:
       string: '{"dispatches":[{"id":"testing-dispatch-id-2","data":{"destinationId":"testing-golf-club","courseId":"testing-golf-explained","allowNewRegistrations":false,"instanced":false,"registrationCap":123,"expirationDate":"2018-01-01","externalConfig":null}}]}'
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
       Content-Type:
@@ -60,7 +60,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:05:44 GMT
+      - Tue, 10 Nov 2020 22:59:21 GMT
       p3p:
       - CP="NOI"
       server:
@@ -70,14 +70,14 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 7a609f410daa3b15339ef0cc23dbb296.cloudfront.net (CloudFront)
+      - 1.1 ec99de6a8df96b4e008b942ab98e6595.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - qU_wuxRf3WbJeyMyB42PBh-EPK2C87UXaCOPnMi_gk4wtKiR2KAAOg==
+      - BjVm4IHlXOwJJY57qZZ_KP71VFw4IZme530t_QesPGF3j-TBvWbZYw==
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:05:44 GMT
+  recorded_at: Tue, 10 Nov 2020 22:59:22 GMT
 recorded_with: VCR 4.0.0

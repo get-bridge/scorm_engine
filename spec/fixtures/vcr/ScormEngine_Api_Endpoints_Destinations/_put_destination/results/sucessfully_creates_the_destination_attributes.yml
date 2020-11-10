@@ -8,7 +8,7 @@ http_interactions:
       string: '{"name":"Golf & Country Club"}'
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
       Content-Type:
@@ -21,7 +21,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:06:33 GMT
+      - Tue, 10 Nov 2020 22:58:13 GMT
       p3p:
       - CP="NOI"
       server:
@@ -31,16 +31,16 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 ed42e29cddf5cc10b8ba8ca7b99004ce.cloudfront.net (CloudFront)
+      - 1.1 93602184543f38c8cb58276d2ff471a9.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - ElSS4Q1aZxf1Fdm02DZlc4lwZgpqUGBj-UVPxA5ElydmcACkIu0wFA==
+      - MVYGvcJYRqYgmUkz8BlRnXFycR9-R4p17fOGX-GhyYaP2OlN1-BBUA==
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:06:33 GMT
+  recorded_at: Tue, 10 Nov 2020 22:58:13 GMT
 - request:
     method: get
     uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/destinations/testing-golf-club
@@ -49,7 +49,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -64,7 +64,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:06:33 GMT
+      - Tue, 10 Nov 2020 22:58:13 GMT
       p3p:
       - CP="NOI"
       server:
@@ -74,14 +74,14 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 93602184543f38c8cb58276d2ff471a9.cloudfront.net (CloudFront)
+      - 1.1 0a35faf8a81bc2da87034be9b38a5c9a.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - Di0M1uqF-LWZz1Q8kumt52QoUhJuqlYKXZE4xCAIx0-GzTMFwrQ4xw==
+      - I_YBgk0Chsnbam50k22LE09XUP-cH3meczig0RZX83dK8o5r2RJ8ZQ==
     body:
       encoding: UTF-8
       string: '{"name":"Golf & Country Club"}'
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:06:34 GMT
+  recorded_at: Tue, 10 Nov 2020 22:58:13 GMT
 recorded_with: VCR 4.0.0

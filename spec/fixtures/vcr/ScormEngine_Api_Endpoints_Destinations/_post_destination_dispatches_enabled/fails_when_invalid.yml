@@ -8,7 +8,7 @@ http_interactions:
       string: oops
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
       Content-Type:
@@ -25,7 +25,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:06:24 GMT
+      - Tue, 10 Nov 2020 22:58:03 GMT
       p3p:
       - CP="NOI"
       server:
@@ -35,16 +35,16 @@ http_interactions:
       x-cache:
       - Error from cloudfront
       via:
-      - 1.1 3beac575dd806b6224c0825634a28bc8.cloudfront.net (CloudFront)
+      - 1.1 b8444affadcd7ea54dc019ee69ff275f.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - nj1JE2rNritMzcptCiteiLuzdQ3nlz5qROX8Q_u9Cj-tk5OosqN78Q==
+      - PCck3OaWNRll8_-mILCnBSoOnv8FuPaNBwpF8tagkzpFWbMWke6b6A==
     body:
       encoding: UTF-8
       string: |-
         Unrecognized token 'oops': was expecting ('true', 'false' or 'null')
          at [Source: (org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream); line: 1, column: 9]
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:06:24 GMT
+  recorded_at: Tue, 10 Nov 2020 22:58:04 GMT
 recorded_with: VCR 4.0.0

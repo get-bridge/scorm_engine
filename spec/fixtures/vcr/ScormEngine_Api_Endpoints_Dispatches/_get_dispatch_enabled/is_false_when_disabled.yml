@@ -8,7 +8,7 @@ http_interactions:
       string: 'false'
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
       Content-Type:
@@ -21,7 +21,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:05:45 GMT
+      - Tue, 10 Nov 2020 22:59:07 GMT
       p3p:
       - CP="NOI"
       server:
@@ -31,16 +31,16 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 ed42e29cddf5cc10b8ba8ca7b99004ce.cloudfront.net (CloudFront)
+      - 1.1 ec99de6a8df96b4e008b942ab98e6595.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - 4HasoHYyuLlz2GY1cHch2GQb97svI0911hnTy3BTZhYRnZ2raa_HVg==
+      - g1TA-A0sAtsCkkSKr5NN3yFtyRR7StEGHEDrL6DBAc-wGGgqKJcQqw==
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:05:45 GMT
+  recorded_at: Tue, 10 Nov 2020 22:59:07 GMT
 - request:
     method: get
     uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/dispatches/testing-dispatch-id-2/enabled
@@ -49,7 +49,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -64,7 +64,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:05:45 GMT
+      - Tue, 10 Nov 2020 22:59:07 GMT
       p3p:
       - CP="NOI"
       server:
@@ -74,14 +74,14 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 9e19f7f2387eead34610d87abf26d1cd.cloudfront.net (CloudFront)
+      - 1.1 b8444affadcd7ea54dc019ee69ff275f.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - zTbt4SZorVr8l65rktrH8XVieJQXX5Tb_OjuAUpUVXgEAHLRYb6dVA==
+      - GINScJ_R-eVY83HxReCZbqv54jD_NGOm9Y4jLlijgT8Vh0pZ7jwinQ==
     body:
       encoding: UTF-8
       string: 'false'
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:05:45 GMT
+  recorded_at: Tue, 10 Nov 2020 22:59:07 GMT
 recorded_with: VCR 4.0.0

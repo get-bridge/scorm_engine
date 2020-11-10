@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -23,7 +23,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:06:33 GMT
+      - Tue, 10 Nov 2020 22:58:19 GMT
       p3p:
       - CP="NOI"
       server:
@@ -33,14 +33,14 @@ http_interactions:
       x-cache:
       - Error from cloudfront
       via:
-      - 1.1 3beac575dd806b6224c0825634a28bc8.cloudfront.net (CloudFront)
+      - 1.1 ec99de6a8df96b4e008b942ab98e6595.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - gFnLdln6kBoLSCfHYCJF5f_kh1tPTGVM3q25L4qZgG1m3RZWw-PDHg==
+      - 5DWXbYI_NL52gEJVLj_ss51uqmmXxCmYftK1ml_XNgixeSfk5hluDg==
     body:
       encoding: UTF-8
       string: '{"message":"Unable to convert ''invalid'' to ISO8601 Date format."}'
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:06:33 GMT
+  recorded_at: Tue, 10 Nov 2020 22:58:19 GMT
 recorded_with: VCR 4.0.0

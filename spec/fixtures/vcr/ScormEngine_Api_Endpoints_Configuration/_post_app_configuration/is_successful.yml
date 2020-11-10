@@ -8,7 +8,7 @@ http_interactions:
       string: '{"settings":[{"settingId":"UserCountReportLookBackDays","value":"90"},{"settingId":"UserCountReportDaysBetweenReports","value":"20"}]}'
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
       Content-Type:
@@ -21,7 +21,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:09:32 GMT
+      - Tue, 10 Nov 2020 22:57:33 GMT
       p3p:
       - CP="NOI"
       server:
@@ -31,14 +31,14 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 f8e91eeca584f530dcca3e3417221c89.cloudfront.net (CloudFront)
+      - 1.1 df0a4ea7de0fa05190904df4271e5d1e.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - bO9BIkd0LPJyFHxJDt8tiAUEwZ_Z0AHCiG684XRRVnsvJZHCG-pkyw==
+      - IeR_c0kP1IaaLxDJnPT_Ho8PIGY0xP0YQF0HQkhBw75QrX1zaM2jDg==
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:09:32 GMT
+  recorded_at: Tue, 10 Nov 2020 22:57:33 GMT
 recorded_with: VCR 4.0.0

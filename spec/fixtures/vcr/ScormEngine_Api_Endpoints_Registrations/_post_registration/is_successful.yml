@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -19,7 +19,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:09:27 GMT
+      - Tue, 10 Nov 2020 22:54:52 GMT
       p3p:
       - CP="NOI"
       server:
@@ -29,16 +29,16 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 3046ef5af023075cfbd500968062319e.cloudfront.net (CloudFront)
+      - 1.1 6499018181503258b63542f68301cbb1.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - fBJ8Vr0--ElGkKs8fQiNbBxKlbLZVhbUQMK8O6Ql0c66KH8bcPHIOg==
+      - "--kO4UlBIDexaK_CyiRmvqFndCZGBycnZegTYRoxzG_aF29OSsAeGg=="
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:09:27 GMT
+  recorded_at: Tue, 10 Nov 2020 22:54:52 GMT
 - request:
     method: post
     uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/registrations
@@ -47,7 +47,7 @@ http_interactions:
       string: '{"courseId":"testing-golf-explained","registrationId":"testing-golf-explained-registration-1","learner":{"id":"testing-golf-explained-learner-1","firstName":"Arnold","lastName":"Palmer"},"postBack":{"url":"http://playtronics.com/passback/","authType":"FORM","userName":"werner_brandes","password":"passport","resultsFormat":"ACTIVITY"}}'
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
       Content-Type:
@@ -60,7 +60,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:09:27 GMT
+      - Tue, 10 Nov 2020 22:54:52 GMT
       p3p:
       - CP="NOI"
       server:
@@ -70,14 +70,14 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 a1d0bea525f74dd86deb7d34bec14cac.cloudfront.net (CloudFront)
+      - 1.1 dc1008da8748ae0c60c93323ff766e49.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - 5-VOX79cJzQs1dNMnHbl7ZnNo9tmDhE0t-nAR6G0OHe7z3hsEKSPcQ==
+      - ljO_CHGy1TrR2F0fKAGdKEz_QhPtRYrURrZI5iFDb6YIaYMkc_V9dA==
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:09:27 GMT
+  recorded_at: Tue, 10 Nov 2020 22:54:52 GMT
 recorded_with: VCR 4.0.0

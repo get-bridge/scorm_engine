@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -19,48 +19,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:09:29 GMT
-      p3p:
-      - CP="NOI"
-      server:
-      - Apache
-      x-xss-protection:
-      - 1; mode=block
-      x-cache:
-      - Miss from cloudfront
-      via:
-      - 1.1 e962bcfd10e6f174f59a72d119cef444.cloudfront.net (CloudFront)
-      x-amz-cf-pop:
-      - SLC50-C1
-      x-amz-cf-id:
-      - AuuzJkMi8KeuZH7OZFtmZ0Fnmh5ExBY6GAfDyCB1vyv6DLmPrtQ6Kg==
-    body:
-      encoding: UTF-8
-      string: ''
-    http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:09:29 GMT
-- request:
-    method: post
-    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/registrations
-    body:
-      encoding: UTF-8
-      string: '{"courseId":"testing-golf-explained","registrationId":"testing-golf-explained-registration-1","learner":{"id":"testing-golf-explained-learner-1","firstName":"Släshy","lastName":"Mč/SláshFacę"},"postBack":{"url":"http://playtronics.com/passback/","authType":"FORM","userName":"werner_brandes","password":"passport","resultsFormat":"ACTIVITY"}}'
-    headers:
-      User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
-      Authorization:
-      - Basic <BASIC_AUTH>
-      Content-Type:
-      - application/json
-  response:
-    status:
-      code: 204
-      message: No Content
-    headers:
-      connection:
-      - close
-      date:
-      - Fri, 25 Sep 2020 23:09:29 GMT
+      - Tue, 10 Nov 2020 22:54:53 GMT
       p3p:
       - CP="NOI"
       server:
@@ -74,10 +33,51 @@ http_interactions:
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - 2xGwxB5nDmDGM8KTPFH5EE3m-DGeXWnMtVTZs92fWcXYmQ9SsYcDxw==
+      - GJCbwPqXsBexp4jID9_Egue4GsgTQ1Tp_Gq1a6QdNuVF6udUyq6U6A==
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:09:29 GMT
+  recorded_at: Tue, 10 Nov 2020 22:54:53 GMT
+- request:
+    method: post
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/registrations
+    body:
+      encoding: UTF-8
+      string: '{"courseId":"testing-golf-explained","registrationId":"testing-golf-explained-registration-1","learner":{"id":"testing-golf-explained-learner-1","firstName":"Släshy","lastName":"Mč/SláshFacę"},"postBack":{"url":"http://playtronics.com/passback/","authType":"FORM","userName":"werner_brandes","password":"passport","resultsFormat":"ACTIVITY"}}'
+    headers:
+      User-Agent:
+      - ScormEngine Ruby Gem 0.8.2
+      Authorization:
+      - Basic <BASIC_AUTH>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      connection:
+      - close
+      date:
+      - Tue, 10 Nov 2020 22:54:54 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Miss from cloudfront
+      via:
+      - 1.1 41b8cfb6434b49744c4c497f1135d9e1.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SLC50-C1
+      x-amz-cf-id:
+      - MNO_XjgRA1bryrv5ls0D-N3raa-Ef4gvQcc9R9nOKtavmBUIX4RewQ==
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Tue, 10 Nov 2020 22:54:54 GMT
 recorded_with: VCR 4.0.0

@@ -8,7 +8,7 @@ http_interactions:
       string: '{"url":"https://github.com/instructure-bridge/scorm_engine/raw/master/spec/fixtures/zip/non-existent-key.zip","courseName":"an-invalid-course-url"}'
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
       Content-Type:
@@ -25,7 +25,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:08:56 GMT
+      - Tue, 10 Nov 2020 22:57:57 GMT
       p3p:
       - CP="NOI"
       server:
@@ -35,68 +35,25 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 f8e91eeca584f530dcca3e3417221c89.cloudfront.net (CloudFront)
+      - 1.1 df0a4ea7de0fa05190904df4271e5d1e.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - jU595pf7zBZSEbABbafLsMx00MMQUN1LBUL7qrN7jahbIzSlP-mkqg==
+      - eG3GGx_ITkGluDycdXiKnJ7qj2knFRJodeiNdHj2YzeCKZ_rYkKDVQ==
     body:
       encoding: UTF-8
-      string: '{"result":"c3bb4b34-cb4f-4288-b7f0-66f195197bb6","importResult":{"jobId":"c3bb4b34-cb4f-4288-b7f0-66f195197bb6","status":"RUNNING","parserWarnings":[]}}'
+      string: '{"result":"3ae0722d-fae6-423d-b0d4-05bb163acea7","importResult":{"jobId":"3ae0722d-fae6-423d-b0d4-05bb163acea7","status":"RUNNING","parserWarnings":[]}}'
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:08:56 GMT
+  recorded_at: Tue, 10 Nov 2020 22:57:57 GMT
 - request:
     method: get
-    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses/importJobs/c3bb4b34-cb4f-4288-b7f0-66f195197bb6
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses/importJobs/3ae0722d-fae6-423d-b0d4-05bb163acea7
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
-      Authorization:
-      - Basic <BASIC_AUTH>
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      content-type:
-      - application/json
-      content-length:
-      - '87'
-      connection:
-      - close
-      date:
-      - Fri, 25 Sep 2020 23:08:56 GMT
-      p3p:
-      - CP="NOI"
-      server:
-      - Apache
-      x-xss-protection:
-      - 1; mode=block
-      x-cache:
-      - Miss from cloudfront
-      via:
-      - 1.1 3917d15f2f5fbcd37ae2fb2846d0022e.cloudfront.net (CloudFront)
-      x-amz-cf-pop:
-      - SLC50-C1
-      x-amz-cf-id:
-      - JR7BimID-x-R8SuwTfsNJDpEL8IUwkDY-gNCNno1a93vJbf7H1WCiw==
-    body:
-      encoding: UTF-8
-      string: '{"jobId":"c3bb4b34-cb4f-4288-b7f0-66f195197bb6","status":"RUNNING","parserWarnings":[]}'
-    http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:08:56 GMT
-- request:
-    method: get
-    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses/importJobs/c3bb4b34-cb4f-4288-b7f0-66f195197bb6
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -111,7 +68,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:09:02 GMT
+      - Tue, 10 Nov 2020 22:57:57 GMT
       p3p:
       - CP="NOI"
       server:
@@ -121,25 +78,25 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 6499018181503258b63542f68301cbb1.cloudfront.net (CloudFront)
+      - 1.1 42785c2f14671098509d558abb6814f1.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - v35vhbncUUz7EK0Mxms4DY2iqDZrgtbXrG9mAVpsxb3BYlW12zAPAg==
+      - z9EiEn6BIA_Usve79csJAji2-L4E53g3aUyTT_-6JJHgcEbNz9Rkmw==
     body:
       encoding: UTF-8
-      string: '{"jobId":"c3bb4b34-cb4f-4288-b7f0-66f195197bb6","status":"ERROR","parserWarnings":[]}'
+      string: '{"jobId":"3ae0722d-fae6-423d-b0d4-05bb163acea7","status":"ERROR","parserWarnings":[]}'
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:09:02 GMT
+  recorded_at: Tue, 10 Nov 2020 22:57:57 GMT
 - request:
     method: get
-    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses/importJobs/c3bb4b34-cb4f-4288-b7f0-66f195197bb6
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses/importJobs/3ae0722d-fae6-423d-b0d4-05bb163acea7
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -154,7 +111,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:09:02 GMT
+      - Tue, 10 Nov 2020 22:57:57 GMT
       p3p:
       - CP="NOI"
       server:
@@ -164,14 +121,14 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 892ff18443201978a8cd2296b3d38e18.cloudfront.net (CloudFront)
+      - 1.1 3046ef5af023075cfbd500968062319e.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - g29dSu9p0QOfqQYlo49C8pHIZeKiC0uBY2T7IYt4yhdW6lnumK1_1Q==
+      - 2NSU1w6jzHb9fK8r4Nk3mch1V9ST-mAAKL0-gye_D9aLaltVLj4U8w==
     body:
       encoding: UTF-8
-      string: '{"jobId":"c3bb4b34-cb4f-4288-b7f0-66f195197bb6","status":"ERROR","parserWarnings":[]}'
+      string: '{"jobId":"3ae0722d-fae6-423d-b0d4-05bb163acea7","status":"ERROR","parserWarnings":[]}'
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:09:02 GMT
+  recorded_at: Tue, 10 Nov 2020 22:57:57 GMT
 recorded_with: VCR 4.0.0

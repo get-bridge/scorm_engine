@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -19,7 +19,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:05:52 GMT
+      - Tue, 10 Nov 2020 22:59:14 GMT
       p3p:
       - CP="NOI"
       server:
@@ -29,16 +29,16 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 42388efa0b39dd5e33d371d553418dbf.cloudfront.net (CloudFront)
+      - 1.1 c4ab6962f5d964707d14e1b456abda18.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - El9hr7o_DtWAY_-Tin0rurv0Jjhuy1QnydTJ3LthmMZHJvq8fXFYag==
+      - ME7Q-FCieCN6EEvWmbpPrUsnJpWmo0iOZR7zAZRDmqUhAw-nCDV9gw==
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:05:52 GMT
+  recorded_at: Tue, 10 Nov 2020 22:59:15 GMT
 - request:
     method: get
     uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/dispatches/nonexistent-dispatch/registrationCount
@@ -47,7 +47,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -62,7 +62,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:05:52 GMT
+      - Tue, 10 Nov 2020 22:59:15 GMT
       p3p:
       - CP="NOI"
       server:
@@ -72,14 +72,14 @@ http_interactions:
       x-cache:
       - Error from cloudfront
       via:
-      - 1.1 9e19f7f2387eead34610d87abf26d1cd.cloudfront.net (CloudFront)
+      - 1.1 07c02ae6c53d85283eb15380264d9998.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - 2pQzgwFZkR-_Zl1jZpJdLKzHeiUeQkAjob4deIjfbhBhZUfRHC4rvg==
+      - g62Vvg5nyfexU8RwmbWPnds-DU26uK0M3zo4em2YkWFxi3_ISf-Uxw==
     body:
       encoding: UTF-8
       string: '{"message":"No dispatches found with ID: nonexistent-dispatch"}'
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:05:52 GMT
+  recorded_at: Tue, 10 Nov 2020 22:59:17 GMT
 recorded_with: VCR 4.0.0

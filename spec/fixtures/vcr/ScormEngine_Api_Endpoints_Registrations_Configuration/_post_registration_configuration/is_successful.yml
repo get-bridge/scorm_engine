@@ -8,7 +8,7 @@ http_interactions:
       string: '{"settings":[{"settingId":"PlayerCaptureHistoryDetailed","value":"NO"},{"settingId":"PlayerStatusRollupModeThresholdScore","value":"80"}]}'
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
       Content-Type:
@@ -21,7 +21,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:05:05 GMT
+      - Tue, 10 Nov 2020 22:58:31 GMT
       p3p:
       - CP="NOI"
       server:
@@ -31,14 +31,14 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 be07bf9bf37f2e63b7b1c8863b7a11ca.cloudfront.net (CloudFront)
+      - 1.1 ed42e29cddf5cc10b8ba8ca7b99004ce.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - dcLJj3LLHasJHLXlsRvb3jgmGNX0nY-FT-tevwrFQ34O5ehAhUywZQ==
+      - A1_2B7eNFhHUheVHwDT8rf4Y9Rm9gs5_WU4y8K5xD3QPtgVCbQTxOg==
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:05:06 GMT
+  recorded_at: Tue, 10 Nov 2020 22:58:31 GMT
 recorded_with: VCR 4.0.0

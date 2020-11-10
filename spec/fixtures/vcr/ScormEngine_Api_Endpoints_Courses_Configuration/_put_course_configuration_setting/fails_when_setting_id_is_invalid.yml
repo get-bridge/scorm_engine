@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -23,7 +23,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:05:07 GMT
+      - Tue, 10 Nov 2020 22:57:19 GMT
       p3p:
       - CP="NOI"
       server:
@@ -33,14 +33,14 @@ http_interactions:
       x-cache:
       - Error from cloudfront
       via:
-      - 1.1 f8e91eeca584f530dcca3e3417221c89.cloudfront.net (CloudFront)
+      - 1.1 6fd49f86f210f7efc9603d6f872dd0cd.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - ZvoxDYFRWUiiMvkzz6ZT3V5HENnlG94n5TGb2FdFeSR5ibaKlcEDgg==
+      - vnRbNbvFHoecmJO5xxV4VRvTyE6bQtfaFBHQdyphrX0cQn5gmrxJHw==
     body:
       encoding: UTF-8
       string: '{"message":"No configuration setting found with id: \"NonExistentSettingTotesBogus\""}'
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:05:08 GMT
+  recorded_at: Tue, 10 Nov 2020 22:57:21 GMT
 recorded_with: VCR 4.0.0

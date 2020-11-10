@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -19,11 +19,11 @@ http_interactions:
       content-type:
       - application/json
       content-length:
-      - '13'
+      - '14'
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:05:08 GMT
+      - Tue, 10 Nov 2020 22:57:21 GMT
       p3p:
       - CP="NOI"
       server:
@@ -33,25 +33,25 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 4459c2044bad72015f32a80513665f32.cloudfront.net (CloudFront)
+      - 1.1 c28e90c09fe72af9ef5e45a1bf85f0fc.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - uT0J6rHRBOon3q36F3co7p37Gv6p4MgBRjFtOFk80GQpbX770A0viA==
+      - GT0qthLGcEsCAxcGyybsptNhYe76RNAeIAO77-FNBi4jhsFKU0VkmA==
     body:
       encoding: UTF-8
-      string: '{"value":"0"}'
+      string: '{"value":"42"}'
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:05:08 GMT
+  recorded_at: Tue, 10 Nov 2020 22:57:21 GMT
 - request:
     method: put
     uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses/testing-golf-explained/configuration/PlayerStatusRollupModeThresholdScore
     body:
       encoding: UTF-8
-      string: '{"value":"1"}'
+      string: '{"value":"43"}'
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
       Content-Type:
@@ -64,7 +64,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:05:08 GMT
+      - Tue, 10 Nov 2020 22:57:21 GMT
       p3p:
       - CP="NOI"
       server:
@@ -74,14 +74,14 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 3460152017718aa24664bf5b7ddf58de.cloudfront.net (CloudFront)
+      - 1.1 27b097f1b9769d8459cc46b29d99a61b.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - 19vv4dKmxrz4smRJBTOmr-TrZvpq4rkpuWV2hwVbzVlxMiiEUwWHzA==
+      - 0trSqlxMs1YIj6Vmx4JhV9K6E8EPt3_mnyIH44-0DzUXtlc6ysOc_w==
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:05:08 GMT
+  recorded_at: Tue, 10 Nov 2020 22:57:21 GMT
 recorded_with: VCR 4.0.0

@@ -8,7 +8,7 @@ http_interactions:
       string: '{"value":"42"}'
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
       Content-Type:
@@ -21,7 +21,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:05:10 GMT
+      - Tue, 10 Nov 2020 22:57:23 GMT
       p3p:
       - CP="NOI"
       server:
@@ -31,16 +31,16 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 c4ab6962f5d964707d14e1b456abda18.cloudfront.net (CloudFront)
+      - 1.1 794a3d3af21f401cf5ddf53187ea3030.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - V7SodpgaSsprN2cpunGaJJ901zT_CFkun2GI9obHrSCLj7Yri26jmQ==
+      - c1LAFq3Mg1ajI9Cy3BPVFFDkp5XdIlZzQE85_ee_saVjRPuO6KwXLQ==
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:05:10 GMT
+  recorded_at: Tue, 10 Nov 2020 22:57:23 GMT
 - request:
     method: get
     uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses/testing-golf-explained/configuration/PlayerStatusRollupModeThresholdScore
@@ -49,7 +49,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
   response:
@@ -64,7 +64,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:05:10 GMT
+      - Tue, 10 Nov 2020 22:57:23 GMT
       p3p:
       - CP="NOI"
       server:
@@ -74,14 +74,14 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 3046ef5af023075cfbd500968062319e.cloudfront.net (CloudFront)
+      - 1.1 6499018181503258b63542f68301cbb1.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - Hz5qeQxKP79YqnpNKL64LgXH6m65TUfpg7OEvcfUz5cFtYJDkjclvQ==
+      - a_UoZJKgtFaKzbInfKYwuhfxU2irUKvAbtahqsvUwfdvcy-VXdK9hg==
     body:
       encoding: UTF-8
       string: '{"value":"42"}'
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:05:10 GMT
+  recorded_at: Tue, 10 Nov 2020 22:57:23 GMT
 recorded_with: VCR 4.0.0

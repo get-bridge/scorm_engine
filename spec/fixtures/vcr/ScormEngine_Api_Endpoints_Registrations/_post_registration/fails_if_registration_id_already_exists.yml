@@ -8,7 +8,7 @@ http_interactions:
       string: '{"courseId":"testing-golf-explained","registrationId":"testing-golf-explained-registration-1","learner":{"id":"testing-golf-explained-learner-1","firstName":"Arnold","lastName":"Palmer"},"postBack":{"url":"http://playtronics.com/passback/","authType":"FORM","userName":"werner_brandes","password":"passport","resultsFormat":"ACTIVITY"}}'
     headers:
       User-Agent:
-      - ScormEngine Ruby Gem 0.8.1
+      - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
       Content-Type:
@@ -25,7 +25,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 25 Sep 2020 23:09:30 GMT
+      - Tue, 10 Nov 2020 22:54:52 GMT
       p3p:
       - CP="NOI"
       server:
@@ -35,14 +35,14 @@ http_interactions:
       x-cache:
       - Error from cloudfront
       via:
-      - 1.1 7a609f410daa3b15339ef0cc23dbb296.cloudfront.net (CloudFront)
+      - 1.1 0a35faf8a81bc2da87034be9b38a5c9a.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - SLC50-C1
       x-amz-cf-id:
-      - pPTv20CwFcKV7y_eBJ_fCHp70xU02W-6nW6EA7EkrfdY_1QTPnozlw==
+      - byVg1BHZGU0oFIzmbF9YnERXR79M_i0t7u4sybP0BNTFj8ugISINoQ==
     body:
       encoding: UTF-8
       string: '{"message":"This RegistrationId is already in use."}'
     http_version: 
-  recorded_at: Fri, 25 Sep 2020 23:09:30 GMT
+  recorded_at: Tue, 10 Nov 2020 22:54:52 GMT
 recorded_with: VCR 4.0.0
