@@ -1,0 +1,931 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v2/appManagement/configuration?includeMetadata=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - ScormEngine Ruby Gem 0.8.2
+      Authorization:
+      - Basic <BASIC_AUTH>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+      date:
+      - Fri, 13 Nov 2020 17:36:39 GMT
+      p3p:
+      - CP="NOI"
+      server:
+      - Apache
+      x-xss-protection:
+      - 1; mode=block
+      x-cache:
+      - Miss from cloudfront
+      via:
+      - 1.1 a7bf7cf3a377b5000ee61eea3824eb75.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - DEN52-C1
+      x-amz-cf-id:
+      - fD67gIErf47hY69lywqWjA8Para2Y5Kd5By1ByCxzpKDMiaVV_xBbg==
+    body:
+      encoding: UTF-8
+      string: '{"settingItems":[{"id":"UseNativePostgreSqlUpserts","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"By
+        default, Engine will use the INSERT / ON CONFLICT upserts for PostgreSQL databases
+        instead of first trying to insert and then updating if there''s a conflict.
+        Must be using PostgreSQL 9.5+ to use this setting. To disable the behavior
+        for older versions of PostgreSQL, set this value to false.","level":"Base"}},{"id":"PlayerLaunchType","effectiveValue":"FRAMESET","effectiveValueSource":"system","metadata":{"dataType":"Enum.LaunchTypeValue","settingDescription":"Specifies
+        how the player as a whole should be launched for this course.","level":"Registration","validValues":[{"value":"FRAMESET","valueDescription":"Display
+        the player or SCO in a child frameset."},{"value":"NEW_WINDOW","valueDescription":"Display
+        the player or SCO in a popup window."},{"value":"NEW_WINDOW_AFTER_CLICK","valueDescription":"Display
+        the player or SCO in a popup window after prompting the user to click a link
+        to avoid popup blocker restrictions."},{"value":"NEW_WINDOW_WITHOUT_BROWSER_TOOLBAR","valueDescription":"Display
+        the player or SCO in a popup window (without toolbar)."},{"value":"NEW_WINDOW_AFTER_CLICK_WITHOUT_BROWSER_TOOLBAR","valueDescription":"Display
+        the player or SCO in a popup window (without toolbar) after prompting the
+        user to click a link to avoid popup blocker restrictions."}]}},{"id":"AiccSessionPerLaunch","effectiveValue":"false","effectiveValueSource":"default","metadata":{"default":"false","dataType":"bool","settingDescription":"If
+        true, the AICC session ID will be created for each launch, and only valid
+        until that launch session has terminated. Otherwise sessions will be precreated
+        for a registration and valid as long as that registration exists.","level":"System"}},{"id":"UseSystemDatabaseForTenantSettings","effectiveValue":"true","effectiveValueSource":"fallback","metadata":{"dataType":"bool","settingDescription":"Should
+        the system database be used to store tenant settings (other than the connection
+        string)? Note: if disabled, setting tenant settings other than connection
+        string will fail until a valid connection string is configured for the tenant.","level":"Base","fallback":"SystemDatabaseEnabled"}},{"id":"PlayerFinalScoCourseNotSatisfiedTimeoutExitAction","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"Enum.ExitActionValue","settingDescription":"The
+        navigation behavior the SCP should display when a SCO at the end of the course
+        that has not been satisfied exits with an exit type of timeout.","level":"Registration","learningStandards":["SCORM11","SCORM12"],"validValues":[{"value":"EXIT_COURSE","valueDescription":"Exit
+        the entire course player"},{"value":"EXIT_COURSE_AFTER_CONFIRM","valueDescription":"Exit
+        the entire course player after asking the learner''s permission"},{"value":"GO_TO_NEXT_SCO","valueDescription":"Immediately
+        go to the next SCO"},{"value":"DISPLAY_MESSAGE","valueDescription":"Display
+        a status message to the learner"},{"value":"DO_NOTHING","valueDescription":"Do
+        not take any action"}]}},{"id":"WebContentForceNewWindow","effectiveValue":"false","effectiveValueSource":"default","metadata":{"default":"false","dataType":"bool","settingDescription":"If
+        true, opens webpage media content in a new window/tab rather than inside the
+        AU. This gets around websites that are configured to not load in an iframe
+        (see ''X-Frame-Options'' response header).","level":"Registration"}},{"id":"PlayerCaptureHistoryDetailed","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Specifies
+        if the course should return detailed attempt information to the server","level":"Registration"}},{"id":"xAPIRewriteStatementModifier","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"mergedJson","settingDescription":"If
+        rusticiRewrite=true is passed on the statements request, then this setting
+        will be used to modify statements as they are returned. It is expected to
+        be a JSON object with an ''overlay'' and/or a ''knownRegistrationOverlay''
+        property. These overlays, from each configuration level (eg: system, tenant,
+        and registration) will be merged into any statements read from this tenant
+        (the knownRegistrationOverlay will only be applied to statements for which
+        the registration can be looked up). The ID for the statement will be changed
+        and the original ID will be noted in an extension property. See ''Dynamic
+        Setting Values''","level":"Registration"}},{"id":"ApiRollupRegistrationDuringSession","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"Should
+        rollup registration postbacks be sent during a learning session, instead of
+        waiting for the learner to exit?.","level":"Registration"}},{"id":"ApiPostbackTimeoutSeconds","effectiveValue":"10","effectiveValueSource":"default","metadata":{"default":"10","dataType":"int","settingDescription":"Timeout
+        in seconds for API rollup registration postback.","level":"Tenant"}},{"id":"MaxRowsPerDatabaseUpsert","effectiveValue":"1","effectiveValueSource":"default","metadata":{"default":"1","dataType":"nonNegativeInt","settingDescription":"The
+        maximum number of rows we should send in a single datbase upsert (merge) statement.
+        Set to 0 for no limit.","level":"System"}},{"id":"AllowedTenantNameRegex","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"string","settingDescription":"Applies
+        to v1 API automatic tenant creation only. A regular expression matching only
+        allowed tenant names that, if given, restricts tenant creation to only those
+        names that match. This setting uses the .NET reguandlar expression language
+        (even on Java). If AllowedTenantNames is also given, it will be checked first,
+        and only names not matched there will be validated against this regex. Note
+        that this setting does not prevent previously-created tenants from being accessed;
+        this setting only restricts what new tenants can be created.","level":"System"}},{"id":"ConfigurationEncryptionExceptions","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"delimitedString","settingDescription":"A
+        comma delimited list of setting ids to encrypt or avoid encrypting, ignoring
+        the default for that setting. Prefix settings to encrypt with ''+'' and settings
+        to avoid encrypting with ''-''.","level":"Special"}},{"id":"PlayerCommMaxFailedSubmissions","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"nonNegativeInt","settingDescription":"Specifies
+        the maximum number of times the client to server communication can fail before
+        the system stops trying and the learner is notified that there is an error.","level":"Registration","learningStandards":["SCORM11","SCORM12","SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"]}},{"id":"PlayerLookaheadSequencerMode","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"Enum.LookaheadSequencerModeValue","settingDescription":"Determines
+        how the Lookahead Sequencer should function on the client side. The Lookahead
+        Sequencer is used intelligently enable/disable activities and controls within
+        the Scorm Content Player based on possible future paths.","level":"Registration","learningStandards":["SCORM11","SCORM12","SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"],"validValues":[{"value":"DISABLED","valueDescription":"Completely
+        Disabled"},{"value":"ENABLED","valueDescription":"Fully Enabled"},{"value":"REALTIME","valueDescription":"Enabled,
+        with real-time status updates"}]}},{"id":"SupplementalQueryStringParametersForAllActivities","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"delimitedString","settingDescription":"Specifies
+        parameter names that, when appended to the launch url, will be forwarded to
+        all content activity pages.","level":"Registration"}},{"id":"PlayerShowProgressBar","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Specifies
+        whether the interface should show a progress bar","level":"Registration"}},{"id":"LrsAuthCacheSecondsFailure","effectiveValue":"60","effectiveValueSource":"default","metadata":{"default":"60","dataType":"int","settingDescription":"The
+        default amount of time to cache an unsuccessful LRS auth callback. This value
+        acts as a timeout that will prevent multiple quick requests (eg, DoS) to the
+        callback page should there be an issue connecting or getting a response.","level":"Tenant"}},{"id":"PlayerDebugLookAheadAudit","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"Should
+        the debugger capture LookAhead Sequencing data at the audit level","level":"Registration","learningStandards":["SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"]}},{"id":"PlayerCourseStructureStartsOpen","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Specifies
+        whether the interface should show the course outline when the course loads
+        or if it should initially be collaspsed and hidden. Only valid if ShowCourseStructure
+        is true.","level":"Registration","learningStandards":["SCORM11","SCORM12","SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION","AICC","CMI5"]}},{"id":"PlayerRequiredWidth","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"nonNegativeInt","settingDescription":"The
+        number of pixels in width the course must occupy to function correctly.","level":"Registration"}},{"id":"HashAccountPasswords","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"If
+        true then when storing configuration settings of type ''accounts'', any passwords
+        provided that are not bcrypt hashes will be converted to bcrypt hashes.","level":"System"}},{"id":"PlayerIntermediateScoNotSatisfiedNormalExitAction","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"Enum.ExitActionValue","settingDescription":"The
+        navigation behavior the SCP should display when a SCO in the middle of a course
+        that has not been satisfied exits with an exit type of normal.","level":"Registration","learningStandards":["SCORM11","SCORM12"],"validValues":[{"value":"EXIT_COURSE","valueDescription":"Exit
+        the entire course player"},{"value":"EXIT_COURSE_AFTER_CONFIRM","valueDescription":"Exit
+        the entire course player after asking the learner''s permission"},{"value":"GO_TO_NEXT_SCO","valueDescription":"Immediately
+        go to the next SCO"},{"value":"DISPLAY_MESSAGE","valueDescription":"Display
+        a status message to the learner"},{"value":"DO_NOTHING","valueDescription":"Do
+        not take any action"}]}},{"id":"PlayerIsSatisfactionTracked","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Does
+        this course package actually report satisfaction (pass/fail) in a meaningful
+        way?","level":"Registration","learningStandards":["SCORM11","SCORM12","SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"]}},{"id":"ApiMaxAuthTokenLifetimeSeconds","effectiveValue":"28800","effectiveValueSource":"default","metadata":{"default":"28800","dataType":"int","settingDescription":"Maximum
+        amount of seconds from now an API token expiration may be set to, when creating
+        a token. Note: there is no way to invalidate individual tokens besides waiting
+        for them to expire, so be careful with long lived tokens.","level":"System"}},{"id":"FilePathToUploadedZippedPackage","effectiveValue":"/var/scormengine/content/uploads/${TenantName}/uploads","effectiveValueSource":"base","metadata":{"dataType":"fileStore","settingDescription":"The
+        path or file store (see file stores) where uploaded zip files should be placed.
+        In a future release this may be used to allow different Engine instances to
+        receive an upload and process the import, but for now there is no reason this
+        shouldn''t just be set to a temporary directory on the local file system.","level":"Tenant"}},{"id":"PlayerForceObjectiveCompletionSetByContent","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Override
+        the manifest settings for \"Objective Set By Content\" and \"Completion Set
+        By Content\" with true values.","level":"Registration","learningStandards":["SCORM11","SCORM12","SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"]}},{"id":"PlayerWrapScoWindowWithApi","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"When
+        a SCO is launched in a new window, this specifies whether the window should
+        be wrapped with a shell window containing a copy of the SCORM API. This setting
+        allows content with errors in the use of its API finder algorithm to still
+        be delivered in a new window. Essentially, this mimics the structure of the
+        ADL Test Suite.","level":"Registration","learningStandards":["SCORM11","SCORM12","SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"]}},{"id":"ForwardedHost","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"string","settingDescription":"The
+        original (before proxying) value of the \"Host\" header field in Engine requests
+        (i.e. the targeted host of a request at its origin). As with the \"Host\"
+        HTTP header, this value may come with a port number appended.","level":"System"}},{"id":"PDFContentStylesheetPath","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"string","settingDescription":"Web
+        path (absolute or relative) to a CSS file that allows for customization of
+        elements in the Media Content AU that are specific to PDF content.","level":"Registration"}},{"id":"UserCountReportMaxOffsetMS","effectiveValue":"3600000","effectiveValueSource":"default","metadata":{"default":"3600000","dataType":"int","settingDescription":"The
+        maximum number of MS to offset the time to send the next report by (actual
+        amount is a random number up to this value). It should not be necessary to
+        change this value except for testing.","level":"System"}},{"id":"MaxPersistRuntimeDataAttempts","effectiveValue":"1","effectiveValueSource":"default","metadata":{"default":"1","dataType":"positiveInt","settingDescription":"Maximum
+        number of attempts to save course runtime data.","level":"Registration","learningStandards":["SCORM11","SCORM12","SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"]}},{"id":"PlayerScoreOverridesStatus","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Determines
+        whether or not the status derived from a score should override the actual
+        status.","level":"Registration","learningStandards":["SCORM11","SCORM12","AICC"]}},{"id":"xAPIStatementPipeMaxBackoffHours","effectiveValue":"24","effectiveValueSource":"default","metadata":{"default":"24","dataType":"nonNegativeInt","settingDescription":"When
+        piping statements, we may encounter an error when calling the API of either
+        LRS. If we do, we retry after a set amount of time, that doubles with each
+        successive failure. This value sets a maximum amount of time (in hours) we
+        will wait between retries. If 0 is given, there is no maximum.","level":"System"}},{"id":"WebPathToContentRootHistory","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"delimitedWebPath","settingDescription":"A
+        list of historical values used for WebPathToContentRoot, which allows the
+        launch links of packages uploaded when these historical values were in effect
+        to be updated so as to reflect the current value. These entries are not required
+        to be in historical order.","level":"Tenant"}},{"id":"PDFContentPageDurationThreshold","effectiveValue":"5","effectiveValueSource":"default","metadata":{"default":"5","dataType":"nonNegativeInt","settingDescription":"Number
+        of seconds the user must view a document page before the page will be counted
+        towards progress/completion calculation.","level":"Registration"}},{"id":"LtiConsumerDescription","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"string","settingDescription":"One-line
+        description of the product providing LTI support.","level":"Tenant"}},{"id":"ApiRollupRegistrationAuthUser","effectiveValue":"scorm","effectiveValueSource":"system","metadata":{"default":"","dataType":"string","settingDescription":"User
+        name to use when posting registration data.","level":"Registration"}},{"id":"xAPILaunchTokenCleanupIntervalInSeconds","effectiveValue":"7200","effectiveValueSource":"default","metadata":{"default":"7200","dataType":"positiveInt","settingDescription":"How
+        long to wait between each execution of the background task that cleans up
+        expired xAPI launch tokens. Default is 2 hours.","level":"System"}},{"id":"LtiConsumerUrl","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"string","settingDescription":"Url
+        to the website of the product providing LTI support.","level":"Tenant"}},{"id":"UsePlayerForTinCanLaunches","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"Sets
+        whether Tin Can launches should use Engine''s player rather than launching
+        the course directly.","level":"Registration"}},{"id":"LtiBaseUrl","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"absoluteHttpUri","settingDescription":"The
+        fully-qualified URL to the ''/api'' path under the Engine application. This
+        value is used for determining absolute URLs for endpoints LTI 1.1 and 1.3
+        tools need to access, so the URL *must* be fully-qualified and accessible
+        from LTI tools. If this value ever changes, then LTI tools may need to be
+        re-configured.","level":"System"}},{"id":"PlayerFinalScoCourseSatisfiedSuspendExitAction","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"Enum.ExitActionValue","settingDescription":"The
+        navigation behavior the SCP should display when a SCO at the end of the course
+        that has been satisfied exits with an exit type of suspend.","level":"Registration","learningStandards":["SCORM11","SCORM12"],"validValues":[{"value":"EXIT_COURSE","valueDescription":"Exit
+        the entire course player"},{"value":"EXIT_COURSE_AFTER_CONFIRM","valueDescription":"Exit
+        the entire course player after asking the learner''s permission"},{"value":"GO_TO_NEXT_SCO","valueDescription":"Immediately
+        go to the next SCO"},{"value":"DISPLAY_MESSAGE","valueDescription":"Display
+        a status message to the learner"},{"value":"DO_NOTHING","valueDescription":"Do
+        not take any action"}]}},{"id":"PlayerFinalScoCourseSatisfiedTimeoutExitAction","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"Enum.ExitActionValue","settingDescription":"The
+        navigation behavior the SCP should display when a SCO at the end of the course
+        that has been satisfied exits with an exit type of timeout.","level":"Registration","learningStandards":["SCORM11","SCORM12"],"validValues":[{"value":"EXIT_COURSE","valueDescription":"Exit
+        the entire course player"},{"value":"EXIT_COURSE_AFTER_CONFIRM","valueDescription":"Exit
+        the entire course player after asking the learner''s permission"},{"value":"GO_TO_NEXT_SCO","valueDescription":"Immediately
+        go to the next SCO"},{"value":"DISPLAY_MESSAGE","valueDescription":"Display
+        a status message to the learner"},{"value":"DO_NOTHING","valueDescription":"Do
+        not take any action"}]}},{"id":"UseDeltaRecordResultsPayload","effectiveValue":"false","effectiveValueSource":"default","metadata":{"default":"false","dataType":"bool","settingDescription":"If
+        this setting is enabled, the payloads for RecordResults requests will be trimmed
+        to only include data that has been updated since the previous successful RecordResults
+        request. This configuration can be used along with CompressRecordResultsPayload
+        to greatly reduce the size of the RecordResults payload.","level":"Registration"}},{"id":"PlayerPreventWindowResize","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Specifies
+        whether the player should allow the learner to resize its windows.","level":"Registration","learningStandards":["SCORM11","SCORM12","SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION","AICC"]}},{"id":"TenantIdLength","effectiveValue":"2","effectiveValueSource":"default","metadata":{"default":"2","dataType":"positiveInt","settingDescription":"The
+        length, in bytes, of the tenancy field in the database","level":"Base"}},{"id":"PlayerDesiredFullScreen","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Specifies
+        that the course is best experienced when it occupies the full screen.","level":"Registration"}},{"id":"MediaContentStylesheetPath","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"string","settingDescription":"Web
+        path (absolute or relative) to a CSS file that allows for customization of
+        elements in the Media Content AU that are not specific to a certain content
+        type.","level":"Registration"}},{"id":"HashContentFilesForActivityId","effectiveValue":"false","effectiveValueSource":"base","metadata":{"default":"true","dataType":"bool","settingDescription":"Specifies
+        whether or not non-xAPI content files should be hashed to generate an activity
+        ID during import. If true, then all of the files in the content directory
+        are hashed to generate the activity ID. If false, then only the manifest file
+        is hashed.","level":"Tenant"}},{"id":"Go1PartnerPortalId","effectiveValue":"-1","effectiveValueSource":"default","metadata":{"default":"-1","dataType":"int","settingDescription":"Partner
+        portal ID to send to Go1 when provisioning a new portal. -1 (or any negative
+        value) indicates there is no partner portal to associate, and no value will
+        be sent.","level":"System"}},{"id":"SimpleQueueRetryInitialDelaySeconds","effectiveValue":"600","effectiveValueSource":"default","metadata":{"default":"600","dataType":"int","settingDescription":"How
+        long to mark tasks as ineligible for processing when picking them up. This
+        time will be doubled after each retry.","level":"System"}},{"id":"PromptOnPlayerClose","effectiveValue":"false","effectiveValueSource":"default","metadata":{"default":"false","dataType":"bool","settingDescription":"Constant
+        value used by the default integration implementation that represents the key
+        used in the configuration repository to specify whether the SCORM Player should
+        prompt the user for confirmation before unloading due to the browser window
+        being closed","level":"Registration","learningStandards":["SCORM11","SCORM12","SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"]}},{"id":"PlayerScaleRawScore","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"In
+        SCORM 2004 content, if a SCO sets a raw score but not a scaled score, should
+        the raw score count as the normative score for the SCO?","level":"Registration","learningStandards":["SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"]}},{"id":"PlayerDebugControlDetailed","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"Should
+        the debugger capture control data at the detailed level","level":"Registration"}},{"id":"PlayerDebugSequencingAudit","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"Should
+        the debugger capture Sequencing data at the audit level","level":"Registration"}},{"id":"PlayerShowCourseStructure","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Specifies
+        whether the interface should show the course outline to the learner","level":"Registration","learningStandards":["SCORM11","SCORM12","SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION","AICC","CMI5"]}},{"id":"PlayerIntermediateScoSatisfiedNormalExitAction","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"Enum.ExitActionValue","settingDescription":"The
+        navigation behavior the SCP should display when a SCO that has been satisfied
+        in the middle of a course exits with an exit type of normal.","level":"Registration","learningStandards":["SCORM11","SCORM12"],"validValues":[{"value":"EXIT_COURSE","valueDescription":"Exit
+        the entire course player"},{"value":"EXIT_COURSE_AFTER_CONFIRM","valueDescription":"Exit
+        the entire course player after asking the learner''s permission"},{"value":"GO_TO_NEXT_SCO","valueDescription":"Immediately
+        go to the next SCO"},{"value":"DISPLAY_MESSAGE","valueDescription":"Display
+        a status message to the learner"},{"value":"DO_NOTHING","valueDescription":"Do
+        not take any action"}]}},{"id":"ApiPingCheckDatabase","effectiveValue":"false","effectiveValueSource":"default","metadata":{"default":"false","dataType":"bool","settingDescription":"Determines
+        whether a simple connectivity check of the Engine database should occur in
+        the execution of the /ping resource.","level":"System"}},{"id":"PlayerInvokeRollupAtSuspendAll","effectiveValue":"true","effectiveValueSource":"system","metadata":{"default":"","dataType":"bool","settingDescription":"Initiates
+        rollup when SuspendAll is invoked.","level":"Registration","learningStandards":["SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"]}},{"id":"TenancyEnabled","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"\"","level":"System"}},{"id":"ContentConnectorRemoteSearchTimeoutMS","effectiveValue":"5000","effectiveValueSource":"default","metadata":{"default":"5000","dataType":"int","settingDescription":"Time
+        to wait for content connector remote searches before returning results from
+        whichever connectors have returned results. Where multiple connectors are
+        used, this setting is a trade off between limiting how long the user has to
+        wait for search results and ensuring complete results.","level":"System"}},{"id":"MediaContentCompletionThreshold","effectiveValue":"95","effectiveValueSource":"default","metadata":{"default":"95","dataType":"nonNegativeInt","settingDescription":"The
+        percentage of media that must be consumed before a media course can be considered
+        ''Complete''.","level":"Registration"}},{"id":"xAPILaunchTokenLifeInSeconds","effectiveValue":"28800","effectiveValueSource":"default","metadata":{"default":"28800","dataType":"int","settingDescription":"Sets
+        the initial life of the TinCan Launch Token. This time is only set when the
+        token is first created. Default is 8 hours.","level":"System"}},{"id":"PlayerIntermediateScoNotSatisfiedTimeoutExitAction","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"Enum.ExitActionValue","settingDescription":"The
+        navigation behavior the SCP should display when a SCO that has not been satisfied
+        in the middle of a course exits with an exit type of timeout.","level":"Registration","learningStandards":["SCORM11","SCORM12"],"validValues":[{"value":"EXIT_COURSE","valueDescription":"Exit
+        the entire course player"},{"value":"EXIT_COURSE_AFTER_CONFIRM","valueDescription":"Exit
+        the entire course player after asking the learner''s permission"},{"value":"GO_TO_NEXT_SCO","valueDescription":"Immediately
+        go to the next SCO"},{"value":"DISPLAY_MESSAGE","valueDescription":"Display
+        a status message to the learner"},{"value":"DO_NOTHING","valueDescription":"Do
+        not take any action"}]}},{"id":"SystemHomepageUrl","effectiveValue":"https://<SCORM_ENGINE_HOST>/","effectiveValueSource":"system","metadata":{"dataType":"string","settingDescription":"The
+        absolute URL of the canonical, permanent, homepage for this system. Ideally
+        this really is the homepage a user would use to access the system, but this
+        must be canonical and permanent: that is, it is a single URL the system can
+        be identified by. This setting is required for xAPI, in order to create actor
+        objects for users in the system. It is also used to construct activity IDs
+        during SCORM to xAPI conversion.","level":"Tenant"}},{"id":"ApiRoot","effectiveValue":"/api/","effectiveValueSource":"default","metadata":{"default":"/api/","dataType":"string","settingDescription":"The
+        root path (under the main application path) for the API (before the API version).","level":"System"}},{"id":"xAPIStatementPipeSleepTimeMilliseconds","effectiveValue":"10000","effectiveValueSource":"default","metadata":{"default":"10000","dataType":"nonNegativeInt","settingDescription":"When
+        no pipes are ready to be processed, the statement pipe thread will sleep for
+        this many milliseconds.","level":"System"}},{"id":"ContentAuthCookieFactory","effectiveValue":"RusticiSoftware.ScormContentPlayer.Logic.Utilities.CloudFrontCookieFactory,
+        /usr/share/tomcat/CloudFront-PrivateKey.der, APKAIA3TVUCWOFBI6GMA, 480","effectiveValueSource":"base","metadata":{"default":"","dataType":"implementation","settingDescription":"For
+        generating cookies to allow access to content. Definition for an ''ICookieAuthFactory''
+        implementation. Format: ''full.class.name|assembly.name, constuctorarg1, arg2,
+        arg3'' (assembly name is not needed for Java, or where class is in RusticiSoftware.Engine).
+        Engine provides an implementation for Amazon CloudFront. Example for CloudFront
+        authentication cookies that will expire in 8 hours: ''RusticiSoftware.ScormContentPlayer.Logic.Utilities.CloudFrontCookieFactory,
+        /fullpath/to/privatekey.pem, keyPairId, 480''","level":"Tenant"}},{"id":"StorePlayerDebugLogsInFileStoreOnExit","effectiveValue":"false","effectiveValueSource":"default","metadata":{"default":"false","dataType":"bool","settingDescription":"Determines
+        whether or not the player debug logs will be saved to the file store automatically
+        when the player exits. With this setting set to true, if PlayerDebugLogsStorageLocation
+        is set, then the player debug logs will be stored in the location configured
+        by that setting.","level":"Registration"}},{"id":"ApiUseSignedLaunchLinks","effectiveValue":"True","effectiveValueSource":"base","metadata":{"default":"false","dataType":"bool","settingDescription":"If
+        enabled, launch links generated by the API will be signed, and only signed
+        launch links will be accepted by the player (so launch links must be generated
+        via the API).","level":"Tenant"}},{"id":"PlayerFinalScoCourseNotSatisfiedSuspendExitAction","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"Enum.ExitActionValue","settingDescription":"The
+        navigation behavior the SCP should display when a SCO at the end of the course
+        that has not been satisfied exits with an exit type of suspend.","level":"Registration","learningStandards":["SCORM11","SCORM12"],"validValues":[{"value":"EXIT_COURSE","valueDescription":"Exit
+        the entire course player"},{"value":"EXIT_COURSE_AFTER_CONFIRM","valueDescription":"Exit
+        the entire course player after asking the learner''s permission"},{"value":"GO_TO_NEXT_SCO","valueDescription":"Immediately
+        go to the next SCO"},{"value":"DISPLAY_MESSAGE","valueDescription":"Display
+        a status message to the learner"},{"value":"DO_NOTHING","valueDescription":"Do
+        not take any action"}]}},{"id":"RedirectLaunchPageOnExit","effectiveValue":"false","effectiveValueSource":"default","metadata":{"default":"false","dataType":"bool","settingDescription":"When
+        using any ''New Window'' variant for PlayerLaunchType, if this setting is
+        enabled, automatically returns the launch page to the LMS when the player
+        window closes. This setting has no effect if the player launch type is frameset.","level":"Registration"}},{"id":"PlayerIntermediateScoSatisfiedSuspendExitAction","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"Enum.ExitActionValue","settingDescription":"The
+        navigation behavior the SCP should display when a SCO that has been satisfied
+        in the middle of a course exits with an exit type of suspend.","level":"Registration","learningStandards":["SCORM11","SCORM12"],"validValues":[{"value":"EXIT_COURSE","valueDescription":"Exit
+        the entire course player"},{"value":"EXIT_COURSE_AFTER_CONFIRM","valueDescription":"Exit
+        the entire course player after asking the learner''s permission"},{"value":"GO_TO_NEXT_SCO","valueDescription":"Immediately
+        go to the next SCO"},{"value":"DISPLAY_MESSAGE","valueDescription":"Display
+        a status message to the learner"},{"value":"DO_NOTHING","valueDescription":"Do
+        not take any action"}]}},{"id":"xAPIBasicAccounts","effectiveValue":"stmt-viewer
+        : SS8j1yuNcCC1Vo83jafS24tGNtV5Vqy : read-only\n        RusticiEngine : SS8j1yuNcCC1Vo83jafS24tGNtV5Vqy
+        : root","effectiveValueSource":"base","metadata":{"default":"","dataType":"accounts","settingDescription":"A
+        set of xAPI accounts can be optionally specified. To use one of these accounts,
+        the same username and password must be sent over HTTP basic auth to the xAPI
+        endpoint. These should be separated by newlines, and must be of the form username:password:role.
+        A bcrypt password hash may be used for the password portion. The roles are
+        as follows:\n* user : typical, default permissions, allowing the account to
+        assert any statement, and read only those statements they have asserted or
+        play some role in\n* read-only : allowed to read all statements and state
+        documents, but not write anything\n* write-only : allowed to write any statement
+        or xAPI document, but not read anything\n* root : allowed to read and write
+        any statement or xAPI document","level":"Tenant"}},{"id":"PlayerUseMeasureProgressBar","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Specifies
+        whether the interface should determine progress bar progress using Measure
+        Rollup or individual SCO completion.","level":"Registration"}},{"id":"DefaultCommCommitFrequency","effectiveValue":"20000","effectiveValueSource":"base","metadata":{"default":"10000","dataType":"int","settingDescription":"\"","level":"System"}},{"id":"ConfigurationCacheMaxEntries","effectiveValue":"2000","effectiveValueSource":"default","metadata":{"default":"2000","dataType":"nonNegativeInt","settingDescription":"The
+        number of cache entries at which to clear the configuration cache to prevent
+        excessive memory usage. This includes an entry for each tenant and package
+        referenced. (Registration specific configuration items are not cached.) Set
+        to 0 to disable caching.","level":"Base"}},{"id":"RusticiEngineScriptsUrl","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"string","settingDescription":"Web
+        path to the Rustici Engine scripts directory","level":"Base"}},{"id":"SSPEnabled","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"Can
+        be disabled if no content is ever going to use SSP. Marginal player performance
+        may be perceived by doing so.","level":"System"}},{"id":"PlayerValidateInteractionResponses","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Determines
+        whether the interaction responses are validated for expected SCORM format.  Use
+        this setting when you want to include descriptive text in addition to the
+        single number/character allowed by SCORM 1.2.  This affects both the user
+        response and the correct response","level":"Registration","learningStandards":["SCORM11","SCORM12","SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"]}},{"id":"xAPIValidations","effectiveValue":"AttachmentContentTransferEncoding,
+        SignatureContentType, NoUnexpectedParameters, IdenticalDocumentsCanConflict,
+        StatementSchemaValidation, StatementSchemaValidationIncludingInteractions,
+        NewDocumentsRequireETag","effectiveValueSource":"default","metadata":{"default":"AttachmentContentTransferEncoding,
+        SignatureContentType, NoUnexpectedParameters, IdenticalDocumentsCanConflict,
+        StatementSchemaValidation, StatementSchemaValidationIncludingInteractions,
+        NewDocumentsRequireETag","dataType":"DelimitedEnum.XapiValidation","settingDescription":"xAPI
+        validations that are required to pass the conformance test (and indeed to
+        conform to xAPI), but were not present in prior releases of Engine. These
+        should be left on if possible, but are provided as a setting to enable non-conforming
+        requests to work if needed. To disable all xAPI validations, use the value
+        \"none\".","level":"Tenant","validValues":[{"value":"AttachmentContentTransferEncoding","valueDescription":"(attachments)
+        MUST include a Content-Transfer-Encoding field with a value of ''binary''
+        in each part''s header after the first (statements) part. Note the above MUST
+        applies to the attachment itself, the LRS does not have a ''MUST'' for validating
+        this header"},{"value":"SignatureContentType","valueDescription":"xAPI signatures
+        have a content type of application/octet-stream"},{"value":"NoUnexpectedParameters","valueDescription":"no
+        unexpected parameters are sent on xAPI request"},{"value":"IdenticalDocumentsCanConflict","valueDescription":"xAPI
+        does not make an exception to the concurrency rules for document PUT requests
+        for identical documents (the same document PUT multiple times). This setting
+        will enable checking identical documents for concurrency E-Tags, and possibly
+        reject them as a conflict"},{"value":"StatementSchemaValidation","valueDescription":"Validate
+        xAPI statements against ''tin-can-json-schema''"},{"value":"StatementSchemaValidationIncludingInteractions","valueDescription":"Validate
+        xAPI statements, including interaction activity details included in those
+        statements, against ''tin-can-json-schema''"},{"value":"NewDocumentsRequireETag","valueDescription":"xAPI
+        does not make an exception to the concurrency rules for document PUT requests
+        where a new document is being written This setting will enable checking new
+        documents for concurrency E-Tags, and possibly reject them"}]}},{"id":"PlayerResetRunTimeData","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"Enum.ResetRunTimeDataTimingValue","settingDescription":"Should
+        the SCP always persist runtime data when the exit type is suspend, or should
+        this be left up to the sequencer?","level":"Registration","learningStandards":["SCORM11","SCORM12","SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"],"validValues":[{"value":"NEVER","valueDescription":"Never
+        reset the runtime data"},{"value":"WHEN_EXIT_IS_NOT_SUSPEND","valueDescription":"Use
+        the RunTime data''s exit flag to determine when to reset the data"},{"value":"ON_EACH_NEW_SEQUENCING_ATTEMPT","valueDescription":"Reset
+        the data whenever a new sequencing attempt begins"}]}},{"id":"PlayerDesiredWidth","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"nonNegativeInt","settingDescription":"The
+        number of pixels in width the course would like to have available, if possible,
+        during delivery.","level":"Registration"}},{"id":"UserCountReportContractPeriodEndDate","effectiveValue":"12/31/2015","effectiveValueSource":"default","metadata":{"default":"12/31/2015","dataType":"string","settingDescription":"In
+        order to ensure taking a user count as soon as possible at the end of each
+        contract period, note the end of the contract period","level":"System"}},{"id":"ConcurrentLaunchDetectionEnabled","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"Enable
+        or disable concurrent launch detection.","level":"Registration"}},{"id":"ShouldExpireLaunchHistory","effectiveValue":"True","effectiveValueSource":"base","metadata":{"default":"false","dataType":"bool","settingDescription":"If
+        true, purge old launch history entries when adding new ones. This can potentially
+        save a lot of DBMS storage space.","level":"Tenant"}},{"id":"PlayerCommCommitFrequency","effectiveValue":"20000","effectiveValueSource":"base","metadata":{"dataType":"nonNegativeInt","settingDescription":"The
+        frequency (in milliseconds) with which the application will check for dirty
+        data and try to send it to the server.","level":"Registration","learningStandards":["SCORM11","SCORM12","SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"]}},{"id":"WebPathToContentRoot","effectiveValue":"/courses/${TenantName}","effectiveValueSource":"base","metadata":{"dataType":"webPath","settingDescription":"A
+        web path (URL) pointing to the directory that is hosting your course content.
+        If you''re hosting the content on the same domain as Engine, then you can
+        exclude the domain in your URL (i.e. \"/path/to/content/root\").","level":"Tenant"}},{"id":"UseModernPlayer","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"If
+        true (default), uses modern player. If false, uses legacy player. Regardless
+        of this configuration setting, either can be overridden by the `player` query
+        string parameter (`player=legacy` or `player=modern`)","level":"Registration"}},{"id":"ModernPlayerCustomizationStylesheetUrl","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"string","settingDescription":"Web
+        path (absolute or relative) to a CSS file to load during modern player start
+        up to allow for customization of player appearance.","level":"Registration"}},{"id":"RedactedItems","effectiveValue":"ExternalRegistrationId,
+        value, .*secret.*, .*ConnectionString.*, object_value, property_value, .*username.*,
+        .*password.*, queue_entry, global_objective_scope, suspended_activity_id,
+        api_learner_id, first_name, last_name, api_registration_id, data,asserter_id,
+        asserter_json, agent","effectiveValueSource":"default","metadata":{"default":"ExternalRegistrationId,
+        value, .*secret.*, .*ConnectionString.*, object_value, property_value, .*username.*,
+        .*password.*, queue_entry, global_objective_scope, suspended_activity_id,
+        api_learner_id, first_name, last_name, api_registration_id, data,asserter_id,
+        asserter_json, agent ","dataType":"delimitedString","settingDescription":"Comma
+        delimited, case insensitive list of regular expressions (start and end anchors
+        will be added) to match columns, configuration setting ids, or external ID
+        class names to redact, if RedactLogs is enabled (otherwise this list has no
+        effect).","level":"Base"}},{"id":"AllowedTenantNames","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"delimitedString","settingDescription":"Applies
+        to v1 API automatic tenant creation only. A comma- and/or whitespace-delimited
+        string enumerating all valid tenant names that, if given, prevents tenants
+        with names not contained therein from being created. Note that this setting
+        does not prevent previously-created tenants from being accessed; this setting
+        only restricts what new tenants can be created.","level":"System"}},{"id":"PlayerEnableFlowNav","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Specifies
+        whether the interface should allow the learner to use Previous and Next navigation
+        elements to go through the course","level":"Registration","learningStandards":["SCORM11","SCORM12","AICC","CMI5"]}},{"id":"PlayerFinalScoCourseSatisfiedLogoutExitAction","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"Enum.ExitActionValue","settingDescription":"The
+        navigation behavior the SCP should display when a SCO at the end of the course
+        that has been satisfied exits with an exit type of logout.","level":"Registration","learningStandards":["SCORM11","SCORM12"],"validValues":[{"value":"EXIT_COURSE","valueDescription":"Exit
+        the entire course player"},{"value":"EXIT_COURSE_AFTER_CONFIRM","valueDescription":"Exit
+        the entire course player after asking the learner''s permission"},{"value":"GO_TO_NEXT_SCO","valueDescription":"Immediately
+        go to the next SCO"},{"value":"DISPLAY_MESSAGE","valueDescription":"Display
+        a status message to the learner"},{"value":"DO_NOTHING","valueDescription":"Do
+        not take any action"}]}},{"id":"MaxParametersPerDatabaseUpsert","effectiveValue":"2100","effectiveValueSource":"default","metadata":{"default":"2100","dataType":"nonNegativeInt","settingDescription":"The
+        maximum number of parameters to include in a single database upsert/merge
+        statement. Set to 0 for no limit. The default of 2100 is based on limits inherent
+        to SqlServer.","level":"System"}},{"id":"PlayerIsIncompleteScoreMeaningful","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"If
+        the course is incomplete, is the score still meaningful?","level":"Registration","learningStandards":["SCORM11","SCORM12","SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"]}},{"id":"ModernPlayerCustomizationScriptUrl","effectiveValue":"https://d2wzd4gs88w14e.cloudfront.net/learn/assets/my-learning/scorm-player-customization-script.min.js","effectiveValueSource":"system","metadata":{"default":"","dataType":"string","settingDescription":"Web
+        path (absolute or relative) to a JavaScript file to load during modern player
+        start up to allow for customization of player execution.","level":"Registration"}},{"id":"ApiPostbackProcessorSleepSeconds","effectiveValue":"300","effectiveValueSource":"default","metadata":{"default":"300","dataType":"int","settingDescription":"How
+        long to sleep between checking for postback tasks to retry (note: the first
+        try is always immediate, either by being synchronous or by triggering an async
+        check of the queue.)","level":"System"}},{"id":"EncryptConfigurationSettings","effectiveValue":"false","effectiveValueSource":"default","metadata":{"default":"false","dataType":"bool","settingDescription":"If
+        true (and encryption passsword is specified), configuration settings of type
+        ''secretString'' will be encrypted.","level":"Special"}},{"id":"ApiResultLimitSinceNotSpecified","effectiveValue":"10","effectiveValueSource":"default","metadata":{"default":"10","dataType":"int","settingDescription":"Maximum
+        number of items to return in a list at once when the ''since'' parameter is
+        available and not used. The only reason since is not a required parameter
+        is to make testing the API easy, and long lists are not required for that.","level":"System"}},{"id":"ForceExitConcurrentLaunches","effectiveValue":"false","effectiveValueSource":"default","metadata":{"default":"false","dataType":"bool","settingDescription":"If
+        true, force exit of previous launch without showing concurrent launch detected
+        page.","level":"Registration"}},{"id":"PlayerRequiredFullScreen","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Specifies
+        that the course must be experienced in full screen mode to function correctly.","level":"Registration"}},{"id":"PlayerAlwaysFlowToFirstSco","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Should
+        the SCP always launch the first SCO when the course is launched regardless
+        of sequencing rules.","level":"Registration","learningStandards":["SCORM11","SCORM12","SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"]}},{"id":"StoreRuntimeDataAsLob","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"Determines
+        whether runtime data received from player should be stored in a lob column
+        or normalized.","level":"Base"}},{"id":"PlayerRollupRuntimeAtScoUnload","effectiveValue":"true","effectiveValueSource":"system","metadata":{"default":"","dataType":"bool","settingDescription":"Initiates
+        rollup and transfer of runtime data at ScoUnload for all SCOs.","level":"Registration","learningStandards":["SCORM11","SCORM12","SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"]}},{"id":"LtiJsonWebTokenExpiry","effectiveValue":"300","effectiveValueSource":"default","metadata":{"default":"300","dataType":"positiveInt","settingDescription":"Number
+        of seconds from now that JSON Web Tokens sent as part of the LTI launch process
+        should expire in.","level":"Tenant"}},{"id":"ContentVaultAuthExpiry","effectiveValue":"43200","effectiveValueSource":"system","metadata":{"default":"2880","dataType":"int","settingDescription":"An
+        integer value greater than 300 seconds and less than 31540000 seconds that
+        defines the number of seconds content should be made available for a launch","level":"Registration"}},{"id":"GenerateTinCanLaunchStatements","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"Specifies
+        whether to generate and save ''launched'' statements during Tin Can launches","level":"Registration"}},{"id":"ConfigurationCacheSeconds","effectiveValue":"60","effectiveValueSource":"default","metadata":{"default":"60","dataType":"nonNegativeInt","settingDescription":"The
+        number of seconds before cached configuration settings expire. Note that for
+        multi web server installations, it may take up to this long for setting changes
+        to be applied, except for registration settings that are not cached. Setting
+        to zero will disable time-based expiration, but the cache will still clear
+        itself if it reaches a size of ConfigurationCacheMaxEntries.","level":"Base"}},{"id":"Lti13PrivacySettings","effectiveValue":"LEARNER_NAME_ONLY","effectiveValueSource":"default","metadata":{"default":"LEARNER_NAME_ONLY","dataType":"Enum.Lti13PrivacySettingValue","settingDescription":"Determines
+        which user-identifying information will be sent during launch.","level":"Registration","validValues":[{"value":"LEARNER_NAME_ONLY","valueDescription":"The
+        learner''s first name, last name, and full name will be sent to the tool during
+        launch. The full name is determined by concatenating the first and last name
+        with a space in between."},{"value":"NO_LEARNER_INFO","valueDescription":"No
+        identifying information about the user will be sent to the tool during launch."}]}},{"id":"ApiBasicTenantAccounts","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"accounts","settingDescription":"A
+        set of basic auth \"accounts\" comprising different API users for a particular
+        tenant. The setting takes the form of `username:password[:role]`, where the
+        role is optional. At this moment, the only valid role is `tenant`.","level":"Tenant"}},{"id":"RemoteDeliverPageUrl","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"string","settingDescription":"Web
+        path (absolute or relative) location of the deliver HTML and player static
+        files. Must be set to an absolute URL for LTI 1.3 platform support.","level":"Registration"}},{"id":"DefaultModernPlayerTheme","effectiveValue":"default","effectiveValueSource":"default","metadata":{"default":"default","dataType":"string","settingDescription":"(Deprecated)
+        See ''ModernPlayerCustomizationStylesheetUrl''. The modern player theme to
+        use unless otherwise specified in the launch URL.","level":"Registration"}},{"id":"LtiConsumerEmail","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"string","settingDescription":"Url
+        to a support email address for the product providing LTI support.","level":"Tenant"}},{"id":"ReadReplicaMaximumExpectedLagMS","effectiveValue":"2000","effectiveValueSource":"default","metadata":{"default":"2000","dataType":"positiveInt","settingDescription":"The
+        expected maximum expected amount of lag time before the read replica reflects
+        updates. Used to set X-Experience-API-Consistent-Through, and may be used
+        in a future version of Engine to determine what other reads may be safely
+        serviced via the replica.","level":"Tenant"}},{"id":"UpdateRunTimeDataLockWaitSeconds","effectiveValue":"11","effectiveValueSource":"default","metadata":{"default":"11","dataType":"int","settingDescription":"How
+        long to wait for a lock on the registration when updating SCORM runtime data.","level":"System"}},{"id":"PlayerTimeLimit","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"nonNegativeInt","settingDescription":"Time
+        limit of the course in minutes, 0 for unlimited (no time limit)","level":"Registration","learningStandards":["SCORM11","SCORM12","SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"]}},{"id":"Cmi5EntitlementKeyAlternate","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"string","settingDescription":"Value
+        to be provided to AUs in cmi5 `LMS.LaunchData` as the alternate entitlement
+        key.","level":"Registration"}},{"id":"EnableRecordingMetrics","effectiveValue":"True","effectiveValueSource":"base","metadata":{"default":"false","dataType":"bool","settingDescription":"If
+        true, Engine will record various metrics and enable an endpoint that exposes
+        those metric values for reporting.","level":"Base"}},{"id":"UnRedactedColumns","effectiveValue":"engine_tenant_id,
+        scorm_registration_id, tincan_registration_id, update_by, update_dt","effectiveValueSource":"default","metadata":{"default":"engine_tenant_id,
+        scorm_registration_id, tincan_registration_id, update_by, update_dt","dataType":"delimitedString","settingDescription":"Comma
+        delimited, case insensitive list of regular expressions (start and end anchors
+        will be added) to match columns that should NOT be redacted even though they
+        appear in a table referenced in ''RedactedTables'', if RedactLogs is enabled
+        (otherwise this list has no effect).","level":"Base"}},{"id":"xAPIStatementPipeCooldownMilliseconds","effectiveValue":"60000","effectiveValueSource":"default","metadata":{"default":"60000","dataType":"nonNegativeInt","settingDescription":"The
+        minimum amount of time, in milliseconds, that the statement pipe thread will
+        wait to poll an endpoint for new statements after running out of new statements.","level":"Tenant"}},{"id":"PlayerShowNavBar","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Specifies
+        whether the interface should show the navigation bar containing buttons like
+        Prev, Next, Exit, etc","level":"Registration"}},{"id":"ApiRollupRegistrationAuthType","effectiveValue":"form","effectiveValueSource":"system","metadata":{"default":"httpbasic","dataType":"string","settingDescription":"Indicates
+        how to authorize against the given postbackurl, can be ''form'' or ''httpbasic''.
+        If form authentication, the username and password for authentication are submitted
+        as form fields ''username'' and ''password'', and the registration data as
+        the form field ''data''. If httpbasic authentication is used, the username
+        and password are placed in the standard Authorization HTTP header, and the
+        registration data is the body of the message. This field is set to ''httpbasic''
+        by default.","level":"Registration"}},{"id":"ApiBasicSystemAccounts","effectiveValue":"RusticiEngine
+        : SS8j1yuNcCC1Vo83jafS24tGNtV5Vqy : root","effectiveValueSource":"base","metadata":{"default":"","dataType":"accounts","settingDescription":"A
+        set of basic auth \"accounts\" comprising different API users for the system.
+        The setting takes the form of `username:password[:role]` (the role is optional).
+        A bcrypt password hash may be used for the password portion. At this moment,
+        the only valid role is `root`.","level":"System"}},{"id":"ApiDoNotCheckAuthentication","effectiveValue":"false","effectiveValueSource":"default","metadata":{"default":"false","dataType":"bool","settingDescription":"For
+        use when API authentication will be handled by a proxy or other software outside
+        of Engine. All API calls will be allowed, IsAllowed() will not be called.","level":"Base"}},{"id":"xAPILargeDocumentsPath","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"fileStore","settingDescription":"The
+        root path or file store (see file stores) where large xAPI documents will
+        be stored (see xAPIMaxDocumentSizeForDatabaseInBytes to define \"large\").","level":"Tenant"}},{"id":"PlayerRequiredHeight","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"nonNegativeInt","settingDescription":"The
+        number of pixels in height the course must occupy to function correctly.","level":"Registration"}},{"id":"xAPIUrl","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"string","settingDescription":"The
+        full URL that is used for xAPI requests. If the value is not specified, a
+        default value of {RusticiEngineUrl}/{xAPIUrlPrefix}/ will be used. Note: xAPI
+        requests will fail if xAPIUrl does not contain /{xAPIUrlPrefix}/","level":"System"}},{"id":"PlayerFinalScoCourseNotSatisfiedLogoutExitAction","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"Enum.ExitActionValue","settingDescription":"The
+        navigation behavior the SCP should display when a SCO at the end of the course
+        that has not been satisfied exits with an exit type of logout.","level":"Registration","learningStandards":["SCORM11","SCORM12"],"validValues":[{"value":"EXIT_COURSE","valueDescription":"Exit
+        the entire course player"},{"value":"EXIT_COURSE_AFTER_CONFIRM","valueDescription":"Exit
+        the entire course player after asking the learner''s permission"},{"value":"GO_TO_NEXT_SCO","valueDescription":"Immediately
+        go to the next SCO"},{"value":"DISPLAY_MESSAGE","valueDescription":"Display
+        a status message to the learner"},{"value":"DO_NOTHING","valueDescription":"Do
+        not take any action"}]}},{"id":"ApiRollupRegistrationPostBackUrl","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"string","settingDescription":"Specifies
+        a URL to which to post activity and status data within an interval in which
+        dirty data is available or as soon as possible when the course is completed.","level":"Registration"}},{"id":"xAPIStatementPipeEnabled","effectiveValue":"false","effectiveValueSource":"default","metadata":{"default":"false","dataType":"bool","settingDescription":"If
+        true, enable the statement pipe feature.","level":"System"}},{"id":"RedirectOnRefreshUrl","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"webPath","settingDescription":"Optional
+        URL the application should redirect to when the learner refreshes the deliver
+        page, which otherwise may result in a the content being re-launched. This
+        can happen when the user deliberately refreshes the page, or uses the back
+        button (except in IE where the back button just shows the existing page from
+        cache and does not reload from the server, or re-run scripts)\nRe-launch is
+        a problem if the content was not suspended, as a new attempt will be generated
+        which will not have all the details from the prior attempt (the prior attempt
+        will still be shown in history).  So even though the user may have completed
+        the initial attempt, they may appear to be incomplete.\nThis is an unusual
+        problem, and frequently re-launching after a refresh is the best choice, so
+        for now we only recommend assinging a value to this property if you have run
+        into the problem described above.  The redirect page should minimally make
+        it clear to the user how to get back into the content.","level":"Registration"}},{"id":"UserCountReportCustomerId","effectiveValue":"unknown","effectiveValueSource":"default","metadata":{"default":"unknown","dataType":"string","settingDescription":"A
+        unique Engine customer identifier provided by Rustici Software.","level":"System"}},{"id":"MaxPersistableStringLength","effectiveValue":"2500000","effectiveValueSource":"default","metadata":{"default":"2500000","dataType":"positiveInt","settingDescription":"The
+        maximum string length (in characters) to allow through to the database.","level":"Base"}},{"id":"PlayerShowTitleBar","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Specifies
+        whether the interface should show the title bar containing the name of the
+        package being delivered","level":"Registration"}},{"id":"PlayerForceDisableRootChoice","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Disables
+        the Root menu item Choice option. This is to prevent new attempts being initiated
+        on the course.","level":"Registration","learningStandards":["SCORM11","SCORM12","SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"]}},{"id":"ValidateManifestsUsingXsd","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"Whether
+        to additionally validate manifests using an XML parser as well as the Engine
+        validation","level":"Tenant"}},{"id":"LtiConsumerProductFamily","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"string","settingDescription":"Company
+        or brand name of the product providing LTI support.","level":"Tenant"}},{"id":"xAPIEnablePublicEndpoint","effectiveValue":"false","effectiveValueSource":"default","metadata":{"default":"false","dataType":"bool","settingDescription":"If
+        set, allows unauthenticated access to a public xAPI endpoint.","level":"System"}},{"id":"RedactLogs","effectiveValue":"false","effectiveValueSource":"default","metadata":{"default":"false","dataType":"bool","settingDescription":"Redact
+        personally identifiable information and credentials when logging.","level":"Base"}},{"id":"ManifestDirPathAcceptedRegex","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"string","settingDescription":"This
+        regex will be used to check the manifestDirPath in a preview launch. If the
+        manifestDirPath matches this regex, then the manifest will be downloaded and
+        validated. Otherwise preview launch will throw an exception. By default this
+        setting is empty, meaning that nothing will be accepted and preview launch
+        will always throw an exception.","level":"System"}},{"id":"UserCountReportTargetUrl","effectiveValue":"https://cloud.scorm.com/engineUserCount","effectiveValueSource":"default","metadata":{"default":"https://cloud.scorm.com/engineUserCount","dataType":"string","settingDescription":"Where
+        will the user count report be sent?","level":"System"}},{"id":"ContentVaultPathModifyingPrefix","effectiveValue":"/vault","effectiveValueSource":"default","metadata":{"default":"/vault","dataType":"string","settingDescription":"Prefix
+        the path modifying content vault plugin will add to content paths","level":"Registration"}},{"id":"PlayerStatusRollupModeThresholdScore","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"nullableDouble","settingDescription":"Specifies
+        how the player should rollup completion status from individual SCOs to aggregations
+        in SCORM 1.2","level":"Registration","learningStandards":["SCORM11","SCORM12","CMI5"]}},{"id":"LtiConsumerName","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"string","settingDescription":"Short,
+        user-friendly name for the product providing LTI support.","level":"Tenant"}},{"id":"DefaultImportRedirectLocation","effectiveValue":"defaultui/defaultredirect","effectiveValueSource":"default","metadata":{"default":"defaultui/defaultredirect","dataType":"string","settingDescription":"Default
+        redirect URL to redirect to after import via `defaultui\\import` page if none
+        was supplied.","level":"System"}},{"id":"xAPIMaxRequestSizeInBytes","effectiveValue":"5242880","effectiveValueSource":"default","metadata":{"default":"5242880","dataType":"nonNegativeInt","settingDescription":"The
+        maximum number of bytes to accept in an xAPI request before returning an error.
+        The default is 5 mebibytes.","level":"System"}},{"id":"LtiConsumerVersion","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"string","settingDescription":"Version
+        of the instance of the product providing LTI support. Should have a major
+        release number followed by a period, the format of minor releases is flexible.","level":"Tenant"}},{"id":"xAPIMaxSizeForDatabaseInBytes","effectiveValue":"64000","effectiveValueSource":"default","metadata":{"default":"64000","dataType":"nonNegativeInt","settingDescription":"Setting
+        that determines the max number of bytes to put into a DB for a document or
+        attachment before trying to store the document in a file store (see xAPILargeDocumentsPath
+        and xAPILargeAttachmentsPath). Unfortunately, documents and attachments stored
+        in the database must be kept entirely in memory, and so it is advantageous
+        to put larger documents and attachments in the filestore, which supports streaming
+        (low memory usage).","level":"Tenant"}},{"id":"Lti11Roles","effectiveValue":"Learner","effectiveValueSource":"default","metadata":{"default":"Learner","dataType":"string","settingDescription":"A
+        comma-separated list of roles to associate with a registration. The value
+        of this setting will be sent during launch in the ''roles'' field. Changing
+        this value has no other effect on platform behavior.","level":"Registration"}},{"id":"PlayerSatisfiedCausesCompletion","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Determines
+        whether or not activity Satisfaction will set completion","level":"Registration","learningStandards":["SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"]}},{"id":"LrsAuthCallbackMaxCacheSize","effectiveValue":"500","effectiveValueSource":"default","metadata":{"default":"500","dataType":"int","settingDescription":"The
+        number of cache entries at which to obliterate the auth callback cache to
+        prevent excessive memory usage.","level":"Tenant"}},{"id":"PlayerSuspendDataMaxLength","effectiveValue":"64000","effectiveValueSource":"system","metadata":{"dataType":"nonNegativeInt","settingDescription":"Maximum
+        suspend data length in bytes.","level":"Registration","learningStandards":["SCORM11","SCORM12","SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"]}},{"id":"ApiPostbackProcessorMaxBatchSize","effectiveValue":"10","effectiveValueSource":"default","metadata":{"default":"10","dataType":"int","settingDescription":"Maximum
+        number of rollup registration tasks to dequeue for processing at once.","level":"System"}},{"id":"DatabaseSchema","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"string","settingDescription":"The
+        DBMS-level schema to use when connecting to the database. At this moment,
+        it is not possible to specify different tenant and system DBMS schemas.","level":"Base"}},{"id":"PlayerEnableChoiceNav","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Specifies
+        whether the interface should allow the learner to choose specific parts to
+        the course to take in any order from the course outline","level":"Registration","learningStandards":["SCORM11","SCORM12","AICC","CMI5"]}},{"id":"PlayerIntermediateScoSatisfiedTimeoutExitAction","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"Enum.ExitActionValue","settingDescription":"The
+        navigation behavior the SCP should display when a SCO that has been satisfied
+        in the middle of a course exits with an exit type of timeout.","level":"Registration","learningStandards":["SCORM11","SCORM12"],"validValues":[{"value":"EXIT_COURSE","valueDescription":"Exit
+        the entire course player"},{"value":"EXIT_COURSE_AFTER_CONFIRM","valueDescription":"Exit
+        the entire course player after asking the learner''s permission"},{"value":"GO_TO_NEXT_SCO","valueDescription":"Immediately
+        go to the next SCO"},{"value":"DISPLAY_MESSAGE","valueDescription":"Display
+        a status message to the learner"},{"value":"DO_NOTHING","valueDescription":"Do
+        not take any action"}]}},{"id":"PlayerUseQuickLookaheadSequencer","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"In
+        SCORM 2004 4th Edition and later, determines whether or not to use the Quick
+        Lookahead Sequencer","level":"Registration","learningStandards":["SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"]}},{"id":"PlayerShowCloseItem","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Specifies
+        whether the interface should show a button that allows the learner to exit
+        the SCO","level":"Registration"}},{"id":"Lti13Roles","effectiveValue":"http://purl.imsglobal.org/vocab/lis/v2/institution/person#Student","effectiveValueSource":"default","metadata":{"default":"http://purl.imsglobal.org/vocab/lis/v2/institution/person#Student","dataType":"delimitedString","settingDescription":"A
+        comma/whitespace delimited list of roles to associate with a registration.
+        The value of this setting will be sent during launch in the ''https://purl.imsglobal.org/spec/lti/claim/roles''
+        claim. Changing this value has no other effect on platform behavior.","level":"Registration"}},{"id":"DatabaseRetryCount","effectiveValue":"3","effectiveValueSource":"default","metadata":{"default":"3","dataType":"nonNegativeInt","settingDescription":"The
+        number of retries we should attempt an database action when contending for
+        shared locks.","level":"Base"}},{"id":"PlayerDebugLookAheadDetailed","effectiveValue":"false","effectiveValueSource":"default","metadata":{"default":"false","dataType":"bool","settingDescription":"Should
+        the debugger capture LookAhead Sequencing data at the detailed level (use
+        care when setting this to true, it can have a noticable performance impact)","level":"Registration","learningStandards":["SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"]}},{"id":"LrsAuthCacheSecondsSuccess","effectiveValue":"1800","effectiveValueSource":"default","metadata":{"default":"1800","dataType":"int","settingDescription":"The
+        default amount of time to cache a successful LRS auth callback. Can be overridden
+        via auth callback response for each individual request if necessary","level":"Tenant"}},{"id":"PlayerCompletionStatOfFailedSuccessStat","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"Enum.CompletionStatusValue","settingDescription":"Specifies
+        the Completion Status value to apply in the case of a Failed Success Status.
+        Only applied if set to \"completed\" or \"incomplete\"","level":"Registration","learningStandards":["SCORM11","SCORM12","AICC"],"validValues":[{"value":"Unknown","valueDescription":"The
+        completion status is unknown and has not been set yet. Note this is a different
+        than the enumeration being undefined, which indicates that the enumeration
+        itself is ''null''"},{"value":"Completed","valueDescription":"The learner
+        has completed the activity"},{"value":"Incomplete","valueDescription":"The
+        learner has started, but not finished the activity"},{"value":"Browsed","valueDescription":"The
+        learner viewed the activity, but just to browse it, not as an attempt"},{"value":"Not_Attempted","valueDescription":"The
+        learner has not started the activity"}]}},{"id":"PlayerIntermediateScoSatisfiedLogoutExitAction","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"Enum.ExitActionValue","settingDescription":"The
+        navigation behavior the SCP should display when a SCO that has been satisfied
+        in the middle of a course exits with an exit type of logout.","level":"Registration","learningStandards":["SCORM11","SCORM12"],"validValues":[{"value":"EXIT_COURSE","valueDescription":"Exit
+        the entire course player"},{"value":"EXIT_COURSE_AFTER_CONFIRM","valueDescription":"Exit
+        the entire course player after asking the learner''s permission"},{"value":"GO_TO_NEXT_SCO","valueDescription":"Immediately
+        go to the next SCO"},{"value":"DISPLAY_MESSAGE","valueDescription":"Display
+        a status message to the learner"},{"value":"DO_NOTHING","valueDescription":"Do
+        not take any action"}]}},{"id":"PlayerDebugLogsStorageLocation","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"fileStore","settingDescription":"The
+        path to the directory or file store (see file stores) where the player debug
+        logs will be stored. If this setting is configured, then clicking ''Save Debug
+        Log'' in the debugger will save the player debug logs to this location.","level":"Tenant"}},{"id":"xAPIFilesPath","effectiveValue":"RusticiSoftware.ScormContentPlayer.Logic.DataAccess.FileStorage.S3StreamingFileStore,
+        us-east-2, bridgestaging-cc-content, xapi/${TenantName}/","effectiveValueSource":"base","metadata":{"default":"RusticiSoftware.ScormContentPlayer.Logic.DataAccess.FileStorage.NullStreamingFileStore","dataType":"fileStore","settingDescription":"This
+        setting is a fallback for both xAPILargeDocumentsPath and xAPILargeAttachmentsPath.
+        If those settings are not given, this setting will be used instead.","level":"Tenant"}},{"id":"TenantSettingSyntaxEnabled","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"Enable
+        tenant setting prefix syntax (tenantName.settingId) for configuring tenant
+        specific settings in the configuration file. Disabling this when not in use
+        can save memory on systems with a large number of tenants.","level":"Base"}},{"id":"ContentVaultSlidingAuthExpiry","effectiveValue":"60","effectiveValueSource":"default","metadata":{"default":"60","dataType":"int","settingDescription":"An
+        integer value greater than 60 seconds and less than 31540000 seconds that
+        defines how large the ''sliding window'' of content should be available","level":"Registration"}},{"id":"WebHookCustomUserAgent","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"string","settingDescription":"Custom
+        user agent header to set for web hook requests.","level":"Tenant"}},{"id":"TinCanInteractionsEnabled","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"If
+        enabled, Engine will extract runtime interaction details from certain xAPI
+        statements and include them in the progress data reported by the API and the
+        registration postback (in ''full'' format).","level":"Registration"}},{"id":"UserCountReportEnabled","effectiveValue":"false","effectiveValueSource":"default","metadata":{"default":"false","dataType":"bool","settingDescription":"\"","level":"System"}},{"id":"EnableClientDebugger","effectiveValue":"false","effectiveValueSource":"default","metadata":{"default":"false","dataType":"bool","settingDescription":"If
+        true, enables activating the debugger by typing ?????. This setting will also
+        cause the user to be prompted whether they wish to see the debugger if an
+        error occurs.","level":"Registration"}},{"id":"WhenToRestartRegistration","effectiveValue":"WHEN_EXISTING_REG_IS_COMPLETE_AND_NEWER_PACKAGE_VERSION_EXISTS","effectiveValueSource":"default","metadata":{"default":"WHEN_EXISTING_REG_IS_COMPLETE_AND_NEWER_PACKAGE_VERSION_EXISTS","dataType":"Enum.RegistrationInstanceIncrementTimingValue","settingDescription":"Determines
+        whether or not to restart a registration when launching it.","level":"Registration","validValues":[{"value":"NEVER","valueDescription":"Never
+        restart an existing registration (never increment instance id)"},{"value":"WHEN_EXISTING_REG_IS_COMPLETE_AND_NEWER_PACKAGE_VERSION_EXISTS","valueDescription":"Restart
+        course (increment instance id) when the overall course when a newer version
+        of the associated course package exists and course status is ''Complete''"},{"value":"WHEN_NEWER_PACKAGE_VERSION_EXISTS","valueDescription":"Restart
+        course (increment instance id) when a newer version of the associated course
+        package exists"},{"value":"WHEN_EXISTING_REG_IS_COMPLETE","valueDescription":"Restart
+        course (increment instance id) when the course has been completed, regardless
+        of satisfaction (pass/fail)."},{"value":"WHEN_EXISTING_REG_IS_SATISFIED","valueDescription":"Restart
+        course (increment instance id) when the overall course status is ''Satisfied''"},{"value":"WHEN_EXISTING_REG_IS_SATISFIED_AND_NEWER_PACKAGE_VERSION_EXISTS","valueDescription":"Restart
+        course (increment instance id) when the overall course is satisfied and a
+        newer version of the associated course package exists and course status is
+        ''Satisfied''"},{"value":"WHEN_EXISTING_REG_IS_INCOMPLETE_AND_NEWER_PACKAGE_VERSION_EXISTS","valueDescription":"Restart
+        course (increment instance id) when the overall course is incomplete and a
+        newer version of the associated course package exists."},{"value":"WHEN_EXISTING_REG_IS_FAILED","valueDescription":"Restart
+        course (increment instance ID) when the overall course is failed."},{"value":"WHEN_EXISTING_REG_IS_FAILED_AND_NEWER_PACKAGE_VERSION_EXISTS","valueDescription":"Restart
+        course (increment instance ID) when the overall course is failed and a newer
+        version of of the associated course package exists."}]}},{"id":"UpdateRunTimeDataLockExpireSeconds","effectiveValue":"10","effectiveValueSource":"default","metadata":{"default":"10","dataType":"int","settingDescription":"How
+        many seconds to lock the registration for when updating SCORM runtime data.
+        Specifying 0 disables registration locking.","level":"System"}},{"id":"LegacyPlayerCustomizationStylesheetUrl","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"string","settingDescription":"Web
+        path (absolute or relative) to a CSS file to load during legacy player start
+        up to allow for customization of player appearance.","level":"Registration"}},{"id":"PlayerCourseStructureWidth","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"nonNegativeInt","settingDescription":"Specifies
+        the default width in pixels for the course outline when shown in the legacy
+        player. This setting does not apply to the modern player.","level":"Registration"}},{"id":"PrivacyPolicyUrl","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"string","settingDescription":"Web
+        path (absolute or relative) that should be linked to as the privacy policy
+        document.","level":"Registration"}},{"id":"PlayerIsAvailableOffline","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Specifies
+        whether the package is available to take offline","level":"Registration","learningStandards":["SCORM11","SCORM12","SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"]}},{"id":"RecordResultsMaxPayloadSizeInBytes","effectiveValue":"5242880","effectiveValueSource":"default","metadata":{"default":"5242880","dataType":"nonNegativeInt","settingDescription":"The
+        maximum number of bytes to accept in a RecordResults request before returning
+        an error. The default is 5 megabytes.","level":"Registration"}},{"id":"LtiPlatformIssuer","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"absoluteHttpUri","settingDescription":"A
+        case-sensitive URL identifying the LTI 1.3 platform. Needs to be an HTTPS
+        scheme that must contain: scheme and host, may contain port number and path
+        components and may not contain query or fragment components. Required for
+        LTI 1.3.","level":"System"}},{"id":"Encryptor","effectiveValue":"RusticiSoftware.ScormContentPlayer.Logic.Encryption.AES128bitGCMNoPaddingEncryptor","effectiveValueSource":"default","metadata":{"default":"RusticiSoftware.ScormContentPlayer.Logic.Encryption.AES128bitGCMNoPaddingEncryptor","dataType":"implementation","settingDescription":"An
+        implementation of RusticiSoftware.ScormContentPlayer.Logic.Encryption.IEncryptor
+        to be used for encryption and decryption of configuration settings and/or
+        external IDs.","level":"Special"}},{"id":"SuppressNavbarWhenForcedFrameset","effectiveValue":"false","effectiveValueSource":"default","metadata":{"default":"false","dataType":"bool","settingDescription":"When
+        enabled, prevents the navbar from showing for requests with the forceFrameset
+        parameter","level":"Registration"}},{"id":"PlayerFinalScoCourseNotSatisfiedNormalExitAction","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"Enum.ExitActionValue","settingDescription":"The
+        navigation behavior the SCP should display when a SCO at the end of the course
+        that has not been satisfied exits with an exit type of normal.","level":"Registration","learningStandards":["SCORM11","SCORM12"],"validValues":[{"value":"EXIT_COURSE","valueDescription":"Exit
+        the entire course player"},{"value":"EXIT_COURSE_AFTER_CONFIRM","valueDescription":"Exit
+        the entire course player after asking the learner''s permission"},{"value":"GO_TO_NEXT_SCO","valueDescription":"Immediately
+        go to the next SCO"},{"value":"DISPLAY_MESSAGE","valueDescription":"Display
+        a status message to the learner"},{"value":"DO_NOTHING","valueDescription":"Do
+        not take any action"}]}},{"id":"PlayerReturnToLmsAction","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"Enum.ReturnToLmsActionValue","settingDescription":"Defines
+        what happens when a user click \"Return To LMS\"","level":"Registration","learningStandards":["SCORM11","SCORM12","SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"],"validValues":[{"value":"Legacy","valueDescription":"Legacy
+        - The behavior matches Engine 2008.1 and prior"},{"value":"SuspendAll","valueDescription":"SUSPEND
+        ALL Navigation Request"},{"value":"ExitAll","valueDescription":"EXIT ALL Navigation
+        Request"},{"value":"Selectable","valueDescription":"Selectable by the user"}]}},{"id":"PlayerLogoutCausesPlayerExit","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Should
+        the SCP allow a cmi.exit request of logout to exit the entire player","level":"Registration","learningStandards":["SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"]}},{"id":"PlayerIntermediateScoNotSatisfiedLogoutExitAction","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"Enum.ExitActionValue","settingDescription":"The
+        navigation behavior the SCP should display when a SCO that has not been satisfied
+        in the middle of a course exits with an exit type of logout.","level":"Registration","learningStandards":["SCORM11","SCORM12"],"validValues":[{"value":"EXIT_COURSE","valueDescription":"Exit
+        the entire course player"},{"value":"EXIT_COURSE_AFTER_CONFIRM","valueDescription":"Exit
+        the entire course player after asking the learner''s permission"},{"value":"GO_TO_NEXT_SCO","valueDescription":"Immediately
+        go to the next SCO"},{"value":"DISPLAY_MESSAGE","valueDescription":"Display
+        a status message to the learner"},{"value":"DO_NOTHING","valueDescription":"Do
+        not take any action"}]}},{"id":"PlayerDebugSequencingDetailed","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"Should
+        the debugger capture Sequencing data at the detailed level","level":"Registration"}},{"id":"xAPIStatementPipeLockTimeSeconds","effectiveValue":"600","effectiveValueSource":"default","metadata":{"default":"600","dataType":"nonNegativeInt","settingDescription":"The
+        amount of time, in seconds, a given machine can lock a statement pipe for
+        exclusive use. This value should encompass the ''clock drift'' between machines
+        and any delays due to possible slow connections or failed timeouts.","level":"System"}},{"id":"AudioVideoContentStylesheetPath","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"string","settingDescription":"Web
+        path (absolute or relative) to a CSS file that allows for customization of
+        elements in the Media Content AU that are specific to Audio/Video content
+        types.","level":"Registration"}},{"id":"xAPIStatementPipeBatchSize","effectiveValue":"500","effectiveValueSource":"default","metadata":{"default":"500","dataType":"positiveInt","settingDescription":"The
+        maximum number of statements that we will send at a time when using the statement
+        pipe feature.","level":"System"}},{"id":"PlayerPreventRightClick","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Specifies
+        whether the player should allow the learner to right click within its frames.
+        This setting can add a small measure of security to the application by making
+        it harder to view the source.","level":"Registration"}},{"id":"Plugins","effectiveValue":"ContentVaultPathModifying.Default","effectiveValueSource":"base","metadata":{"default":"","dataType":"delimitedImplementation","settingDescription":"Comma
+        separated list of implementation definitions that dictates which plugins are
+        loaded by Engine if available.","level":"Base"}},{"id":"SimpleQueueMaxTries","effectiveValue":"8","effectiveValueSource":"default","metadata":{"default":"8","dataType":"int","settingDescription":"How
+        many times to attempt a queued item before giving up. Note that the last retry
+        will have a delay of 2^n * SimpleQueueRetryInitialDelaySeconds","level":"System"}},{"id":"EnableExistingActivityIdParserWarnings","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"When
+        enabled (default), parser warnings will be generated during import of packages
+        with activities that are either already mapped to a package, or recorderd
+        in the LRS.","level":"Tenant"}},{"id":"PlayerCaptureHistory","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Specifies
+        if the course should return attempt information to the server","level":"Registration"}},{"id":"ApiIndentJson","effectiveValue":"false","effectiveValueSource":"default","metadata":{"default":"false","dataType":"bool","settingDescription":"Format
+        the JSON returned from the API nicely, useful when developing but should usually
+        be turned off in production for performance and payload size reasons.","level":"Base"}},{"id":"PlayerStatusRollupModeValue","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"Enum.StatusRollupMethodValue","settingDescription":"Specifies
+        how the player should rollup completion status from individual SCOs to aggregations
+        in SCORM 1.2","level":"Registration","learningStandards":["SCORM11","SCORM12","CMI5"],"validValues":[{"value":"STATUS_PROVIDED_BY_COURSE","valueDescription":"For
+        use with single SCO courses, just takes whatever status is reported by the
+        course."},{"value":"COMPLETE_WHEN_ALL_UNITS_COMPLETE","valueDescription":"Marks
+        the course complete whenever all of the SCOs are complete, even if the SCO
+        is failed."},{"value":"COMPLETE_WHEN_ALL_UNITS_COMPLETE_AND_NOT_FAILED","valueDescription":"Marks
+        the course complete whenever all of the SCOs are complete and not failed."},{"value":"COMPLETE_WHEN_THRESHOLD_SCORE_IS_MET","valueDescription":"Marks
+        the course complete whenever a certain score has been obtained as calculated
+        by the Score Rollup Method."},{"value":"COMPLETE_WHEN_ALL_UNITS_COMPLETE_AND_THRESHOLD_SCORE_IS_MET","valueDescription":"Marks
+        the course complete whenever all of the SCOs are complete and not failed and
+        a certain score has been obtained as calculated by the Score Rollup Method."},{"value":"COMPLETE_WHEN_ALL_UNITS_ARE_PASSED","valueDescription":"Marks
+        the course complete whenever all of the SCOs are satisfied(passed). In 1.2,
+        any SCO that is passed will also be complete (but not necessarily the other
+        way around)."}]}},{"id":"xAPILargeAttachmentsPath","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"fileStore","settingDescription":"The
+        root path or file store (see file stores) where large xAPI attachments will
+        be stored (see xAPIMaxDocumentSizeForDatabaseInBytes to define \"large\").","level":"Tenant"}},{"id":"AllowedRequests","effectiveValue":"LAUNCH_PAGE,
+        DELIVER_PAGE, RECORD_AICC_RESULTS_PAGE, RECORD_SCORM_RESULTS_PAGE, SUPPORT_PAGES","effectiveValueSource":"default","metadata":{"default":"LAUNCH_PAGE,
+        DELIVER_PAGE, RECORD_AICC_RESULTS_PAGE, RECORD_SCORM_RESULTS_PAGE, SUPPORT_PAGES","dataType":"delimitedString","settingDescription":"Comma
+        delimited whitelist of non-API request types that are allowed (see documentation
+        for SecureMethod enum for valid entries).","level":"System"}},{"id":"PreviousEncryptor","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"implementation","settingDescription":"The
+        previously used implementation of RusticiSoftware.ScormContentPlayer.Logic.Encryption.IEncryptor
+        used, so values encrypted with it can continue to be decrypted until encrypted
+        with the new encryptor. Note: for fallback to a previous encryptor to work,
+        the main Encryptor must detect and throw an exception when decryption fails.","level":"Special"}},{"id":"UseLegacyMobileFramesetBehavior","effectiveValue":"False","effectiveValueSource":"base","metadata":{"default":"false","dataType":"bool","settingDescription":"Determines
+        how to handle mobile launches. When set to true, then Engine will use the
+        old behavior (where forceFrameset is needed to do a frameset launch, and SuppressNavbarWhenForcedFrameset
+        is needed to hide the navbar). When set to false, mobile launches will be
+        treated the same way as desktop launches.","level":"Registration"}},{"id":"PlayerIsCompletionTracked","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Does
+        this course package actually report completion in a meaningful way?","level":"Registration","learningStandards":["SCORM11","SCORM12","SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"]}},{"id":"xAPIUrlPrefix","effectiveValue":"lrs","effectiveValueSource":"default","metadata":{"default":"lrs","dataType":"string","settingDescription":"The
+        URL prefix that is used for xAPI requests.","level":"System"}},{"id":"ApiEnableV1","effectiveValue":"True","effectiveValueSource":"base","metadata":{"default":"false","dataType":"bool","settingDescription":"Is
+        the v1 API enabled? If false requests to the v1 API will be rejected regardless
+        of the credential specified.","level":"Base"}},{"id":"ApiEnableV2","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"Is
+        the v2 API enabled? If false requests to the v2 API will be rejected regardless
+        of the credential specified.","level":"Base"}},{"id":"SQLDebugLogMinimumExecutionMS","effectiveValue":"0","effectiveValueSource":"default","metadata":{"default":"0","dataType":"int","settingDescription":"When
+        DEBUG level loging is enabled so Engine''s SQL statements are logged, only
+        log statements that take at least this many milliseconds to execute.","level":"Base"}},{"id":"ApiAlternateIdDelimiter","effectiveValue":"~","effectiveValueSource":"default","metadata":{"default":"~","dataType":"string","settingDescription":"A
+        delimiter that may be used instead of | when passing External IDs to API calls,
+        since | can be a problem in URL paths.","level":"System"}},{"id":"DatabaseTimeoutSeconds","effectiveValue":"60","effectiveValueSource":"default","metadata":{"default":"60","dataType":"nonNegativeInt","settingDescription":"The
+        timeout (in seconds) to set on database operations. This setting applies only
+        to .NET.","level":"Base"}},{"id":"ContentLangToUrl","effectiveValue":"[]","effectiveValueSource":"default","metadata":{"default":"[]","dataType":"languageList","settingDescription":"JSON
+        string that represents a list of ContentLanguageDefinition objects. The ContentLanguageDefinition
+        obj contains the following keys: label (required string - The displayed string
+        that specifies the language), srclang (string - The ISO language code associated
+        with the language), src (required string - The URL to the .vtt file content),
+        default (bool - Is this the default language), and kind (string - Specifies
+        the type of support file. Expected values include \"captions\" and \"subtitles\")","level":"Registration"}},{"id":"ForwardedProtocol","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"string","settingDescription":"The
+        original (before proxying) protocl used to send requests to Engine. If the
+        Engine server is behind an SSL Offloading proxy, this value will likely be
+        HTTPS.","level":"System"}},{"id":"RedirectOnExitUrl","effectiveValue":"noop","effectiveValueSource":"base","metadata":{"dataType":"string","settingDescription":"The
+        URL the application should redirect to when the learner exits a course","level":"Registration"}},{"id":"OfflineZipOutputLocation","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"fileStore","settingDescription":"The
+        path to the directory or file store (see file stores) where offline zip files
+        should be placed.","level":"Tenant"}},{"id":"ApiResultLimit","effectiveValue":"100","effectiveValueSource":"default","metadata":{"default":"100","dataType":"int","settingDescription":"Maximum
+        number of items to return in a list at once.","level":"System"}},{"id":"PlayerIntermediateScoNotSatisfiedSuspendExitAction","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"Enum.ExitActionValue","settingDescription":"The
+        navigation behavior the SCP should display when a SCO that has not been satisfied
+        in the middle of a course exits with an exit type of suspend.","level":"Registration","learningStandards":["SCORM11","SCORM12"],"validValues":[{"value":"EXIT_COURSE","valueDescription":"Exit
+        the entire course player"},{"value":"EXIT_COURSE_AFTER_CONFIRM","valueDescription":"Exit
+        the entire course player after asking the learner''s permission"},{"value":"GO_TO_NEXT_SCO","valueDescription":"Immediately
+        go to the next SCO"},{"value":"DISPLAY_MESSAGE","valueDescription":"Display
+        a status message to the learner"},{"value":"DO_NOTHING","valueDescription":"Do
+        not take any action"}]}},{"id":"PlayerLaunchCompletedRegsAsNoCredit","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Determines
+        whether an AICC or SCORM 1.2 registrations goes into \"no credit\" mode upon
+        completion","level":"Registration","learningStandards":["SCORM11","SCORM12","AICC"]}},{"id":"ExpireLaunchHistoryAfterDays","effectiveValue":"90","effectiveValueSource":"base","metadata":{"default":"30","dataType":"positiveInt","settingDescription":"The
+        minimum number of days that should pass before purging a launch history entry.","level":"Tenant"}},{"id":"PlayerStatusDisplayPreference","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"Enum.StatusDisplayValue","settingDescription":"Specifies
+        how the player should display the completion and success status of individual
+        SCOs.","level":"Registration","learningStandards":["SCORM11","SCORM12","CMI5"],"validValues":[{"value":"SUCCESS_ONLY","valueDescription":"Only
+        display an icon to represent the success status of the activity."},{"value":"COMPLETION_ONLY","valueDescription":"Only
+        display an icon to represent the completion status of the activity."},{"value":"SEPARATE","valueDescription":"Display
+        two icons, one to represent the completion status of the activity, another
+        to represent the success status."},{"value":"COMBINED","valueDescription":"Display
+        a single icon that represents both the success and completion status of an
+        activity."},{"value":"NONE","valueDescription":"Do not display any status
+        representation icons."}]}},{"id":"PlayerInternetExplorerCompatibilityMode","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"Enum.InternetExplorerCompatibilityModeValue","settingDescription":"The
+        Internet Explorer Compatibility Mode to launch this content in. This determines
+        which X-UA-Compatible meta tag should be used, if any, by the player''s frameset
+        pages in which content can be held within a child frame.","level":"Registration","learningStandards":["SCORM11","SCORM12","SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"],"validValues":[{"value":"NONE","valueDescription":"No
+        X-UA-Compatible meta tag should be used."},{"value":"EMULATE_IE7","valueDescription":"IE7
+        Mode, use DOCTYPE if present, otherwise use Quirks Mode"},{"value":"IE7","valueDescription":"IE7
+        Mode, use Standards Mode regardless of DOCTYPE"},{"value":"EMULATE_IE8","valueDescription":"IE8
+        Mode, use DOCTYPE if present, otherwise use Quirks Mode"},{"value":"IE8","valueDescription":"IE8
+        Mode, use Standards Mode regardless of DOCTYPE"},{"value":"EMULATE_IE9","valueDescription":"IE9
+        Mode, use DOCTYPE if present, otherwise use Quirks Mode"},{"value":"IE9","valueDescription":"IE9
+        Mode, use Standards Mode regardless of DOCTYPE"},{"value":"EDGE","valueDescription":"Use
+        the highest rendering mode available."},{"value":"IE10","valueDescription":"Use
+        IE10 mode. Early indicators are that this is necessary for vbscript support
+        in IE11."}]}},{"id":"OfflinePathToContentRoot","effectiveValue":"RusticiSoftware.ScormContentPlayer.Logic.DataAccess.FileStorage.S3StreamingFileStore,
+        us-east-2, bridgestaging-cc-content, courses/${TenantName}/","effectiveValueSource":"fallback","metadata":{"dataType":"fileStore","settingDescription":"Path
+        to the directory or file store that is the root of where offline package content
+        can be found.","level":"Tenant","fallback":"FilePathToContentRoot"}},{"id":"ContentVaultIpAddressValidationEnabled","effectiveValue":"false","effectiveValueSource":"system","metadata":{"default":"true","dataType":"bool","settingDescription":"Tells
+        if IP address validation should be enabled or disabled","level":"Registration"}},{"id":"PlayerDebugRteDetailed","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"Should
+        the debugger capture RunTime data at the detailed level","level":"Registration"}},{"id":"Go1ApiKey","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"string","settingDescription":"The
+        API consumer key for this Go1 integration","level":"Tenant"}},{"id":"PlayerIsIncompleteSatisfactionMeaningful","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"If
+        the course is incomplete, is its satisfaction (pass/fail) still meaningful?","level":"Registration","learningStandards":["SCORM11","SCORM12","SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"]}},{"id":"UserCountReportLookBackDays","effectiveValue":"365","effectiveValueSource":"system","metadata":{"default":"365","dataType":"int","settingDescription":"How
+        long is the contract period (and therefore the range to report usage for).","level":"System"}},{"id":"FilePathToContentRoot","effectiveValue":"RusticiSoftware.ScormContentPlayer.Logic.DataAccess.FileStorage.S3StreamingFileStore,
+        us-east-2, bridgestaging-cc-content, courses/${TenantName}/","effectiveValueSource":"base","metadata":{"dataType":"fileStore","settingDescription":"The
+        path to the directory or file store (see file stores) where uploaded and unzipped
+        files should be placed.","level":"Tenant"}},{"id":"PreviousEncryptionPassword","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"string","settingDescription":"For
+        use when changing passwords. Set this to the prior value of EncryptionPassword
+        so values encrypted with it can continue to be decrypted until encrypted with
+        the new password.  Note: for fallback to a previous password to work, the
+        Encryptor must detect and throw an exception when decryption fails.","level":"Special"}},{"id":"PlayerScoLaunchType","effectiveValue":"NEW_WINDOW","effectiveValueSource":"system","metadata":{"dataType":"Enum.LaunchTypeValue","settingDescription":"Specifies
+        how the individual parts of the course should be launched","level":"Registration","validValues":[{"value":"FRAMESET","valueDescription":"Display
+        the player or SCO in a child frameset."},{"value":"NEW_WINDOW","valueDescription":"Display
+        the player or SCO in a popup window."},{"value":"NEW_WINDOW_AFTER_CLICK","valueDescription":"Display
+        the player or SCO in a popup window after prompting the user to click a link
+        to avoid popup blocker restrictions."},{"value":"NEW_WINDOW_WITHOUT_BROWSER_TOOLBAR","valueDescription":"Display
+        the player or SCO in a popup window (without toolbar)."},{"value":"NEW_WINDOW_AFTER_CLICK_WITHOUT_BROWSER_TOOLBAR","valueDescription":"Display
+        the player or SCO in a popup window (without toolbar) after prompting the
+        user to click a link to avoid popup blocker restrictions."}]}},{"id":"PlayerDebugRteAudit","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"Should
+        the debugger capture RunTime data at the audit level","level":"Registration"}},{"id":"UseStatementTimestampInRegistrationUpdates","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"Normally
+        the FirstAccessDate and CompletedDate values are set to the current time when
+        the statement is processed and we update the registration state from it. This
+        switches to using the timestamp value from the statement triggering the registration
+        update for these values where applicable.","level":"Tenant"}},{"id":"UserCountReportDaysBetweenReports","effectiveValue":"30","effectiveValueSource":"system","metadata":{"default":"30","dataType":"int","settingDescription":"How
+        many days to wait before reporting a user count after the last time user count
+        was reported.","level":"System"}},{"id":"RusticiEngineUrl","effectiveValue":"/ScormEngineInterface","effectiveValueSource":"base","metadata":{"default":"","dataType":"string","settingDescription":"Context
+        path to which Engine has been deployed","level":"Base"}},{"id":"ContentVaultAuthFingerprintValidationEnabled","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"Tells
+        if fingerprint validation should be enabled or disabled","level":"Registration"}},{"id":"PlayerDebugIncludeTimestamps","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"Should
+        debug information include timestamps and measurements of how long individual
+        functions are taking for performance monitoring","level":"Registration"}},{"id":"PlayerShowFinishButton","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Specifies
+        whether the interface should show a button that allows the learner to return
+        to the LMS","level":"Registration"}},{"id":"PlayerRollupEmptySetToUnknown","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"In
+        SCORM 2004, determines whether a set of child activities in an unknown state
+        rollup to \"unknown\" or \"complete/satisfied\"","level":"Registration","learningStandards":["SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"]}},{"id":"RedactedTables","effectiveValue":"ScormActivity.*,
+        ScormLaunchHistory, ScormRegistrationGlobalObj, TinCanRegistration","effectiveValueSource":"default","metadata":{"default":"ScormActivity.*,
+        ScormLaunchHistory, ScormRegistrationGlobalObj, TinCanRegistration","dataType":"delimitedString","settingDescription":"Comma
+        delimited, case insensitive list of regular expressions (start and end anchors
+        will be added) to match tables to redact (all columns that appear in one of
+        these tables are redacted), if RedactLogs is enabled (otherwise this list
+        has no effect).","level":"Base"}},{"id":"PlayerMakeStudentPrefsGlobalToCourse","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"When
+        a student makes a preference (audio volume, etc) the preference should be
+        applied to all SCOs","level":"Registration","learningStandards":["SCORM11","SCORM12","SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"]}},{"id":"ApiPostbackDataModelVersion","effectiveValue":"v1","effectiveValueSource":"system","metadata":{"default":"v2","dataType":"Enum.ApiVersion","settingDescription":"The
+        API version that will be used to determine the contents and format of API
+        postbacks.","level":"Tenant","validValues":[{"value":"v1","valueDescription":"Version
+        1 of the API"},{"value":"v2","valueDescription":"Version 2 of the API"}]}},{"id":"PlayerFinishCausesImmediateCommit","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"This
+        setting forces data to be sent to the server immediately upon the call of
+        LMSFinish or Terminate by the SCO. Can be useful for SCOs that are not completing
+        because of timing issues related to window closing.","level":"Registration","learningStandards":["SCORM11","SCORM12","SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"]}},{"id":"IntermediatePageLoadAtStart","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"Whether
+        to load the intermediate page in the content frame at launch before the loader
+        takes over. Turning this off leads to a small performance optimization, but
+        at the risk of the user not seeing a loading message particularly in multi
+        SCO/AU courses with no automatic first SCO/AU load.","level":"Registration"}},{"id":"ApiCourseDeleteAttemptDeleteFiles","effectiveValue":"false","effectiveValueSource":"default","metadata":{"default":"false","dataType":"bool","settingDescription":"Controls
+        whether or not deleting a course through the API should also attempt to delete
+        the course''s files. This functionality will only work for courses that are
+        located within the FilePathToContentRoot that you have configured. It will
+        not delete the metadata files for remote AICC or Tin Can courses.","level":"Registration"}},{"id":"OfflineContentPathAcceptedRegex","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"string","settingDescription":"This
+        regex will be used to check the pathToContent parameter when exporting an
+        offline course. If the pathToContent matches this regex, then the offline
+        course will be exported, otherwise the export will throw an exception. By
+        default this setting will deny all paths so is required if the pathToContent
+        param is to be used. Note: ''AllowedRequests'' must also be set to include
+        ''OFFLINE_SERVICES'' to allow exporting courses for offline use.","level":"Tenant"}},{"id":"ModernPlayerCustomizationLogo","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"string","settingDescription":"Web
+        path to an image file to show as customization of player appearance.","level":"Registration"}},{"id":"xAPIObjectStoreRepairs","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"DelimitedEnum.TinCan.Implementation.ObjectKeyRepairTypes","settingDescription":"Some
+        customers who upgraded to Engine 2015.1 from earlier versions of Engine and
+        were using xAPI may experience bugs arising from the keys in the upgraded
+        object store not matching the scheme used in 2015.1 and later. Setting this
+        allows customers to fix this issue by automatically searching for certain
+        objects based on the location they would have had in 2014. The valid choices
+        here are UriHashCase and DocumentHashCase. Both options should be enabled
+        for Java customers with this problem; only UriHashCase is necessary for .NET
+        customers. In both cases, be sure to consult with Engine support before enabling,
+        so we can confirm this problem applies to you.","level":"System"}},{"id":"PlayerInvalidMenuItemAction","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"Enum.InvalidMenuItemActionValue","settingDescription":"Specifies
+        the method of disabling items in the course outline which for which a request
+        would not succeed.","level":"Registration","validValues":[{"value":"SHOW","valueDescription":"Show
+        the menu item and have it fully enabled"},{"value":"HIDE","valueDescription":"Hide
+        the menu item completely"},{"value":"DISABLE","valueDescription":"Show the
+        menu item, but disable its link"}]}},{"id":"LtiConsumerIdentifier","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"string","settingDescription":"A
+        unique identifier for the product providing LTI support. This identifier is
+        required and should not change once set. Must be no larger than 255 ASCII
+        characters in length. A UUID is recommended.","level":"Tenant"}},{"id":"PlayerDebugControlAudit","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"Should
+        the debugger capture control data at the audit level","level":"Registration"}},{"id":"xAPILaunchTokenUpdateLifeInSeconds","effectiveValue":"0","effectiveValueSource":"default","metadata":{"default":"0","dataType":"int","settingDescription":"Sets
+        the updated life of the TinCan Launch Token. This time will be added to the
+        expiry every time the token is accessed. Default is 0.","level":"System"}},{"id":"ApiTokenPostbackValidHours","effectiveValue":"24","effectiveValueSource":"default","metadata":{"default":"24","dataType":"int","settingDescription":"Number
+        of hours the token used to authenticate SCORM runtime postbacks (when using
+        signed launch links) is valid.","level":"Tenant"}},{"id":"ContentVaultSlidingAuthExpiryEnabled","effectiveValue":"false","effectiveValueSource":"default","metadata":{"default":"false","dataType":"bool","settingDescription":"Whether
+        content vault''s sliding expiry window is enabled","level":"Registration"}},{"id":"DataPersistenceEngine","effectiveValue":"mysql","effectiveValueSource":"base","metadata":{"dataType":"string","settingDescription":"A
+        string (`sqlserver`, `mysql`, `postgresql`, or `oracle`) corresponding to
+        the DBMS flavor in use.","level":"Base"}},{"id":"PlayerFirstScoIsPretest","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Specifies
+        whether the first SCO in the course should be considered a pretest. If true
+        and the first SCO is passed, the rest of the course will be marked as completed.","level":"Registration","learningStandards":["SCORM11","SCORM12","CMI5"]}},{"id":"PlayerIsScoreTracked","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Does
+        this course package actually report its score in a meaningful way?","level":"Registration","learningStandards":["SCORM11","SCORM12","SCORM20042NDEDITION","SCORM20043RDEDITION","SCORM20044THEDITION"]}},{"id":"AttemptInsertBeforeUpsert","effectiveValue":"null","effectiveValueSource":"default","metadata":{"default":"null","dataType":"nullableBool","settingDescription":"If
+        true, attempt to use inserts before upserts. This can result in a signficant
+        performance gain in systems where inserts would generally be expected to succeed,
+        such as the Engine upgrade tool. The use of this setting is not supported
+        with PostgreSQL and can result in errors.","level":"System"}},{"id":"ImportLinkLocation","effectiveValue":"defaultui/import","effectiveValueSource":"default","metadata":{"default":"defaultui/import","dataType":"string","settingDescription":"The
+        path to the import page used when you have generated an import URL to POST
+        to.","level":"System"}},{"id":"PlayerApplyRollupStatusToSuccess","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Specifies
+        whether the success status should be updated based on the rudimentary status
+        rollup rules.","level":"Registration","learningStandards":["SCORM11","SCORM12","CMI5"]}},{"id":"ApiRollupRegistrationSynchronous","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"The
+        initial attempt to post registration data will occur synchronously as the
+        course is being completed.","level":"Registration"}},{"id":"Lti11PrivacySettings","effectiveValue":"LEARNER_NAME_ONLY","effectiveValueSource":"default","metadata":{"default":"LEARNER_NAME_ONLY","dataType":"Enum.Lti11PrivacySettingValue","settingDescription":"Determines
+        which user-identifying information will be sent during launch.","level":"Registration","validValues":[{"value":"LEARNER_NAME_ONLY","valueDescription":"The
+        learner''s first name, last name, and full name will be sent to the tool during
+        launch. The full name is determined by concatenating the first and last name
+        with a space in between."},{"value":"LEARNER_NAME_AND_EMAIL","valueDescription":"The
+        learner''s first name, last name, full name, and email will be sent to the
+        tool during launch. The full name is determined by concatenating the first
+        and last name with a space in between. The email should be passed in the id
+        property of the learner schema when a registration is created."},{"value":"NO_LEARNER_INFO","valueDescription":"No
+        identifying information about the user will be sent to the tool during launch."}]}},{"id":"EncryptionPassword","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"string","settingDescription":"This
+        setting gives the secret key used for encryption of configuration settings,
+        and xAPI pipe passwords. If this is set to a 128 bit value expressed as hex
+        in the format ''0xABCD...'', it will be used as the encryption key. If not,
+        it will be used to generate a key, which will introduce a small delay the
+        first time the key is needed.","level":"Special"}},{"id":"MaxUpsertSizeInBytes","effectiveValue":"0","effectiveValueSource":"default","metadata":{"default":"0","dataType":"nonNegativeInt","settingDescription":"The
+        maximum size of each upsert (merge) statement in bytes. Set to 0 for no size
+        limit. This setting is usually only necessary for MySQL customers with a very
+        small max_allowed_packet value.","level":"System"}},{"id":"PlayerDebugSequencingSimple","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"Capture
+        sequencing debugging information in a more human readable fashion than the
+        very technical Audit or Detailed level","level":"Registration","learningStandards":["SCORM20044THEDITION"]}},{"id":"SystemDatabaseEnabled","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"Should
+        the system database be used? Note: if disabled, features that use system wide
+        queues such as PENS and xAPI pipes will not work. Multiple tenants per DB
+        are not supported without a system database. This setting must be set as desired
+        upon initial installation of Engine, changing it on a existing system is likely
+        to result in data loss.","level":"Base"}},{"id":"xAPIEnabled","effectiveValue":"true","effectiveValueSource":"default","metadata":{"default":"true","dataType":"bool","settingDescription":"\"","level":"System"}},{"id":"ContentVaultEnabled","effectiveValue":"True","effectiveValueSource":"base","metadata":{"default":"false","dataType":"bool","settingDescription":"Whether
+        to use content vault to authenticate access to the content","level":"Registration"}},{"id":"PlayerScoreRollupModeNumberOfScoringObjects","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"int","settingDescription":"Specifies
+        how the player should rollup scores from individual SCOs to aggregations in
+        SCORM 1.2","level":"Registration","learningStandards":["SCORM11","SCORM12","CMI5"]}},{"id":"xAPIStatementPipeWebTimeoutMilliseconds","effectiveValue":"10000","effectiveValueSource":"default","metadata":{"default":"10000","dataType":"nonNegativeInt","settingDescription":"The
+        timeout, in milliseconds, we will use when sending GET and POST requests to
+        the LRSes involved in a statement pipe. This number is set fairly high by
+        default to accomodate batches involving many attachments.","level":"System"}},{"id":"PlayerDesiredHeight","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"nonNegativeInt","settingDescription":"The
+        number of pixels in height the course would like to have available, if possible,
+        during delivery.","level":"Registration"}},{"id":"PlayerShowHelp","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Specifies
+        whether the interface should show a help button","level":"Registration"}},{"id":"LegacyPlayerCustomizationScriptUrl","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"string","settingDescription":"Web
+        path (absolute or relative) to a JavaScript file to load during legacy player
+        start up to allow for customization of player execution.","level":"Registration"}},{"id":"CompressRecordResultsPayload","effectiveValue":"false","effectiveValueSource":"default","metadata":{"default":"false","dataType":"bool","settingDescription":"If
+        this setting is enabled, the payloads for the RecordResults requests will
+        be compressed using the LZString library. This configuration can be used along
+        with UseDeltaRecordResultsPayload to greatly reduce the size of the RecordResults
+        payload.","level":"Registration"}},{"id":"ApiRollupRegistrationFormat","effectiveValue":"FULL","effectiveValueSource":"system","metadata":{"default":"activity","dataType":"string","settingDescription":"Level
+        of detail in the information that provided when posting registration data.
+        It may be one of three values: ''course'' (course summary), ''activity'' (activity
+        summary, or ''full'' (full detail), and is set to ''activity'' by default.
+        The information will be posted as JSON, using the schemas for the registration
+        /progress or /progress/detail resources depending on the format selected,
+        with an additional wrapper specifying the registration ID.","level":"Registration"}},{"id":"PlayerFinalScoCourseSatisfiedNormalExitAction","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"Enum.ExitActionValue","settingDescription":"The
+        navigation behavior the SCP should display when a SCO at the end of the course
+        that has been satisfied exits with an exit type of normal.","level":"Registration","learningStandards":["SCORM11","SCORM12"],"validValues":[{"value":"EXIT_COURSE","valueDescription":"Exit
+        the entire course player"},{"value":"EXIT_COURSE_AFTER_CONFIRM","valueDescription":"Exit
+        the entire course player after asking the learner''s permission"},{"value":"GO_TO_NEXT_SCO","valueDescription":"Immediately
+        go to the next SCO"},{"value":"DISPLAY_MESSAGE","valueDescription":"Display
+        a status message to the learner"},{"value":"DO_NOTHING","valueDescription":"Do
+        not take any action"}]}},{"id":"PlayerAllowCompleteStatusChange","effectiveValue":"","effectiveValueSource":"default","metadata":{"default":"","dataType":"bool","settingDescription":"Determines
+        whether or not the lesson status can be modified once it has been set to complete.","level":"Registration","learningStandards":["SCORM11","SCORM12","AICC"]}},{"id":"ConcurrentLaunchDetectionHistoryRows","effectiveValue":"5","effectiveValueSource":"default","metadata":{"default":"5","dataType":"positiveInt","settingDescription":"The
+        number of launch history entries to load when detecting concurrent launches.","level":"Registration"}},{"id":"PlayerScoreRollupModeValue","effectiveValue":"","effectiveValueSource":"default","metadata":{"dataType":"Enum.ScoreRollupMethodValue","settingDescription":"Specifies
+        how the player should rollup scores from individual SCOs to aggregations in
+        SCORM 1.2","level":"Registration","learningStandards":["SCORM11","SCORM12","CMI5"],"validValues":[{"value":"SCORE_PROVIDED_BY_COURSE","valueDescription":"For
+        use with single SCO courses, uses whatever score is provided by the SCO."},{"value":"AVERAGE_SCORE_OF_ALL_UNITS","valueDescription":"Adds
+        up all reported scores and divides by the number of SCOs in the course."},{"value":"AVERAGE_SCORE_OF_ALL_UNITS_WITH_SCORES","valueDescription":"Adds
+        up all reported scores and divides by the number of SCOs that actually reported
+        a score."},{"value":"FIXED_AVERAGE","valueDescription":"Adds up all reported
+        scores and divides by a fixed number."},{"value":"AVERAGE_SCORE_OF_ALL_UNITS_WITH_NONZERO_SCORES","valueDescription":"Adds
+        up all reported scores and divides by the number of SCOs that reported a score
+        greater than zero."},{"value":"LAST_SCO_SCORE","valueDescription":"Use the
+        score of the last SCO."}]}},{"id":"xAPIPostProcessContextParameters","effectiveValue":"top
+        , left , content_token , width , content_endpoint , height, Content-Length","effectiveValueSource":"default","metadata":{"default":"top
+        , left , content_token , width , content_endpoint , height, Content-Length","dataType":"delimitedString","settingDescription":"Only
+        relevant if TinCanPostProcessContext is overriden, or as a way to consume
+        extraneous parameters so they are not flagged as ''unexpected''. Comma-delimited,
+        case sensitive list of xAPI parameters to pass to the TinCanPostProcessContext
+        integration method requestParameters collection. This is needed because xAPI
+        requires us to consider any unexpected parameters an error, so if an integration
+        uses parameters from the xAPI call it needs to declare that usage. The default
+        value contains extra parameters the combination of the Engine player and the
+        TinCan launch process recomendation typically cause to be sent.","level":"Tenant"}}]}'
+    http_version: 
+  recorded_at: Fri, 13 Nov 2020 17:36:40 GMT
+recorded_with: VCR 4.0.0

@@ -10,6 +10,18 @@ RSpec.describe ScormEngine::Api::Endpoints::Configuration do
       expect(subject.result.UserCountReportLookBackDays).to be_truthy
       expect(subject.result["UserCountReportDaysBetweenReports"]).to be_truthy
     end
+
+    describe "includeMetadata" do
+      let(:subject) { scorm_engine_client.get_app_configuration(includeMetadata: true) }
+
+      it "is successful" do
+        expect(subject.success?).to eq true
+      end
+
+      it "returns metadata in raw_response when included in options" do
+        expect(subject.raw_response.body['settingItems'].first["metadata"]).to_not be_nil
+      end
+    end
   end
 
   describe "#post_app_configuration" do
@@ -48,6 +60,23 @@ RSpec.describe ScormEngine::Api::Endpoints::Configuration do
       expect(response.success?).to eq false
       expect(response.status).to eq 400
       expect(response.message).to match(/NonExistentSettingTotesBogus is not a valid setting ID/)
+    end
+  end
+
+  describe "#delete_app_configuration" do
+    let(:subject) { scorm_engine_client }
+    let(:response) {
+      subject.delete_app_configuration(setting_id: "UserCountReportLookBackDays")
+    }
+
+    it "is successful" do
+      expect(response.success?).to eq true
+    end
+    it "fails when settings are invalid" do
+      response = subject.delete_app_configuration(setting_id: "NonExistentSettingTotesBogus")
+      expect(response.success?).to eq false
+      expect(response.status).to eq 400
+      expect(response.message).to match(/NonExistentSettingTotesBogus/)
     end
   end
 end

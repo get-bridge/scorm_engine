@@ -1,18 +1,16 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v2/appManagement/configuration
+    method: delete
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v2/appManagement/configuration/NonExistentSettingTotesBogus
     body:
-      encoding: UTF-8
-      string: '{"settings":[{"settingId":"NonExistentSettingTotesBogus","value":"YES"}]}'
+      encoding: US-ASCII
+      string: ''
     headers:
       User-Agent:
       - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
-      Content-Type:
-      - application/json
   response:
     status:
       code: 400
@@ -21,11 +19,11 @@ http_interactions:
       content-type:
       - application/json
       content-length:
-      - '68'
+      - '74'
       connection:
       - close
       date:
-      - Fri, 13 Nov 2020 17:36:17 GMT
+      - Fri, 13 Nov 2020 17:35:54 GMT
       p3p:
       - CP="NOI"
       server:
@@ -35,14 +33,14 @@ http_interactions:
       x-cache:
       - Error from cloudfront
       via:
-      - 1.1 5950a1c2bfcf1f3e07bedbb2efad39f3.cloudfront.net (CloudFront)
+      - 1.1 34a6660c4928dac92cf01799fb3e9409.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - DEN52-C1
       x-amz-cf-id:
-      - yeqWnhMCsJErQ5Yz_WEwag8JkeEU2pxag2MbSl5ntbT3PXUiGR1CbQ==
+      - 23XWDoib5rd1KbIFrVhhsryjMBjesqj6jWWgllQtXrQUgJqCi7zMNQ==
     body:
       encoding: UTF-8
-      string: '{"message":"NonExistentSettingTotesBogus is not a valid setting ID"}'
+      string: '{"message":"no such configuration setting ''NonExistentSettingTotesBogus''"}'
     http_version: 
-  recorded_at: Fri, 13 Nov 2020 17:36:17 GMT
+  recorded_at: Fri, 13 Nov 2020 17:35:54 GMT
 recorded_with: VCR 4.0.0

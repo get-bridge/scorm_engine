@@ -17,7 +17,9 @@ module ScormEngine
         #
         def get_app_configuration(options = {})
           api_v2(without_tenant: !options.fetch(:for_tenant, false)) do
-            response = get("appManagement/configuration")
+            options.delete(:for_tenant)
+
+            response = get("appManagement/configuration", options)
 
             result = OpenStruct.new
 
@@ -54,6 +56,34 @@ module ScormEngine
             body = { settings: settings.map { |k, v| { "settingId" => k, "value" => v.to_s } } }
 
             response = post("appManagement/configuration", {}, body)
+
+            Response.new(raw_response: response)
+          end
+        end
+
+        #
+        # Deletes the current value for a setting, reverting it to its default value.
+        #
+        # @see http://rustici-docs.s3.amazonaws.com/engine/20.1.x/api/apiV2.html#/appManagement/DeleteApplicationConfigurationSetting
+        #
+        # @param [Hash] options
+        #
+        # @option [String] setting_id
+        #   The ID for the setting to be deleted.
+        #
+        # @option options [Boolean] :for_tenant
+        #   Indicates whether the configuration should be set for the current tenant.
+        #   If false or not specified, will update configuration settings for the application in general.
+        #
+        # @return [ScormEngine::Response]
+        #
+        def delete_app_configuration(options = {})
+          require_options(options, :setting_id)
+
+          api_v2(without_tenant: !options.fetch(:for_tenant, false)) do
+            setting_id = options.delete(:setting_id)
+
+            response = delete("appManagement/configuration/#{setting_id}")
 
             Response.new(raw_response: response)
           end

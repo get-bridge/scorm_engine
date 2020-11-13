@@ -21,7 +21,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Tue, 10 Nov 2020 22:57:27 GMT
+      - Fri, 13 Nov 2020 17:36:17 GMT
       p3p:
       - CP="NOI"
       server:
@@ -31,16 +31,16 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 3046ef5af023075cfbd500968062319e.cloudfront.net (CloudFront)
+      - 1.1 17a5b9b0c17eb15303e6341f5fc26610.cloudfront.net (CloudFront)
       x-amz-cf-pop:
-      - SLC50-C1
+      - DEN52-C1
       x-amz-cf-id:
-      - 8fE2248jqYjA7eGaEIKD50UxFmgmrb1qIUEMYGKaQwK3cft29hM3qQ==
+      - 3dSczFwWiDNck-f5CjiKYup9DcGUJtJ9yJQS5aoYpaad4kx_AesJVQ==
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Tue, 10 Nov 2020 22:57:27 GMT
+  recorded_at: Fri, 13 Nov 2020 17:36:17 GMT
 - request:
     method: get
     uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v2/appManagement/configuration
@@ -64,7 +64,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Tue, 10 Nov 2020 22:57:27 GMT
+      - Fri, 13 Nov 2020 17:36:17 GMT
       p3p:
       - CP="NOI"
       server:
@@ -74,11 +74,11 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 c4ab6962f5d964707d14e1b456abda18.cloudfront.net (CloudFront)
+      - 1.1 3f7e5e686bf8f19b9c786efbe99c7589.cloudfront.net (CloudFront)
       x-amz-cf-pop:
-      - SLC50-C1
+      - DEN52-C1
       x-amz-cf-id:
-      - T1SNOOvtJkZwEktTgbQD0rQ4tkoAuLbRu-aVbQJ6Z7ST1q_RNwND7w==
+      - WkTZ2jdJltKJJ8w-V5Vi6zfWXEp9XDy6w6Fp4AfQykhQF19zByLnXA==
     body:
       encoding: UTF-8
       string: '{"settingItems":[{"id":"UseNativePostgreSqlUpserts","effectiveValue":"true","effectiveValueSource":"default"},{"id":"PlayerLaunchType","effectiveValue":"FRAMESET","effectiveValueSource":"system"},{"id":"AiccSessionPerLaunch","effectiveValue":"false","effectiveValueSource":"default"},{"id":"UseSystemDatabaseForTenantSettings","effectiveValue":"true","effectiveValueSource":"fallback"},{"id":"PlayerFinalScoCourseNotSatisfiedTimeoutExitAction","effectiveValue":"","effectiveValueSource":"default"},{"id":"WebContentForceNewWindow","effectiveValue":"false","effectiveValueSource":"default"},{"id":"PlayerCaptureHistoryDetailed","effectiveValue":"","effectiveValueSource":"default"},{"id":"xAPIRewriteStatementModifier","effectiveValue":"","effectiveValueSource":"default"},{"id":"ApiRollupRegistrationDuringSession","effectiveValue":"true","effectiveValueSource":"default"},{"id":"ApiPostbackTimeoutSeconds","effectiveValue":"10","effectiveValueSource":"default"},{"id":"MaxRowsPerDatabaseUpsert","effectiveValue":"1","effectiveValueSource":"default"},{"id":"AllowedTenantNameRegex","effectiveValue":"","effectiveValueSource":"default"},{"id":"ConfigurationEncryptionExceptions","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerCommMaxFailedSubmissions","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerLookaheadSequencerMode","effectiveValue":"","effectiveValueSource":"default"},{"id":"SupplementalQueryStringParametersForAllActivities","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerShowProgressBar","effectiveValue":"","effectiveValueSource":"default"},{"id":"LrsAuthCacheSecondsFailure","effectiveValue":"60","effectiveValueSource":"default"},{"id":"PlayerDebugLookAheadAudit","effectiveValue":"true","effectiveValueSource":"default"},{"id":"PlayerCourseStructureStartsOpen","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerRequiredWidth","effectiveValue":"","effectiveValueSource":"default"},{"id":"HashAccountPasswords","effectiveValue":"true","effectiveValueSource":"default"},{"id":"PlayerIntermediateScoNotSatisfiedNormalExitAction","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerIsSatisfactionTracked","effectiveValue":"","effectiveValueSource":"default"},{"id":"ApiMaxAuthTokenLifetimeSeconds","effectiveValue":"28800","effectiveValueSource":"default"},{"id":"FilePathToUploadedZippedPackage","effectiveValue":"/var/scormengine/content/uploads/${TenantName}/uploads","effectiveValueSource":"base"},{"id":"PlayerForceObjectiveCompletionSetByContent","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerWrapScoWindowWithApi","effectiveValue":"","effectiveValueSource":"default"},{"id":"ForwardedHost","effectiveValue":"","effectiveValueSource":"default"},{"id":"PDFContentStylesheetPath","effectiveValue":"","effectiveValueSource":"default"},{"id":"UserCountReportMaxOffsetMS","effectiveValue":"3600000","effectiveValueSource":"default"},{"id":"MaxPersistRuntimeDataAttempts","effectiveValue":"1","effectiveValueSource":"default"},{"id":"PlayerScoreOverridesStatus","effectiveValue":"","effectiveValueSource":"default"},{"id":"xAPIStatementPipeMaxBackoffHours","effectiveValue":"24","effectiveValueSource":"default"},{"id":"WebPathToContentRootHistory","effectiveValue":"","effectiveValueSource":"default"},{"id":"PDFContentPageDurationThreshold","effectiveValue":"5","effectiveValueSource":"default"},{"id":"LtiConsumerDescription","effectiveValue":"","effectiveValueSource":"default"},{"id":"ApiRollupRegistrationAuthUser","effectiveValue":"scorm","effectiveValueSource":"system"},{"id":"xAPILaunchTokenCleanupIntervalInSeconds","effectiveValue":"7200","effectiveValueSource":"default"},{"id":"LtiConsumerUrl","effectiveValue":"","effectiveValueSource":"default"},{"id":"UsePlayerForTinCanLaunches","effectiveValue":"true","effectiveValueSource":"default"},{"id":"LtiBaseUrl","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerFinalScoCourseSatisfiedSuspendExitAction","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerFinalScoCourseSatisfiedTimeoutExitAction","effectiveValue":"","effectiveValueSource":"default"},{"id":"UseDeltaRecordResultsPayload","effectiveValue":"false","effectiveValueSource":"default"},{"id":"PlayerPreventWindowResize","effectiveValue":"","effectiveValueSource":"default"},{"id":"TenantIdLength","effectiveValue":"2","effectiveValueSource":"default"},{"id":"PlayerDesiredFullScreen","effectiveValue":"","effectiveValueSource":"default"},{"id":"MediaContentStylesheetPath","effectiveValue":"","effectiveValueSource":"default"},{"id":"HashContentFilesForActivityId","effectiveValue":"false","effectiveValueSource":"base"},{"id":"Go1PartnerPortalId","effectiveValue":"-1","effectiveValueSource":"default"},{"id":"SimpleQueueRetryInitialDelaySeconds","effectiveValue":"600","effectiveValueSource":"default"},{"id":"PromptOnPlayerClose","effectiveValue":"false","effectiveValueSource":"default"},{"id":"PlayerScaleRawScore","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerDebugControlDetailed","effectiveValue":"true","effectiveValueSource":"default"},{"id":"PlayerDebugSequencingAudit","effectiveValue":"true","effectiveValueSource":"default"},{"id":"PlayerShowCourseStructure","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerIntermediateScoSatisfiedNormalExitAction","effectiveValue":"","effectiveValueSource":"default"},{"id":"ApiPingCheckDatabase","effectiveValue":"false","effectiveValueSource":"default"},{"id":"PlayerInvokeRollupAtSuspendAll","effectiveValue":"true","effectiveValueSource":"system"},{"id":"TenancyEnabled","effectiveValue":"true","effectiveValueSource":"default"},{"id":"ContentConnectorRemoteSearchTimeoutMS","effectiveValue":"5000","effectiveValueSource":"default"},{"id":"MediaContentCompletionThreshold","effectiveValue":"95","effectiveValueSource":"default"},{"id":"xAPILaunchTokenLifeInSeconds","effectiveValue":"28800","effectiveValueSource":"default"},{"id":"PlayerIntermediateScoNotSatisfiedTimeoutExitAction","effectiveValue":"","effectiveValueSource":"default"},{"id":"SystemHomepageUrl","effectiveValue":"https://<SCORM_ENGINE_HOST>/","effectiveValueSource":"system"},{"id":"ApiRoot","effectiveValue":"/api/","effectiveValueSource":"default"},{"id":"xAPIStatementPipeSleepTimeMilliseconds","effectiveValue":"10000","effectiveValueSource":"default"},{"id":"ContentAuthCookieFactory","effectiveValue":"RusticiSoftware.ScormContentPlayer.Logic.Utilities.CloudFrontCookieFactory,
@@ -101,7 +101,7 @@ http_interactions:
         ScormLaunchHistory, ScormRegistrationGlobalObj, TinCanRegistration","effectiveValueSource":"default"},{"id":"PlayerMakeStudentPrefsGlobalToCourse","effectiveValue":"","effectiveValueSource":"default"},{"id":"ApiPostbackDataModelVersion","effectiveValue":"v1","effectiveValueSource":"system"},{"id":"PlayerFinishCausesImmediateCommit","effectiveValue":"","effectiveValueSource":"default"},{"id":"IntermediatePageLoadAtStart","effectiveValue":"true","effectiveValueSource":"default"},{"id":"ApiCourseDeleteAttemptDeleteFiles","effectiveValue":"false","effectiveValueSource":"default"},{"id":"OfflineContentPathAcceptedRegex","effectiveValue":"","effectiveValueSource":"default"},{"id":"ModernPlayerCustomizationLogo","effectiveValue":"","effectiveValueSource":"default"},{"id":"xAPIObjectStoreRepairs","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerInvalidMenuItemAction","effectiveValue":"","effectiveValueSource":"default"},{"id":"LtiConsumerIdentifier","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerDebugControlAudit","effectiveValue":"true","effectiveValueSource":"default"},{"id":"xAPILaunchTokenUpdateLifeInSeconds","effectiveValue":"0","effectiveValueSource":"default"},{"id":"ApiTokenPostbackValidHours","effectiveValue":"24","effectiveValueSource":"default"},{"id":"ContentVaultSlidingAuthExpiryEnabled","effectiveValue":"false","effectiveValueSource":"default"},{"id":"DataPersistenceEngine","effectiveValue":"mysql","effectiveValueSource":"base"},{"id":"PlayerFirstScoIsPretest","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerIsScoreTracked","effectiveValue":"","effectiveValueSource":"default"},{"id":"AttemptInsertBeforeUpsert","effectiveValue":"null","effectiveValueSource":"default"},{"id":"ImportLinkLocation","effectiveValue":"defaultui/import","effectiveValueSource":"default"},{"id":"PlayerApplyRollupStatusToSuccess","effectiveValue":"","effectiveValueSource":"default"},{"id":"ApiRollupRegistrationSynchronous","effectiveValue":"true","effectiveValueSource":"default"},{"id":"Lti11PrivacySettings","effectiveValue":"LEARNER_NAME_ONLY","effectiveValueSource":"default"},{"id":"EncryptionPassword","effectiveValue":"","effectiveValueSource":"default"},{"id":"MaxUpsertSizeInBytes","effectiveValue":"0","effectiveValueSource":"default"},{"id":"PlayerDebugSequencingSimple","effectiveValue":"true","effectiveValueSource":"default"},{"id":"SystemDatabaseEnabled","effectiveValue":"true","effectiveValueSource":"default"},{"id":"xAPIEnabled","effectiveValue":"true","effectiveValueSource":"default"},{"id":"ContentVaultEnabled","effectiveValue":"True","effectiveValueSource":"base"},{"id":"PlayerScoreRollupModeNumberOfScoringObjects","effectiveValue":"","effectiveValueSource":"default"},{"id":"xAPIStatementPipeWebTimeoutMilliseconds","effectiveValue":"10000","effectiveValueSource":"default"},{"id":"PlayerDesiredHeight","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerShowHelp","effectiveValue":"","effectiveValueSource":"default"},{"id":"LegacyPlayerCustomizationScriptUrl","effectiveValue":"","effectiveValueSource":"default"},{"id":"CompressRecordResultsPayload","effectiveValue":"false","effectiveValueSource":"default"},{"id":"ApiRollupRegistrationFormat","effectiveValue":"FULL","effectiveValueSource":"system"},{"id":"PlayerFinalScoCourseSatisfiedNormalExitAction","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerAllowCompleteStatusChange","effectiveValue":"","effectiveValueSource":"default"},{"id":"ConcurrentLaunchDetectionHistoryRows","effectiveValue":"5","effectiveValueSource":"default"},{"id":"PlayerScoreRollupModeValue","effectiveValue":"","effectiveValueSource":"default"},{"id":"xAPIPostProcessContextParameters","effectiveValue":"top
         , left , content_token , width , content_endpoint , height, Content-Length","effectiveValueSource":"default"}]}'
     http_version: 
-  recorded_at: Tue, 10 Nov 2020 22:57:29 GMT
+  recorded_at: Fri, 13 Nov 2020 17:36:17 GMT
 - request:
     method: post
     uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v2/appManagement/configuration
@@ -123,7 +123,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Tue, 10 Nov 2020 22:57:29 GMT
+      - Fri, 13 Nov 2020 17:36:18 GMT
       p3p:
       - CP="NOI"
       server:
@@ -133,16 +133,16 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 892ff18443201978a8cd2296b3d38e18.cloudfront.net (CloudFront)
+      - 1.1 584febef1233840787d98d1cd03f82c1.cloudfront.net (CloudFront)
       x-amz-cf-pop:
-      - SLC50-C1
+      - DEN52-C1
       x-amz-cf-id:
-      - KAP2czUuOHqDHgULaQGZ-nIxxVG9PaLbpaIIwUBE_GcjMwNkGdFb9g==
+      - q2PAiIhBYo7bS7VFRGTZg8ajuSHXusoIeosrqsNM-lAy9pmGQtNpVw==
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Tue, 10 Nov 2020 22:57:29 GMT
+  recorded_at: Fri, 13 Nov 2020 17:36:18 GMT
 - request:
     method: get
     uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v2/appManagement/configuration
@@ -166,7 +166,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Tue, 10 Nov 2020 22:57:32 GMT
+      - Fri, 13 Nov 2020 17:36:21 GMT
       p3p:
       - CP="NOI"
       server:
@@ -176,11 +176,11 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 bd6dc6ff7ea2e7a0c6202fdae4d38e80.cloudfront.net (CloudFront)
+      - 1.1 592e119b061227362dc16266517f02c2.cloudfront.net (CloudFront)
       x-amz-cf-pop:
-      - SLC50-C1
+      - DEN52-C1
       x-amz-cf-id:
-      - uG3k7RMLM44dX9hNSSVPljjJERGYdB-mdxfZTqE4pQr7DbKUMpFYJw==
+      - 7BgjimV8uPfbb6BmXMb3X1zIjfHA0A93p7iHQE0KeQMzrko1AXusSA==
     body:
       encoding: UTF-8
       string: '{"settingItems":[{"id":"UseNativePostgreSqlUpserts","effectiveValue":"true","effectiveValueSource":"default"},{"id":"PlayerLaunchType","effectiveValue":"FRAMESET","effectiveValueSource":"system"},{"id":"AiccSessionPerLaunch","effectiveValue":"false","effectiveValueSource":"default"},{"id":"UseSystemDatabaseForTenantSettings","effectiveValue":"true","effectiveValueSource":"fallback"},{"id":"PlayerFinalScoCourseNotSatisfiedTimeoutExitAction","effectiveValue":"","effectiveValueSource":"default"},{"id":"WebContentForceNewWindow","effectiveValue":"false","effectiveValueSource":"default"},{"id":"PlayerCaptureHistoryDetailed","effectiveValue":"","effectiveValueSource":"default"},{"id":"xAPIRewriteStatementModifier","effectiveValue":"","effectiveValueSource":"default"},{"id":"ApiRollupRegistrationDuringSession","effectiveValue":"true","effectiveValueSource":"default"},{"id":"ApiPostbackTimeoutSeconds","effectiveValue":"10","effectiveValueSource":"default"},{"id":"MaxRowsPerDatabaseUpsert","effectiveValue":"1","effectiveValueSource":"default"},{"id":"AllowedTenantNameRegex","effectiveValue":"","effectiveValueSource":"default"},{"id":"ConfigurationEncryptionExceptions","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerCommMaxFailedSubmissions","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerLookaheadSequencerMode","effectiveValue":"","effectiveValueSource":"default"},{"id":"SupplementalQueryStringParametersForAllActivities","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerShowProgressBar","effectiveValue":"","effectiveValueSource":"default"},{"id":"LrsAuthCacheSecondsFailure","effectiveValue":"60","effectiveValueSource":"default"},{"id":"PlayerDebugLookAheadAudit","effectiveValue":"true","effectiveValueSource":"default"},{"id":"PlayerCourseStructureStartsOpen","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerRequiredWidth","effectiveValue":"","effectiveValueSource":"default"},{"id":"HashAccountPasswords","effectiveValue":"true","effectiveValueSource":"default"},{"id":"PlayerIntermediateScoNotSatisfiedNormalExitAction","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerIsSatisfactionTracked","effectiveValue":"","effectiveValueSource":"default"},{"id":"ApiMaxAuthTokenLifetimeSeconds","effectiveValue":"28800","effectiveValueSource":"default"},{"id":"FilePathToUploadedZippedPackage","effectiveValue":"/var/scormengine/content/uploads/${TenantName}/uploads","effectiveValueSource":"base"},{"id":"PlayerForceObjectiveCompletionSetByContent","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerWrapScoWindowWithApi","effectiveValue":"","effectiveValueSource":"default"},{"id":"ForwardedHost","effectiveValue":"","effectiveValueSource":"default"},{"id":"PDFContentStylesheetPath","effectiveValue":"","effectiveValueSource":"default"},{"id":"UserCountReportMaxOffsetMS","effectiveValue":"3600000","effectiveValueSource":"default"},{"id":"MaxPersistRuntimeDataAttempts","effectiveValue":"1","effectiveValueSource":"default"},{"id":"PlayerScoreOverridesStatus","effectiveValue":"","effectiveValueSource":"default"},{"id":"xAPIStatementPipeMaxBackoffHours","effectiveValue":"24","effectiveValueSource":"default"},{"id":"WebPathToContentRootHistory","effectiveValue":"","effectiveValueSource":"default"},{"id":"PDFContentPageDurationThreshold","effectiveValue":"5","effectiveValueSource":"default"},{"id":"LtiConsumerDescription","effectiveValue":"","effectiveValueSource":"default"},{"id":"ApiRollupRegistrationAuthUser","effectiveValue":"scorm","effectiveValueSource":"system"},{"id":"xAPILaunchTokenCleanupIntervalInSeconds","effectiveValue":"7200","effectiveValueSource":"default"},{"id":"LtiConsumerUrl","effectiveValue":"","effectiveValueSource":"default"},{"id":"UsePlayerForTinCanLaunches","effectiveValue":"true","effectiveValueSource":"default"},{"id":"LtiBaseUrl","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerFinalScoCourseSatisfiedSuspendExitAction","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerFinalScoCourseSatisfiedTimeoutExitAction","effectiveValue":"","effectiveValueSource":"default"},{"id":"UseDeltaRecordResultsPayload","effectiveValue":"false","effectiveValueSource":"default"},{"id":"PlayerPreventWindowResize","effectiveValue":"","effectiveValueSource":"default"},{"id":"TenantIdLength","effectiveValue":"2","effectiveValueSource":"default"},{"id":"PlayerDesiredFullScreen","effectiveValue":"","effectiveValueSource":"default"},{"id":"MediaContentStylesheetPath","effectiveValue":"","effectiveValueSource":"default"},{"id":"HashContentFilesForActivityId","effectiveValue":"false","effectiveValueSource":"base"},{"id":"Go1PartnerPortalId","effectiveValue":"-1","effectiveValueSource":"default"},{"id":"SimpleQueueRetryInitialDelaySeconds","effectiveValue":"600","effectiveValueSource":"default"},{"id":"PromptOnPlayerClose","effectiveValue":"false","effectiveValueSource":"default"},{"id":"PlayerScaleRawScore","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerDebugControlDetailed","effectiveValue":"true","effectiveValueSource":"default"},{"id":"PlayerDebugSequencingAudit","effectiveValue":"true","effectiveValueSource":"default"},{"id":"PlayerShowCourseStructure","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerIntermediateScoSatisfiedNormalExitAction","effectiveValue":"","effectiveValueSource":"default"},{"id":"ApiPingCheckDatabase","effectiveValue":"false","effectiveValueSource":"default"},{"id":"PlayerInvokeRollupAtSuspendAll","effectiveValue":"true","effectiveValueSource":"system"},{"id":"TenancyEnabled","effectiveValue":"true","effectiveValueSource":"default"},{"id":"ContentConnectorRemoteSearchTimeoutMS","effectiveValue":"5000","effectiveValueSource":"default"},{"id":"MediaContentCompletionThreshold","effectiveValue":"95","effectiveValueSource":"default"},{"id":"xAPILaunchTokenLifeInSeconds","effectiveValue":"28800","effectiveValueSource":"default"},{"id":"PlayerIntermediateScoNotSatisfiedTimeoutExitAction","effectiveValue":"","effectiveValueSource":"default"},{"id":"SystemHomepageUrl","effectiveValue":"https://<SCORM_ENGINE_HOST>/","effectiveValueSource":"system"},{"id":"ApiRoot","effectiveValue":"/api/","effectiveValueSource":"default"},{"id":"xAPIStatementPipeSleepTimeMilliseconds","effectiveValue":"10000","effectiveValueSource":"default"},{"id":"ContentAuthCookieFactory","effectiveValue":"RusticiSoftware.ScormContentPlayer.Logic.Utilities.CloudFrontCookieFactory,
@@ -203,5 +203,5 @@ http_interactions:
         ScormLaunchHistory, ScormRegistrationGlobalObj, TinCanRegistration","effectiveValueSource":"default"},{"id":"PlayerMakeStudentPrefsGlobalToCourse","effectiveValue":"","effectiveValueSource":"default"},{"id":"ApiPostbackDataModelVersion","effectiveValue":"v1","effectiveValueSource":"system"},{"id":"PlayerFinishCausesImmediateCommit","effectiveValue":"","effectiveValueSource":"default"},{"id":"IntermediatePageLoadAtStart","effectiveValue":"true","effectiveValueSource":"default"},{"id":"ApiCourseDeleteAttemptDeleteFiles","effectiveValue":"false","effectiveValueSource":"default"},{"id":"OfflineContentPathAcceptedRegex","effectiveValue":"","effectiveValueSource":"default"},{"id":"ModernPlayerCustomizationLogo","effectiveValue":"","effectiveValueSource":"default"},{"id":"xAPIObjectStoreRepairs","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerInvalidMenuItemAction","effectiveValue":"","effectiveValueSource":"default"},{"id":"LtiConsumerIdentifier","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerDebugControlAudit","effectiveValue":"true","effectiveValueSource":"default"},{"id":"xAPILaunchTokenUpdateLifeInSeconds","effectiveValue":"0","effectiveValueSource":"default"},{"id":"ApiTokenPostbackValidHours","effectiveValue":"24","effectiveValueSource":"default"},{"id":"ContentVaultSlidingAuthExpiryEnabled","effectiveValue":"false","effectiveValueSource":"default"},{"id":"DataPersistenceEngine","effectiveValue":"mysql","effectiveValueSource":"base"},{"id":"PlayerFirstScoIsPretest","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerIsScoreTracked","effectiveValue":"","effectiveValueSource":"default"},{"id":"AttemptInsertBeforeUpsert","effectiveValue":"null","effectiveValueSource":"default"},{"id":"ImportLinkLocation","effectiveValue":"defaultui/import","effectiveValueSource":"default"},{"id":"PlayerApplyRollupStatusToSuccess","effectiveValue":"","effectiveValueSource":"default"},{"id":"ApiRollupRegistrationSynchronous","effectiveValue":"true","effectiveValueSource":"default"},{"id":"Lti11PrivacySettings","effectiveValue":"LEARNER_NAME_ONLY","effectiveValueSource":"default"},{"id":"EncryptionPassword","effectiveValue":"","effectiveValueSource":"default"},{"id":"MaxUpsertSizeInBytes","effectiveValue":"0","effectiveValueSource":"default"},{"id":"PlayerDebugSequencingSimple","effectiveValue":"true","effectiveValueSource":"default"},{"id":"SystemDatabaseEnabled","effectiveValue":"true","effectiveValueSource":"default"},{"id":"xAPIEnabled","effectiveValue":"true","effectiveValueSource":"default"},{"id":"ContentVaultEnabled","effectiveValue":"True","effectiveValueSource":"base"},{"id":"PlayerScoreRollupModeNumberOfScoringObjects","effectiveValue":"","effectiveValueSource":"default"},{"id":"xAPIStatementPipeWebTimeoutMilliseconds","effectiveValue":"10000","effectiveValueSource":"default"},{"id":"PlayerDesiredHeight","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerShowHelp","effectiveValue":"","effectiveValueSource":"default"},{"id":"LegacyPlayerCustomizationScriptUrl","effectiveValue":"","effectiveValueSource":"default"},{"id":"CompressRecordResultsPayload","effectiveValue":"false","effectiveValueSource":"default"},{"id":"ApiRollupRegistrationFormat","effectiveValue":"FULL","effectiveValueSource":"system"},{"id":"PlayerFinalScoCourseSatisfiedNormalExitAction","effectiveValue":"","effectiveValueSource":"default"},{"id":"PlayerAllowCompleteStatusChange","effectiveValue":"","effectiveValueSource":"default"},{"id":"ConcurrentLaunchDetectionHistoryRows","effectiveValue":"5","effectiveValueSource":"default"},{"id":"PlayerScoreRollupModeValue","effectiveValue":"","effectiveValueSource":"default"},{"id":"xAPIPostProcessContextParameters","effectiveValue":"top
         , left , content_token , width , content_endpoint , height, Content-Length","effectiveValueSource":"default"}]}'
     http_version: 
-  recorded_at: Tue, 10 Nov 2020 22:57:33 GMT
+  recorded_at: Fri, 13 Nov 2020 17:36:21 GMT
 recorded_with: VCR 4.0.0

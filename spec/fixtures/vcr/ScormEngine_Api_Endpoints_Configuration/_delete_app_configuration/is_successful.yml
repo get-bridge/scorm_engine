@@ -1,18 +1,16 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v2/appManagement/configuration
+    method: delete
+    uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v2/appManagement/configuration/UserCountReportLookBackDays
     body:
-      encoding: UTF-8
-      string: '{"settings":[{"settingId":"UserCountReportLookBackDays","value":"90"},{"settingId":"UserCountReportDaysBetweenReports","value":"20"}]}'
+      encoding: US-ASCII
+      string: ''
     headers:
       User-Agent:
       - ScormEngine Ruby Gem 0.8.2
       Authorization:
       - Basic <BASIC_AUTH>
-      Content-Type:
-      - application/json
   response:
     status:
       code: 204
@@ -21,7 +19,7 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 13 Nov 2020 17:36:16 GMT
+      - Fri, 13 Nov 2020 17:35:54 GMT
       p3p:
       - CP="NOI"
       server:
@@ -31,14 +29,14 @@ http_interactions:
       x-cache:
       - Miss from cloudfront
       via:
-      - 1.1 d126a6b57e5778e7435ff2e74117527a.cloudfront.net (CloudFront)
+      - 1.1 30ea845097208edbc19305c535a5be99.cloudfront.net (CloudFront)
       x-amz-cf-pop:
       - DEN52-C1
       x-amz-cf-id:
-      - xIlI06uaLXV1o5oJ6TFf0dsVbPDZGpIaRvIFVSFsUMDK6D1c70WuLw==
+      - 9oduLymNKR0itZRX50atGfw-OwDbUN6XD0yiIBDWsOtnG-XvMhHhrQ==
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Fri, 13 Nov 2020 17:36:17 GMT
+  recorded_at: Fri, 13 Nov 2020 17:35:54 GMT
 recorded_with: VCR 4.0.0
