@@ -4,7 +4,10 @@ require "pry"
 require "scorm_engine"
 
 # Ensure we're picking up only the test scorm settings
-Dotenv.load(".env.test")
+Dotenv.load(".env.test.local",
+            ".env.test",
+            ".env.local",
+            ".env")
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
