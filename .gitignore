@@ -1,9 +1,9 @@
 /.bundle/
-/.env
-/.env.test
+/.env*.local
 /.rspec_status
 /.ruby-version
 /.yardoc
+/.idea/
 /_yardoc/
 /coverage/
 /doc/

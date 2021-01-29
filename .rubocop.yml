@@ -1,14 +1,16 @@
 AllCops:
+  NewCops: disable
+  SuggestExtensions: false
   TargetRubyVersion: 2.5
 Layout/EmptyLinesAroundClassBody:
   Enabled: false
-Layout/AlignParameters:
+Layout/ParameterAlignment:
   Enabled: false
 Layout/EmptyLinesAroundModuleBody:
   Enabled: false
-Naming/AccessorMethodName:
+Layout/LineLength:
   Enabled: false
-Metrics/LineLength:
+Naming/AccessorMethodName:
   Enabled: false
 Metrics/ModuleLength:
   Enabled: false
@@ -58,8 +60,6 @@ Style/StringLiteralsInInterpolation:
   Enabled: false
 Metrics/MethodLength:
   Max: 50
-Style/BracesAroundHashParameters:
-  Enabled: false
 Metrics/CyclomaticComplexity:
   Max: 15
 Metrics/PerceivedComplexity:

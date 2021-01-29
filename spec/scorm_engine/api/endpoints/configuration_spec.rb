@@ -19,7 +19,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Configuration do
       end
 
       it "returns metadata in raw_response when included in options" do
-        expect(subject.raw_response.body['settingItems'].first["metadata"]).to_not be_nil
+        expect(subject.raw_response.body["settingItems"].first["metadata"]).to_not be_nil
       end
     end
   end
@@ -43,7 +43,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Configuration do
       expect(configuration["UserCountReportLookBackDays"]).to eq "90"
       expect(configuration["UserCountReportDaysBetweenReports"]).to eq "20"
 
-      resp = subject.post_app_configuration(
+      subject.post_app_configuration(
         settings: { "UserCountReportLookBackDays" => "365",
                     "UserCountReportDaysBetweenReports" => 30 }
       )

@@ -32,7 +32,7 @@ RSpec.describe ScormEngine::Faraday::Connection do
         client = ScormEngine::Client.new(tenant: "test")
 
         expect(client).to receive(:base_uri).with(version: 2).and_call_original
-        client.send(:connection, { version: 2 })
+        client.send(:connection, version: 2)
       end
     end
   end

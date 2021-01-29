@@ -7,13 +7,11 @@ module ScormEngineHelpers
   # importing a course and play it back other tests that expect the actual
   # record to exist in SCORM will fail.
   #
-  def against_real_scorm_engine
+  def against_real_scorm_engine(&block)
     return unless scorm_engine_is_available?
 
     cassette = VCR.eject_cassette
-    VCR.turned_off do
-      yield
-    end
+    VCR.turned_off(&block)
     VCR.insert_cassette(cassette.name, cassette.instance_variable_get(:@options))
   end
 

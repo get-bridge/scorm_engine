@@ -34,9 +34,7 @@ module ScormEngine
             request.headers["engineTenantName"] = tenant unless @without_tenant
           else
             # "more" pagination urls are fully or relatively qualified
-            unless path =~ %r{\Ahttps?://} || path.start_with?(base_uri.path)
-              path = "#{tenant}/#{path}"
-            end
+            path = "#{tenant}/#{path}" unless path =~ %r{\Ahttps?://} || path.start_with?(base_uri.path)
           end
 
           options = coerce_options(options)

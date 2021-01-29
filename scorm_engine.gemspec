@@ -17,17 +17,18 @@ Gem::Specification.new do |spec|
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
+  spec.required_ruby_version = ">= 2.5"
 
-  spec.add_dependency "faraday", "~> 0.12"
-  spec.add_dependency "faraday_middleware", "~> 0.12"
+  spec.add_dependency "faraday", ">=0.12", "<=2.0"
+  spec.add_dependency "faraday_middleware", ">=0.12", "<=2.0"
 
-  spec.add_development_dependency "bundler", "~> 1.16"
+  spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "dotenv", "~> 2.4"
-  spec.add_development_dependency "pry", "~> 0.11"
+  spec.add_development_dependency "pry", "~> 0.1"
   spec.add_development_dependency "rake", "~> 13.0"
   spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "rubocop", "~> 0.56"
+  spec.add_development_dependency "rubocop", "~> 1.0"
   spec.add_development_dependency "rubyzip", "~> 2.3"
-  spec.add_development_dependency "vcr", "~> 4.0"
+  spec.add_development_dependency "vcr", "~> 6.0"
   spec.add_development_dependency "yard", "~> 0.9"
 end

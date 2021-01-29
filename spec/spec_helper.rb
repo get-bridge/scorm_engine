@@ -4,7 +4,10 @@ require "pry"
 require "scorm_engine"
 
 # Ensure we're picking up only the test scorm settings
-Dotenv.load(".env.test")
+Dotenv.load(".env.test.local",
+            ".env.test",
+            ".env.local",
+            ".env")
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -42,6 +45,6 @@ RSpec.configure do |config|
 end
 
 # Require every spec support file
-Dir[File.join(File.dirname(__FILE__), "support", "**/*.rb")].each do |file|
+Dir[File.join(File.dirname(__FILE__), "support", "**/*.rb")].sort.each do |file|
   require file
 end

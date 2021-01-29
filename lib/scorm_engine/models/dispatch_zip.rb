@@ -21,6 +21,7 @@ module ScormEngine
       # @return [String]
       attr_accessor :body
 
+      # rubocop:disable Lint/MissingSuper
       def initialize(options = {})
         @options = options.dup
         @dispatch_id = options[:dispatch_id]
@@ -28,6 +29,7 @@ module ScormEngine
         @filename = options[:filename]
         @body = options[:body]
       end
+      # rubocop:enable Lint/MissingSuper
     end
   end
 end

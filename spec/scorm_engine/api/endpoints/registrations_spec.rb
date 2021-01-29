@@ -22,7 +22,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
     against_real_scorm_engine do
       ensure_course_exists(client: subject, course_id: registration_options[:course_id])
       ensure_registration_exists(registration_options.merge(client: subject))
-      ensure_course_exists(client: subject, course_id: registration_options[:course_id] + "-no-registrations")
+      ensure_course_exists(client: subject, course_id: "#{registration_options[:course_id]}-no-registrations")
     end
   end
 
@@ -50,7 +50,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
       end
 
       it "excludes results" do
-        registrations = subject.get_registrations(course_id: registration_options[:course_id] + "-no-registrations")
+        registrations = subject.get_registrations(course_id: "#{registration_options[:course_id]}-no-registrations")
         reg = registrations.result.detect { |r| r.id == registration_options[:registration_id] }
         expect(reg).to be nil
       end

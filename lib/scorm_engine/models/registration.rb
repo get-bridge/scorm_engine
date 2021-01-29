@@ -1,5 +1,6 @@
 module ScormEngine
   module Models
+    # rubocop:disable Metrics/AbcSize
     class Registration < Base
       # @attr
       # The external identification of the registration.
@@ -183,5 +184,6 @@ module ScormEngine
         Time.parse(completed_date)
       end
     end
+    # rubocop:enable Metrics/AbcSize
   end
 end
