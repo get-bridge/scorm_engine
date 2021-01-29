@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: ScormEngine::Api::Endpoints::Registrations::LaunchHistory
+  
+    &mdash; Documentation by YARD 0.9.26
+  
+</title>
+
+  <link rel="stylesheet" href="../../../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../../../css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "ScormEngine::Api::Endpoints::Registrations::LaunchHistory";
+  relpath = '../../../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../../../_index.html">Index (L)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../../ScormEngine.html" title="ScormEngine (module)">ScormEngine</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../../Api.html" title="ScormEngine::Api (module)">Api</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Endpoints.html" title="ScormEngine::Api::Endpoints (module)">Endpoints</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Registrations.html" title="ScormEngine::Api::Endpoints::Registrations (module)">Registrations</a></span></span>
+     &raquo; 
+    <span class="title">LaunchHistory</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: ScormEngine::Api::Endpoints::Registrations::LaunchHistory
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+  <dl>
+    <dt>Included in:</dt>
+    <dd><span class='object_link'><a href="../../Endpoints.html" title="ScormEngine::Api::Endpoints (module)">ScormEngine::Api::Endpoints</a></span></dd>
+  </dl>
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/scorm_engine/api/endpoints/registrations/launch_history.rb</dd>
+  </dl>
+  
+</div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_registration_launch_history-instance_method" title="#get_registration_launch_history (instance method)">#<strong>get_registration_launch_history</strong>(options = {})  &#x21d2; Array&lt;ScormEngine::Models::RegistrationLaunchHistory&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get launch history data associated with this registration.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="get_registration_launch_history-instance_method">
+  
+    #<strong>get_registration_launch_history</strong>(options = {})  &#x21d2; <tt>Array&lt;<span class='object_link'><a href="../../../Models/RegistrationLaunchHistory.html" title="ScormEngine::Models::RegistrationLaunchHistory (class)">ScormEngine::Models::RegistrationLaunchHistory</a></span>&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get launch history data associated with this registration</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>options</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:registration_id</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>ID for the registration.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:instance</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>() The instance of this registration to use. If not provided, the latest instance will be used.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:include_history_log</span>
+          <span class="type">(<tt>Boolean</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>false</tt>
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Whether to include the history log in the launch history. The history log is a blob of XML that shows all of the SCORM-related calls inside the course. Depending on the course itself, these logs can get very large if a lot of calls are being made.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;<span class='object_link'><a href="../../../Models/RegistrationLaunchHistory.html" title="ScormEngine::Models::RegistrationLaunchHistory (class)">ScormEngine::Models::RegistrationLaunchHistory</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__launchHistory_get" target="_parent" title="http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__launchHistory_get">http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__launchHistory_get</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/registrations/launch_history.rb', line 28</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_registration_launch_history'>get_registration_launch_history</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_require_options'>require_options</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='symbol'>:registration_id</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span>
+  <span class='id identifier rubyid_registration_id'>registration_id</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:registration_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:includeHistoryLog</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='op'>!</span><span class='op'>!</span><span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:include_history_log</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>registrations/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_registration_id'>registration_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>/launchHistory</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='kw'>if</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_success?'>success?</span>
+             <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>launchHistory</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_history'>history</span><span class='op'>|</span>
+               <span class='const'><span class='object_link'><a href="../../../../ScormEngine.html" title="ScormEngine (module)">ScormEngine</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../../Models.html" title="ScormEngine::Models (module)">Models</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../../Models/RegistrationLaunchHistory.html" title="ScormEngine::Models::RegistrationLaunchHistory (class)">RegistrationLaunchHistory</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new_from_api'><span class='object_link'><a href="../../../Models/RegistrationLaunchHistory.html#new_from_api-class_method" title="ScormEngine::Models::RegistrationLaunchHistory.new_from_api (method)">new_from_api</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_history'>history</span><span class='rparen'>)</span>
+             <span class='kw'>end</span>
+           <span class='kw'>end</span>
+
+  <span class='const'><span class='object_link'><a href="../../../Response.html" title="ScormEngine::Response (class)">Response</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../../../Response.html#initialize-instance_method" title="ScormEngine::Response#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>raw_response:</span> <span class='id identifier rubyid_response'>response</span><span class='comma'>,</span> <span class='label'>result:</span> <span class='id identifier rubyid_result'>result</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Fri Jan 29 18:20:02 2021 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.26 (ruby-2.7.2).
+</div>
+
+    </div>
+  </body>
+</html>

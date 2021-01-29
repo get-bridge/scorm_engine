@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: ScormEngine
+  
+    &mdash; Documentation by YARD 0.9.26
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "ScormEngine";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index (S)</a> &raquo;
+    
+    
+    <span class="title">ScormEngine</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: ScormEngine
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/scorm_engine/api/endpoints/courses/configuration.rb<span class="defines">,<br />
+  lib/scorm_engine.rb,<br /> lib/scorm_engine/utils.rb,<br /> lib/scorm_engine/client.rb,<br /> lib/scorm_engine/version.rb,<br /> lib/scorm_engine/response.rb,<br /> lib/scorm_engine/models/base.rb,<br /> lib/scorm_engine/api/endpoints.rb,<br /> lib/scorm_engine/configuration.rb,<br /> lib/scorm_engine/models/course.rb,<br /> lib/scorm_engine/models/learner.rb,<br /> lib/scorm_engine/faraday/request.rb,<br /> lib/scorm_engine/models/dispatch.rb,<br /> lib/scorm_engine/api/endpoints/ping.rb,<br /> lib/scorm_engine/faraday/connection.rb,<br /> lib/scorm_engine/models/destination.rb,<br /> lib/scorm_engine/api/endpoints/about.rb,<br /> lib/scorm_engine/models/dispatch_zip.rb,<br /> lib/scorm_engine/models/registration.rb,<br /> lib/scorm_engine/models/course_import.rb,<br /> lib/scorm_engine/api/endpoints/courses.rb,<br /> lib/scorm_engine/api/endpoints/dispatches.rb,<br /> lib/scorm_engine/api/endpoints/destinations.rb,<br /> lib/scorm_engine/api/endpoints/configuration.rb,<br /> lib/scorm_engine/api/endpoints/registrations.rb,<br /> lib/scorm_engine/models/course_configuration.rb,<br /> lib/scorm_engine/models/tenant_configuration.rb,<br /> lib/scorm_engine/api/endpoints/courses/import.rb,<br /> lib/scorm_engine/models/registration_configuration.rb,<br /> lib/scorm_engine/models/dispatch_registration_count.rb,<br /> lib/scorm_engine/models/registration_launch_history.rb,<br /> lib/scorm_engine/api/endpoints/tenants/configuration.rb,<br /> lib/scorm_engine/models/registration_activity_detail.rb,<br /> lib/scorm_engine/models/registration_runtime_interaction.rb,<br /> lib/scorm_engine/api/endpoints/registrations/configuration.rb,<br /> lib/scorm_engine/api/endpoints/registrations/launch_history.rb</span>
+</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>TODO: Consider consolidating this and [Courses|Tenants]::Configuration, but only after we&#39;re</p>
+
+<pre class="code ruby"><code class="ruby">sure they are really 99.9% the same in terms of functionality.
+</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="ScormEngine/Api.html" title="ScormEngine::Api (module)">Api</a></span>, <span class='object_link'><a href="ScormEngine/Faraday.html" title="ScormEngine::Faraday (module)">Faraday</a></span>, <span class='object_link'><a href="ScormEngine/Models.html" title="ScormEngine::Models (module)">Models</a></span>, <span class='object_link'><a href="ScormEngine/Utils.html" title="ScormEngine::Utils (module)">Utils</a></span>
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="ScormEngine/Client.html" title="ScormEngine::Client (class)">Client</a></span>, <span class='object_link'><a href="ScormEngine/Configuration.html" title="ScormEngine::Configuration (class)">Configuration</a></span>, <span class='object_link'><a href="ScormEngine/Response.html" title="ScormEngine::Response (class)">Response</a></span>
+    
+  
+</p>
+
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="VERSION-constant" class="">VERSION =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0.8.3</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#configuration-class_method" title="configuration (class method)">.<strong>configuration</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#configure-class_method" title="configure (class method)">.<strong>configure</strong> {|configuration| ... } &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="configuration-class_method">
+  
+    .<strong>configuration</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4
+5
+6</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/scorm_engine/configuration.rb', line 4</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_configuration'>configuration</span>
+  <span class='ivar'>@configuration</span> <span class='op'>||=</span> <span class='const'><span class='object_link'><a href="ScormEngine/Configuration.html" title="ScormEngine::Configuration (class)">Configuration</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="ScormEngine/Configuration.html#initialize-instance_method" title="ScormEngine::Configuration#initialize (method)">new</a></span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="configure-class_method">
+  
+    .<strong>configure</strong> {|configuration| ... } &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="#configuration-class_method" title="ScormEngine.configuration (method)">configuration</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8
+9
+10</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/scorm_engine/configuration.rb', line 8</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_configure'>configure</span>
+  <span class='kw'>yield</span><span class='lparen'>(</span><span class='id identifier rubyid_configuration'>configuration</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Fri Jan 29 18:20:02 2021 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.26 (ruby-2.7.2).
+</div>
+
+    </div>
+  </body>
+</html>

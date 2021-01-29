@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-
-require "bundler/setup"
-require "scorm_engine"
-require "dotenv/load"
-require "pry"
-Pry.start

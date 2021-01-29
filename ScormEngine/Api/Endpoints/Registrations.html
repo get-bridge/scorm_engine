@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: ScormEngine::Api::Endpoints::Registrations
+  
+    &mdash; Documentation by YARD 0.9.26
+  
+</title>
+
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "ScormEngine::Api::Endpoints::Registrations";
+  relpath = '../../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../../_index.html">Index (R)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../ScormEngine.html" title="ScormEngine (module)">ScormEngine</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Api.html" title="ScormEngine::Api (module)">Api</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Endpoints.html" title="ScormEngine::Api::Endpoints (module)">Endpoints</a></span></span>
+     &raquo; 
+    <span class="title">Registrations</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: ScormEngine::Api::Endpoints::Registrations
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+  <dl>
+    <dt>Included in:</dt>
+    <dd><span class='object_link'><a href="../Endpoints.html" title="ScormEngine::Api::Endpoints (module)">ScormEngine::Api::Endpoints</a></span></dd>
+  </dl>
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/scorm_engine/api/endpoints/registrations.rb<span class="defines">,<br />
+  lib/scorm_engine/api/endpoints/registrations/configuration.rb,<br /> lib/scorm_engine/api/endpoints/registrations/launch_history.rb</span>
+</dd>
+  </dl>
+  
+</div>
+
+<h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Registrations/Configuration.html" title="ScormEngine::Api::Endpoints::Registrations::Configuration (module)">Configuration</a></span>, <span class='object_link'><a href="Registrations/LaunchHistory.html" title="ScormEngine::Api::Endpoints::Registrations::LaunchHistory (module)">LaunchHistory</a></span>
+    
+  
+    
+  
+</p>
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delete_registration-instance_method" title="#delete_registration (instance method)">#<strong>delete_registration</strong>(options = {})  &#x21d2; ScormEngine::Response </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Delete a registration.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_registration_exists-instance_method" title="#get_registration_exists (instance method)">#<strong>get_registration_exists</strong>(options = {})  &#x21d2; ScormEngine::Response </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Does this registration exist? You can also use the &#39;instance&#39; parameter to check if a particular instance of a registrations exists.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_registration_instances-instance_method" title="#get_registration_instances (instance method)">#<strong>get_registration_instances</strong>(options = {})  &#x21d2; Enumerator&lt;ScormEngine::Models::Registration&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get all the instances of this the registration specified by the registration ID.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_registration_progress-instance_method" title="#get_registration_progress (instance method)">#<strong>get_registration_progress</strong>(options = {})  &#x21d2; ScormEngine::Models::Registration </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get registration summary.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_registrations-instance_method" title="#get_registrations (instance method)">#<strong>get_registrations</strong>(options = {})  &#x21d2; Enumerator&lt;ScormEngine::Models::Registration&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Gets a list of registrations including a summary of the status of each registration.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#post_registration-instance_method" title="#post_registration (instance method)">#<strong>post_registration</strong>(options = {})  &#x21d2; ScormEngine::Response </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create a registration.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="delete_registration-instance_method">
+  
+    #<strong>delete_registration</strong>(options = {})  &#x21d2; <tt><span class='object_link'><a href="../../Response.html" title="ScormEngine::Response (class)">ScormEngine::Response</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Delete a registration.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>options</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:registration_id</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>ID for the registration.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Response.html" title="ScormEngine::Response (class)">ScormEngine::Response</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__delete" target="_parent" title="http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__delete">http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__delete</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/registrations.rb', line 188</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_delete_registration'>delete_registration</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_require_options'>require_options</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='symbol'>:registration_id</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span>
+  <span class='id identifier rubyid_registration_id'>registration_id</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:registration_id</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>registrations/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_registration_id'>registration_id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+
+  <span class='const'><span class='object_link'><a href="../../Response.html" title="ScormEngine::Response (class)">Response</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../../Response.html#initialize-instance_method" title="ScormEngine::Response#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>raw_response:</span> <span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_registration_exists-instance_method">
+  
+    #<strong>get_registration_exists</strong>(options = {})  &#x21d2; <tt><span class='object_link'><a href="../../Response.html" title="ScormEngine::Response (class)">ScormEngine::Response</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Does this registration exist? You can also use the &#39;instance&#39; parameter to check if a particular instance of a registrations exists.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>options</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:registration_id</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>ID for the registration.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:instance</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>() The instance of this registration to use. If not provided, the latest instance will be used.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Response.html" title="ScormEngine::Response (class)">ScormEngine::Response</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__get" target="_parent" title="http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__get">http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__get</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/registrations.rb', line 126</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_registration_exists'>get_registration_exists</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_require_options'>require_options</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='symbol'>:registration_id</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span>
+  <span class='id identifier rubyid_registration_id'>registration_id</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:registration_id</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>registrations/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_registration_id'>registration_id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_success?'>success?</span> <span class='op'>?</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>exists</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>:</span> <span class='kw'>nil</span>
+
+  <span class='const'><span class='object_link'><a href="../../Response.html" title="ScormEngine::Response (class)">Response</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../../Response.html#initialize-instance_method" title="ScormEngine::Response#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>raw_response:</span> <span class='id identifier rubyid_response'>response</span><span class='comma'>,</span> <span class='label'>result:</span> <span class='id identifier rubyid_result'>result</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_registration_instances-instance_method">
+  
+    #<strong>get_registration_instances</strong>(options = {})  &#x21d2; <tt>Enumerator&lt;<span class='object_link'><a href="../../Models/Registration.html" title="ScormEngine::Models::Registration (class)">ScormEngine::Models::Registration</a></span>&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get all the instances of this the registration specified by the registration ID</p>
+
+<p>Multiple instances of a registration are created based on the value you have for the setting “WhenToRestartRegistration”. By default, Engine will “restart” a registration once that registration is completed and there is a newer version of that registration&#39;s package is available. If both of those conditions are met when the registration is launched, then Engine will create a new instance for that registration.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>options</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:registration_id</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>ID for the registration.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:before</span>
+          <span class="type">(<tt>DateTime</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>() Only registrations updated before the specified ISO 8601 TimeStamp (inclusive) are included. If a time zone is not specified, the server&#39;s time zone will be used.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:since</span>
+          <span class="type">(<tt>DateTime</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>() Only registrations updated since the specified ISO 8601 TimeStamp (inclusive) are included. If a time zone is not specified, the server&#39;s time zone will be used.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Enumerator&lt;<span class='object_link'><a href="../../Models/Registration.html" title="ScormEngine::Models::Registration (class)">ScormEngine::Models::Registration</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__instances_get" target="_parent" title="http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__instances_get">http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__instances_get</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/registrations.rb', line 87</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_registration_instances'>get_registration_instances</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_require_options'>require_options</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='symbol'>:registration_id</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span>
+  <span class='id identifier rubyid_registration_id'>registration_id</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:registration_id</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>registrations/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_registration_id'>registration_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>/instances</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Enumerator</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_enum'>enum</span><span class='op'>|</span>
+    <span class='id identifier rubyid_loop'>loop</span> <span class='kw'>do</span>
+      <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_success?'>success?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>registrations</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_registration'>registration</span><span class='op'>|</span>
+        <span class='id identifier rubyid_enum'>enum</span> <span class='op'>&lt;&lt;</span> <span class='const'><span class='object_link'><a href="../../../ScormEngine.html" title="ScormEngine (module)">ScormEngine</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Models.html" title="ScormEngine::Models (module)">Models</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Models/Registration.html" title="ScormEngine::Models::Registration (class)">Registration</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new_from_api'><span class='object_link'><a href="../../Models/Registration.html#new_from_api-class_method" title="ScormEngine::Models::Registration.new_from_api (method)">new_from_api</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_registration'>registration</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+      <span class='kw'>break</span> <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_success?'>success?</span> <span class='op'>||</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>more</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+      <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>more</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='const'><span class='object_link'><a href="../../Response.html" title="ScormEngine::Response (class)">Response</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../../Response.html#initialize-instance_method" title="ScormEngine::Response#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>raw_response:</span> <span class='id identifier rubyid_response'>response</span><span class='comma'>,</span> <span class='label'>result:</span> <span class='id identifier rubyid_result'>result</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_registration_progress-instance_method">
+  
+    #<strong>get_registration_progress</strong>(options = {})  &#x21d2; <tt><span class='object_link'><a href="../../Models/Registration.html" title="ScormEngine::Models::Registration (class)">ScormEngine::Models::Registration</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get registration summary</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>options</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:registration_id</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>ID for the registration.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:instance</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>() The instance of this registration to use. If not provided, the latest instance will be used.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:detail</span>
+          <span class="type">(<tt>Boolean</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>false</tt>
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Whether or not to populate &#39;activityDetails&#39;.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Models/Registration.html" title="ScormEngine::Models::Registration (class)">ScormEngine::Models::Registration</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__progress_get" target="_parent" title="http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__progress_get">http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__progress_get</a></li>
+    
+      <li><a href="http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__progress_detail_get" target="_parent" title="http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__progress_detail_get">http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__progress_detail_get</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/registrations.rb', line 159</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_registration_progress'>get_registration_progress</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_require_options'>require_options</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='symbol'>:registration_id</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span>
+  <span class='id identifier rubyid_registration_id'>registration_id</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:registration_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_detail'>detail</span> <span class='op'>=</span> <span class='op'>!</span><span class='op'>!</span><span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:detail</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_url'>url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>registrations/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_registration_id'>registration_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>/progress</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_url'>url</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/detail</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_detail'>detail</span>
+
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_success?'>success?</span> <span class='op'>?</span> <span class='const'><span class='object_link'><a href="../../../ScormEngine.html" title="ScormEngine (module)">ScormEngine</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Models.html" title="ScormEngine::Models (module)">Models</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Models/Registration.html" title="ScormEngine::Models::Registration (class)">Registration</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new_from_api'><span class='object_link'><a href="../../Models/Registration.html#new_from_api-class_method" title="ScormEngine::Models::Registration.new_from_api (method)">new_from_api</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='kw'>nil</span>
+
+  <span class='const'><span class='object_link'><a href="../../Response.html" title="ScormEngine::Response (class)">Response</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../../Response.html#initialize-instance_method" title="ScormEngine::Response#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>raw_response:</span> <span class='id identifier rubyid_response'>response</span><span class='comma'>,</span> <span class='label'>result:</span> <span class='id identifier rubyid_result'>result</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_registrations-instance_method">
+  
+    #<strong>get_registrations</strong>(options = {})  &#x21d2; <tt>Enumerator&lt;<span class='object_link'><a href="../../Models/Registration.html" title="ScormEngine::Models::Registration (class)">ScormEngine::Models::Registration</a></span>&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Note the “since” parameter exists to allow retreiving only registrations that have changed, and the “before” parameter exists to allow retreiving only registrations that haven&#39;t changed.</p>
+</div>
+  </div>
+
+
+<p>Gets a list of registrations including a summary of the status of each registration.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>options</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:before</span>
+          <span class="type">(<tt>DateTime</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>() Only registrations updated before the specified ISO 8601 TimeStamp (inclusive) are included. If a time zone is not specified, the server&#39;s time zone will be used.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:since</span>
+          <span class="type">(<tt>DateTime</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>() Only registrations updated since the specified ISO 8601 TimeStamp (inclusive) are included. If a time zone is not specified, the server&#39;s time zone will be used.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:course_id</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>() Only registrations for the specified course id will be included.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:learner_id</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>() Only registrations for the specified learner id will be included.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Enumerator&lt;<span class='object_link'><a href="../../Models/Registration.html" title="ScormEngine::Models::Registration (class)">ScormEngine::Models::Registration</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations_get" target="_parent" title="http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations_get">http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations_get</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/registrations.rb', line 37</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_registrations'>get_registrations</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span>
+  <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:courseId</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:course_id</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='symbol'>:course_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:learnerId</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:learner_id</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='symbol'>:learner_id</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>registrations</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Enumerator</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_enum'>enum</span><span class='op'>|</span>
+    <span class='id identifier rubyid_loop'>loop</span> <span class='kw'>do</span>
+      <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_success?'>success?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>registrations</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_registration'>registration</span><span class='op'>|</span>
+        <span class='id identifier rubyid_enum'>enum</span> <span class='op'>&lt;&lt;</span> <span class='const'><span class='object_link'><a href="../../../ScormEngine.html" title="ScormEngine (module)">ScormEngine</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Models.html" title="ScormEngine::Models (module)">Models</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Models/Registration.html" title="ScormEngine::Models::Registration (class)">Registration</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new_from_api'><span class='object_link'><a href="../../Models/Registration.html#new_from_api-class_method" title="ScormEngine::Models::Registration.new_from_api (method)">new_from_api</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_registration'>registration</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+      <span class='kw'>break</span> <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_success?'>success?</span> <span class='op'>||</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>more</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+      <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>more</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='const'><span class='object_link'><a href="../../Response.html" title="ScormEngine::Response (class)">Response</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../../Response.html#initialize-instance_method" title="ScormEngine::Response#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>raw_response:</span> <span class='id identifier rubyid_response'>response</span><span class='comma'>,</span> <span class='label'>result:</span> <span class='id identifier rubyid_result'>result</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="post_registration-instance_method">
+  
+    #<strong>post_registration</strong>(options = {})  &#x21d2; <tt><span class='object_link'><a href="../../Response.html" title="ScormEngine::Response (class)">ScormEngine::Response</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create a registration.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>options</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:course_id</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The course ID.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:registration_id</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The registration&#39;s ID. Must be unique.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:learner/:id</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The learner&#39;s ID.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:learner/:first_name</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The learner&#39;s first name.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:learner/:last_name</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The learner&#39;s last name.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:post_back/:url</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>() Specifies an optional override URL for which to post activity and status data in real time as the course is completed. By default all of these settings are read from your configuration, so only specify this if you need to control it on a per-registration basis.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:post_back/:auth_type</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>&quot;FORM&quot;</tt>
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Optional parameter to specify how to authorize against the given postbackurl, can be &#39;FORM&#39; or &#39;HTTPBASIC&#39;. If form authentication, the username and password for authentication are submitted as form fields &#39;username&#39; and &#39;password&#39;, and the registration data as the form field &#39;data&#39;. If HTTP Basic Authentication is used, the username and password are placed in the standard Authorization HTTP header, and the registration data is the body of the message (sent as application/json content type).</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:post_back/:user_name</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>() The user name to be used in authorizing the postback of data to the URL specified by postback url.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:post_back/:password</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>() The password to be used in authorizing the postback of data to the URL specified by postback url.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:post_back/:results_format</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>&quot;COURSE&quot;</tt>
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>This parameter allows you to specify a level of detail in the information that is posted back while the course is being taken. It may be one of three values: &#39;COURSE&#39; (course summary), &#39;ACTIVITY&#39; (activity summary), or &#39;FULL&#39; (full detail), and is set to &#39;COURSE&#39; by default. The information will be posted as JSON using the same schema as what is returned in the /progress and /progress/detail endpoints.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Response.html" title="ScormEngine::Response (class)">ScormEngine::Response</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations_post" target="_parent" title="http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations_post">http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations_post</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/registrations.rb', line 256</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_post_registration'>post_registration</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_require_options'>require_options</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='symbol'>:course_id</span><span class='comma'>,</span> <span class='symbol'>:registration_id</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='symbol'>:learner</span><span class='comma'>,</span> <span class='symbol'>:id</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='symbol'>:learner</span><span class='comma'>,</span> <span class='symbol'>:first_name</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='symbol'>:learner</span><span class='comma'>,</span> <span class='symbol'>:last_name</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span>
+
+  <span class='id identifier rubyid_body'>body</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+    <span class='label'>courseId:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:course_id</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='label'>registrationId:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:registration_id</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='label'>learner:</span> <span class='lbrace'>{</span>
+      <span class='label'>id:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:learner</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='comma'>,</span>
+      <span class='label'>firstName:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:learner</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:first_name</span><span class='rbracket'>]</span><span class='comma'>,</span>
+      <span class='label'>lastName:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:learner</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:last_name</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+  <span class='rbrace'>}</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:post_back</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_body'>body</span><span class='lbracket'>[</span><span class='symbol'>:postBack</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+      <span class='label'>url:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:post_back</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:url</span><span class='rbracket'>]</span><span class='comma'>,</span>
+      <span class='label'>authType:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:post_back</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:auth_type</span><span class='rbracket'>]</span><span class='op'>&amp;.</span><span class='id identifier rubyid_upcase'>upcase</span><span class='comma'>,</span>
+      <span class='label'>userName:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:post_back</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:user_name</span><span class='rbracket'>]</span><span class='comma'>,</span>
+      <span class='label'>password:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:post_back</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:password</span><span class='rbracket'>]</span><span class='comma'>,</span>
+      <span class='label'>resultsFormat:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:post_back</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:results_format</span><span class='rbracket'>]</span><span class='op'>&amp;.</span><span class='id identifier rubyid_upcase'>upcase</span><span class='comma'>,</span>
+    <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_reject'>reject</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid__k'>_k</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='op'>|</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='rbrace'>}</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>registrations</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_body'>body</span><span class='rparen'>)</span>
+
+  <span class='const'><span class='object_link'><a href="../../Response.html" title="ScormEngine::Response (class)">Response</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../../Response.html#initialize-instance_method" title="ScormEngine::Response#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>raw_response:</span> <span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Fri Jan 29 18:20:02 2021 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.26 (ruby-2.7.2).
+</div>
+
+    </div>
+  </body>
+</html>

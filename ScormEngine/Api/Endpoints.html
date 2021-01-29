@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: ScormEngine::Api::Endpoints
+  
+    &mdash; Documentation by YARD 0.9.26
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "ScormEngine::Api::Endpoints";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (E)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../ScormEngine.html" title="ScormEngine (module)">ScormEngine</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Api.html" title="ScormEngine::Api (module)">Api</a></span></span>
+     &raquo; 
+    <span class="title">Endpoints</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: ScormEngine::Api::Endpoints
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  <dl>
+      <dt>Includes:</dt>
+      <dd><span class='object_link'><a href="Endpoints/About.html" title="ScormEngine::Api::Endpoints::About (module)">About</a></span>, <span class='object_link'><a href="Endpoints/Configuration.html" title="ScormEngine::Api::Endpoints::Configuration (module)">Configuration</a></span>, <span class='object_link'><a href="Endpoints/Courses.html" title="ScormEngine::Api::Endpoints::Courses (module)">Courses</a></span>, <span class='object_link'><a href="Endpoints/Courses/Configuration.html" title="ScormEngine::Api::Endpoints::Courses::Configuration (module)">Courses::Configuration</a></span>, <span class='object_link'><a href="Endpoints/Courses/Import.html" title="ScormEngine::Api::Endpoints::Courses::Import (module)">Courses::Import</a></span>, <span class='object_link'><a href="Endpoints/Destinations.html" title="ScormEngine::Api::Endpoints::Destinations (module)">Destinations</a></span>, <span class='object_link'><a href="Endpoints/Dispatches.html" title="ScormEngine::Api::Endpoints::Dispatches (module)">Dispatches</a></span>, <span class='object_link'><a href="Endpoints/Ping.html" title="ScormEngine::Api::Endpoints::Ping (module)">Ping</a></span>, <span class='object_link'><a href="Endpoints/Registrations.html" title="ScormEngine::Api::Endpoints::Registrations (module)">Registrations</a></span>, <span class='object_link'><a href="Endpoints/Registrations/Configuration.html" title="ScormEngine::Api::Endpoints::Registrations::Configuration (module)">Registrations::Configuration</a></span>, <span class='object_link'><a href="Endpoints/Registrations/LaunchHistory.html" title="ScormEngine::Api::Endpoints::Registrations::LaunchHistory (module)">Registrations::LaunchHistory</a></span>, <span class='object_link'><a href="Endpoints/Tenants/Configuration.html" title="ScormEngine::Api::Endpoints::Tenants::Configuration (module)">Tenants::Configuration</a></span></dd>
+  </dl>
+  
+  
+
+  
+  <dl>
+    <dt>Included in:</dt>
+    <dd><span class='object_link'><a href="../Client.html" title="ScormEngine::Client (class)">Client</a></span></dd>
+  </dl>
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/scorm_engine/api/endpoints.rb<span class="defines">,<br />
+  lib/scorm_engine/api/endpoints/ping.rb,<br /> lib/scorm_engine/api/endpoints/about.rb,<br /> lib/scorm_engine/api/endpoints/courses.rb,<br /> lib/scorm_engine/api/endpoints/dispatches.rb,<br /> lib/scorm_engine/api/endpoints/destinations.rb,<br /> lib/scorm_engine/api/endpoints/configuration.rb,<br /> lib/scorm_engine/api/endpoints/registrations.rb,<br /> lib/scorm_engine/api/endpoints/courses/import.rb,<br /> lib/scorm_engine/api/endpoints/courses/configuration.rb,<br /> lib/scorm_engine/api/endpoints/tenants/configuration.rb,<br /> lib/scorm_engine/api/endpoints/registrations/configuration.rb,<br /> lib/scorm_engine/api/endpoints/registrations/launch_history.rb</span>
+</dd>
+  </dl>
+  
+</div>
+
+<h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Endpoints/About.html" title="ScormEngine::Api::Endpoints::About (module)">About</a></span>, <span class='object_link'><a href="Endpoints/Configuration.html" title="ScormEngine::Api::Endpoints::Configuration (module)">Configuration</a></span>, <span class='object_link'><a href="Endpoints/Courses.html" title="ScormEngine::Api::Endpoints::Courses (module)">Courses</a></span>, <span class='object_link'><a href="Endpoints/Destinations.html" title="ScormEngine::Api::Endpoints::Destinations (module)">Destinations</a></span>, <span class='object_link'><a href="Endpoints/Dispatches.html" title="ScormEngine::Api::Endpoints::Dispatches (module)">Dispatches</a></span>, <span class='object_link'><a href="Endpoints/Ping.html" title="ScormEngine::Api::Endpoints::Ping (module)">Ping</a></span>, <span class='object_link'><a href="Endpoints/Registrations.html" title="ScormEngine::Api::Endpoints::Registrations (module)">Registrations</a></span>, <span class='object_link'><a href="Endpoints/Tenants.html" title="ScormEngine::Api::Endpoints::Tenants (module)">Tenants</a></span>
+    
+  
+    
+  
+</p>
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_registration_launch_link-instance_method" title="#get_registration_launch_link (instance method)">#<strong>get_registration_launch_link</strong>(options = {})  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the link to use to launch this registration.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Endpoints/Tenants/Configuration.html" title="ScormEngine::Api::Endpoints::Tenants::Configuration (module)">Tenants::Configuration</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Endpoints/Tenants/Configuration.html#get_tenant_configuration-instance_method" title="ScormEngine::Api::Endpoints::Tenants::Configuration#get_tenant_configuration (method)">#get_tenant_configuration</a></span>, <span class='object_link'><a href="Endpoints/Tenants/Configuration.html#get_tenant_configuration_setting-instance_method" title="ScormEngine::Api::Endpoints::Tenants::Configuration#get_tenant_configuration_setting (method)">#get_tenant_configuration_setting</a></span>, <span class='object_link'><a href="Endpoints/Tenants/Configuration.html#post_tenant_configuration-instance_method" title="ScormEngine::Api::Endpoints::Tenants::Configuration#post_tenant_configuration (method)">#post_tenant_configuration</a></span>, <span class='object_link'><a href="Endpoints/Tenants/Configuration.html#put_tenant_configuration_setting-instance_method" title="ScormEngine::Api::Endpoints::Tenants::Configuration#put_tenant_configuration_setting (method)">#put_tenant_configuration_setting</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Endpoints/Registrations/LaunchHistory.html" title="ScormEngine::Api::Endpoints::Registrations::LaunchHistory (module)">Registrations::LaunchHistory</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Endpoints/Registrations/LaunchHistory.html#get_registration_launch_history-instance_method" title="ScormEngine::Api::Endpoints::Registrations::LaunchHistory#get_registration_launch_history (method)">#get_registration_launch_history</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Endpoints/Registrations/Configuration.html" title="ScormEngine::Api::Endpoints::Registrations::Configuration (module)">Registrations::Configuration</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Endpoints/Registrations/Configuration.html#get_registration_configuration-instance_method" title="ScormEngine::Api::Endpoints::Registrations::Configuration#get_registration_configuration (method)">#get_registration_configuration</a></span>, <span class='object_link'><a href="Endpoints/Registrations/Configuration.html#get_registration_configuration_setting-instance_method" title="ScormEngine::Api::Endpoints::Registrations::Configuration#get_registration_configuration_setting (method)">#get_registration_configuration_setting</a></span>, <span class='object_link'><a href="Endpoints/Registrations/Configuration.html#post_registration_configuration-instance_method" title="ScormEngine::Api::Endpoints::Registrations::Configuration#post_registration_configuration (method)">#post_registration_configuration</a></span>, <span class='object_link'><a href="Endpoints/Registrations/Configuration.html#put_registration_configuration_setting-instance_method" title="ScormEngine::Api::Endpoints::Registrations::Configuration#put_registration_configuration_setting (method)">#put_registration_configuration_setting</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Endpoints/Registrations.html" title="ScormEngine::Api::Endpoints::Registrations (module)">Registrations</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Endpoints/Registrations.html#delete_registration-instance_method" title="ScormEngine::Api::Endpoints::Registrations#delete_registration (method)">#delete_registration</a></span>, <span class='object_link'><a href="Endpoints/Registrations.html#get_registration_exists-instance_method" title="ScormEngine::Api::Endpoints::Registrations#get_registration_exists (method)">#get_registration_exists</a></span>, <span class='object_link'><a href="Endpoints/Registrations.html#get_registration_instances-instance_method" title="ScormEngine::Api::Endpoints::Registrations#get_registration_instances (method)">#get_registration_instances</a></span>, <span class='object_link'><a href="Endpoints/Registrations.html#get_registration_progress-instance_method" title="ScormEngine::Api::Endpoints::Registrations#get_registration_progress (method)">#get_registration_progress</a></span>, <span class='object_link'><a href="Endpoints/Registrations.html#get_registrations-instance_method" title="ScormEngine::Api::Endpoints::Registrations#get_registrations (method)">#get_registrations</a></span>, <span class='object_link'><a href="Endpoints/Registrations.html#post_registration-instance_method" title="ScormEngine::Api::Endpoints::Registrations#post_registration (method)">#post_registration</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Endpoints/Ping.html" title="ScormEngine::Api::Endpoints::Ping (module)">Ping</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Endpoints/Ping.html#get_ping-instance_method" title="ScormEngine::Api::Endpoints::Ping#get_ping (method)">#get_ping</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Endpoints/Dispatches.html" title="ScormEngine::Api::Endpoints::Dispatches (module)">Dispatches</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Endpoints/Dispatches.html#delete_dispatch-instance_method" title="ScormEngine::Api::Endpoints::Dispatches#delete_dispatch (method)">#delete_dispatch</a></span>, <span class='object_link'><a href="Endpoints/Dispatches.html#delete_dispatch_registration_count-instance_method" title="ScormEngine::Api::Endpoints::Dispatches#delete_dispatch_registration_count (method)">#delete_dispatch_registration_count</a></span>, <span class='object_link'><a href="Endpoints/Dispatches.html#get_dispatch-instance_method" title="ScormEngine::Api::Endpoints::Dispatches#get_dispatch (method)">#get_dispatch</a></span>, <span class='object_link'><a href="Endpoints/Dispatches.html#get_dispatch_enabled-instance_method" title="ScormEngine::Api::Endpoints::Dispatches#get_dispatch_enabled (method)">#get_dispatch_enabled</a></span>, <span class='object_link'><a href="Endpoints/Dispatches.html#get_dispatch_registration_count-instance_method" title="ScormEngine::Api::Endpoints::Dispatches#get_dispatch_registration_count (method)">#get_dispatch_registration_count</a></span>, <span class='object_link'><a href="Endpoints/Dispatches.html#get_dispatch_zip-instance_method" title="ScormEngine::Api::Endpoints::Dispatches#get_dispatch_zip (method)">#get_dispatch_zip</a></span>, <span class='object_link'><a href="Endpoints/Dispatches.html#get_dispatches-instance_method" title="ScormEngine::Api::Endpoints::Dispatches#get_dispatches (method)">#get_dispatches</a></span>, <span class='object_link'><a href="Endpoints/Dispatches.html#post_dispatch-instance_method" title="ScormEngine::Api::Endpoints::Dispatches#post_dispatch (method)">#post_dispatch</a></span>, <span class='object_link'><a href="Endpoints/Dispatches.html#put_dispatch-instance_method" title="ScormEngine::Api::Endpoints::Dispatches#put_dispatch (method)">#put_dispatch</a></span>, <span class='object_link'><a href="Endpoints/Dispatches.html#put_dispatch_enabled-instance_method" title="ScormEngine::Api::Endpoints::Dispatches#put_dispatch_enabled (method)">#put_dispatch_enabled</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Endpoints/Destinations.html" title="ScormEngine::Api::Endpoints::Destinations (module)">Destinations</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Endpoints/Destinations.html#delete_destination-instance_method" title="ScormEngine::Api::Endpoints::Destinations#delete_destination (method)">#delete_destination</a></span>, <span class='object_link'><a href="Endpoints/Destinations.html#get_destination-instance_method" title="ScormEngine::Api::Endpoints::Destinations#get_destination (method)">#get_destination</a></span>, <span class='object_link'><a href="Endpoints/Destinations.html#get_destination_dispatches_registration_count-instance_method" title="ScormEngine::Api::Endpoints::Destinations#get_destination_dispatches_registration_count (method)">#get_destination_dispatches_registration_count</a></span>, <span class='object_link'><a href="Endpoints/Destinations.html#get_destinations-instance_method" title="ScormEngine::Api::Endpoints::Destinations#get_destinations (method)">#get_destinations</a></span>, <span class='object_link'><a href="Endpoints/Destinations.html#post_destination-instance_method" title="ScormEngine::Api::Endpoints::Destinations#post_destination (method)">#post_destination</a></span>, <span class='object_link'><a href="Endpoints/Destinations.html#post_destination_dispatches_enabled-instance_method" title="ScormEngine::Api::Endpoints::Destinations#post_destination_dispatches_enabled (method)">#post_destination_dispatches_enabled</a></span>, <span class='object_link'><a href="Endpoints/Destinations.html#post_destination_dispatches_registration_instancing-instance_method" title="ScormEngine::Api::Endpoints::Destinations#post_destination_dispatches_registration_instancing (method)">#post_destination_dispatches_registration_instancing</a></span>, <span class='object_link'><a href="Endpoints/Destinations.html#put_destination-instance_method" title="ScormEngine::Api::Endpoints::Destinations#put_destination (method)">#put_destination</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Endpoints/Courses/Import.html" title="ScormEngine::Api::Endpoints::Courses::Import (module)">Courses::Import</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Endpoints/Courses/Import.html#get_course_import-instance_method" title="ScormEngine::Api::Endpoints::Courses::Import#get_course_import (method)">#get_course_import</a></span>, <span class='object_link'><a href="Endpoints/Courses/Import.html#post_course_import-instance_method" title="ScormEngine::Api::Endpoints::Courses::Import#post_course_import (method)">#post_course_import</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Endpoints/Courses/Configuration.html" title="ScormEngine::Api::Endpoints::Courses::Configuration (module)">Courses::Configuration</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Endpoints/Courses/Configuration.html#get_course_configuration-instance_method" title="ScormEngine::Api::Endpoints::Courses::Configuration#get_course_configuration (method)">#get_course_configuration</a></span>, <span class='object_link'><a href="Endpoints/Courses/Configuration.html#get_course_configuration_setting-instance_method" title="ScormEngine::Api::Endpoints::Courses::Configuration#get_course_configuration_setting (method)">#get_course_configuration_setting</a></span>, <span class='object_link'><a href="Endpoints/Courses/Configuration.html#post_course_configuration-instance_method" title="ScormEngine::Api::Endpoints::Courses::Configuration#post_course_configuration (method)">#post_course_configuration</a></span>, <span class='object_link'><a href="Endpoints/Courses/Configuration.html#put_course_configuration_setting-instance_method" title="ScormEngine::Api::Endpoints::Courses::Configuration#put_course_configuration_setting (method)">#put_course_configuration_setting</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Endpoints/Courses.html" title="ScormEngine::Api::Endpoints::Courses (module)">Courses</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Endpoints/Courses.html#delete_course-instance_method" title="ScormEngine::Api::Endpoints::Courses#delete_course (method)">#delete_course</a></span>, <span class='object_link'><a href="Endpoints/Courses.html#get_course_detail-instance_method" title="ScormEngine::Api::Endpoints::Courses#get_course_detail (method)">#get_course_detail</a></span>, <span class='object_link'><a href="Endpoints/Courses.html#get_course_preview-instance_method" title="ScormEngine::Api::Endpoints::Courses#get_course_preview (method)">#get_course_preview</a></span>, <span class='object_link'><a href="Endpoints/Courses.html#get_courses-instance_method" title="ScormEngine::Api::Endpoints::Courses#get_courses (method)">#get_courses</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Endpoints/Configuration.html" title="ScormEngine::Api::Endpoints::Configuration (module)">Configuration</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Endpoints/Configuration.html#delete_app_configuration-instance_method" title="ScormEngine::Api::Endpoints::Configuration#delete_app_configuration (method)">#delete_app_configuration</a></span>, <span class='object_link'><a href="Endpoints/Configuration.html#get_app_configuration-instance_method" title="ScormEngine::Api::Endpoints::Configuration#get_app_configuration (method)">#get_app_configuration</a></span>, <span class='object_link'><a href="Endpoints/Configuration.html#post_app_configuration-instance_method" title="ScormEngine::Api::Endpoints::Configuration#post_app_configuration (method)">#post_app_configuration</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Endpoints/About.html" title="ScormEngine::Api::Endpoints::About (module)">About</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Endpoints/About.html#get_about-instance_method" title="ScormEngine::Api::Endpoints::About#get_about (method)">#get_about</a></span>, <span class='object_link'><a href="Endpoints/About.html#get_about_user_count-instance_method" title="ScormEngine::Api::Endpoints::About#get_about_user_count (method)">#get_about_user_count</a></span></p>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="get_registration_launch_link-instance_method">
+  
+    #<strong>get_registration_launch_link</strong>(options = {})  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the link to use to launch this registration</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>options</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:registration_id</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The ID of the registration.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:expiry</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>0</tt>
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Number of seconds from now this link will expire in. Use 0 for no expiration.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:redirect_on_exit_url</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The URL the application should redirect to when the learner exits a course. If not specified, configured value will be used.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__launchLink_get" target="_parent" title="http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__launchLink_get">http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__launchLink_get</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/registrations.rb', line 307</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_registration_launch_link'>get_registration_launch_link</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_require_options'>require_options</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='symbol'>:registration_id</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span>
+  <span class='id identifier rubyid_registration_id'>registration_id</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:registration_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:redirectOnExitUrl</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:redirect_on_exit_url</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='symbol'>:redirect_on_exit_url</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>registrations/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_registration_id'>registration_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>/launchLink</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_success?'>success?</span> <span class='op'>?</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>launchLink</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>:</span> <span class='kw'>nil</span>
+
+  <span class='const'><span class='object_link'><a href="../Response.html" title="ScormEngine::Response (class)">Response</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Response.html#initialize-instance_method" title="ScormEngine::Response#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>raw_response:</span> <span class='id identifier rubyid_response'>response</span><span class='comma'>,</span> <span class='label'>result:</span> <span class='id identifier rubyid_result'>result</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Fri Jan 29 18:20:02 2021 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.26 (ruby-2.7.2).
+</div>
+
+    </div>
+  </body>
+</html>
