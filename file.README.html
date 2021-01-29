@@ -58,7 +58,7 @@
       </div>
 
       <div id="content"><div id='filecontents'>
-<p><a href="https://travis-ci.org/instructure-bridge/scorm_engine"><img src="https://travis-ci.org/instructure-bridge/scorm_engine.svg?branch=master"></a> <a href="https://badge.fury.io/rb/scorm_engine"><img src="https://badge.fury.io/rb/scorm_engine.svg"></a> <a href="https://www.rubydoc.info/gems/scorm_engine"><img src="http://img.shields.io/badge/yard-docs-blue.svg"></a></p>
+<p><a href="https://github.com/instructure-bridge/scorm_engine/actions"><img src="https://github.com/instructure-bridge/scorm_engine/workflows/ScormEngine/badge.svg"></a> <a href="https://badge.fury.io/rb/scorm_engine"><img src="https://badge.fury.io/rb/scorm_engine.svg"></a> <a href="https://instructure-bridge.github.io/scorm_engine/"><img src="http://img.shields.io/badge/yard-docs-blue.svg"></a></p>
 
 <h1 id="label-ScormEngine">ScormEngine</h1>
 
@@ -98,6 +98,12 @@
 
 <p>TODO: Write usage instructions here</p>
 
+<h2 id="label-Testing">Testing</h2>
+
+<p>Ensure you have <code>ruby</code> and <code>bundler</code> installed. - <code>gem install bundler</code> - <code>bundle install</code> - <code>bundle exec rake spec</code>, <code>bundle exec rake rubocop</code>, <code>bundle exec rake yard</code></p>
+
+<p>To test running these specs against an actual SCORM server, create a <code>.env.test.local</code> - <code>cp .env.test .env.test.local</code> - Update the values in <code>.env.test.local</code> with the values you want overridden.</p>
+
 <h2 id="label-Contributing">Contributing</h2>
 
 <p>Bug reports and pull requests are welcome on GitHub at <a href="https://github.com/instructure-bridge/scorm_engine">github.com/instructure-bridge/scorm_engine</a>.</p>
@@ -108,7 +114,7 @@
 </div></div>
 
       <div id="footer">
-  Generated on Fri Jan 29 18:20:02 2021 by
+  Generated on Fri Jan 29 18:58:00 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.2).
 </div>
