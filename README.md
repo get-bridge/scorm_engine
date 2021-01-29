@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/instructure-bridge/scorm_engine.svg?branch=master)](https://travis-ci.org/instructure-bridge/scorm_engine)
+[![Build Status](https://github.com/instructure-bridge/scorm_engine/workflows/ScormEngine/badge.svg)](https://github.com/instructure-bridge/scorm_engine/actions)
 [![Gem Version](https://badge.fury.io/rb/scorm_engine.svg)](https://badge.fury.io/rb/scorm_engine)
-[![Yard Docs](http://img.shields.io/badge/yard-docs-blue.svg)](https://www.rubydoc.info/gems/scorm_engine)
+[![Yard Docs](http://img.shields.io/badge/yard-docs-blue.svg)](https://instructure-bridge.github.io/scorm_engine/)
 
 # ScormEngine
 
@@ -30,6 +30,17 @@ Or install it yourself as:
 ## Usage
 
 TODO: Write usage instructions here
+
+## Testing
+
+Ensure you have `ruby` and `bundler` installed.
+- `gem install bundler`
+- `bundle install`
+- `bundle exec rake spec`, `bundle exec rake rubocop`, `bundle exec rake yard`
+
+To test running these specs against an actual SCORM server, create a `.env.test.local`
+- `cp .env.test .env.test.local`
+- Update the values in `.env.test.local` with the values you want overridden.
 
 ## Contributing
 
