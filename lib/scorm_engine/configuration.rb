@@ -37,10 +37,10 @@ module ScormEngine
       @logger = ::Logger.new(ENV.fetch("SCORM_ENGINE_LOGFILE", "/dev/null"))
 
       @log_options = begin
-                       JSON.parse(ENV.fetch("SCORM_ENGINE_LOG_OPTIONS"))
-                     rescue KeyError, JSON::ParserError
-                       { headers: false, bodies: false }
-                     end
+        JSON.parse(ENV.fetch("SCORM_ENGINE_LOG_OPTIONS"))
+      rescue KeyError, JSON::ParserError
+        { headers: false, bodies: false }
+      end
     end
   end
 end

@@ -8,9 +8,9 @@ Layout/ParameterAlignment:
   Enabled: false
 Layout/EmptyLinesAroundModuleBody:
   Enabled: false
-Naming/AccessorMethodName:
+Layout/LineLength:
   Enabled: false
-Metrics/LineLength:
+Naming/AccessorMethodName:
   Enabled: false
 Metrics/ModuleLength:
   Enabled: false

@@ -10,7 +10,7 @@ puts
 puts "This will remove all courses, registrations, etc from the tenant '#{tenant}'."
 puts "To continue type this exact phrase: I DO WHAT I WANT"
 printf "> "
-phrase = STDIN.gets.chomp
+phrase = $stdin.gets.chomp
 exit unless phrase == "I DO WHAT I WANT"
 puts
 
