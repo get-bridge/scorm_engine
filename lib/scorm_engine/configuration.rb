@@ -10,11 +10,11 @@ module ScormEngine
   end
 
   class Configuration
-    # Legacy v1 API: http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html
+    # Legacy v1 API: https://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html
     # Latest v2 API: https://rustici-docs.s3.amazonaws.com/engine/20.1.x/api/apiV2.html
     attr_accessor :protocol, :host, :path_prefix, :v2_path_prefix
 
-    # http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/Architecture-API.html#api-authentication
+    # https://rustici-docs.s3.amazonaws.com/engine/2017.1.x/Configuration/Security.html#API-Authentication
     attr_accessor :username, :password
 
     # defaults to /dev/null

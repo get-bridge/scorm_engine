@@ -6,7 +6,7 @@ module ScormEngine
         #
         # Get a list of dispatches.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__dispatches_get
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__dispatches_get
         #
         # @param [Hash] options
         #
@@ -41,7 +41,7 @@ module ScormEngine
         #
         # Create a dispatch.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__dispatches_post
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__dispatches_post
         #
         # @param [Hash] options
         #
@@ -105,7 +105,7 @@ module ScormEngine
         #
         # Get a dispatch.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__dispatches__dispatchId__get
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__dispatches__dispatchId__get
         #
         # @param [Hash] options
         #
@@ -128,7 +128,7 @@ module ScormEngine
         #
         # Update a dispatch.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__dispatches__dispatchId__put
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__dispatches__dispatchId__put
         #
         # @param [Hash] options
         #
@@ -188,7 +188,7 @@ module ScormEngine
         #
         # Delete a dispatch.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__dispatches__dispatchId__delete
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__dispatches__dispatchId__delete
         #
         # @param [Hash] options
         #
@@ -208,7 +208,7 @@ module ScormEngine
         #
         # Get the enabled status of a dispatch.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__dispatches__dispatchId__enabled_get
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__dispatches__dispatchId__enabled_get
         #
         # @param [Hash] options
         #
@@ -230,7 +230,7 @@ module ScormEngine
         #
         # Enable or disable the dispatch.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__dispatches__dispatchId__enabled_put
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__dispatches__dispatchId__enabled_put
         #
         # @param [Hash] options
         #
@@ -255,7 +255,7 @@ module ScormEngine
         #
         # Get the ZIP dispatch package.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__dispatches__dispatchId__zip_get
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__dispatches__dispatchId__zip_get
         #
         # @param [Hash] options
         #
@@ -291,7 +291,7 @@ module ScormEngine
         #
         # Get the registration count and last reset time of a dispatch.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__dispatches__dispatchId__registrationCount_get
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__dispatches__dispatchId__registrationCount_get
         #
         # @param [Hash] options
         #
@@ -314,7 +314,7 @@ module ScormEngine
         #
         # Reset the registration count and last reset time of a dispatch.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__dispatches__dispatchId__registrationCount_delete
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__dispatches__dispatchId__registrationCount_delete
         #
         # @param [Hash] options
         #

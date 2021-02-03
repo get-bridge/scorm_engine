@@ -10,7 +10,7 @@ module ScormEngine
           # Either the actual contents of the zip file to import may be posted,
           # or JSON that references the remote location to import from.
           #
-          # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__courses_importJobs_post
+          # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__courses_importJobs_post
           #
           # @param [Hash] options
           #
@@ -70,7 +70,7 @@ module ScormEngine
           #
           # This method will check the status of a course import.
           #
-          # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__courses_importJobs__importJobId__get
+          # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__courses_importJobs__importJobId__get
           #
           # @param [Hash] options
           #

@@ -12,7 +12,7 @@ module ScormEngine
           # Returns the effective value of every setting at this level, as well
           # as the effective value of any setting at a more specific level.
           #
-          # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__configuration_get
+          # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__configuration_get
           #
           # @return [ScormEngine::Models::TenantConfiguration]
           #
@@ -27,7 +27,7 @@ module ScormEngine
           #
           # Bulk set configuration settings via POST request.
           #
-          # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__configuration_post
+          # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__configuration_post
           #
           # @param [Hash] options
           #
@@ -52,7 +52,7 @@ module ScormEngine
           #
           # Returns the effective value for this configuration setting for the resource being configured.
           #
-          # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__configuration__settingId__get
+          # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__configuration__settingId__get
           #
           # @param [Hash] options
           #
@@ -77,7 +77,7 @@ module ScormEngine
           #
           # Sets the value for this configuration setting, for the resource being configured.
           #
-          # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__configuration__settingId__put
+          # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__configuration__settingId__put
           #
           # @param [Hash] options
           #

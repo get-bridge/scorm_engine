@@ -6,8 +6,8 @@ module ScormEngine
         #
         # Get the list of courses
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__courses_get
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__courses__courseId__get
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__courses_get
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__courses__courseId__get
         #
         # @param [Hash] options
         #
@@ -47,7 +47,7 @@ module ScormEngine
         #
         # Delete a course
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__courses__courseId__delete
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__courses__courseId__delete
         #
         # @param [Hash] options
         #
@@ -67,7 +67,7 @@ module ScormEngine
         #
         # Get the details of a course
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__courses__courseId__detail_get
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__courses__courseId__detail_get
         #
         # @param [Hash] options
         #
@@ -96,7 +96,7 @@ module ScormEngine
         #
         # Returns the launch link to use to preview this course
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__courses__courseId__preview_get
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__courses__courseId__preview_get
         #
         # @param [Hash] options
         #

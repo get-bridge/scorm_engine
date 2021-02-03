@@ -5,7 +5,7 @@ module ScormEngine
         #
         # Get back a message indicating that the API is working.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__ping_get
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__ping_get
         #
         # @return [ScormEngine::Response]
         #

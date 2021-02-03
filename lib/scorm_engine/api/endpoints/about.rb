@@ -5,7 +5,7 @@ module ScormEngine
         #
         # Get back the version and platform of the running instance of Engine
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__about_get
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__about_get
         #
         # @return [ScormEngine::Response]
         #
@@ -20,7 +20,7 @@ module ScormEngine
         #
         # Gets the number of users across all tenants.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__about_userCount_get
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__about_userCount_get
         #
         # @param [Hash] options
         #

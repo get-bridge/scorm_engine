@@ -5,7 +5,7 @@ module ScormEngine
         #
         # Get the application settings currently configured in Engine.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/20.1.x/api/apiV2.html#/appManagement/GetApplicationConfiguration
+        # @see https://rustici-docs.s3.amazonaws.com/engine/20.1.x/api/apiV2.html#/appManagement/GetApplicationConfiguration
         #
         # @param [Hash] options
         #
@@ -34,7 +34,7 @@ module ScormEngine
         #
         # Set one or more application settings in Engine.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/20.1.x/api/apiV2.html#/appManagement/SetApplicationConfiguration
+        # @see https://rustici-docs.s3.amazonaws.com/engine/20.1.x/api/apiV2.html#/appManagement/SetApplicationConfiguration
         #
         # @param [Hash] options
         #
@@ -64,7 +64,7 @@ module ScormEngine
         #
         # Deletes the current value for a setting, reverting it to its default value.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/20.1.x/api/apiV2.html#/appManagement/DeleteApplicationConfigurationSetting
+        # @see https://rustici-docs.s3.amazonaws.com/engine/20.1.x/api/apiV2.html#/appManagement/DeleteApplicationConfigurationSetting
         #
         # @param [Hash] options
         #

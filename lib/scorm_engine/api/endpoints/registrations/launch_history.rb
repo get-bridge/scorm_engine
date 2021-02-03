@@ -6,7 +6,7 @@ module ScormEngine
           #
           # Get launch history data associated with this registration
           #
-          # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__launchHistory_get
+          # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__launchHistory_get
           #
           # @param [Hash] options
           #
