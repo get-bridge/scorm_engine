@@ -6,7 +6,7 @@ module ScormEngine
         #
         # Get a list of destinations.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__destinations_get
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__destinations_get
         #
         # @param [Hash] options
         #
@@ -41,7 +41,7 @@ module ScormEngine
         #
         # Create a destination.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__destinations_post
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__destinations_post
         #
         # @param [Hash] options
         #
@@ -76,7 +76,7 @@ module ScormEngine
         #
         # Get a destination.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__destinations__destinationId__get
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__destinations__destinationId__get
         #
         # @param [Hash] options
         #
@@ -99,7 +99,7 @@ module ScormEngine
         #
         # Update a destination.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__destinations__destinationId__put
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__destinations__destinationId__put
         #
         # @param [Hash] options
         #
@@ -131,7 +131,7 @@ module ScormEngine
         # Deleting a destination will also delete all dispatches for that
         # destination.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__destinations_delete
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__destinations_delete
         #
         # @param [Hash] options
         #
@@ -151,7 +151,7 @@ module ScormEngine
         #
         # Enable or disable all related dispatches.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__destinations__destinationId__dispatches_enabled_post
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__destinations__destinationId__dispatches_enabled_post
         #
         # @param [Hash] options
         #
@@ -176,7 +176,7 @@ module ScormEngine
         #
         # Enable or disable registration instancing.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__destinations__destinationId__dispatches_registrationInstancing_post
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__destinations__destinationId__dispatches_registrationInstancing_post
         #
         # @param [Hash] options
         #
@@ -201,7 +201,7 @@ module ScormEngine
         #
         # Get an aggregate count of all related dispatch registrations.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__destinations__destinationId__dispatches_registrationCount_get
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x.dispatch/api-dispatch.html#tenant__destinations__destinationId__dispatches_registrationCount_get
         #
         # @param [Hash] options
         #

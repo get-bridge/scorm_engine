@@ -12,7 +12,7 @@ module ScormEngine
         #       "before" parameter exists to allow retreiving only
         #       registrations that haven't changed.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations_get
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations_get
         #
         # @param [Hash] options
         #
@@ -65,7 +65,7 @@ module ScormEngine
         # registration is launched, then Engine will create a new instance for
         # that registration.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__instances_get
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__instances_get
         #
         # @param [Hash] options
         #
@@ -110,7 +110,7 @@ module ScormEngine
         # parameter to check if a particular instance of a registrations
         # exists.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__get
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__get
         #
         # @param [Hash] options
         #
@@ -139,8 +139,8 @@ module ScormEngine
         #
         # Get registration summary
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__progress_get
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__progress_detail_get
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__progress_get
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__progress_detail_get
         #
         # @param [Hash] options
         #
@@ -176,7 +176,7 @@ module ScormEngine
         #
         # Delete a registration.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__delete
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__delete
         #
         # @param [Hash] options
         #
@@ -199,7 +199,7 @@ module ScormEngine
         #
         # Create a registration.
         #
-        # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations_post
+        # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations_post
         #
         # @param [Hash] options
         #
@@ -287,7 +287,7 @@ module ScormEngine
       #
       # Returns the link to use to launch this registration
       #
-      # @see http://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__launchLink_get
+      # @see https://rustici-docs.s3.amazonaws.com/engine/2017.1.x/api.html#tenant__registrations__registrationId__launchLink_get
       #
       # @param [Hash] options
       #
