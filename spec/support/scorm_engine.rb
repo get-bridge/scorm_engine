@@ -47,7 +47,7 @@ module ScormEngineHelpers
     if options[:pathname]
       import_options[:pathname] = options[:pathname]
     else
-      import_options[:url] = "https://github.com/instructure-bridge/scorm_engine/raw/master/spec/fixtures/zip/#{options[:key]}.zip"
+      import_options[:url] = "https://github.com/get-bridge/scorm_engine/raw/master/spec/fixtures/zip/#{options[:key]}.zip"
     end
 
     import = options[:client].post_course_import(import_options)

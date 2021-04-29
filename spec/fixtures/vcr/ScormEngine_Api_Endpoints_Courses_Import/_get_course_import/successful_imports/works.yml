@@ -5,7 +5,7 @@ http_interactions:
     uri: https://<SCORM_ENGINE_HOST>/ScormEngineInterface/api/v1/ScormEngineGemTesting-default/courses/importJobs?course=a-valid-course-url&mayCreateNewVersion=true
     body:
       encoding: UTF-8
-      string: '{"url":"https://github.com/instructure-bridge/scorm_engine/raw/master/spec/fixtures/zip/RuntimeBasicCalls_SCORM20043rdEdition.zip","courseName":"a-valid-course-url"}'
+      string: '{"url":"https://github.com/get-bridge/scorm_engine/raw/master/spec/fixtures/zip/RuntimeBasicCalls_SCORM20043rdEdition.zip","courseName":"a-valid-course-url"}'
     headers:
       User-Agent:
       - ScormEngine Ruby Gem 0.8.2
