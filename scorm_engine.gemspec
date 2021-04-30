@@ -10,9 +10,9 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Ruby Client for Rustici's SCORM Engine API"
   spec.description   = "Ruby Client for Rustici's SCORM Engine 2017.1 & 20.1 API"
-  spec.homepage      = "https://github.com/instructure-bridge/scorm_engine"
+  spec.homepage      = "https://github.com/get-bridge/scorm_engine"
   spec.license       = "MIT"
-  spec.metadata      = { "documentation_uri" => "https://instructure-bridge.github.io/scorm_engine/" }
+  spec.metadata      = { "documentation_uri" => "https://get-bridge.github.io/scorm_engine/" }
 
   spec.files         = Dir.glob("{lib,spec}/**/*") + %w[Rakefile .rspec]
   spec.bindir        = "exe"

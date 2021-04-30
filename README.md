@@ -1,6 +1,6 @@
-[![Build Status](https://github.com/instructure-bridge/scorm_engine/workflows/ScormEngine/badge.svg)](https://github.com/instructure-bridge/scorm_engine/actions)
+[![Build Status](https://github.com/get-bridge/scorm_engine/workflows/ScormEngine/badge.svg)](https://github.com/get-bridge/scorm_engine/actions)
 [![Gem Version](https://badge.fury.io/rb/scorm_engine.svg)](https://badge.fury.io/rb/scorm_engine)
-[![Yard Docs](http://img.shields.io/badge/yard-docs-blue.svg)](https://instructure-bridge.github.io/scorm_engine/)
+[![Yard Docs](http://img.shields.io/badge/yard-docs-blue.svg)](https://get-bridge.github.io/scorm_engine/)
 
 # ScormEngine
 
@@ -45,7 +45,7 @@ To test running these specs against an actual SCORM server, create a `.env.test.
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at
-https://github.com/instructure-bridge/scorm_engine.
+https://github.com/get-bridge/scorm_engine.
 
 ## License
 
