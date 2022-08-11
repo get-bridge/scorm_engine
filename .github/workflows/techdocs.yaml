@@ -3,7 +3,7 @@ name: Publish Bridge Techdocs
 on:
   push:
     branches:
-      - 'main'
+      - 'master'
       - 'backstage-addition' #change this to your test branch.
     # Run only when TechDocs related files are updated.
     paths:
