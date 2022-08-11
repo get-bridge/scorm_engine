@@ -1,0 +1,29 @@
+name: Publish Bridge Techdocs
+
+on:
+  push:
+    branches:
+      - 'main'
+      - 'backstage-addition' #change this to your test branch.
+    # Run only when TechDocs related files are updated.
+    paths:
+      - 'docs/**'
+      - 'mkdocs.yaml'
+      - '.github/workflows/techdocs.yaml'
+jobs:
+  publish-techdocs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: get-bridge/developer_portal
+          token: ${{ secrets.GIT_HUB_TOKEN }}
+          path: .github/developer_portal
+          ref: master
+      - uses: ./.github/developer_portal/.github/actions/techdocs
+        with:
+          aws_access_key_id: ${{ secrets.TRUSS_AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.TRUSS_AWS_SECRET_ACCESS_KEY }}
+          entity_name: 'scorm-engine'
+          entity_kind: 'component'
+          entity_namespace: 'default'

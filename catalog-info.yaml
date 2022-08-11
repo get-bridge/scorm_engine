@@ -1,0 +1,18 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: scorm-engine
+  title: Scorm Engine
+  description:
+  tags:
+    - ruby
+  annotations:
+    github.com/project-slug: 'get-bridge/scorm_engine'
+    backstage.io/source-location: url:https://github.com/get-bridge/scorm_engine
+    backstage.io/techdocs-ref: dir:.
+    opsgenie.com/component-selector: 'tag:"scorm_engine"'
+spec:
+  type: website
+  lifecycle: production
+  owner: oberbaum
+  system: private-websites
