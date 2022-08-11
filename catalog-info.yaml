@@ -3,7 +3,7 @@ kind: Component
 metadata:
   name: scorm-engine
   title: Scorm Engine
-  description:
+  description: Scorm Engine
   tags:
     - ruby
   annotations:
