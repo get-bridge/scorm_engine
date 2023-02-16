@@ -58,7 +58,7 @@ jobs:
           ruby-version: 2.7
           bundler-cache: true
       - name: Yard documents
-        run: bin/bundle rake yard
+        run: bin/rake yard
 
       - name: Deploy pages
         if: (github.event_name == 'push' || github.event.inputs.deploy == 'true')
