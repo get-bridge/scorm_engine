@@ -6,7 +6,7 @@ require "rubocop/rake_task"
 RuboCop::RakeTask.new
 RSpec::Core::RakeTask.new(:spec)
 
-task default: :spec
+task default: [:rubocop, :spec, :yard]
 
 YARD::Rake::YardocTask.new do |t|
   t.files = ["lib/**/*.rb"]

@@ -27,16 +27,13 @@ Or install it yourself as:
 
     $ gem install scorm_engine
 
-## Usage
-
-TODO: Write usage instructions here
+## Usage #TODO
 
 ## Testing
 
-Ensure you have `ruby` and `bundler` installed.
-- `gem install bundler`
-- `bundle install`
-- `bundle exec rake spec`, `bundle exec rake rubocop`, `bundle exec rake yard`
+All in one testing for rubocop, rspec, and yard doc generation with the default rake task:
+
+    bin/rake
 
 To test running these specs against an actual SCORM server, create a `.env.test.local`
 - `cp .env.test .env.test.local`
@@ -49,5 +46,4 @@ https://github.com/get-bridge/scorm_engine.
 
 ## License
 
-The gem is available as open source under the terms of the [MIT
-License](https://opensource.org/licenses/MIT).
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
