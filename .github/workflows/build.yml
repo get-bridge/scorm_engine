@@ -39,11 +39,11 @@ jobs:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
       - name: Rubocop
-        run: bin/bundle rake rubocop
+        run: bin/rake rubocop
       - name: Rspec tests
-        run: bin/bundle rake spec
+        run: bin/rake spec
       - name: Yard documents
-        run: bin/bundle rake yard
+        run: bin/rake yard
 
   deploy:
     needs: 'tests'
