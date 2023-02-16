@@ -1,6 +1,5 @@
 require "bundler/setup"
 require "dotenv"
-require "pry"
 require "scorm_engine"
 
 # Ensure we're picking up only the test scorm settings
