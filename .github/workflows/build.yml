@@ -22,7 +22,7 @@ on:
 
 # ensure only one workflow per ref
 # pull_request_target/push events commonly result in duplicate workflows being ran
-concurency:
+concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
