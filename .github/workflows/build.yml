@@ -29,7 +29,7 @@ concurrency:
 jobs:
   tests:
     if: >
-      contains(github.event.pull_request.labels.*.name, 'dependencies') # dependabot functionality
+      contains(github.event.pull_request.labels.*.name, 'dependencies')
       || github.event_name == 'push'
       || github.event_name == 'workflow_dispatch'
     strategy:
