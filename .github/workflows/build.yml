@@ -2,9 +2,15 @@ name: 'ScormEngine'
 
 on:
   pull_request:
-    types: [labeled]
     branches-ignore:
       - 'gh-pages'
+      - 'dependabot/**'
+  # See https://securitylab.github.com/research/github-actions-preventing-pwn-requests/ for more details.
+  # Using pull_request_target in order to grant dependabot access to run the test action.
+  pull_request_target:
+    branches-ignore:
+      - 'gh-pages'
+    types: [labeled] # for dependabot
   push:
     branches-ignore:
       - 'gh-pages'
@@ -20,6 +26,11 @@ on:
 
 jobs:
   tests:
+    if: >
+      contains(github.event.pull_request.labels.*.name, 'dependencies') ||
+      github.event_name == 'push' ||
+      github.event_name == 'pull_request' ||
+      github.event_name == 'workflow_dispatch'
     strategy:
       fail-fast: false
       matrix:
