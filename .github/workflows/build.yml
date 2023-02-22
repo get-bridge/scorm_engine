@@ -1,10 +1,12 @@
 name: 'ScormEngine'
 
 on:
-  pull_request:
-    types: [labeled]
+  # See https://securitylab.github.com/research/github-actions-preventing-pwn-requests/ for more details.
+  # Using pull_request_target in order to grant dependabot access to run the test action.
+  pull_request_target:
     branches-ignore:
       - 'gh-pages'
+    types: [labeled] # for dependabot
   push:
     branches-ignore:
       - 'gh-pages'
@@ -18,8 +20,18 @@ on:
         required: true
         default: 'false'
 
+# ensure only one workflow per ref
+# pull_request_target/push events commonly result in duplicate workflows being ran
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   tests:
+    if: >
+      contains(github.event.pull_request.labels.*.name, 'dependencies')
+      || github.event_name == 'push'
+      || github.event_name == 'workflow_dispatch'
     strategy:
       fail-fast: false
       matrix:
