@@ -79,7 +79,7 @@ jobs:
 
       - name: Deploy pages
         if: (github.event_name == 'push' || github.event.inputs.deploy == 'true')
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        uses: JamesIves/github-pages-deploy-action@v4.4.3
         with:
           SSH: false
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
