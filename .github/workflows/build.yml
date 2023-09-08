@@ -71,7 +71,7 @@ jobs:
     if: >
       contains(github.event.pull_request.labels.*.name, 'dependencies')
       || github.event_name == 'push'
-      || github.event.inputs.deploy == 'true' # implies workflow_dispatch is the event_name
+      || github.event.inputs.deploy == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3.5.3
