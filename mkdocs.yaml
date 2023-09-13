@@ -1,0 +1,7 @@
+site_name:  'Scorm Engine'
+
+plugins:
+  - techdocs-core
+
+nav:
+  - Overview: index.md
