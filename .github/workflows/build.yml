@@ -48,11 +48,11 @@ jobs:
           - head
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v3.5.3
+      - uses: actions/checkout@v4
         with:
           persist-credentials: false
 
-      - uses: ruby/setup-ruby@v1.152.0
+      - uses: ruby/setup-ruby@v1.153.0
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
@@ -74,11 +74,11 @@ jobs:
       || github.event.inputs.deploy == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.5.3
+      - uses: actions/checkout@v4
         with:
           persist-credentials: false
 
-      - uses: ruby/setup-ruby@v1.152.0
+      - uses: ruby/setup-ruby@v1.153.0
         with:
           ruby-version: 3.2
           bundler-cache: true
