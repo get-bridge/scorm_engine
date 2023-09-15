@@ -96,7 +96,6 @@ jobs:
           clean-exclude: |
             .gitattributes
             .gitignore
-            CNAME
             LICENSE
 
   # release-gem:
