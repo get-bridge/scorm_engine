@@ -4,6 +4,9 @@ updates:
     directory: /
     schedule:
       interval: daily
+    labels:
+      - dependencies
+      - rubygems
     reviewers:
       - get-bridge/oberbaum
 
@@ -11,5 +14,8 @@ updates:
     directory: /
     schedule:
       interval: daily
+    labels:
+      - dependencies
+      - github_actions
     reviewers:
       - get-bridge/oberbaum
