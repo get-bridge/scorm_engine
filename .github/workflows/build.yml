@@ -4,16 +4,16 @@ on:
   # See https://securitylab.github.com/research/github-actions-preventing-pwn-requests/ for more details.
   # Using pull_request_target in order to grant dependabot access to run the test action.
   pull_request_target:
-    branches-ignore:
-      - 'gh-pages'
+    # branches-ignore:
+    #   - 'gh-pages'
     types: [labeled] # for dependabot
   push:
     branches-ignore:
-      - 'gh-pages'
+      # - 'gh-pages'
       - 'dependabot/**'
   workflow_dispatch:
-    branches-ignore:
-      - 'gh-pages'
+    # branches-ignore:
+    #   - 'gh-pages'
     inputs:
       deploy:
         description: 'Deploy: [true, false]'
