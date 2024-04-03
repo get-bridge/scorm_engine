@@ -38,8 +38,9 @@ jobs:
         os:
           - ubuntu-latest # currently ubuntu-22.04
           - ubuntu-20.04
-          - macos-latest # currently macos-12
-          - macos-11
+          - macos-latest # currently macos-14, ARM based
+          - macos-latest-large # currently macos-14 Intel based
+          - macos-13
         ruby:
           - 2.7
           - 3.0
