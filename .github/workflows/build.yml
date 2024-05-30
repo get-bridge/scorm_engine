@@ -54,7 +54,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: ruby/setup-ruby@v1.173.0
+      - uses: ruby/setup-ruby@v1.178.0
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
@@ -80,7 +80,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: ruby/setup-ruby@v1.173.0
+      - uses: ruby/setup-ruby@v1.178.0
         with:
           ruby-version: 3.3
           bundler-cache: true
