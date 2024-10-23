@@ -1,5 +1,6 @@
 require "faraday"
 require "faraday_middleware"
+require "uri"
 
 module ScormEngine
   module Faraday
