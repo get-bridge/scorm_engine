@@ -1,6 +1,15 @@
 module ScormEngine
   module Faraday
-    module Request
+         def request(method, path, options, body = nil)
+        # Ensure api_version has a default value
+        @api_version ||= 2
+        
+        connection(version: @api_version).send(method) do |request|
+          if @api_version == 2
+            request.headers["engineTenantName"] = tenant unless @without_tenant
+          else
+            path = "#{tenant}/#{path}" unless path =~ %r{\Ahttps?://} || path.start_with?(base_uri.path)
+          endRequest
       def get(path, options = {})
         request(:get, path, options)
       end
@@ -17,13 +26,22 @@ module ScormEngine
         request(:delete, path, options)
       end
 
+      # Initialize @api_version to 2 by default
+      def initialize(*args)
+        @api_version = 2
+        super(*args) if defined?(super)
+      end
+      
       def api_v2(without_tenant: false)
+        original_version = @api_version
+        original_tenant = @without_tenant
         @api_version = 2
         @without_tenant = without_tenant
 
         yield
       ensure
-        @api_version = 1
+        @api_version = original_version
+        @without_tenant = original_tenant
       end
 
       private
