@@ -38,7 +38,7 @@ module ScormEngine
 
       def request(method, path, options, body = nil)
         api_version = @api_version || current_api_version
-        
+
         connection(version: api_version).send(method) do |request|
           if api_version == 2
             request.headers["engineTenantName"] = tenant unless @without_tenant

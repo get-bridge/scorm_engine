@@ -12,7 +12,7 @@ module ScormEngine
 
     def initialize(tenant:)
       @tenant = tenant
-      @api_version = 2  # Default to API v2
+      @api_version = 2 # Default to API v2
     end
 
     def current_api_version

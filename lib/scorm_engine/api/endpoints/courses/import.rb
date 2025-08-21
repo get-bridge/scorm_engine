@@ -49,19 +49,18 @@ module ScormEngine
 
             # Handle file content posting for API requests
             body = if options[:url]
-              # API v2 (SCORM Engine v23) doesn't accept courseName parameter
-              if current_api_version == 2
-                { url: options[:url] }
-              else
-                # API v1 compatibility - include courseName
-                { url: options[:url], courseName: options[:name] || options[:course_id] }
-              end
-            else
-              file_content
-            end
+                     # API v2 (SCORM Engine v23) doesn't accept courseName parameter
+                     if current_api_version == 2
+                       { url: options[:url] }
+                     else
+                       # API v1 compatibility - include courseName
+                       { url: options[:url], courseName: options[:name] || options[:course_id] }
+                     end
+                   else
+                     file_content
+                   end
 
             response = post("courses/importJobs", query_params, body)
-
             result = response&.success? ? ScormEngine::Models::CourseImport.new_from_api(response.body) : nil
 
             Response.new(raw_response: response, result: result)

@@ -110,4 +110,106 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Import do
       end
     end
   end
+
+  # API v2 Migration Tests - v23 Compatibility
+  describe "API v2 compatibility (v23 SCORM Engine)" do
+    let(:mock_client) do
+      Class.new do
+        include ScormEngine::Api::Endpoints::Courses::Import
+        
+        attr_reader :api_version
+        
+        def initialize(api_version)
+          @api_version = api_version
+        end
+        
+        def current_api_version
+          @api_version
+        end
+        
+        def post(path, query_params, body)
+          # Mock HTTP response for testing
+          double("Response", 
+                 success?: true, 
+                 body: { "jobId" => "test-job-123" },
+                 status: 200
+                )
+        end
+        
+        def require_options(options, *required_keys)
+          # Mock validation
+        end
+        
+        def require_exclusive_option(options, *exclusive_keys)  
+          # Mock validation
+        end
+        
+        private
+        
+        def file_content
+          "mock file content"
+        end
+      end
+    end
+
+    let(:base_options) do
+      {
+        course_id: "test-course-123",
+        url: "https://example.com/course.zip",
+        name: "Test Course Name"
+      }
+    end
+
+    context "when using API v2" do
+      subject { mock_client.new(2) }
+
+      it "excludes courseName parameter for v23 compatibility" do
+        expect(subject).to receive(:post).with(
+          "courses/importJobs",
+          { courseId: "test-course-123" },
+          { url: "https://example.com/course.zip" }
+        )
+        
+        subject.post_course_import(base_options)
+      end
+
+      it "does not include courseName even when name is provided" do
+        expect(subject).to receive(:post) do |path, query_params, body|
+          expect(body).not_to have_key(:courseName)
+          expect(body[:url]).to eq("https://example.com/course.zip")
+          double("Response", success?: true, body: {}, status: 200)
+        end
+        
+        subject.post_course_import(base_options)
+      end
+    end
+
+    context "when using API v1 (backward compatibility)" do
+      subject { mock_client.new(1) }
+
+      it "includes courseName parameter for backward compatibility" do
+        expect(subject).to receive(:post).with(
+          "courses/importJobs",
+          { courseId: "test-course-123" },
+          { 
+            url: "https://example.com/course.zip",
+            courseName: "Test Course Name"
+          }
+        )
+        
+        subject.post_course_import(base_options)
+      end
+
+      it "uses course_id as courseName fallback when name is not provided" do
+        options_without_name = base_options.except(:name)
+        
+        expect(subject).to receive(:post) do |path, query_params, body|
+          expect(body[:courseName]).to eq("test-course-123")
+          double("Response", success?: true, body: {}, status: 200)
+        end
+        
+        subject.post_course_import(options_without_name)
+      end
+    end
+  end
 end
