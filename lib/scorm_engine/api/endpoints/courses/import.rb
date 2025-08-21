@@ -44,21 +44,21 @@ module ScormEngine
             require_options(options, :course_id)
             require_exclusive_option(options, :url, :pathname)
 
-            query_params = {
-              course: options[:course_id],
-              mayCreateNewVersion: !!options[:may_create_new_version]
-            }
+            query_params = {}
+            query_params[:courseId] = options[:course_id] if options[:course_id]
 
-            # When loading from a URL, we pass the URL and course name in the
-            # body as JSON. When loading from a file, the file's contents get
-            # placed in the body. In the latter case we can't pass in any other
-            # parameters, because the SCORM server doesn't know how to deal
-            # with multipart bodies and will become confused.
+            # Handle file content posting for API requests
             body = if options[:url]
-                     { url: options[:url], courseName: options[:name] || options[:course_id] }
-                   elsif options[:pathname]
-                     { file: ::Faraday::UploadIO.new(options[:pathname], "application/zip") }
-                   end
+              # API v2 (SCORM Engine v23) doesn't accept courseName parameter
+              if current_api_version == 2
+                { url: options[:url] }
+              else
+                # API v1 compatibility - include courseName
+                { url: options[:url], courseName: options[:name] || options[:course_id] }
+              end
+            else
+              file_content
+            end
 
             response = post("courses/importJobs", query_params, body)
 

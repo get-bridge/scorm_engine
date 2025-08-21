@@ -23,14 +23,24 @@ module ScormEngine
 
         yield
       ensure
+        @api_version = nil  # Reset to default
+      end
+
+      def api_v1
         @api_version = 1
+
+        yield
+      ensure
+        @api_version = nil  # Reset to default
       end
 
       private
 
       def request(method, path, options, body = nil)
-        connection(version: @api_version).send(method) do |request|
-          if @api_version == 2
+        api_version = @api_version || current_api_version
+        
+        connection(version: api_version).send(method) do |request|
+          if api_version == 2
             request.headers["engineTenantName"] = tenant unless @without_tenant
           else
             # "more" pagination urls are fully or relatively qualified

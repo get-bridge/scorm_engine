@@ -22,5 +22,18 @@ module ScormEngine
     def message
       raw_response.body["message"] if raw_response.body.is_a?(Hash)
     end
+
+    def detailed_error_info
+      return "Success" if success?
+      
+      error_info = {
+        status: status,
+        message: message,
+        body: raw_response.body,
+        headers: raw_response.headers.to_hash
+      }
+      
+      error_info.inspect
+    end
   end
 end
