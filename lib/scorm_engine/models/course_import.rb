@@ -35,8 +35,12 @@ module ScormEngine
           if options.fetch("importResult", {}).key?("course")
             this.course = Course.new_from_api(options.fetch("importResult", {})["course"])
           end
+        elsif options.key?("result") && options.size == 1
+          # Initial import response format: {"result": "job-id"}
+          this.id = options["result"]
+          this.status = "RUNNING" # Assume running for initial response
         else
-          # API v1 response structure
+          # API v1 response structure or full status response
           this.id = options["jobId"]
           this.status = options["status"]&.upcase
           this.course = Course.new_from_api(options["course"]) if options.key?("course") # unavailable in error states
