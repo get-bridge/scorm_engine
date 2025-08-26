@@ -27,10 +27,16 @@ module ScormEngine
         this.options = options.dup
 
         if options.key?("importResult")
-          this.id = options["result"]
-          this.status = options.fetch("importResult", {})["status"]&.upcase
+          # API v2 response structure: status is at top level, importResult contains nested data
+          this.id = options["jobId"]
+          this.status = options["status"]&.upcase
           this.parser_warnings = options.fetch("importResult", {})["parserWarnings"]
+          # Course data is nested in importResult for API v2
+          if options.fetch("importResult", {}).key?("course")
+            this.course = Course.new_from_api(options.fetch("importResult", {})["course"])
+          end
         else
+          # API v1 response structure
           this.id = options["jobId"]
           this.status = options["status"]&.upcase
           this.course = Course.new_from_api(options["course"]) if options.key?("course") # unavailable in error states

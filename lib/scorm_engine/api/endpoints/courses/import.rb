@@ -49,15 +49,23 @@ module ScormEngine
 
             # Handle file content posting for API requests
             body = if options[:url]
-                     # API v2 (SCORM Engine v23) doesn't accept courseName parameter
+                     # API v2 (SCORM Engine v23) doesn't accept courseName parameter or courseId in body
                      if current_api_version == 2
                        { url: options[:url] }
                      else
                        # API v1 compatibility - include courseName
                        { url: options[:url], courseName: options[:name] || options[:course_id] }
                      end
+                   elsif options[:pathname]
+                     # File upload via multipart form data
+                     if current_api_version == 2
+                       { file: options[:pathname] }
+                     else
+                       # API v1 compatibility - include courseName for file uploads
+                       { file: options[:pathname], courseName: options[:name] || options[:course_id] }
+                     end
                    else
-                     file_content
+                     raise ArgumentError, "Either :url or :pathname must be provided for course import"
                    end
 
             response = post("courses/importJobs", query_params, body)
