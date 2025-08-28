@@ -38,7 +38,30 @@ module ScormEngine
 
       def request(method, path, options, body = nil)
         api_version = @api_version || current_api_version
+        @retry_attempted = false unless defined?(@retry_attempted)
 
+        begin
+          make_request(method, path, options, body, api_version)
+        rescue => e
+          # Check if this is a tenant not found error and we have a tenant creator
+          if should_retry_with_tenant_creation?(e) && @tenant_creator && !@retry_attempted
+            @retry_attempted = true
+            
+            begin
+              @tenant_creator.call(@tenant)
+              # Retry the original request
+              make_request(method, path, options, body, api_version)
+            rescue => retry_error
+              # If tenant creation or retry fails, raise the original error
+              raise e
+            end
+          else
+            raise e
+          end
+        end
+      end
+
+      def make_request(method, path, options, body, api_version)
         connection(version: api_version).send(method) do |request|
           if api_version == 2
             request.headers["engineTenantName"] = tenant unless @without_tenant
@@ -61,6 +84,22 @@ module ScormEngine
             request.body = body unless body.empty?
           end
         end
+      end
+
+      def should_retry_with_tenant_creation?(error)
+        return false unless error.respond_to?(:response)
+        
+        response = error.response
+        return false unless response
+        
+        # Check for 400 status with tenant not found message
+        if response.status == 400
+          body = response.body
+          body_text = body.to_s
+          return body_text.include?("is not a valid tenant name")
+        end
+        
+        false
       end
 
       def coerce_options(options = {})
