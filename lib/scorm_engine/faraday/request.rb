@@ -40,25 +40,26 @@ module ScormEngine
         api_version = @api_version || current_api_version
         @retry_attempted = false unless defined?(@retry_attempted)
 
-        begin
-          make_request(method, path, options, body, api_version)
-        rescue => e
-          # Check if this is a tenant not found error and we have a tenant creator
-          if should_retry_with_tenant_creation?(e) && @tenant_creator && !@retry_attempted
-            @retry_attempted = true
-            
-            begin
-              @tenant_creator.call(@tenant)
-              # Retry the original request
-              make_request(method, path, options, body, api_version)
-            rescue => retry_error
-              # If tenant creation or retry fails, raise the original error
-              raise e
-            end
-          else
-            raise e
+        response = make_request(method, path, options, body, api_version)
+        
+        # Check if this is a tenant not found error and we have a tenant creator
+        if should_retry_with_tenant_creation?(response) && @tenant_creator && !@retry_attempted
+          @retry_attempted = true
+          
+          begin
+            @tenant_creator.call(@tenant)
+            # Retry the original request
+            make_request(method, path, options, body, api_version)
+          rescue => retry_error
+            # If tenant creation or retry fails, return the original response
+            response
           end
+        else
+          response
         end
+      rescue => e
+        # Handle exceptions (like network errors) separately
+        raise e
       end
 
       def make_request(method, path, options, body, api_version)
@@ -86,17 +87,28 @@ module ScormEngine
         end
       end
 
-      def should_retry_with_tenant_creation?(error)
-        return false unless error.respond_to?(:response)
-        
-        response = error.response
-        return false unless response
-        
-        # Check for 400 status with tenant not found message
-        if response.status == 400
-          body = response.body
-          body_text = body.to_s
-          return body_text.include?("is not a valid tenant name")
+      def should_retry_with_tenant_creation?(response_or_error)
+        # Handle both Response objects and exceptions
+        if response_or_error.respond_to?(:raw_response)
+          # This is a ScormEngine::Response object
+          response = response_or_error.raw_response
+          return false unless response
+          
+          # Check for 400 status with tenant not found message
+          if response.status == 400
+            body_text = response.body.to_s
+            return body_text.include?("is not a valid tenant name")
+          end
+        elsif response_or_error.respond_to?(:response)
+          # This is an exception with a response attribute
+          response = response_or_error.response
+          return false unless response
+          
+          # Check for 400 status with tenant not found message
+          if response.status == 400
+            body_text = response.body.to_s
+            return body_text.include?("is not a valid tenant name")
+          end
         end
         
         false
