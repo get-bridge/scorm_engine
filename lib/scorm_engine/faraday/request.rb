@@ -48,11 +48,11 @@ module ScormEngine
           
           begin
             @tenant_creator.call(@tenant)
-            # Retry the original request
-            make_request(method, path, options, body, api_version)
+            # Retry the original request and return the result
+            return make_request(method, path, options, body, api_version)
           rescue => retry_error
             # If tenant creation or retry fails, return the original response
-            response
+            return response
           end
         else
           response
