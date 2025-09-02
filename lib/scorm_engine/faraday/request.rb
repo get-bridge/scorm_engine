@@ -41,21 +41,23 @@ module ScormEngine
         @retry_attempted = false unless defined?(@retry_attempted)
 
         response = make_request(method, path, options, body, api_version)
+        wrapped_response = ScormEngine::Response.new(raw_response: response)
         
         # Check if this is a tenant not found error and we have a tenant creator
-        if should_retry_with_tenant_creation?(response) && @tenant_creator && !@retry_attempted
+        if should_retry_with_tenant_creation?(wrapped_response) && @tenant_creator && !@retry_attempted
           @retry_attempted = true
           
           begin
             @tenant_creator.call(@tenant)
             # Retry the original request and return the result
-            return make_request(method, path, options, body, api_version)
+            retry_response = make_request(method, path, options, body, api_version)
+            return ScormEngine::Response.new(raw_response: retry_response)
           rescue => retry_error
             # If tenant creation or retry fails, return the original response
-            return response
+            return wrapped_response
           end
         else
-          response
+          wrapped_response
         end
       rescue => e
         # Handle exceptions (like network errors) separately

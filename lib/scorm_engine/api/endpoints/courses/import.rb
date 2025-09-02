@@ -69,7 +69,7 @@ module ScormEngine
                    end
 
             response = post("courses/importJobs", query_params, body)
-            result = response&.success? ? ScormEngine::Models::CourseImport.new_from_api(response.body) : nil
+            result = response&.success? ? ScormEngine::Models::CourseImport.new_from_api(response.raw_response.body) : nil
 
             Response.new(raw_response: response, result: result)
           end
@@ -92,7 +92,7 @@ module ScormEngine
             response = get("courses/importJobs/#{options[:id]}")
 
             # jobId is not always returned. :why:
-            result = response&.success? ? ScormEngine::Models::CourseImport.new_from_api({ "jobId" => options[:id] }.merge(response.body)) : nil
+            result = response&.success? ? ScormEngine::Models::CourseImport.new_from_api({ "jobId" => options[:id] }.merge(response.raw_response.body)) : nil
 
             Response.new(raw_response: response, result: result)
           end
