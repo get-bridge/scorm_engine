@@ -27,17 +27,26 @@ module ScormEngine
           options = options.dup
 
           path = "courses"
-          path = "courses/#{options.delete(:course_id)}" if options[:course_id]
+          single_course_id = options.delete(:course_id)
+          path = "courses/#{single_course_id}" if single_course_id
 
           response = get(path, options)
 
           result = Enumerator.new do |enum|
-            loop do
-              response.success? && response.body["courses"].each do |course|
-                enum << ScormEngine::Models::Course.new_from_api(course)
+            if single_course_id
+              # Single course endpoint returns course data directly
+              if response.success? && response.raw_response.body.is_a?(Hash)
+                enum << ScormEngine::Models::Course.new_from_api(response.raw_response.body)
               end
-              break if !response.success? || response.body["more"].nil?
-              response = get(response.body["more"])
+            else
+              # Multiple courses endpoint returns array in "courses" key
+              loop do
+                response.success? && response.raw_response.body["courses"].each do |course|
+                  enum << ScormEngine::Models::Course.new_from_api(course)
+                end
+                break if !response.success? || response.raw_response.body["more"].nil?
+                response = get(response.raw_response.body["more"])
+              end
             end
           end
 
@@ -88,7 +97,7 @@ module ScormEngine
 
           response = get("courses/#{course_id}/detail", options)
 
-          result = response.success? ? ScormEngine::Models::Course.new_from_api(response.body) : nil
+          result = response.success? ? ScormEngine::Models::Course.new_from_api(response.raw_response.body) : nil
 
           Response.new(raw_response: response, result: result)
         end
@@ -126,7 +135,7 @@ module ScormEngine
 
           response = get("courses/#{course_id}/preview", options)
 
-          result = response.success? ? response.body["launchLink"] : nil
+          result = response.success? ? response.raw_response.body["launchLink"] : nil
 
           Response.new(raw_response: response, result: result)
         end
