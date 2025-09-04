@@ -9,6 +9,10 @@ module ScormEngine
       @result = result
     end
 
+    def body
+      raw_response.body
+    end
+
     def results
       result.is_a?(Enumerator) ? result : Array(result)
     end
