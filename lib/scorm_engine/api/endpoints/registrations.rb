@@ -311,9 +311,14 @@ module ScormEngine
         registration_id = options.delete(:registration_id)
         options[:redirectOnExitUrl] = options.delete(:redirect_on_exit_url) if options.key?(:redirect_on_exit_url)
 
-        response = get("registrations/#{registration_id}/launchLink", options)
+        # API v2 uses POST instead of GET for launch links
+        response = if current_api_version == 2
+                     post("registrations/#{registration_id}/launchLink", {}, options)
+                   else
+                     get("registrations/#{registration_id}/launchLink", options)
+                   end
 
-        result = response.success? ? response.body["launchLink"] : nil
+        result = response.success? ? response.raw_response.body["launchLink"] : nil
 
         Response.new(raw_response: response, result: result)
       end
