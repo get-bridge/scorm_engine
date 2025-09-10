@@ -36,7 +36,9 @@ jobs:
       fail-fast: false
       matrix:
         os:
-          - ubuntu-latest # currently ubuntu-22.04
+          # Latest Ubuntu is currently 24.04, which doesn't support older versions of Ruby. We need to decide what versions of Ruby need to be tested against.
+          # - ubuntu-latest # currently ubuntu-22.04
+          - ubuntu-22.04
           - ubuntu-20.04
           - macos-latest # currently macos-14, ARM based
           - macos-latest-large # currently macos-14 Intel based
