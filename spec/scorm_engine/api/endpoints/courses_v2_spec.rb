@@ -5,51 +5,51 @@ RSpec.describe "ScormEngine::Api::Endpoints::Courses API v2 Integration" do
   let(:mock_client) do
     Class.new do
       include ScormEngine::Api::Endpoints::Courses
-      
+
       attr_reader :api_version, :mock_responses
-      
+
       def initialize(api_version)
         @api_version = api_version
         @mock_responses = {}
       end
-      
+
       def current_api_version
         @api_version
       end
-      
-      def get(path, options = {})
+
+      def get(__path, __options = {})
         response_data = @mock_responses[path] || default_response
         MockResponse.new(response_data)
       end
-      
+
       def set_mock_response(path, data)
         @mock_responses[path] = data
       end
-      
+
       private
-      
+
       def default_response
         { success: true, body: {} }
       end
     end
   end
-  
+
   class MockResponse
     attr_reader :raw_response
-    
+
     def initialize(data)
       @data = data
       @raw_response = self
     end
-    
+
     def success?
       @data[:success] != false
     end
-    
+
     def body
       @data[:body] || {}
     end
-    
+
     def status
       @data[:status] || 200
     end
@@ -72,12 +72,12 @@ RSpec.describe "ScormEngine::Api::Endpoints::Courses API v2 Integration" do
 
       it "returns course data directly for single course requests" do
         client.set_mock_response("courses/course-123", single_course_data)
-        
+
         response = client.get_courses(course_id: "course-123")
-        
+
         expect(response).to be_a(ScormEngine::Response)
         expect(response.success?).to be true
-        
+
         # Should yield the course directly, not wrapped in an array
         courses = response.result.to_a
         expect(courses).to have(1).item
@@ -99,7 +99,7 @@ RSpec.describe "ScormEngine::Api::Endpoints::Courses API v2 Integration" do
                 "description" => "First course"
               },
               {
-                "id" => "course-2", 
+                "id" => "course-2",
                 "title" => "Course Two",
                 "description" => "Second course"
               }
@@ -111,15 +111,15 @@ RSpec.describe "ScormEngine::Api::Endpoints::Courses API v2 Integration" do
 
       it "returns array of courses from courses endpoint" do
         client.set_mock_response("courses", multiple_courses_data)
-        
+
         response = client.get_courses
-        
+
         expect(response).to be_a(ScormEngine::Response)
         expect(response.success?).to be true
-        
+
         courses = response.result.to_a
         expect(courses).to have(2).items
-        expect(courses.map(&:id)).to eq(["course-1", "course-2"])
+        expect(courses.map(&:id)).to eq(%w[course-1 course-2])
         expect(courses.map(&:title)).to eq(["Course One", "Course Two"])
       end
     end
@@ -152,7 +152,7 @@ RSpec.describe "ScormEngine::Api::Endpoints::Courses API v2 Integration" do
       it "handles pagination correctly" do
         client.set_mock_response("courses", first_page_data)
         client.set_mock_response("/courses?page=2", second_page_data)
-        
+
         # Mock the get method to handle pagination paths
         allow(client).to receive(:get) do |path, _options|
           case path
@@ -164,16 +164,16 @@ RSpec.describe "ScormEngine::Api::Endpoints::Courses API v2 Integration" do
             MockResponse.new(success: false, body: {})
           end
         end
-        
+
         response = client.get_courses
-        
+
         expect(response).to be_a(ScormEngine::Response)
         expect(response.success?).to be true
-        
+
         # Should enumerate through all pages
         courses = response.result.to_a
         expect(courses).to have(2).items
-        expect(courses.map(&:id)).to eq(["course-1", "course-2"])
+        expect(courses.map(&:id)).to eq(%w[course-1 course-2])
       end
     end
 
@@ -188,13 +188,13 @@ RSpec.describe "ScormEngine::Api::Endpoints::Courses API v2 Integration" do
 
       it "handles course not found gracefully" do
         client.set_mock_response("courses/nonexistent", error_response)
-        
+
         response = client.get_courses(course_id: "nonexistent")
-        
+
         expect(response).to be_a(ScormEngine::Response)
         expect(response.success?).to be false
         expect(response.status).to eq(404)
-        
+
         # Should return empty enumerator for failed requests
         courses = response.result.to_a
         expect(courses).to be_empty
@@ -205,11 +205,11 @@ RSpec.describe "ScormEngine::Api::Endpoints::Courses API v2 Integration" do
           success: true,
           body: "not a hash"
         }
-        
+
         client.set_mock_response("courses/malformed", malformed_data)
-        
+
         response = client.get_courses(course_id: "malformed")
-        
+
         # Should not raise an exception, but return empty results
         expect { response.result.to_a }.not_to raise_error
         courses = response.result.to_a
@@ -231,11 +231,11 @@ RSpec.describe "ScormEngine::Api::Endpoints::Courses API v2 Integration" do
           "more" => nil
         }
       }
-      
+
       client.set_mock_response("courses", legacy_data)
-      
+
       response = client.get_courses
-      
+
       expect(response).to be_a(ScormEngine::Response)
       courses = response.result.to_a
       expect(courses).to have(1).item

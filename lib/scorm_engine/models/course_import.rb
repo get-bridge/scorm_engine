@@ -32,9 +32,7 @@ module ScormEngine
           this.status = options["status"]&.upcase
           this.parser_warnings = options.fetch("importResult", {})["parserWarnings"]
           # Course data is nested in importResult for API v2
-          if options.fetch("importResult", {}).key?("course")
-            this.course = Course.new_from_api(options.fetch("importResult", {})["course"])
-          end
+          this.course = Course.new_from_api(options.fetch("importResult", {})["course"]) if options.fetch("importResult", {}).key?("course")
         elsif options.key?("result") && options.size == 1
           # Initial import response format: {"result": "job-id"}
           this.id = options["result"]

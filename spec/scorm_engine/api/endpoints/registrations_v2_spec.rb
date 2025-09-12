@@ -5,26 +5,22 @@ RSpec.describe "ScormEngine Registrations LaunchLink API v2" do
   let(:mock_client) do
     Class.new do
       include ScormEngine::Api::Endpoints::Registrations
-      
+
       attr_reader :api_version
-      
+
       def initialize(api_version)
         @api_version = api_version
       end
-      
+
       def current_api_version
         @api_version
       end
-      
-      def get(path, options = {})
-        MockResponse.new(
-          success: true,
-          status: 200,
-          body: { "launchLink" => "https://example.com/launch?method=GET" }
-        )
+
+      def get(*_args)
+        MockResponse.new
       end
-      
-      def post(path, query_params, body)
+
+      def post(*_args)
         MockResponse.new(
           success: true,
           status: 200,
@@ -33,23 +29,23 @@ RSpec.describe "ScormEngine Registrations LaunchLink API v2" do
       end
     end
   end
-  
+
   class MockResponse
     attr_reader :raw_response
-    
+
     def initialize(data)
       @data = data
       @raw_response = self
     end
-    
+
     def success?
       @data[:success] != false
     end
-    
+
     def body
       @data[:body] || {}
     end
-    
+
     def status
       @data[:status] || 200
     end
@@ -72,9 +68,9 @@ RSpec.describe "ScormEngine Registrations LaunchLink API v2" do
           {},
           { redirectOnExitUrl: "https://example.com/exit" }
         ).and_call_original
-        
+
         response = client.get_launch_link(registration_id: registration_id, **launch_options)
-        
+
         expect(response).to be_a(ScormEngine::Response)
         expect(response.result).to eq("https://example.com/launch?method=POST")
       end
@@ -85,7 +81,7 @@ RSpec.describe "ScormEngine Registrations LaunchLink API v2" do
           {},
           hash_including(redirectOnExitUrl: "https://example.com/exit")
         )
-        
+
         client.get_launch_link(registration_id: registration_id, **launch_options)
       end
 
@@ -94,7 +90,7 @@ RSpec.describe "ScormEngine Registrations LaunchLink API v2" do
           theme: "dark",
           language: "en-US"
         )
-        
+
         expect(client).to receive(:post).with(
           "registrations/#{registration_id}/launchLink",
           {},
@@ -104,7 +100,7 @@ RSpec.describe "ScormEngine Registrations LaunchLink API v2" do
             language: "en-US"
           )
         )
-        
+
         client.get_launch_link(registration_id: registration_id, **extended_options)
       end
     end
@@ -117,9 +113,9 @@ RSpec.describe "ScormEngine Registrations LaunchLink API v2" do
           "registrations/#{registration_id}/launchLink",
           { redirectOnExitUrl: "https://example.com/exit" }
         ).and_call_original
-        
+
         response = client.get_launch_link(registration_id: registration_id, **launch_options)
-        
+
         expect(response).to be_a(ScormEngine::Response)
         expect(response.result).to eq("https://example.com/launch?method=GET")
       end
@@ -129,14 +125,14 @@ RSpec.describe "ScormEngine Registrations LaunchLink API v2" do
           "registrations/#{registration_id}/launchLink",
           hash_including(redirectOnExitUrl: "https://example.com/exit")
         )
-        
+
         client.get_launch_link(registration_id: registration_id, **launch_options)
       end
     end
 
     context "error handling" do
       let(:client) { mock_client.new(2) }
-      
+
       let(:error_response) do
         MockResponse.new(
           success: false,
@@ -147,9 +143,9 @@ RSpec.describe "ScormEngine Registrations LaunchLink API v2" do
 
       it "handles registration not found gracefully" do
         allow(client).to receive(:post).and_return(error_response)
-        
+
         response = client.get_launch_link(registration_id: "nonexistent")
-        
+
         expect(response).to be_a(ScormEngine::Response)
         expect(response.success?).to be false
         expect(response.result).to be_nil
@@ -164,7 +160,7 @@ RSpec.describe "ScormEngine Registrations LaunchLink API v2" do
           redirect_on_exit_url: "https://example.com/exit",
           additional_params: "test=value"
         }
-        
+
         expect(client).to receive(:post).with(
           anything,
           anything,
@@ -173,7 +169,7 @@ RSpec.describe "ScormEngine Registrations LaunchLink API v2" do
             additional_params: "test=value"
           )
         )
-        
+
         client.get_launch_link(registration_id: registration_id, **options)
       end
 
@@ -182,7 +178,7 @@ RSpec.describe "ScormEngine Registrations LaunchLink API v2" do
           theme: "custom",
           language: "fr-FR"
         }
-        
+
         expect(client).to receive(:post).with(
           anything,
           anything,
@@ -191,7 +187,7 @@ RSpec.describe "ScormEngine Registrations LaunchLink API v2" do
             language: "fr-FR"
           )
         )
-        
+
         client.get_launch_link(registration_id: registration_id, **options)
       end
     end
@@ -206,18 +202,18 @@ RSpec.describe "ScormEngine Registrations LaunchLink API v2" do
           language: "en-US",
           show_progress: true
         }
-        
+
         expect(client).to receive(:post).with(
           "registrations/#{registration_id}/launchLink",
           {},
           hash_including(
             redirectOnExitUrl: "https://lms.example.com/course/complete",
             theme: "lms-branded",
-            language: "en-US", 
+            language: "en-US",
             show_progress: true
           )
         )
-        
+
         response = client.get_launch_link(registration_id: registration_id, **lms_options)
         expect(response.result).to be_a(String)
         expect(response.result).to start_with("https://")

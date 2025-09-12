@@ -19,30 +19,32 @@ RSpec.describe ScormEngine::Models::CourseImport do
         }
       end
 
-      it "correctly parses API v2 import response with nested data" do
+      it "correctly parses API v2 import response with nested data attributes" do
         import = described_class.new_from_api(api_v2_import_response)
-        
-        expect(import.id).to eq("job-123")
-        expect(import.status).to eq("RUNNING")
-        expect(import.parser_warnings).to eq(["Warning 1", "Warning 2"])
+
+        expect(import).to have_attributes(id: "job-123", status: "RUNNING", parser_warnings: ["Warning 1", "Warning 2"])
+      end
+
+      it "correctly parses API v2 import response with nested data type" do
+        import = described_class.new_from_api(api_v2_import_response)
+
         expect(import.course).to be_a(ScormEngine::Models::Course)
-        expect(import.course.id).to eq("course-123")
-        expect(import.course.title).to eq("Test Course")
+          .and have_attributes(id: "course-123", title: "Test Course")
       end
 
       it "handles completed import status" do
         completed_response = api_v2_import_response.merge("status" => "COMPLETED")
-        
+
         import = described_class.new_from_api(completed_response)
-        
+
         expect(import.status).to eq("COMPLETED")
       end
 
       it "handles failed import status" do
         failed_response = api_v2_import_response.merge("status" => "ERROR")
-        
+
         import = described_class.new_from_api(failed_response)
-        
+
         expect(import.status).to eq("ERROR")
       end
     end
@@ -56,9 +58,8 @@ RSpec.describe ScormEngine::Models::CourseImport do
 
       it "creates import with running status for initial response" do
         import = described_class.new_from_api(initial_response)
-        
-        expect(import.id).to eq("job-456")
-        expect(import.status).to eq("RUNNING")
+
+        expect(import).to have_attributes(id: "job-456", status: "RUNNING")
       end
     end
 
@@ -75,14 +76,17 @@ RSpec.describe ScormEngine::Models::CourseImport do
         }
       end
 
-      it "correctly parses API v1 format for backward compatibility" do
+      it "correctly parses API v1 format for backward compatibility attributes" do
         import = described_class.new_from_api(api_v1_response)
-        
-        expect(import.id).to eq("job-789")
-        expect(import.status).to eq("COMPLETED")
-        expect(import.parser_warnings).to eq(["Legacy warning"])
+
+        expect(import).to have_attributes(id: "job-789", status: "COMPLETED", parser_warnings: ["Legacy warning"])
+      end
+
+      it "correctly parses API v1 format for backward compatibility type" do
+        import = described_class.new_from_api(api_v1_response)
+
         expect(import.course).to be_a(ScormEngine::Models::Course)
-        expect(import.course.id).to eq("course-789")
+          .and have_attributes(id: "course-789")
       end
     end
 
@@ -99,11 +103,8 @@ RSpec.describe ScormEngine::Models::CourseImport do
 
       it "handles error states without course data" do
         import = described_class.new_from_api(error_response)
-        
-        expect(import.id).to eq("job-error")
-        expect(import.status).to eq("ERROR")
-        expect(import.parser_warnings).to eq(["Fatal error occurred"])
-        expect(import.course).to be_nil
+
+        expect(import).to have_attributes(id: "job-error", status: "ERROR", parser_warnings: ["Fatal error occurred"], course: nil)
       end
     end
 
@@ -111,14 +112,14 @@ RSpec.describe ScormEngine::Models::CourseImport do
       it "uppercases status values consistently" do
         response = { "jobId" => "test", "status" => "running" }
         import = described_class.new_from_api(response)
-        
+
         expect(import.status).to eq("RUNNING")
       end
 
       it "handles nil status gracefully" do
         response = { "jobId" => "test", "status" => nil }
         import = described_class.new_from_api(response)
-        
+
         expect(import.status).to be_nil
       end
     end

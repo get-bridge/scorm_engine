@@ -25,8 +25,7 @@ module ScormEngine
       #
       def self.get_settings_from_api(options = {})
         configuration_items = options["configurationItems"]
-        return {} unless configuration_items&.respond_to?(:reduce)
-        
+        return {} unless configuration_items.respond_to?(:reduce)
         configuration_items.reduce({}) do |m, o|
           m[o["id"]] = o["value"]
           m

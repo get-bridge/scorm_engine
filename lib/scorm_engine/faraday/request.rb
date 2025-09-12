@@ -42,24 +42,24 @@ module ScormEngine
 
         response = make_request(method, path, options, body, api_version)
         wrapped_response = ScormEngine::Response.new(raw_response: response)
-        
+
         # Check if this is a tenant not found error and we have a tenant creator
         if should_retry_with_tenant_creation?(wrapped_response) && @tenant_creator && !@retry_attempted
           @retry_attempted = true
-          
+
           begin
             @tenant_creator.call(@tenant)
             # Retry the original request and return the result
             retry_response = make_request(method, path, options, body, api_version)
-            return ScormEngine::Response.new(raw_response: retry_response)
-          rescue => retry_error
+            ScormEngine::Response.new(raw_response: retry_response)
+          rescue StandardError => e
             # If tenant creation or retry fails, return the original response
-            return wrapped_response
+            wrapped_response
           end
         else
           wrapped_response
         end
-      rescue => e
+      rescue StandardError => e
         # Handle exceptions (like network errors) separately
         raise e
       end
@@ -95,7 +95,7 @@ module ScormEngine
           # This is a ScormEngine::Response object
           response = response_or_error.raw_response
           return false unless response
-          
+
           # Check for 400 status with tenant not found message
           if response.status == 400
             body_text = response.body.to_s
@@ -105,14 +105,14 @@ module ScormEngine
           # This is an exception with a response attribute
           response = response_or_error.response
           return false unless response
-          
+
           # Check for 400 status with tenant not found message
           if response.status == 400
             body_text = response.body.to_s
             return body_text.include?("is not a valid tenant name")
           end
         end
-        
+
         false
       end
 

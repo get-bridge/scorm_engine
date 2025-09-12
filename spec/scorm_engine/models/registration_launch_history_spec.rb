@@ -72,8 +72,8 @@ RSpec.describe ScormEngine::Models::RegistrationLaunchHistory do
     %i[launch_time exit_time last_runtime_update].each do |attr|
       describe ":#{attr}" do
         it "is set properly in the UTC timezone" do
-          expect(launch_history.send(attr)).to be_a Time
-          expect(launch_history.send(attr).zone).to eq "UTC"
+          time_value = launch_history.send(attr)
+          expect(time_value).to be_a(Time).and have_attributes(zone: "UTC")
         end
 
         it "is left unset if not present" do

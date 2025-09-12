@@ -28,8 +28,8 @@ RSpec.describe ScormEngine::Models::Registration do
 
     describe ":score" do
       it "is set properly" do
-        expect(registration.score).to be_a Numeric
-        expect(registration.score.round(2)).to eq 3.14
+        score_value = registration.score
+        expect(score_value).to be_a(Numeric).and eq(3.14)
       end
 
       it "is left unset if not present" do
@@ -41,14 +41,14 @@ RSpec.describe ScormEngine::Models::Registration do
     describe ":completed_date" do
       it "is set properly when key is in root level" do
         registration = described_class.new_from_api(options.merge("completedDate" => "2018-05-24T00:01:02.000Z"))
-        expect(registration.completed_date).to be_a Time
-        expect(registration.completed_date.iso8601).to eq "2018-05-24T00:01:02Z"
+        completed_date = registration.completed_date
+        expect(completed_date).to be_a(Time).and have_attributes(iso8601: "2018-05-24T00:01:02Z")
       end
 
       it "is set properly when key is in score object" do
         registration = described_class.new_from_api(options.merge("score" => { "completedDate" => "2018-05-24T00:01:02.000Z" }))
-        expect(registration.completed_date).to be_a Time
-        expect(registration.completed_date.iso8601).to eq "2018-05-24T00:01:02Z"
+        completed_date = registration.completed_date
+        expect(completed_date).to be_a(Time).and have_attributes(iso8601: "2018-05-24T00:01:02Z")
       end
 
       it "is left unset if not present" do
@@ -58,8 +58,8 @@ RSpec.describe ScormEngine::Models::Registration do
 
     describe ":course" do
       it "is set properly" do
-        expect(registration.course).to be_a ScormEngine::Models::Course
-        expect(registration.course.id).to eq "course-789"
+        course = registration.course
+        expect(course).to be_a(ScormEngine::Models::Course).and have_attributes(id: "course-789")
       end
 
       it "is left unset if not present" do
@@ -70,8 +70,8 @@ RSpec.describe ScormEngine::Models::Registration do
 
     describe ":learner" do
       it "is set properly" do
-        expect(registration.learner).to be_a ScormEngine::Models::Learner
-        expect(registration.learner.id).to eq "learner-123"
+        learner = registration.learner
+        expect(learner).to be_a(ScormEngine::Models::Learner).and have_attributes(id: "learner-123")
       end
 
       it "is left unset if not present" do

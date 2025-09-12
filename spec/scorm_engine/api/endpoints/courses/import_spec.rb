@@ -118,29 +118,28 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Import do
         include ScormEngine::Api::Endpoints::Courses::Import
         
         attr_reader :api_version
-        
+
         def initialize(api_version)
           @api_version = api_version
         end
-        
+
         def current_api_version
           @api_version
         end
-        
-        def post(path, query_params, body)
+
+        def post(*_args)
           # Mock HTTP response for testing
-          double("Response", 
-                 success?: true, 
-                 body: { "jobId" => "test-job-123" },
-                 status: 200
-                )
+          double("Response",
+                 success?: true,
+                 body: {"jobId" => "test-job-123"},
+                 status: 200)
         end
-        
-        def require_options(options, *required_keys)
+
+        def require_options(*_args)
           # Mock validation
         end
-        
-        def require_exclusive_option(options, *exclusive_keys)  
+
+        def require_exclusive_option(*_args)
           # Mock validation
         end
         
@@ -174,12 +173,12 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Import do
       end
 
       it "does not include courseName even when name is provided" do
-        expect(subject).to receive(:post) do |path, query_params, body|
+        expect(subject).to receive(:post) do |_path, _query_params, body|
           expect(body).not_to have_key(:courseName)
           expect(body[:url]).to eq("https://example.com/course.zip")
           double("Response", success?: true, body: {}, status: 200)
         end
-        
+
         subject.post_course_import(base_options)
       end
     end
@@ -203,11 +202,10 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Import do
       it "uses course_id as courseName fallback when name is not provided" do
         options_without_name = base_options.except(:name)
         
-        expect(subject).to receive(:post) do |path, query_params, body|
+        expect(subject).to receive(:post) do |_path, _query_params, body|
           expect(body[:courseName]).to eq("test-course-123")
           double("Response", success?: true, body: {}, status: 200)
         end
-        
         subject.post_course_import(options_without_name)
       end
     end

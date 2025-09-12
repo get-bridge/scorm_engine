@@ -9,11 +9,7 @@ RSpec.describe ScormEngine::Models::Destination do
       end
 
       it "is set when passed at within `data`" do
-        destination = described_class.new_from_api(
-          "data" => {
-            "name" => "test"
-          }
-        )
+        destination = described_class.new_from_api("data" => { "name" => "test" })
         expect(destination.name).to eq "test"
       end
     end
