@@ -1,5 +1,6 @@
+# rubocop:disable RSpec/ExampleLength
 RSpec.describe ScormEngine::Api::Endpoints::Registrations do
-  let(:subject) { scorm_engine_client }
+  subject(:client) { scorm_engine_client }
 
   let(:registration_options) { {
     course_id: "testing-golf-explained",
@@ -20,14 +21,14 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
 
   before do
     against_real_scorm_engine do
-      ensure_course_exists(client: subject, course_id: registration_options[:course_id])
-      ensure_registration_exists(registration_options.merge(client: subject))
-      ensure_course_exists(client: subject, course_id: "#{registration_options[:course_id]}-no-registrations")
+      ensure_course_exists(client: client, course_id: registration_options[:course_id])
+      ensure_registration_exists(registration_options.merge(client: client))
+      ensure_course_exists(client: client, course_id: "#{registration_options[:course_id]}-no-registrations")
     end
   end
 
   describe "#get_registrations" do
-    let(:registrations) { subject.get_registrations }
+    let(:registrations) { client.get_registrations }
 
     it "is successful" do
       expect(registrations.success?).to eq true
@@ -44,13 +45,13 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
 
     describe "filtering by course_id" do
       it "includes results" do
-        registrations = subject.get_registrations(course_id: registration_options[:course_id])
+        registrations = client.get_registrations(course_id: registration_options[:course_id])
         reg = registrations.result.detect { |r| r.id == registration_options[:registration_id] }
         expect(reg).not_to be nil
       end
 
       it "excludes results" do
-        registrations = subject.get_registrations(course_id: "#{registration_options[:course_id]}-no-registrations")
+        registrations = client.get_registrations(course_id: "#{registration_options[:course_id]}-no-registrations")
         reg = registrations.result.detect { |r| r.id == registration_options[:registration_id] }
         expect(reg).to be nil
       end
@@ -58,13 +59,13 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
 
     describe "filtering by learner_id" do
       it "includes results" do
-        registrations = subject.get_registrations(learner_id: registration_options[:learner][:id])
+        registrations = client.get_registrations(learner_id: registration_options[:learner][:id])
         reg = registrations.result.detect { |r| r.id == registration_options[:registration_id] }
         expect(reg).not_to be nil
       end
 
       it "excludes results" do
-        registrations = subject.get_registrations(learner_id: "some-other-learner-id")
+        registrations = client.get_registrations(learner_id: "some-other-learner-id")
         reg = registrations.result.detect { |r| r.id == registration_options[:registration_id] }
         expect(reg).to be nil
       end
@@ -72,7 +73,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
   end
 
   describe "#get_registration_instances" do
-    let(:registrations) { subject.get_registration_instances(registration_id: registration_options[:registration_id]) }
+    let(:registrations) { client.get_registration_instances(registration_id: registration_options[:registration_id]) }
 
     it "is successful" do
       expect(registrations.success?).to eq true
@@ -90,7 +91,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
 
   describe "#get_registration_exists" do
     it "is true when registration exists" do
-      response = subject.get_registration_exists(registration_id: registration_options[:registration_id])
+      response = client.get_registration_exists(registration_id: registration_options[:registration_id])
       aggregate_failures do
         expect(response.success?).to eq true
         expect(response.result).to eq true
@@ -98,7 +99,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
     end
 
     it "is false when registration does not exist" do
-      response = subject.get_registration_exists(registration_id: "reg-does-not-exist")
+      response = client.get_registration_exists(registration_id: "reg-does-not-exist")
       aggregate_failures do
         expect(response.result).to eq nil
         expect(response.status).to eq 404
@@ -108,7 +109,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
 
   describe "#get_registration_progress" do
     it "returns a registration when it exists" do
-      response = subject.get_registration_progress(registration_id: registration_options[:registration_id])
+      response = client.get_registration_progress(registration_id: registration_options[:registration_id])
       aggregate_failures do
         expect(response.success?).to eq true
         expect(response.result).to be_a ScormEngine::Models::Registration
@@ -117,7 +118,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
     end
 
     it "fails when registration does not exist" do
-      response = subject.get_registration_progress(registration_id: "reg-does-not-exist")
+      response = client.get_registration_progress(registration_id: "reg-does-not-exist")
       aggregate_failures do
         expect(response.success?).to eq false
         expect(response.status).to eq 404
@@ -125,14 +126,14 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
       end
     end
 
-    context "detail" do
+    context "when detail" do
       it "does not return activity_details by default" do
-        response = subject.get_registration_progress(registration_id: registration_options[:registration_id])
+        response = client.get_registration_progress(registration_id: registration_options[:registration_id])
         expect(response.result.activity_details).to eq nil
       end
 
       it "returns activity_details if requested" do
-        response = subject.get_registration_progress(registration_id: registration_options[:registration_id], detail: true)
+        response = client.get_registration_progress(registration_id: registration_options[:registration_id], detail: true)
         expect(response.result.activity_details).to be_a ScormEngine::Models::RegistrationActivityDetail
       end
     end
@@ -140,14 +141,14 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
 
   describe "#delete_registration" do
     it "is successful when registration exists" do
-      response = subject.delete_registration(registration_id: registration_options[:registration_id])
+      response = client.delete_registration(registration_id: registration_options[:registration_id])
       aggregate_failures do
         expect(response.success?).to eq true
       end
     end
 
     it "is failure when registration does not exist" do
-      response = subject.delete_registration(registration_id: "reg-does-not-exist")
+      response = client.delete_registration(registration_id: "reg-does-not-exist")
       aggregate_failures do
         expect(response.success?).to eq false
         expect(response.status).to eq 404
@@ -158,8 +159,8 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
 
   describe "#post_registration" do
     it "is successful" do
-      subject.delete_registration(registration_options)
-      response = subject.post_registration(registration_options)
+      client.delete_registration(registration_options)
+      response = client.post_registration(registration_options)
       aggregate_failures do
         expect(response.success?).to eq true
         expect(response.status).to eq 204
@@ -170,8 +171,8 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
       options = registration_options.dup
       options[:learner][:first_name] = "Släshy"
       options[:learner][:last_name] = "Mč/Slásh\Facę"
-      subject.delete_registration(options)
-      response = subject.post_registration(options)
+      client.delete_registration(options)
+      response = client.post_registration(options)
       aggregate_failures do
         expect(response.success?).to eq true
         expect(response.status).to eq 204
@@ -179,7 +180,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
     end
 
     it "fails if course_id is invalid" do
-      response = subject.post_registration(registration_options.merge(course_id: "invalid-bogus"))
+      response = client.post_registration(registration_options.merge(course_id: "invalid-bogus"))
       aggregate_failures do
         expect(response.success?).to eq false
         expect(response.status).to eq 400
@@ -188,7 +189,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
     end
 
     it "fails if registration_id already exists" do
-      response = subject.post_registration(registration_options)
+      response = client.post_registration(registration_options)
       aggregate_failures do
         expect(response.success?).to eq false
         expect(response.status).to eq 400
@@ -198,7 +199,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
   end
 
   describe "#get_registration_launch_link" do
-    let(:response) { subject.get_registration_launch_link(registration_id: registration_options[:registration_id], redirect_on_exit_url: "https://example.com") }
+    let(:response) { client.get_registration_launch_link(registration_id: registration_options[:registration_id], redirect_on_exit_url: "https://example.com") }
 
     it "is successful" do
       expect(response.success?).to eq true
@@ -211,12 +212,25 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
       end
     end
 
-    it "fails when id is invalid" do
-      response = subject.get_registration_launch_link(registration_id: "nonexistent-registration")
+    it "fails when id is invalid, response false" do
+      response = client.get_registration_launch_link(registration_id: "nonexistent-registration")
       expect(response.success?).to eq false
+    end
+
+    it "fails when id is invalid, status 404" do
+      response = client.get_registration_launch_link(registration_id: "nonexistent-registration")
       expect(response.status).to eq 404
+    end
+
+    it "fails when id is invalid, message present" do
+      response = client.get_registration_launch_link(registration_id: "nonexistent-registration")
       expect(response.message).to match(/'nonexistent-registration'/)
+    end
+
+    it "fails when id is invalid, result nil" do
+      response = client.get_registration_launch_link(registration_id: "nonexistent-registration")
       expect(response.result).to eq nil
     end
   end
 end
+# rubocop:enable RSpec/ExampleLength

@@ -52,7 +52,7 @@ module ScormEngine
             # Retry the original request and return the result
             retry_response = make_request(method, path, options, body, api_version)
             ScormEngine::Response.new(raw_response: retry_response)
-          rescue StandardError => e
+          rescue StandardError
             # If tenant creation or retry fails, return the original response
             wrapped_response
           end

@@ -42,7 +42,7 @@ module ScormEngine
         time = options["lastResetTime"]
         return if time.nil? || time == "none"
 
-        Time.parse(time)
+        Time.zone.parse(time)
       end
     end
   end

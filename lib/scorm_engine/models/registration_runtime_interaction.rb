@@ -88,8 +88,8 @@ module ScormEngine
 
       def self.get_timestamp_from_api(options)
         timestamp = options["timestampUtc"]
-        return if timestamp.nil? || timestamp.empty?
-        Time.parse(timestamp)
+        return if string.blank?
+        Time.zone.parse(timestamp)
       end
     end
   end

@@ -1,13 +1,15 @@
 RSpec.describe ScormEngine::Api::Endpoints::Ping do
+  subject(:client) { scorm_engine_client }
+
   describe "#get_ping" do
-    let(:subject) { scorm_engine_client.get_ping }
+    let(:client) { scorm_engine_client.get_ping }
 
     it "is successful" do
-      expect(subject.success?).to eq true
+      expect(client.success?).to eq true
     end
 
     it "reports the api is up" do
-      expect(subject.message).to match(/API is up/)
+      expect(client.message).to match(/API is up/)
     end
 
     context "with invalid password" do
@@ -16,11 +18,11 @@ RSpec.describe ScormEngine::Api::Endpoints::Ping do
       end
 
       it "is unsuccessful" do
-        expect(subject.success?).to eq false
+        expect(client.success?).to eq false
       end
 
       it "returns status 403" do
-        expect(subject.status).to eq 403
+        expect(client.status).to eq 403
       end
     end
   end

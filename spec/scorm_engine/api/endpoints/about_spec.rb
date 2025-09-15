@@ -1,58 +1,60 @@
 RSpec.describe ScormEngine::Api::Endpoints::About do
   describe "#get_about" do
-    let(:subject) { scorm_engine_client.get_about }
+    client(:client) { scorm_engine_client.get_about }
 
     it "is successful" do
-      expect(subject.success?).to eq true
+      expect(client.success?).to eq true
     end
 
     it "knows the version" do
-      expect(subject.result.version).to eq "20.1.12.336"
+      expect(client.result.version).to eq "20.1.12.336"
     end
 
     it "knows the platform" do
-      expect(subject.result.platform).to eq "Java"
+      expect(client.result.platform).to eq "Java"
     end
   end
 
   describe "#get_about_user_count" do
-    let(:subject) { scorm_engine_client.get_about_user_count }
+    let(:client) { scorm_engine_client.get_about_user_count }
 
     it "is successful" do
-      expect(subject.success?).to eq true
+      expect(client.success?).to eq true
     end
 
     it "tracks combined counts" do
       aggregate_failures do
-        expect(subject.result.total).to be >= 1
-        expect(subject.result.dispatched).to be >= 0
-        expect(subject.result.non_dispatched).to be >= 0
+        expect(client.result.total).to be >= 1
+        expect(client.result.dispatched).to be >= 0
+        expect(client.result.non_dispatched).to be >= 0
       end
     end
 
+    # rubocop:disable RSpec/ExampleLength
     it "tracks per tenantcounts" do
       aggregate_failures do
-        expect(subject.result.by_tenant).to be_a Hash
-        tenant = subject.result.by_tenant[scorm_engine_client.tenant.downcase]
+        expect(client.result.by_tenant).to be_a Hash
+        tenant = client.result.by_tenant[scorm_engine_client.tenant.downcase]
         expect(tenant.total).to be >= 0
         expect(tenant.dispatched).to be >= 0
         expect(tenant.non_dispatched).to be >= 0
       end
     end
+    # rubocop:enable RSpec/ExampleLength
 
     it "accepts :before option" do
-      subject = scorm_engine_client.get_about_user_count(before: Time.parse("1901-01-1 00:00:00 UTC"))
+      client = scorm_engine_client.get_about_user_count(before: Time.parse("1901-01-1 00:00:00 UTC"))
       aggregate_failures do
-        expect(subject.success?).to eq true
-        expect(subject.result.total).to eq 0
+        expect(client.success?).to eq true
+        expect(client.result.total).to eq 0
       end
     end
 
     it "accepts :since option" do
-      subject = scorm_engine_client.get_about_user_count(since: Time.parse("2031-01-1 00:00:00 UTC"))
+      client = scorm_engine_client.get_about_user_count(since: Time.parse("2031-01-1 00:00:00 UTC"))
       aggregate_failures do
-        expect(subject.success?).to eq true
-        expect(subject.result.total).to eq 0
+        expect(client.success?).to eq true
+        expect(client.result.total).to eq 0
       end
     end
   end

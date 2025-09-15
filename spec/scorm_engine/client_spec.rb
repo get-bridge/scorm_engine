@@ -2,8 +2,9 @@ require "spec_helper"
 require_relative "../support/scorm_engine_configuration"
 
 RSpec.describe ScormEngine::Client do
-  let(:tenant) { "test-tenant" }
   subject(:client) { described_class.new(tenant: tenant) }
+
+  let(:tenant) { "test-tenant" }
 
   describe "#initialize" do
     it "sets the tenant" do
