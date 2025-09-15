@@ -1,4 +1,3 @@
-# rubocop:disable RSpec/ExampleLength
 RSpec.describe ScormEngine::Api::Endpoints::Configuration do
   describe "#get_app_configuration" do
     client(:client) { scorm_engine_client.get_app_configuration }
@@ -96,4 +95,3 @@ RSpec.describe ScormEngine::Api::Endpoints::Configuration do
     end
   end
 end
-# rubocop:enable RSpec/ExampleLength

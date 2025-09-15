@@ -1,4 +1,3 @@
-# rubocop:disable RSpec/ExampleLength
 RSpec.describe ScormEngine::Api::Endpoints::Courses::Configuration do
   subject(:client) { scorm_engine_client }
 
@@ -167,4 +166,3 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Configuration do
     end
   end
 end
-# rubocop:enable RSpec/ExampleLength

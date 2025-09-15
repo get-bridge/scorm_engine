@@ -30,7 +30,6 @@ RSpec.describe ScormEngine::Api::Endpoints::About do
       end
     end
 
-    # rubocop:disable RSpec/ExampleLength
     it "tracks per tenantcounts" do
       aggregate_failures do
         expect(client.result.by_tenant).to be_a Hash
@@ -40,7 +39,6 @@ RSpec.describe ScormEngine::Api::Endpoints::About do
         expect(tenant.non_dispatched).to be >= 0
       end
     end
-    # rubocop:enable RSpec/ExampleLength
 
     it "accepts :before option" do
       client = scorm_engine_client.get_about_user_count(before: Time.parse("1901-01-1 00:00:00 UTC"))

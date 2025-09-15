@@ -1,5 +1,5 @@
 require "zip"
-# rubocop:disable RSpec/ExampleLength
+
 RSpec.describe ScormEngine::Api::Endpoints::Dispatches do
   subject(:client) { scorm_engine_client }
 
@@ -386,4 +386,3 @@ RSpec.describe ScormEngine::Api::Endpoints::Dispatches do
     end
   end
 end
-# rubocop:enable RSpec/ExampleLength

@@ -35,7 +35,6 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations::LaunchHistory do
       expect(histories.result.all? { |r| r.is_a?(ScormEngine::Models::RegistrationLaunchHistory) }).to eq true
     end
 
-    # rubocop:disable RSpec/ExampleLength
     it "fails when registration does not exist" do
       response = client.get_registration_launch_history(registration_id: "reg-does-not-exist")
       aggregate_failures do
@@ -44,6 +43,5 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations::LaunchHistory do
         expect(response.result).to eq nil
       end
     end
-    # rubocop:enable RSpec/ExampleLength
   end
 end

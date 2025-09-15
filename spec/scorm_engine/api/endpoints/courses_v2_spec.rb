@@ -1,7 +1,6 @@
 require "spec_helper"
 require_relative "../../../../support/scorm_engine_configuration"
 
-# rubocop:disable RSpec/ExampleLength
 RSpec.describe ScormEngine::Api::Endpoints::CoursesV2 do
   let(:mock_client) do
     Class.new do
@@ -328,4 +327,3 @@ RSpec.describe ScormEngine::Api::Endpoints::CoursesV2 do
     end
   end
 end
-# rubocop:enable RSpec/ExampleLength
