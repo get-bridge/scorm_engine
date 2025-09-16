@@ -1,6 +1,6 @@
 RSpec.describe ScormEngine::Api::Endpoints::Configuration do
   describe "#get_app_configuration" do
-    client(:client) { scorm_engine_client.get_app_configuration }
+    let(:client) { scorm_engine_client.get_app_configuration }
 
     it "is successful" do
       expect(client.success?).to eq true

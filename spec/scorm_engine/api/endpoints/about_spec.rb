@@ -1,6 +1,8 @@
+require "spec_helper"
+
 RSpec.describe ScormEngine::Api::Endpoints::About do
   describe "#get_about" do
-    client(:client) { scorm_engine_client.get_about }
+    let(:client) { scorm_engine_client.get_about }
 
     it "is successful" do
       expect(client.success?).to eq true

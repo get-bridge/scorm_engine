@@ -1,5 +1,5 @@
 RSpec.describe ScormEngine::Api::Endpoints::Destinations do
-  client(:client) { scorm_engine_client }
+  let(:client) { scorm_engine_client }
 
   let(:destination_options) { {
     destination_id: "testing-golf-club",

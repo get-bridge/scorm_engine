@@ -1,5 +1,5 @@
 RSpec.describe ScormEngine::Api::Endpoints::Courses::Import do
-  client(:client) { scorm_engine_client }
+  let(:client) { scorm_engine_client }
 
   before do
     against_real_scorm_engine do
@@ -160,7 +160,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Import do
     end
 
     context "when using API v2" do
-      client { mock_client.new(2) }
+      let(:client) { mock_client.new(2) }
 
       it "excludes courseName parameter for v23 compatibility" do
         allow(client).to receive(:post)
@@ -190,7 +190,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Import do
     end
 
     context "when using API v1 (backward compatibility)" do
-      client { mock_client.new(1) }
+      let(:client) { mock_client.new(1) }
 
       it "includes courseName parameter for backward compatibility" do
         allow(client).to receive(:post)
