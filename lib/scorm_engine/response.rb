@@ -2,11 +2,21 @@ module ScormEngine
   class Response
     attr_reader :raw_response, :result
 
-    delegate :success?, :status, :body, to: :raw_response
-
     def initialize(raw_response:, result: nil)
       @raw_response = raw_response
       @result = result
+    end
+
+    def success?
+      raw_response.success?
+    end
+
+    def status
+      raw_response.status
+    end
+
+    def body
+      raw_response.body
     end
 
     def results
