@@ -30,11 +30,17 @@ module ScormEngine
     def detailed_error_info
       return "Success" if success?
 
+      headers_hash = begin
+        raw_response.headers.to_hash
+      rescue NoMethodError
+        raw_response.headers
+      end
+
       error_info = {
         status: status,
         message: message,
         body: raw_response.body,
-        headers: raw_response.headers.to_hash
+        headers: headers_hash
       }
 
       error_info.inspect

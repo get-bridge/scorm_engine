@@ -92,7 +92,7 @@ module ScormEngine
       def self.get_expiration_date(options = {})
         expiration_date = options["expirationDate"]
         return if expiration_date.nil? || expiration_date == "none"
-        Time.zone.parse(expiration_date)
+        Time.parse(expiration_date)
       end
     end
   end

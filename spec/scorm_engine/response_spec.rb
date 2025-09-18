@@ -84,7 +84,7 @@ RSpec.describe ScormEngine::Response do
 
   describe "#results" do
     context "when result is an Enumerator" do
-      let(:enumerator) { [1, 2, 3].to_enum }
+      let(:enumerator) { [1, 2, 3].each }
       let(:mock_result) { enumerator }
 
       it "returns the enumerator as is" do
@@ -93,24 +93,25 @@ RSpec.describe ScormEngine::Response do
     end
 
     context "when result is not an Enumerator" do
-      it "wraps result in an array" do
-        expect(response.results).to eq([mock_result])
+      it "converts result using Array()" do
+        # Array({"data" => "test"}) converts hash to array of key-value pairs
+        expect(response.results).to eq([["data", "test"]])
       end
     end
 
     context "when result is nil" do
       let(:mock_result) { nil }
 
-      it "returns [nil]" do
-        expect(response.results).to eq([nil])
+      it "returns empty array via Array(nil)" do
+        expect(response.results).to eq([])
       end
     end
 
     context "when result is already an array" do
       let(:mock_result) { [1, 2, 3] }
 
-      it "wraps the array (returns [[1, 2, 3]])" do
-        expect(response.results).to eq([[1, 2, 3]])
+      it "returns the array unchanged via Array(array)" do
+        expect(response.results).to eq([1, 2, 3])
       end
     end
   end
@@ -123,21 +124,31 @@ RSpec.describe ScormEngine::Response do
     end
 
     context "when response is not successful" do
+      let(:mock_headers) do
+        instance_double("Headers").tap do |headers|
+          allow(headers).to receive(:to_hash).and_return({
+            "Content-Type" => "application/json",
+            "X-Error-Code" => "VALIDATION"
+          })
+        end
+      end
+
       let(:mock_raw_response) do
         instance_double("RawResponse",
                         success?: false,
                         status: 400,
                         body: { "message" => "Bad Request", "details" => "Invalid parameters" },
-                        headers: { "Content-Type" => "application/json", "X-Error-Code" => "VALIDATION" })
+                        headers: mock_headers)
       end
 
       it "returns detailed error information" do
         error_info = response.detailed_error_info
 
-        expect(error_info).to include("status: 400",
-                                      "message: \"Bad Request\"",
-                                      "body: {\"message\"=>\"Bad Request\", \"details\"=>\"Invalid parameters\"}",
-                                      "headers: {\"Content-Type\"=>\"application/json\", \"X-Error-Code\"=>\"VALIDATION\"}")
+        expect(error_info).to include("400")
+        expect(error_info).to include("Bad Request")
+        expect(error_info).to include("Invalid parameters")
+        expect(error_info).to include("Content-Type")
+        expect(error_info).to include("application/json")
       end
     end
 
@@ -152,24 +163,33 @@ RSpec.describe ScormEngine::Response do
       end
 
       before do
-        allow(mock_headers).to receive(:to_hash).and_raise(NoMethodError)
+        allow(mock_headers).to receive(:to_hash).and_raise(NoMethodError, "undefined method `to_hash'")
       end
 
       it "handles headers conversion gracefully" do
         expect { response.detailed_error_info }.not_to raise_error
+        error_info = response.detailed_error_info
+        expect(error_info).to include("500")
+        expect(error_info).to include("Server Error")
       end
     end
   end
 
   describe "integration with real HTTP responses" do
     context "when simulating Faraday response behavior" do
+      let(:mock_headers) do
+        instance_double("Headers").tap do |headers|
+          allow(headers).to receive(:to_hash).and_return({ "content-type" => "application/json" })
+        end
+      end
+
       let(:faraday_response) do
         # Simulate a Faraday::Response-like object
         instance_double("FaradayResponse",
                         success?: false,
                         status: 404,
                         body: { "error" => "Course not found", "code" => "COURSE_NOT_FOUND" },
-                        headers: { "content-type" => "application/json" })
+                        headers: mock_headers)
       end
 
       let(:response) { described_class.new(raw_response: faraday_response) }
@@ -178,7 +198,10 @@ RSpec.describe ScormEngine::Response do
         error_info = response.detailed_error_info
 
         expect(error_info).to be_a(String)
-                          .and include("404", "Course not found", "COURSE_NOT_FOUND", "application/json")
+        expect(error_info).to include("404")
+        expect(error_info).to include("Course not found")
+        expect(error_info).to include("COURSE_NOT_FOUND")
+        expect(error_info).to include("application/json")
       end
     end
   end

@@ -24,6 +24,8 @@ module ScormEngine
       #   A hash of key/value pairs.
       #
       def self.get_settings_from_api(options = {})
+        return {} if options.nil?
+
         configuration_items = options["configurationItems"]
         return {} unless configuration_items.respond_to?(:reduce)
         configuration_items.reduce({}) do |m, o|

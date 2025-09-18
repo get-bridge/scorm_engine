@@ -23,7 +23,9 @@ module ScormEngine
 
             result = OpenStruct.new
 
-            response.body["settingItems"].each do |setting|
+            # Safely handle response.body["settingItems"] which might be nil in error cases
+            setting_items = response.body&.dig("settingItems") || []
+            setting_items.each do |setting|
               result[setting["id"]] = setting["effectiveValue"]
             end
 

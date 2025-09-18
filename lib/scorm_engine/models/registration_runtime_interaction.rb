@@ -87,9 +87,11 @@ module ScormEngine
       end
 
       def self.get_timestamp_from_api(options)
-        timestamp = options["timestampUtc"]
-        return if string.blank?
-        Time.zone.parse(timestamp)
+        # Handle both API v1 (timestampUtc) and API v2 (timestamp) key names
+        timestamp = options["timestamp"] || options["timestampUtc"]
+        return if timestamp.nil? || timestamp.empty?
+
+        Time.parse(timestamp)
       end
     end
   end

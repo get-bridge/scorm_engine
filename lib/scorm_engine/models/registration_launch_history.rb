@@ -76,10 +76,10 @@ module ScormEngine
       # @return [Time]
       #
       def self.parse_time(string)
-        return nil if string.blank?
+        return nil if string.nil? || string.empty?
         Time.strptime("#{string} UTC", "%m/%d/%Y %H:%M:%S %p %Z")
       rescue StandardError
-        Time.zone.parse(string)
+        Time.parse(string)
       end
 
       #

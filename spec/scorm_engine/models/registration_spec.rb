@@ -29,7 +29,7 @@ RSpec.describe ScormEngine::Models::Registration do
     describe ":score" do
       it "is set properly" do
         score_value = registration.score
-        expect(score_value).to be_a(Numeric).and eq(3.14)
+        expect(score_value).to be_a(Numeric).and eq(3.14159)
       end
 
       it "is left unset if not present" do

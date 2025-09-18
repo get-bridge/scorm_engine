@@ -89,14 +89,14 @@ module ScormEngine
         this.options = options.dup
         this.id = options["id"]
         this.instance = options["instance"]
-        this.updated = Time.zone.parse(options["updated"]) if options.key?("updated")
+        this.updated = Time.parse(options["updated"]) if options.key?("updated")
         this.registration_completion = options["registrationCompletion"]&.upcase
         this.registration_success = options["registrationSuccess"]&.upcase
         this.total_seconds_tracked = options["totalSecondsTracked"]&.to_i
-        this.first_access_date = Time.zone.parse(options["firstAccessDate"]) if options.key?("firstAccessDate")
-        this.last_access_date = Time.zone.parse(options["lastAccessDate"]) if options.key?("lastAccessDate")
-        this.created_date = Time.zone.parse(options["createdDate"]) if options.key?("createdDate")
-        this.updated = Time.zone.parse(options["updated"]) if options.key?("updated")
+        this.first_access_date = Time.parse(options["firstAccessDate"]) if options.key?("firstAccessDate")
+        this.last_access_date = Time.parse(options["lastAccessDate"]) if options.key?("lastAccessDate")
+        this.created_date = Time.parse(options["createdDate"]) if options.key?("createdDate")
+        this.updated = Time.parse(options["updated"]) if options.key?("updated")
         this.registration_completion_amount = options["registrationCompletionAmount"].to_f # Sometimes it returns "NaN"
 
         this.score = get_score_from_api(options)
@@ -181,7 +181,7 @@ module ScormEngine
         completed_date = options["completedDate"]
         completed_date ||= options.fetch("score", {})["completedDate"]
         return if completed_date.nil?
-        Time.zone.parse(completed_date)
+        Time.parse(completed_date)
       end
     end
     # rubocop:enable Metrics/AbcSize
