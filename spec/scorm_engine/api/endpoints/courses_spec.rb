@@ -16,7 +16,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
         @api_version
       end
 
-      def get(path, options = {})
+      def get(path, __options = {})
         response_data = @mock_responses[path] || default_response
         MockResponse.new(response_data)
       end
