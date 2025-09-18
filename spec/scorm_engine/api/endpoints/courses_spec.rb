@@ -90,7 +90,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
         # Should yield the course directly, not wrapped in an array
         courses = response.result.to_a
         aggregate_failures do
-          expect(courses).to have(1).item
+          expect(courses.length).to eq(1)
           expect(courses.first).to be_a(ScormEngine::Models::Course)
           expect(courses.first.id).to eq("course-123")
           expect(courses.first.title).to eq("Test Course")
@@ -138,7 +138,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
 
         courses = response.result.to_a
         aggregate_failures do
-          expect(courses).to have(2).items
+          expect(courses.length).to eq(2)
           expect(courses.map(&:id)).to eq(%w[course-1 course-2])
           expect(courses.map(&:title)).to eq(["Course One", "Course Two"])
         end
@@ -320,7 +320,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
 
       courses = response.result.to_a
       aggregate_failures do
-        expect(courses).to have(1).item
+        expect(courses.length).to eq(1)
         expect(courses.first.id).to eq("legacy-course")
       end
     end
