@@ -36,7 +36,8 @@ RSpec.describe ScormEngine::Api::Endpoints::Registrations do
         registration_id = options[:registration_id]
 
         # Transform parameters like the real implementation does
-        transformed_options = options.except(:registration_id)
+        transformed_options = options.dup
+        transformed_options.delete(:registration_id)
         transformed_options[:redirectOnExitUrl] = transformed_options.delete(:redirect_on_exit_url) if transformed_options.key?(:redirect_on_exit_url)
 
         # Simulate the actual method logic

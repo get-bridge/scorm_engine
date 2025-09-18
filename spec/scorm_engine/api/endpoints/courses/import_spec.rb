@@ -221,7 +221,8 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Import do
       end
 
       it "uses course_id as courseName fallback when name is not provided" do
-        options_without_name = base_options.except(:name)
+        options_without_name = base_options.dup
+        options_without_name.delete(:name)
 
         allow(client).to receive(:post).and_wrap_original do |_method, *args|
           _, _, body = args

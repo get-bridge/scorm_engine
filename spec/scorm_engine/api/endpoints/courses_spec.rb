@@ -17,7 +17,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
       end
 
       def get(__path, __options = {})
-        response_data = @mock_responses[path] || default_response
+        response_data = @mock_responses[__path] || default_response
         MockResponse.new(response_data)
       end
 
@@ -191,7 +191,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses do
         # Should enumerate through all pages
         courses = response.result.to_a
         aggregate_failures do
-          expect(courses).to have(2).items
+          expect(courses.length).to eq(2)
           expect(courses.map(&:id)).to eq(%w[course-1 course-2])
         end
       end
