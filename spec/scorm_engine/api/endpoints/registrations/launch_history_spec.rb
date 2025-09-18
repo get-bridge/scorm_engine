@@ -1,6 +1,6 @@
 RSpec.describe ScormEngine::Api::Endpoints::Registrations::LaunchHistory do
   # TODO: VCR Integration Tests - ScormEngine API v2 Migration
-  # 
+  #
   # All tests in this file have been temporarily commented out due to VCR cassette
   # format incompatibility with ScormEngine API v2. These tests require VCR cassettes
   # to be re-recorded with the new API v2 authentication headers (engineTenantName).
