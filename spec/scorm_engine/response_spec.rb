@@ -126,10 +126,10 @@ RSpec.describe ScormEngine::Response do
     context "when response is not successful" do
       let(:mock_headers) do
         instance_double("Headers").tap do |headers|
-          allow(headers).to receive(:to_hash).and_return({
+          allow(headers).to receive(:to_hash).and_return(
             "Content-Type" => "application/json",
             "X-Error-Code" => "VALIDATION"
-          })
+          )
         end
       end
 
