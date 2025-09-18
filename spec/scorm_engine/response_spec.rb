@@ -95,7 +95,7 @@ RSpec.describe ScormEngine::Response do
     context "when result is not an Enumerator" do
       it "converts result using Array()" do
         # Array({"data" => "test"}) converts hash to array of key-value pairs
-        expect(response.results).to eq([["data", "test"]])
+        expect(response.results).to eq([%w[data test]])
       end
     end
 
@@ -127,9 +127,9 @@ RSpec.describe ScormEngine::Response do
       let(:mock_headers) do
         instance_double("Headers").tap do |headers|
           allow(headers).to receive(:to_hash).and_return({
-            "Content-Type" => "application/json",
-            "X-Error-Code" => "VALIDATION"
-          })
+                                                            "Content-Type" => "application/json",
+                                                            "X-Error-Code" => "VALIDATION"
+                                                          })
         end
       end
 

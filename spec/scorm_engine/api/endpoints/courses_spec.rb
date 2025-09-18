@@ -333,7 +333,7 @@ end
 #
 # Integration test methods that need VCR cassette updates:
 # - #get_courses (integration): Basic course listing functionality
-#   - Course result validation and enumeration 
+#   - Course result validation and enumeration
 #   - :course_id option filtering
 #   - :since option with timestamp filtering
 #   - :more option for pagination support

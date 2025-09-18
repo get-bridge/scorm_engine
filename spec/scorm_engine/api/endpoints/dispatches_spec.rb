@@ -290,7 +290,7 @@ RSpec.describe ScormEngine::Api::Endpoints::Dispatches do
   # - #get_dispatches (with pagination and since options)
   # - #post_dispatch
   # - #get_dispatch
-  # - #put_dispatch  
+  # - #put_dispatch
   # - #delete_dispatch
   # - #get_dispatch_enabled
   # - #put_dispatch_enabled

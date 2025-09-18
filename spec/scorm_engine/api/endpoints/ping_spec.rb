@@ -4,13 +4,13 @@ RSpec.describe ScormEngine::Api::Endpoints::Ping do
   # TODO: Re-enable integration tests after ScormEngine API v2 VCR cassette updates
   # These integration tests require VCR cassettes to be re-recorded with API v2 authentication headers.
   # Current failures are due to:
-  # 1. VCR cassettes recorded with API v1 format (tenant in URL path)  
+  # 1. VCR cassettes recorded with API v1 format (tenant in URL path)
   # 2. API v2 uses engineTenantName header instead of tenant in URL
   # 3. Different authentication and request/response formats between v1 and v2
   #
   # Integration test methods that need VCR cassette updates:
   # - get_ping basic functionality testing
-  # - get_ping success response validation  
+  # - get_ping success response validation
   # - get_ping error handling with invalid credentials
   # - get_ping status code validation (403 for invalid password)
   #

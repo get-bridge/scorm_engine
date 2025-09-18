@@ -45,6 +45,9 @@ Style/BlockDelimiters:
     - expect
   Exclude:
     - "spec/**/*"
+Style/BlockComments:
+  Exclude:
+    - "spec/**/*"
     - "Gemfile"
 Layout/MultilineBlockLayout:
   Exclude:
