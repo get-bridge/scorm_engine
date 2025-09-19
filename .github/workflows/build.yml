@@ -48,9 +48,6 @@ jobs:
           - 3.2
           - 3.3
           - head
-        include:
-          - ruby: head # There are known issues with VCR on Ruby 3.5. We're waiting for an update on VCR codebase
-            continue-on-error: true
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v5
