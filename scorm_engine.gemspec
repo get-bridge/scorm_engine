@@ -21,6 +21,7 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = ">= 2.7"
 
   spec.add_dependency "base64"
+  spec.add_dependency "cgi"
   spec.add_dependency "faraday", ">=0.12", "<=3.0"
   spec.add_dependency "faraday_middleware", ">=0.12", "<=2.0"
   spec.add_dependency "logger"
