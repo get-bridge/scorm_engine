@@ -26,10 +26,14 @@ module ScormEngine
       def self.get_settings_from_api(options = {})
         return {} if options.nil?
 
-        configuration_items = options["configurationItems"]
+        # API v2 uses "settingItems", API v1 uses "configurationItems"
+        configuration_items = options["settingItems"] || options["configurationItems"]
         return {} unless configuration_items.respond_to?(:reduce)
+        
         configuration_items.reduce({}) do |m, o|
-          m[o["id"]] = o["value"]
+          # API v2 uses "effectiveValue", API v1 uses "value"
+          value = o["effectiveValue"] || o["value"]
+          m[o["id"]] = value
           m
         end
       end
