@@ -163,8 +163,9 @@ module ScormEngine
           registration_id = options.delete(:registration_id)
           detail = !!options.delete(:detail)
 
-          url = "registrations/#{registration_id}/progress"
-          url += "/detail" if detail
+          # API v2 uses the base registration endpoint for both summary and detailed progress
+          # The v2 endpoint includes activity details by default
+          url = "registrations/#{registration_id}"
 
           response = get(url, options)
 
