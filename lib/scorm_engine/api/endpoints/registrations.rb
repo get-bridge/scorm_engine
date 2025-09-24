@@ -164,7 +164,13 @@ module ScormEngine
           detail = !!options.delete(:detail)
 
           # API v2 uses the base registration endpoint for both summary and detailed progress
-          # The v2 endpoint includes activity details by default
+          # When detail is requested, add the v2 parameters for full data compatibility
+          if detail
+            options[:includeChildResults] = true
+            options[:includeInteractionsAndObjectives] = true 
+            options[:includeRuntime] = true
+          end
+
           url = "registrations/#{registration_id}"
 
           response = get(url, options)
