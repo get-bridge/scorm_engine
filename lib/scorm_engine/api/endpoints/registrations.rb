@@ -167,7 +167,7 @@ module ScormEngine
           # When detail is requested, add the v2 parameters for full data compatibility
           if detail
             options[:includeChildResults] = true
-            options[:includeInteractionsAndObjectives] = true 
+            options[:includeInteractionsAndObjectives] = true
             options[:includeRuntime] = true
           end
 

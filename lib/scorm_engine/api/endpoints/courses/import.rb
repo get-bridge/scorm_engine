@@ -44,8 +44,19 @@ module ScormEngine
             require_options(options, :course_id)
             require_exclusive_option(options, :url, :pathname)
 
-            query_params = {}
-            query_params[:courseId] = options[:course_id] if options[:course_id]
+            # API v2 uses courseId as query param, v1 used 'course'
+            query_params = if current_api_version == 2
+                             {
+                               courseId: options[:course_id],
+                               mayCreateNewVersion: !!options[:may_create_new_version]
+                             }
+                           else
+                             # Original v1 API parameter structure
+                             {
+                               course: options[:course_id],
+                               mayCreateNewVersion: !!options[:may_create_new_version]
+                             }
+                           end
 
             # Handle file content posting for API requests
             body = if options[:url]

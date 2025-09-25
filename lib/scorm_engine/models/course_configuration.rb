@@ -29,7 +29,7 @@ module ScormEngine
         # API v2 uses "settingItems", API v1 uses "configurationItems"
         configuration_items = options["settingItems"] || options["configurationItems"]
         return {} unless configuration_items.respond_to?(:reduce)
-        
+
         configuration_items.reduce({}) do |m, o|
           # API v2 uses "effectiveValue", API v1 uses "value"
           value = o["effectiveValue"] || o["value"]
