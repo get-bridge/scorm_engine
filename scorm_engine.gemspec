@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Philip Hallstrom", "Mel Green"]
   spec.email         = ["phallstrom@instructure.com", "mgreen@instructure.com"]
 
-  spec.summary       = "Ruby Client for Rustici's SCORM Engine API"
-  spec.description   = "Ruby Client for Rustici's SCORM Engine 2017.1 & 20.1 API"
+  spec.summary       = "Ruby Client for Rustici's SCORM Engine API v2"
+  spec.description   = "Ruby Client for Rustici's SCORM Engine 24 API v2"
   spec.homepage      = "https://github.com/get-bridge/scorm_engine"
   spec.license       = "MIT"
   spec.metadata      = { "documentation_uri" => "https://get-bridge.github.io/scorm_engine/" }
@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
-  spec.required_ruby_version = ">= 2.7"
+  spec.required_ruby_version = ">= 3.1"
 
   spec.add_dependency "base64"
   spec.add_dependency "cgi"
