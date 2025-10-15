@@ -35,15 +35,25 @@ module ScormEngine
           result = Enumerator.new do |enum|
             if single_course_id
               # Single course endpoint returns course data directly
-              enum << ScormEngine::Models::Course.new_from_api(response.raw_response.body) if response.success? && response.raw_response.body.is_a?(Hash)
+              if response.success? && response.raw_response.body.is_a?(Hash)
+                enum << ScormEngine::Models::Course.new_from_api(response.raw_response.body)
+              end
             else
               # Multiple courses endpoint returns array in "courses" key
               loop do
-                response.success? && response.raw_response.body["courses"].each do |course|
+                break unless response.success? && response.raw_response.body.is_a?(Hash)
+                
+                courses = response.raw_response.body["courses"]
+                break unless courses.is_a?(Array)
+                
+                courses.each do |course|
                   enum << ScormEngine::Models::Course.new_from_api(course)
                 end
-                break if !response.success? || response.raw_response.body["more"].nil?
-                response = get(response.raw_response.body["more"])
+                
+                more_url = response.raw_response.body["more"]
+                break if more_url.nil?
+                
+                response = get(more_url)
               end
             end
           end

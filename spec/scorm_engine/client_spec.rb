@@ -13,6 +13,25 @@ RSpec.describe ScormEngine::Client do
     it "defaults to API version 2" do
       expect(client.current_api_version).to eq(2)
     end
+
+    context "with tenant_creator provided" do
+      let(:tenant_creator) { instance_spy("TenantCreator") }
+      let(:client_with_creator) { described_class.new(tenant: tenant, tenant_creator: tenant_creator) }
+
+      it "sets the tenant_creator" do
+        expect(client_with_creator.tenant_creator).to eq(tenant_creator)
+      end
+
+      it "stores the tenant_creator for later use" do
+        expect(client_with_creator.instance_variable_get(:@tenant_creator)).to eq(tenant_creator)
+      end
+    end
+
+    context "without tenant_creator" do
+      it "sets tenant_creator to nil" do
+        expect(client.tenant_creator).to be_nil
+      end
+    end
   end
 
   describe "#current_api_version" do

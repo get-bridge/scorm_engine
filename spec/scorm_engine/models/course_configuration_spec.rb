@@ -35,6 +35,39 @@ RSpec.describe ScormEngine::Models::CourseConfiguration do
       end
     end
 
+    context "with valid setting items (alternative key)" do
+      let(:valid_setting_items_response) do
+        {
+          "settingItems" => [
+            {
+              "id" => "setting_one",
+              "value" => "value_one"
+            },
+            {
+              "id" => "setting_two",
+              "value" => "value_two"
+            },
+            {
+              "id" => "boolean_setting",
+              "value" => "true"
+            },
+          ]
+        }
+      end
+
+      it "converts setting items to hash correctly type" do
+        settings = described_class.get_settings_from_api(valid_setting_items_response)
+
+        expect(settings).to be_a(Hash)
+      end
+
+      it "converts setting items to hash correctly value" do
+        settings = described_class.get_settings_from_api(valid_setting_items_response)
+
+        expect(settings).to eq({ "setting_one" => "value_one", "setting_two" => "value_two", "boolean_setting" => "true" })
+      end
+    end
+
     context "with empty configuration items" do
       let(:empty_response) do
         {

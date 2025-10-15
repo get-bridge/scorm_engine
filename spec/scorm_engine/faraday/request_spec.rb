@@ -197,90 +197,43 @@ RSpec.describe ScormEngine::Faraday::Request do
     end
 
     describe "with tenant_creator provided" do
-      it "creates tenant and retries request successfully" do
-        tenant_creator = instance_spy("TenantCreator")
-        client = tenant_mock_class.new("test-tenant", tenant_creator: tenant_creator)
-        mock_connection = instance_spy(Faraday::Connection)
-        mock_request = instance_spy(Faraday::Request)
-
-        tenant_not_found_response = instance_double(
+      let(:tenant_creator) { instance_spy("TenantCreator") }
+      let(:client) { tenant_mock_class.new("test-tenant", tenant_creator: tenant_creator) }
+      let(:mock_connection) { instance_spy(Faraday::Connection) }
+      let(:mock_request) { instance_spy(Faraday::Request) }
+      let(:tenant_not_found_response) do
+        instance_double(
           Faraday::Response,
           status: 400,
           success?: false,
           body: { "message" => "test-tenant is not a valid tenant name" }
         )
+      end
 
+      before do
         allow(mock_connection).to receive(:get).and_yield(mock_request).and_return(tenant_not_found_response)
         allow(mock_request).to receive(:headers).and_return({})
         allow(mock_request).to receive(:url)
         allow(client).to receive(:connection).and_return(mock_connection)
+      end
 
+      it "creates tenant and retries request successfully" do
         response = client.send(:request, :get, "courses", {})
         expect(response.raw_response.status).to eq(400)
       end
 
       it "calls the connection when retrying" do
-        tenant_creator = instance_spy("TenantCreator")
-        client = tenant_mock_class.new("test-tenant", tenant_creator: tenant_creator)
-        mock_connection = instance_spy(Faraday::Connection)
-        mock_request = instance_spy(Faraday::Request)
-
-        tenant_not_found_response = instance_double(
-          Faraday::Response,
-          status: 400,
-          success?: false,
-          body: { "message" => "test-tenant is not a valid tenant name" }
-        )
-
-        allow(mock_connection).to receive(:get).and_yield(mock_request).and_return(tenant_not_found_response)
-        allow(mock_request).to receive(:headers).and_return({})
-        allow(mock_request).to receive(:url)
-        allow(client).to receive(:connection).and_return(mock_connection)
-
         client.send(:request, :get, "courses", {})
         expect(mock_connection).to have_received(:get).at_least(:once)
       end
 
       it "calls tenant_creator with the tenant name" do
-        tenant_creator = instance_spy("TenantCreator")
-        client = tenant_mock_class.new("test-tenant", tenant_creator: tenant_creator)
-        mock_connection = instance_spy(Faraday::Connection)
-        mock_request = instance_spy(Faraday::Request)
-
-        tenant_not_found_response = instance_double(
-          Faraday::Response,
-          status: 400,
-          success?: false,
-          body: { "message" => "test-tenant is not a valid tenant name" }
-        )
-
-        allow(mock_connection).to receive(:get).and_yield(mock_request).and_return(tenant_not_found_response)
-        allow(mock_request).to receive(:headers).and_return({})
-        allow(mock_request).to receive(:url)
-        allow(client).to receive(:connection).and_return(mock_connection)
-
         client.send(:request, :get, "courses", {})
         expect(tenant_creator).to have_received(:call).with("test-tenant")
       end
 
       it "returns original error if tenant creation fails" do
-        tenant_creator = instance_spy("TenantCreator")
-        client = tenant_mock_class.new("test-tenant", tenant_creator: tenant_creator)
-        mock_connection = instance_spy(Faraday::Connection)
-        mock_request = instance_spy(Faraday::Request)
-
-        tenant_not_found_response = instance_double(
-          Faraday::Response,
-          status: 400,
-          success?: false,
-          body: { "message" => "test-tenant is not a valid tenant name" }
-        )
-
         allow(tenant_creator).to receive(:call).and_raise(StandardError, "Creation failed")
-        allow(mock_connection).to receive(:get).and_yield(mock_request).and_return(tenant_not_found_response)
-        allow(mock_request).to receive(:headers).and_return({})
-        allow(mock_request).to receive(:url)
-        allow(client).to receive(:connection).and_return(mock_connection)
 
         response = client.send(:request, :get, "courses", {})
         expect(response.raw_response.status).to eq(400)
@@ -288,44 +241,31 @@ RSpec.describe ScormEngine::Faraday::Request do
     end
 
     describe "without tenant_creator" do
-      it "returns the original error" do
-        client = tenant_mock_class.new("test-tenant")
-        mock_connection = instance_spy(Faraday::Connection)
-        mock_request = instance_spy(Faraday::Request)
-
-        tenant_not_found_response = instance_double(
+      let(:client) { tenant_mock_class.new("test-tenant") }
+      let(:mock_connection) { instance_spy(Faraday::Connection) }
+      let(:mock_request) { instance_spy(Faraday::Request) }
+      let(:tenant_not_found_response) do
+        instance_double(
           Faraday::Response,
           status: 400,
           success?: false,
           body: { "message" => "test-tenant is not a valid tenant name" }
         )
+      end
 
+      before do
         allow(mock_connection).to receive(:get).and_yield(mock_request).and_return(tenant_not_found_response)
         allow(mock_request).to receive(:headers).and_return({})
         allow(mock_request).to receive(:url)
         allow(client).to receive(:connection).and_return(mock_connection)
+      end
 
+      it "returns the original error" do
         response = client.send(:request, :get, "courses", {})
         expect(response.raw_response.status).to eq(400)
       end
 
       it "calls the connection" do
-        client = tenant_mock_class.new("test-tenant")
-        mock_connection = instance_spy(Faraday::Connection)
-        mock_request = instance_spy(Faraday::Request)
-
-        tenant_not_found_response = instance_double(
-          Faraday::Response,
-          status: 400,
-          success?: false,
-          body: { "message" => "test-tenant is not a valid tenant name" }
-        )
-
-        allow(mock_connection).to receive(:get).and_yield(mock_request).and_return(tenant_not_found_response)
-        allow(mock_request).to receive(:headers).and_return({})
-        allow(mock_request).to receive(:url)
-        allow(client).to receive(:connection).and_return(mock_connection)
-
         client.send(:request, :get, "courses", {})
         expect(mock_connection).to have_received(:get)
       end
@@ -351,6 +291,35 @@ RSpec.describe ScormEngine::Faraday::Request do
         server_error = instance_double(Faraday::Response, status: 500, body: "Internal server error")
         wrapped_response = ScormEngine::Response.new(raw_response: server_error)
         expect(client.send(:should_retry_with_tenant_creation?, wrapped_response)).to be false
+      end
+
+      context "when response_or_error responds to :response" do
+        it "returns true for tenant not found error in wrapped response" do
+          client = tenant_mock_class.new("test-tenant")
+          tenant_error = instance_double(Faraday::Response, status: 400, body: "test-tenant is not a valid tenant name")
+          error_with_response = instance_double("ErrorObject", response: tenant_error)
+          expect(client.send(:should_retry_with_tenant_creation?, error_with_response)).to be true
+        end
+
+        it "returns false for other 400 errors in wrapped response" do
+          client = tenant_mock_class.new("test-tenant")
+          other_error = instance_double(Faraday::Response, status: 400, body: "Some other validation error")
+          error_with_response = instance_double("ErrorObject", response: other_error)
+          expect(client.send(:should_retry_with_tenant_creation?, error_with_response)).to be false
+        end
+
+        it "returns false for non-400 errors in wrapped response" do
+          client = tenant_mock_class.new("test-tenant")
+          server_error = instance_double(Faraday::Response, status: 500, body: "Internal server error")
+          error_with_response = instance_double("ErrorObject", response: server_error)
+          expect(client.send(:should_retry_with_tenant_creation?, error_with_response)).to be false
+        end
+
+        it "handles nil response gracefully" do
+          client = tenant_mock_class.new("test-tenant")
+          error_with_nil_response = instance_double("ErrorObject", response: nil)
+          expect(client.send(:should_retry_with_tenant_creation?, error_with_nil_response)).to be false
+        end
       end
     end
   end

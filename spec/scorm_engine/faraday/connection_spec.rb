@@ -28,7 +28,7 @@ RSpec.describe ScormEngine::Faraday::Connection do
 
   describe "#connection" do
     describe "version" do
-      it "passes on to #base_uri" do
+      it "passes on to #base_uri with version 2" do
         client = ScormEngine::Client.new(tenant: "test")
 
         allow(client).to receive(:base_uri).and_call_original
@@ -36,6 +36,16 @@ RSpec.describe ScormEngine::Faraday::Connection do
         client.send(:connection, version: 2)
 
         expect(client).to have_received(:base_uri).with(version: 2)
+      end
+
+      it "passes on to #base_uri with version 1" do
+        client = ScormEngine::Client.new(tenant: "test")
+
+        allow(client).to receive(:base_uri).and_call_original
+
+        client.send(:connection, version: 1)
+
+        expect(client).to have_received(:base_uri).with(version: 1)
       end
     end
   end

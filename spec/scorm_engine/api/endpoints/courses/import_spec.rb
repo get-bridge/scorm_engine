@@ -23,20 +23,21 @@ RSpec.describe ScormEngine::Api::Endpoints::Courses::Import do
     end
 
     describe "arguments posted to the api" do
-      it "works in the general case" do
+      before do
         allow(client).to receive(:post)
+      end
+
+      it "works in the general case" do
         client.post_course_import(course_id: "id123", url: "http://path.to/scorm.zip")
         expect(client).to have_received(:post).with("courses/importJobs", { courseId: "id123", mayCreateNewVersion: false }, { url: "http://path.to/scorm.zip" })
       end
 
       it "allows creating a new version" do
-        allow(client).to receive(:post)
         client.post_course_import(course_id: "id123", url: "http://path.to/scorm.zip", may_create_new_version: true)
         expect(client).to have_received(:post).with("courses/importJobs", { courseId: "id123", mayCreateNewVersion: true }, { url: "http://path.to/scorm.zip" })
       end
 
       it "allows overriding course name" do
-        allow(client).to receive(:post)
         client.post_course_import(course_id: "id123", url: "http://path.to/scorm.zip", name: "the name")
         expect(client).to have_received(:post).with("courses/importJobs", { courseId: "id123", mayCreateNewVersion: false }, { url: "http://path.to/scorm.zip" })
       end

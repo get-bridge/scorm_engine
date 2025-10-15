@@ -27,23 +27,31 @@ module ScormEngine
         this.options = options.dup
 
         if options.key?("importResult")
-          # API v2 response structure: status is at top level, importResult contains nested data
-          # Also handles legacy test format with "result" and "importResult"
-          this.id = options["jobId"] || options["result"]
-          this.status = options["status"]&.upcase || options.fetch("importResult", {})["status"]&.upcase
-          this.parser_warnings = options.fetch("importResult", {})["parserWarnings"]
-          # Course data is nested in importResult for API v2
-          this.course = Course.new_from_api(options.fetch("importResult", {})["course"]) if options.fetch("importResult", {}).key?("course")
-        elsif options.key?("result") && options.size == 1
-          # Initial import response format: {"result": "job-id"}
-          this.id = options["result"]
-          this.status = "RUNNING" # Assume running for initial response
+          # API v2 response
+          import_result = options["importResult"] || {}
+
+          this.id              = options["jobId"] || options["result"]
+          this.status          = (options["status"] || import_result["status"])&.upcase
+          this.parser_warnings = import_result["parserWarnings"]
+
+          if import_result.key?("course")
+            this.course = Course.new_from_api(import_result["course"])
+          end
+
+        elsif options.keys == ["result"]
+          # Initial import response (legacy format: {"result" => "job-id"})
+          this.id     = options["result"]
+          this.status = "RUNNING"
+
         else
-          # API v1 response structure or full status response
-          this.id = options["jobId"]
-          this.status = options["status"]&.upcase
-          this.parser_warnings = options["parserWarnings"] # Handle API v1 parserWarnings at top level
-          this.course = Course.new_from_api(options["course"]) if options.key?("course") # unavailable in error states
+          # API v1 or full status response
+          this.id              = options["jobId"]
+          this.status          = options["status"]&.upcase
+          this.parser_warnings = options["parserWarnings"]
+
+          if options.key?("course")
+            this.course = Course.new_from_api(options["course"])
+          end
         end
 
         this
