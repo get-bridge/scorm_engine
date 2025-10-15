@@ -34,9 +34,7 @@ module ScormEngine
           this.status          = (options["status"] || import_result["status"])&.upcase
           this.parser_warnings = import_result["parserWarnings"]
 
-          if import_result.key?("course")
-            this.course = Course.new_from_api(import_result["course"])
-          end
+          this.course = Course.new_from_api(import_result["course"]) if import_result.key?("course")
 
         elsif options.keys == ["result"]
           # Initial import response (legacy format: {"result" => "job-id"})
@@ -49,9 +47,7 @@ module ScormEngine
           this.status          = options["status"]&.upcase
           this.parser_warnings = options["parserWarnings"]
 
-          if options.key?("course")
-            this.course = Course.new_from_api(options["course"])
-          end
+          this.course = Course.new_from_api(options["course"]) if options.key?("course")
         end
 
         this
