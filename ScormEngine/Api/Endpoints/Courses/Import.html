@@ -6,7 +6,7 @@
 <title>
   Module: ScormEngine::Api::Endpoints::Courses::Import
   
-    &mdash; Documentation by YARD 0.9.36
+    &mdash; Documentation by YARD 0.9.37
   
 </title>
 
@@ -245,19 +245,19 @@
       <pre class="lines">
 
 
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91</pre>
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/courses/import.rb', line 82</span>
+      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/courses/import.rb', line 100</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_course_import'>get_course_import</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_require_options'>require_options</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='symbol'>:id</span><span class='rparen'>)</span>
@@ -265,7 +265,7 @@
   <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>courses/importJobs/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 
   <span class='comment'># jobId is not always returned. :why:
-</span>  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_response'>response</span><span class='op'>&amp;.</span><span class='id identifier rubyid_success?'>success?</span> <span class='op'>?</span> <span class='const'><span class='object_link'><a href="../../../../ScormEngine.html" title="ScormEngine (module)">ScormEngine</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../../Models.html" title="ScormEngine::Models (module)">Models</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../../Models/CourseImport.html" title="ScormEngine::Models::CourseImport (class)">CourseImport</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new_from_api'><span class='object_link'><a href="../../../Models/CourseImport.html#new_from_api-class_method" title="ScormEngine::Models::CourseImport.new_from_api (method)">new_from_api</a></span></span><span class='lparen'>(</span><span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>jobId</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='kw'>nil</span>
+</span>  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_response'>response</span><span class='op'>&amp;.</span><span class='id identifier rubyid_success?'>success?</span> <span class='op'>?</span> <span class='const'><span class='object_link'><a href="../../../../ScormEngine.html" title="ScormEngine (module)">ScormEngine</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../../Models.html" title="ScormEngine::Models (module)">Models</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../../Models/CourseImport.html" title="ScormEngine::Models::CourseImport (class)">CourseImport</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new_from_api'><span class='object_link'><a href="../../../Models/CourseImport.html#new_from_api-class_method" title="ScormEngine::Models::CourseImport.new_from_api (method)">new_from_api</a></span></span><span class='lparen'>(</span><span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>jobId</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_raw_response'>raw_response</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='kw'>nil</span>
 
   <span class='const'><span class='object_link'><a href="../../../Response.html" title="ScormEngine::Response (class)">Response</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../../../Response.html#initialize-instance_method" title="ScormEngine::Response#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>raw_response:</span> <span class='id identifier rubyid_response'>response</span><span class='comma'>,</span> <span class='label'>result:</span> <span class='id identifier rubyid_result'>result</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
@@ -444,7 +444,25 @@
 65
 66
 67
-68</pre>
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/courses/import.rb', line 43</span>
@@ -453,25 +471,43 @@
   <span class='id identifier rubyid_require_options'>require_options</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='symbol'>:course_id</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_require_exclusive_option'>require_exclusive_option</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='symbol'>:url</span><span class='comma'>,</span> <span class='symbol'>:pathname</span><span class='rparen'>)</span>
 
-  <span class='id identifier rubyid_query_params'>query_params</span> <span class='op'>=</span> <span class='lbrace'>{</span>
-    <span class='label'>course:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:course_id</span><span class='rbracket'>]</span><span class='comma'>,</span>
-    <span class='label'>mayCreateNewVersion:</span> <span class='op'>!</span><span class='op'>!</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:may_create_new_version</span><span class='rbracket'>]</span>
-  <span class='rbrace'>}</span>
+  <span class='comment'># API v2 uses courseId as query param, v1 used &#39;course&#39;
+</span>  <span class='id identifier rubyid_query_params'>query_params</span> <span class='op'>=</span> <span class='kw'>if</span> <span class='id identifier rubyid_current_api_version'>current_api_version</span> <span class='op'>==</span> <span class='int'>2</span>
+                   <span class='lbrace'>{</span>
+                     <span class='label'>courseId:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:course_id</span><span class='rbracket'>]</span><span class='comma'>,</span>
+                     <span class='label'>mayCreateNewVersion:</span> <span class='op'>!</span><span class='op'>!</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:may_create_new_version</span><span class='rbracket'>]</span>
+                   <span class='rbrace'>}</span>
+                 <span class='kw'>else</span>
+                   <span class='comment'># Original v1 API parameter structure
+</span>                   <span class='lbrace'>{</span>
+                     <span class='label'>course:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:course_id</span><span class='rbracket'>]</span><span class='comma'>,</span>
+                     <span class='label'>mayCreateNewVersion:</span> <span class='op'>!</span><span class='op'>!</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:may_create_new_version</span><span class='rbracket'>]</span>
+                   <span class='rbrace'>}</span>
+                 <span class='kw'>end</span>
 
-  <span class='comment'># When loading from a URL, we pass the URL and course name in the
-</span>  <span class='comment'># body as JSON. When loading from a file, the file&#39;s contents get
-</span>  <span class='comment'># placed in the body. In the latter case we can&#39;t pass in any other
-</span>  <span class='comment'># parameters, because the SCORM server doesn&#39;t know how to deal
-</span>  <span class='comment'># with multipart bodies and will become confused.
+  <span class='comment'># Handle file content posting for API requests
 </span>  <span class='id identifier rubyid_body'>body</span> <span class='op'>=</span> <span class='kw'>if</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:url</span><span class='rbracket'>]</span>
-           <span class='lbrace'>{</span> <span class='label'>url:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:url</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>courseName:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:course_id</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
+           <span class='comment'># API v2 (SCORM Engine v23) doesn&#39;t accept courseName parameter or courseId in body
+</span>           <span class='kw'>if</span> <span class='id identifier rubyid_current_api_version'>current_api_version</span> <span class='op'>==</span> <span class='int'>2</span>
+             <span class='lbrace'>{</span> <span class='label'>url:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:url</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
+           <span class='kw'>else</span>
+             <span class='comment'># API v1 compatibility - include courseName
+</span>             <span class='lbrace'>{</span> <span class='label'>url:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:url</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>courseName:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:course_id</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
+           <span class='kw'>end</span>
          <span class='kw'>elsif</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:pathname</span><span class='rbracket'>]</span>
-           <span class='lbrace'>{</span> <span class='label'>file:</span> <span class='op'>::</span><span class='const'>Faraday</span><span class='op'>::</span><span class='const'>UploadIO</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:pathname</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>application/zip</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+           <span class='comment'># File upload via multipart form data
+</span>           <span class='kw'>if</span> <span class='id identifier rubyid_current_api_version'>current_api_version</span> <span class='op'>==</span> <span class='int'>2</span>
+             <span class='lbrace'>{</span> <span class='label'>file:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:pathname</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
+           <span class='kw'>else</span>
+             <span class='comment'># API v1 compatibility - include courseName for file uploads
+</span>             <span class='lbrace'>{</span> <span class='label'>file:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:pathname</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>courseName:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:course_id</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
+           <span class='kw'>end</span>
+         <span class='kw'>else</span>
+           <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Either :url or :pathname must be provided for course import</span><span class='tstring_end'>&quot;</span></span>
          <span class='kw'>end</span>
 
   <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>courses/importJobs</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_query_params'>query_params</span><span class='comma'>,</span> <span class='id identifier rubyid_body'>body</span><span class='rparen'>)</span>
-
-  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_response'>response</span><span class='op'>&amp;.</span><span class='id identifier rubyid_success?'>success?</span> <span class='op'>?</span> <span class='const'><span class='object_link'><a href="../../../../ScormEngine.html" title="ScormEngine (module)">ScormEngine</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../../Models.html" title="ScormEngine::Models (module)">Models</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../../Models/CourseImport.html" title="ScormEngine::Models::CourseImport (class)">CourseImport</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new_from_api'><span class='object_link'><a href="../../../Models/CourseImport.html#new_from_api-class_method" title="ScormEngine::Models::CourseImport.new_from_api (method)">new_from_api</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='kw'>nil</span>
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_response'>response</span><span class='op'>&amp;.</span><span class='id identifier rubyid_success?'>success?</span> <span class='op'>?</span> <span class='const'><span class='object_link'><a href="../../../../ScormEngine.html" title="ScormEngine (module)">ScormEngine</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../../Models.html" title="ScormEngine::Models (module)">Models</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../../Models/CourseImport.html" title="ScormEngine::Models::CourseImport (class)">CourseImport</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new_from_api'><span class='object_link'><a href="../../../Models/CourseImport.html#new_from_api-class_method" title="ScormEngine::Models::CourseImport.new_from_api (method)">new_from_api</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_raw_response'>raw_response</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='kw'>nil</span>
 
   <span class='const'><span class='object_link'><a href="../../../Response.html" title="ScormEngine::Response (class)">Response</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../../../Response.html#initialize-instance_method" title="ScormEngine::Response#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>raw_response:</span> <span class='id identifier rubyid_response'>response</span><span class='comma'>,</span> <span class='label'>result:</span> <span class='id identifier rubyid_result'>result</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
@@ -485,9 +521,9 @@
 </div>
 
       <div id="footer">
-  Generated on Thu Jul 11 16:18:19 2024 by
+  Generated on Thu Oct 16 14:59:10 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.36 (ruby-3.3.0).
+  0.9.37 (ruby-3.3.9).
 </div>
 
     </div>

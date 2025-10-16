@@ -6,7 +6,7 @@
 <title>
   Module: ScormEngine::Faraday::Request
   
-    &mdash; Documentation by YARD 0.9.36
+    &mdash; Documentation by YARD 0.9.37
   
 </title>
 
@@ -102,6 +102,28 @@
     </h2>
 
     <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#api_v1-instance_method" title="#api_v1 (instance method)">#<strong>api_v1</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
       
         <li class="public ">
   <span class="summary_signature">
@@ -223,7 +245,45 @@
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="api_v2-instance_method">
+  <h3 class="signature first" id="api_v1-instance_method">
+  
+    #<strong>api_v1</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+29
+30
+31
+32
+33
+34
+35</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/scorm_engine/faraday/request.rb', line 29</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_api_v1'>api_v1</span>
+  <span class='ivar'>@api_version</span> <span class='op'>=</span> <span class='int'>1</span>
+
+  <span class='kw'>yield</span>
+<span class='kw'>ensure</span>
+  <span class='ivar'>@api_version</span> <span class='op'>=</span> <span class='kw'>nil</span>  <span class='comment'># Reset to default
+</span><span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="api_v2-instance_method">
   
     #<strong>api_v2</strong>(without_tenant: false)  &#x21d2; <tt>Object</tt> 
   
@@ -255,8 +315,8 @@
 
   <span class='kw'>yield</span>
 <span class='kw'>ensure</span>
-  <span class='ivar'>@api_version</span> <span class='op'>=</span> <span class='int'>1</span>
-<span class='kw'>end</span></pre>
+  <span class='ivar'>@api_version</span> <span class='op'>=</span> <span class='kw'>nil</span>  <span class='comment'># Reset to default
+</span><span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -387,9 +447,9 @@
 </div>
 
       <div id="footer">
-  Generated on Thu Jul 11 16:18:19 2024 by
+  Generated on Thu Oct 16 14:59:10 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.36 (ruby-3.3.0).
+  0.9.37 (ruby-3.3.9).
 </div>
 
     </div>
