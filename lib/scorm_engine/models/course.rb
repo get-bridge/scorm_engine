@@ -58,7 +58,7 @@ module ScormEngine
         this.version = options["version"]
         this.title = get_title_from_api(options)
         this.registration_count = options["registrationCount"]
-        this.updated = Time.parse(options["updated"]) if options.key?("updated")
+        this.updated = Time.zone.parse(options["updated"]) if options.key?("updated")
         this.description = options.fetch("metadata", {})["description"]
         this.scaled_passing_score = get_scaled_passing_score_from_api(options)
         this.course_learning_standard = options["courseLearningStandard"]&.upcase

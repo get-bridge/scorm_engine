@@ -8,10 +8,16 @@ module ScormEngine
     include Faraday::Request
     include Api::Endpoints
 
-    attr_reader :tenant
+    attr_reader :tenant, :tenant_creator
 
-    def initialize(tenant:)
+    def initialize(tenant:, tenant_creator: nil)
       @tenant = tenant
+      @tenant_creator = tenant_creator
+      @api_version = 2 # Default to API v2
+    end
+
+    def current_api_version
+      @api_version || 2
     end
   end
 end

@@ -7,10 +7,6 @@ module ScormEngine
       @result = result
     end
 
-    def results
-      result.is_a?(Enumerator) ? result : Array(result)
-    end
-
     def success?
       raw_response.success?
     end
@@ -19,8 +15,35 @@ module ScormEngine
       raw_response.status
     end
 
+    def body
+      raw_response.body
+    end
+
+    def results
+      result.is_a?(Enumerator) ? result : Array(result)
+    end
+
     def message
       raw_response.body["message"] if raw_response.body.is_a?(Hash)
+    end
+
+    def detailed_error_info
+      return "Success" if success?
+
+      headers_hash = begin
+        raw_response.headers.to_hash
+      rescue NoMethodError
+        raw_response.headers
+      end
+
+      error_info = {
+        status: status,
+        message: message,
+        body: raw_response.body,
+        headers: headers_hash
+      }
+
+      error_info.inspect
     end
   end
 end

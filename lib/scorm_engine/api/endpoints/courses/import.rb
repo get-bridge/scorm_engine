@@ -44,25 +44,43 @@ module ScormEngine
             require_options(options, :course_id)
             require_exclusive_option(options, :url, :pathname)
 
-            query_params = {
-              course: options[:course_id],
-              mayCreateNewVersion: !!options[:may_create_new_version]
-            }
+            # API v2 uses courseId as query param, v1 used 'course'
+            query_params = if current_api_version == 2
+                             {
+                               courseId: options[:course_id],
+                               mayCreateNewVersion: !!options[:may_create_new_version]
+                             }
+                           else
+                             # Original v1 API parameter structure
+                             {
+                               course: options[:course_id],
+                               mayCreateNewVersion: !!options[:may_create_new_version]
+                             }
+                           end
 
-            # When loading from a URL, we pass the URL and course name in the
-            # body as JSON. When loading from a file, the file's contents get
-            # placed in the body. In the latter case we can't pass in any other
-            # parameters, because the SCORM server doesn't know how to deal
-            # with multipart bodies and will become confused.
+            # Handle file content posting for API requests
             body = if options[:url]
-                     { url: options[:url], courseName: options[:name] || options[:course_id] }
+                     # API v2 (SCORM Engine v23) doesn't accept courseName parameter or courseId in body
+                     if current_api_version == 2
+                       { url: options[:url] }
+                     else
+                       # API v1 compatibility - include courseName
+                       { url: options[:url], courseName: options[:name] || options[:course_id] }
+                     end
                    elsif options[:pathname]
-                     { file: ::Faraday::UploadIO.new(options[:pathname], "application/zip") }
+                     # File upload via multipart form data
+                     if current_api_version == 2
+                       { file: options[:pathname] }
+                     else
+                       # API v1 compatibility - include courseName for file uploads
+                       { file: options[:pathname], courseName: options[:name] || options[:course_id] }
+                     end
+                   else
+                     raise ArgumentError, "Either :url or :pathname must be provided for course import"
                    end
 
             response = post("courses/importJobs", query_params, body)
-
-            result = response&.success? ? ScormEngine::Models::CourseImport.new_from_api(response.body) : nil
+            result = response&.success? ? ScormEngine::Models::CourseImport.new_from_api(response.raw_response.body) : nil
 
             Response.new(raw_response: response, result: result)
           end
@@ -85,7 +103,7 @@ module ScormEngine
             response = get("courses/importJobs/#{options[:id]}")
 
             # jobId is not always returned. :why:
-            result = response&.success? ? ScormEngine::Models::CourseImport.new_from_api({ "jobId" => options[:id] }.merge(response.body)) : nil
+            result = response&.success? ? ScormEngine::Models::CourseImport.new_from_api({ "jobId" => options[:id] }.merge(response.raw_response.body)) : nil
 
             Response.new(raw_response: response, result: result)
           end

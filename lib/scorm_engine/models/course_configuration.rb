@@ -24,8 +24,16 @@ module ScormEngine
       #   A hash of key/value pairs.
       #
       def self.get_settings_from_api(options = {})
-        options["configurationItems"].reduce({}) do |m, o|
-          m[o["id"]] = o["value"]
+        return {} if options.nil?
+
+        # API v2 uses "settingItems", API v1 uses "configurationItems"
+        configuration_items = options["settingItems"] || options["configurationItems"]
+        return {} unless configuration_items.respond_to?(:reduce)
+
+        configuration_items.reduce({}) do |m, o|
+          # API v2 uses "effectiveValue", API v1 uses "value"
+          value = o["effectiveValue"] || o["value"]
+          m[o["id"]] = value
           m
         end
       end

@@ -1,14 +1,14 @@
 RSpec.describe ScormEngine::Models::Course do
   describe ".new_from_api" do
     describe ":title" do
-      it "is blank when title is blank" do
+      it "is blank when title is missing" do
         course = described_class.new_from_api(
           "id" => "test"
         )
         expect(course.title).to eq ""
       end
 
-      it "is blank when title is blank" do
+      it "is blank when title is empty string" do
         course = described_class.new_from_api(
           "id" => "test", "title" => ""
         )

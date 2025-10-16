@@ -27,13 +27,27 @@ module ScormEngine
         this.options = options.dup
 
         if options.key?("importResult")
-          this.id = options["result"]
-          this.status = options.fetch("importResult", {})["status"]&.upcase
-          this.parser_warnings = options.fetch("importResult", {})["parserWarnings"]
+          # API v2 response
+          import_result = options["importResult"] || {}
+
+          this.id              = options["jobId"] || options["result"]
+          this.status          = (options["status"] || import_result["status"])&.upcase
+          this.parser_warnings = import_result["parserWarnings"]
+
+          this.course = Course.new_from_api(import_result["course"]) if import_result.key?("course")
+
+        elsif options.keys == ["result"]
+          # Initial import response (legacy format: {"result" => "job-id"})
+          this.id     = options["result"]
+          this.status = "RUNNING"
+
         else
-          this.id = options["jobId"]
-          this.status = options["status"]&.upcase
-          this.course = Course.new_from_api(options["course"]) if options.key?("course") # unavailable in error states
+          # API v1 or full status response
+          this.id              = options["jobId"]
+          this.status          = options["status"]&.upcase
+          this.parser_warnings = options["parserWarnings"]
+
+          this.course = Course.new_from_api(options["course"]) if options.key?("course")
         end
 
         this
@@ -49,6 +63,10 @@ module ScormEngine
 
       def complete?
         status == "COMPLETE"
+      end
+
+      def completed?
+        status == "COMPLETED"
       end
     end
   end

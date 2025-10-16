@@ -60,7 +60,7 @@ module ScormEngine
         options
           .fetch("runtime", {})
           .fetch("runtimeInteractions", [])
-          .map { |e| RegistrationRuntimeInteraction.new_from_api(e) }
+          .map { |e| ScormEngine::Models::RegistrationRuntimeInteraction.new_from_api(e) }
       end
 
       #

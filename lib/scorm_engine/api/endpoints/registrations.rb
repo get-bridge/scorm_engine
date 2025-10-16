@@ -163,8 +163,15 @@ module ScormEngine
           registration_id = options.delete(:registration_id)
           detail = !!options.delete(:detail)
 
-          url = "registrations/#{registration_id}/progress"
-          url += "/detail" if detail
+          # API v2 uses the base registration endpoint for both summary and detailed progress
+          # When detail is requested, add the v2 parameters for full data compatibility
+          if detail
+            options[:includeChildResults] = true
+            options[:includeInteractionsAndObjectives] = true
+            options[:includeRuntime] = true
+          end
+
+          url = "registrations/#{registration_id}"
 
           response = get(url, options)
 
@@ -311,9 +318,14 @@ module ScormEngine
         registration_id = options.delete(:registration_id)
         options[:redirectOnExitUrl] = options.delete(:redirect_on_exit_url) if options.key?(:redirect_on_exit_url)
 
-        response = get("registrations/#{registration_id}/launchLink", options)
+        # API v2 uses POST instead of GET for launch links
+        response = if current_api_version == 2
+                     post("registrations/#{registration_id}/launchLink", {}, options)
+                   else
+                     get("registrations/#{registration_id}/launchLink", options)
+                   end
 
-        result = response.success? ? response.body["launchLink"] : nil
+        result = response.success? ? response.raw_response.body["launchLink"] : nil
 
         Response.new(raw_response: response, result: result)
       end

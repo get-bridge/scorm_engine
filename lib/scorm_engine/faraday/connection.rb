@@ -5,7 +5,8 @@ module ScormEngine
   module Faraday
     module Connection
 
-      def base_uri(version: 1)
+      # Default to v2
+      def base_uri(version: 2)
         uri = URI("")
         uri.scheme = ScormEngine.configuration.protocol
         uri.host = ScormEngine.configuration.host
@@ -21,7 +22,8 @@ module ScormEngine
 
       private
 
-      def connection(version: 1)
+      # Default to v2
+      def connection(version: 2)
         @connection ||= ::Faraday.new(url: base_uri(version: version).to_s) do |faraday|
           faraday.headers["User-Agent"] = "ScormEngine Ruby Gem #{ScormEngine::VERSION}"
 

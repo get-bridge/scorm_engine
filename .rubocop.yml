@@ -1,7 +1,7 @@
 AllCops:
   NewCops: disable
   SuggestExtensions: false
-  TargetRubyVersion: 2.7
+  TargetRubyVersion: 3.1
 Layout/EmptyLinesAroundClassBody:
   Enabled: false
 Layout/ParameterAlignment:
@@ -43,6 +43,9 @@ Style/BlockDelimiters:
     - subject
     - watch
     - expect
+  Exclude:
+    - "spec/**/*"
+Style/BlockComments:
   Exclude:
     - "spec/**/*"
     - "Gemfile"
