@@ -15,6 +15,32 @@ A ruby client for Rustici's SCORM Engine 2017.1 API and limited support for the 
 
 ## Installation
 
+### From GitHub Packages (Recommended)
+
+Remote packages:
+New versions are automatically published to GitHub Packages when a git tag matching `v*.*.*` (e.g., `v0.10.0`) is pushed to the repository.
+
+Local packages:
+First, configure your Bundler to authenticate with GitHub Packages:
+
+```bash
+# Replace YOUR_GITHUB_USERNAME and YOUR_GITHUB_TOKEN with your actual values
+bundle config https://rubygems.pkg.github.com/get-bridge YOUR_GITHUB_USERNAME:YOUR_GITHUB_TOKEN
+```
+
+You'll need a GitHub Personal Access Token with `read:packages` scope. Create one at:
+https://github.com/settings/tokens
+
+Then add this line to your application's Gemfile:
+
+```ruby
+source "https://rubygems.pkg.github.com/get-bridge" do
+  gem 'scorm_engine'
+end
+```
+
+### From RubyGems (Legacy)
+
 Add this line to your application's Gemfile:
 
     gem 'scorm_engine'
