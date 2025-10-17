@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = "Ruby Client for Rustici's SCORM Engine 24 API v2"
   spec.homepage      = "https://github.com/get-bridge/scorm_engine"
   spec.license       = "MIT"
-  spec.metadata      = { 
+  spec.metadata      = {
     "documentation_uri" => "https://get-bridge.github.io/scorm_engine/",
     "github_repo" => "https://github.com/get-bridge/scorm_engine",
     "source_code_uri" => "https://github.com/get-bridge/scorm_engine",
