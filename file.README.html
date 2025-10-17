@@ -79,6 +79,27 @@
 
 <h2 id="label-Installation">Installation</h2>
 
+<h3 id="label-From+GitHub+Packages+-28Recommended-29">From GitHub Packages (Recommended)</h3>
+
+<p>Remote packages: New versions are automatically published to GitHub Packages when a git tag matching <code>v*.<strong>.</code></strong> (e.g., <code>v0.10.0</code>) is pushed to the repository.</p>
+
+<p>Local packages: First, configure your Bundler to authenticate with GitHub Packages:</p>
+
+<pre class="code ruby"><code class="ruby"># Replace YOUR_GITHUB_USERNAME and YOUR_GITHUB_TOKEN with your actual values
+bundle config https://rubygems.pkg.github.com/get-bridge YOUR_GITHUB_USERNAME:YOUR_GITHUB_TOKEN
+</code></pre>
+
+<p>You’ll need a GitHub Personal Access Token with <code>read:packages</code> scope. Create one at: <a href="https://github.com/settings/tokens">github.com/settings/tokens</a></p>
+
+<p>Then add this line to your application’s Gemfile:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_source'>source</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://rubygems.pkg.github.com/get-bridge</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>scorm_engine</span><span class='tstring_end'>&#39;</span></span>
+<span class='kw'>end</span>
+</code></pre>
+
+<h3 id="label-From+RubyGems+-28Legacy-29">From RubyGems (Legacy)</h3>
+
 <p>Add this line to your application’s Gemfile:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>scorm_engine</span><span class='tstring_end'>&#39;</span></span>
@@ -115,7 +136,7 @@
 </div></div>
 
       <div id="footer">
-  Generated on Thu Oct 16 14:59:10 2025 by
+  Generated on Fri Oct 17 13:46:30 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.3.9).
 </div>
