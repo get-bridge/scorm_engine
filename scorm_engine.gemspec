@@ -33,7 +33,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "ostruct"
 
   spec.add_development_dependency "bundler", "~> 2.0"
-  spec.add_development_dependency "dotenv", "~> 2.4"
+  spec.add_development_dependency "dotenv", "~> 3.1"
   spec.add_development_dependency "rake", "~> 13.0"
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "rubocop", "~> 1.0"
