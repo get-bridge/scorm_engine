@@ -15,7 +15,8 @@ Gem::Specification.new do |spec|
   spec.metadata      = { 
     "documentation_uri" => "https://get-bridge.github.io/scorm_engine/",
     "github_repo" => "https://github.com/get-bridge/scorm_engine",
-    "source_code_uri" => "https://github.com/get-bridge/scorm_engine"
+    "source_code_uri" => "https://github.com/get-bridge/scorm_engine",
+    "allowed_push_host" => "https://rubygems.pkg.github.com/get-bridge"
   }
 
   spec.files         = Dir.glob("{lib,spec}/**/*") + %w[Rakefile .rspec]
