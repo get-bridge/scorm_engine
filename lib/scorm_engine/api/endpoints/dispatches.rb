@@ -84,16 +84,18 @@ module ScormEngine
 
           body = {
             dispatches: [
-              id: options[:dispatch_id],
-              data: {
-                destinationId: options[:destination_id],
-                courseId: options[:course_id],
-                allowNewRegistrations: options[:allow_new_registrations],
-                instanced: options[:instanced],
-                registrationCap: options[:registration_cap],
-                expirationDate: options[:expiration_date],
-                externalConfig: options[:external_config],
-              },
+              {
+                id: options[:dispatch_id],
+                data: {
+                  destinationId: options[:destination_id],
+                  courseId: options[:course_id],
+                  allowNewRegistrations: options[:allow_new_registrations],
+                  instanced: options[:instanced],
+                  registrationCap: options[:registration_cap],
+                  expirationDate: options[:expiration_date],
+                  externalConfig: options[:external_config],
+                },
+              }
             ]
           }
 

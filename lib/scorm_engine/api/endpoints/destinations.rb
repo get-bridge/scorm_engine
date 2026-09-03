@@ -61,10 +61,12 @@ module ScormEngine
 
           body = {
             destinations: [
-              id: options[:destination_id].to_s,
-              data: {
-                name: options[:name].to_s,
-              },
+              {
+                id: options[:destination_id].to_s,
+                data: {
+                  name: options[:name].to_s,
+                },
+              }
             ]
           }
 
