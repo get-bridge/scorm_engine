@@ -13,6 +13,9 @@ on:
 jobs:
   publish-techdocs:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - uses: actions/checkout@v5
         with:
@@ -22,8 +25,6 @@ jobs:
           ref: master
       - uses: ./.github/developer_portal/.github/actions/techdocs
         with:
-          aws_access_key_id: ${{ secrets.TRUSS_AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.TRUSS_AWS_SECRET_ACCESS_KEY }}
           aws_region: us-east-2
           entity_name: 'scorm-engine'
           entity_kind: 'component'
