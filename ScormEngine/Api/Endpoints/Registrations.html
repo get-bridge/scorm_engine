@@ -6,13 +6,13 @@
 <title>
   Module: ScormEngine::Api::Endpoints::Registrations
   
-    &mdash; Documentation by YARD 0.9.37
+    &mdash; Documentation by YARD 0.9.45
   
 </title>
 
-  <link rel="stylesheet" href="../../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "ScormEngine::Api::Endpoints::Registrations";
@@ -27,6 +27,8 @@
 
   </head>
   <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
     <div class="nav_wrap">
       <iframe id="nav" src="../../../class_list.html?1"></iframe>
       <div id="resizer"></div>
@@ -83,8 +85,9 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/scorm_engine/api/endpoints/registrations.rb<span class="defines">,<br />
-  lib/scorm_engine/api/endpoints/registrations/configuration.rb,<br /> lib/scorm_engine/api/endpoints/registrations/launch_history.rb</span>
+    <dd>lib/scorm_engine/api/endpoints/registrations.rb<span class="defines">,<br>
+  lib/scorm_engine/api/endpoints/registrations/configuration.rb,<br> lib/scorm_engine/api/endpoints/registrations/launch_history.rb</span>
+
 </dd>
   </dl>
   
@@ -132,9 +135,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Delete a registration.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Delete a registration.</p></div></span>
   
 </li>
 
@@ -156,9 +157,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Does this registration exist? You can also use the ‘instance’ parameter to check if a particular instance of a registrations exists.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Does this registration exist? You can also use the 'instance' parameter to check if a particular instance of a registrations exists.</p></div></span>
   
 </li>
 
@@ -180,9 +179,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Get all the instances of this the registration specified by the registration ID.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Get all the instances of this the registration specified by the registration ID.</p></div></span>
   
 </li>
 
@@ -204,9 +201,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Get registration summary.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Get registration summary.</p></div></span>
   
 </li>
 
@@ -228,9 +223,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Gets a list of registrations including a summary of the status of each registration.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Gets a list of registrations including a summary of the status of each registration.</p></div></span>
   
 </li>
 
@@ -252,14 +245,13 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Create a registration.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Create a registration.</p></div></span>
   
 </li>
 
       
     </ul>
+    
   
 
 
@@ -279,9 +271,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Delete a registration.</p>
-
+    <p>Delete a registration.</p>
 
   </div>
 </div>
@@ -317,9 +307,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>ID for the registration.</p>
-</div>
+            &mdash; <div class='inline'><p>ID for the registration.</p></div>
           
         </li>
       
@@ -393,9 +381,9 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Does this registration exist? You can also use the ‘instance’ parameter to check if a particular instance of a registrations exists.</p>
-
+    <p>Does this registration exist? You can also use the 'instance'
+parameter to check if a particular instance of a registrations
+exists.</p>
 
   </div>
 </div>
@@ -431,9 +419,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>ID for the registration.</p>
-</div>
+            &mdash; <div class='inline'><p>ID for the registration.</p></div>
           
         </li>
       
@@ -444,9 +430,9 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>() The instance of this registration to use. If not provided, the latest instance will be used.</p>
-</div>
+            &mdash; <div class='inline'><p>()
+The instance of this registration to use. If not provided, the
+latest instance will be used.</p></div>
           
         </li>
       
@@ -524,11 +510,14 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Get all the instances of this the registration specified by the registration ID</p>
-
-<p>Multiple instances of a registration are created based on the value you have for the setting “WhenToRestartRegistration”. By default, Engine will “restart” a registration once that registration is completed and there is a newer version of that registration’s package is available. If both of those conditions are met when the registration is launched, then Engine will create a new instance for that registration.</p>
-
+    <p>Get all the instances of this the registration specified by the registration ID</p>
+<p>Multiple instances of a registration are created based on the value
+you have for the setting &quot;WhenToRestartRegistration&quot;. By default,
+Engine will &quot;restart&quot; a registration once that registration is
+completed and there is a newer version of that registration's package
+is available. If both of those conditions are met when the
+registration is launched, then Engine will create a new instance for
+that registration.</p>
 
   </div>
 </div>
@@ -564,9 +553,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>ID for the registration.</p>
-</div>
+            &mdash; <div class='inline'><p>ID for the registration.</p></div>
           
         </li>
       
@@ -577,9 +564,10 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>() Only registrations updated before the specified ISO 8601 TimeStamp (inclusive) are included. If a time zone is not specified, the server’s time zone will be used.</p>
-</div>
+            &mdash; <div class='inline'><p>()
+Only registrations updated before the specified ISO 8601 TimeStamp (inclusive)
+are included. If a time zone is not specified, the server's time zone will be
+used.</p></div>
           
         </li>
       
@@ -590,9 +578,10 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>() Only registrations updated since the specified ISO 8601 TimeStamp (inclusive) are included. If a time zone is not specified, the server’s time zone will be used.</p>
-</div>
+            &mdash; <div class='inline'><p>()
+Only registrations updated since the specified ISO 8601 TimeStamp (inclusive)
+are included. If a time zone is not specified, the server's time zone will be
+used.</p></div>
           
         </li>
       
@@ -686,9 +675,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Get registration summary</p>
-
+    <p>Get registration summary</p>
 
   </div>
 </div>
@@ -724,9 +711,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>ID for the registration.</p>
-</div>
+            &mdash; <div class='inline'><p>ID for the registration.</p></div>
           
         </li>
       
@@ -737,9 +722,9 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>() The instance of this registration to use. If not provided, the latest instance will be used.</p>
-</div>
+            &mdash; <div class='inline'><p>()
+The instance of this registration to use. If not provided, the
+latest instance will be used.</p></div>
           
         </li>
       
@@ -753,9 +738,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>Whether or not to populate ‘activityDetails’.</p>
-</div>
+            &mdash; <div class='inline'><p>Whether or not to populate 'activityDetails'.</p></div>
           
         </li>
       
@@ -860,14 +843,14 @@
     
   <div class="note notetag">
     <strong>Note:</strong>
-    <div class='inline'>
-<p>Note the “since” parameter exists to allow retreiving only registrations that have changed, and the “before” parameter exists to allow retreiving only registrations that haven’t changed.</p>
-</div>
+    <div class='inline'><p>Note the &quot;since&quot; parameter exists to allow
+retreiving only registrations that have changed, and the
+&quot;before&quot; parameter exists to allow retreiving only
+registrations that haven't changed.</p></div>
   </div>
 
-
-<p>Gets a list of registrations including a summary of the status of each registration.</p>
-
+<p>Gets a list of registrations including a summary of the status of
+each registration.</p>
 
   </div>
 </div>
@@ -903,9 +886,10 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>() Only registrations updated before the specified ISO 8601 TimeStamp (inclusive) are included. If a time zone is not specified, the server’s time zone will be used.</p>
-</div>
+            &mdash; <div class='inline'><p>()
+Only registrations updated before the specified ISO 8601 TimeStamp (inclusive)
+are included. If a time zone is not specified, the server's time zone will be
+used.</p></div>
           
         </li>
       
@@ -916,9 +900,10 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>() Only registrations updated since the specified ISO 8601 TimeStamp (inclusive) are included. If a time zone is not specified, the server’s time zone will be used.</p>
-</div>
+            &mdash; <div class='inline'><p>()
+Only registrations updated since the specified ISO 8601 TimeStamp (inclusive)
+are included. If a time zone is not specified, the server's time zone will be
+used.</p></div>
           
         </li>
       
@@ -929,9 +914,8 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>() Only registrations for the specified course id will be included.</p>
-</div>
+            &mdash; <div class='inline'><p>()
+Only registrations for the specified course id will be included.</p></div>
           
         </li>
       
@@ -942,9 +926,8 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>() Only registrations for the specified learner id will be included.</p>
-</div>
+            &mdash; <div class='inline'><p>()
+Only registrations for the specified learner id will be included.</p></div>
           
         </li>
       
@@ -1036,9 +1019,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Create a registration.</p>
-
+    <p>Create a registration.</p>
 
   </div>
 </div>
@@ -1074,9 +1055,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The course ID.</p>
-</div>
+            &mdash; <div class='inline'><p>The course ID.</p></div>
           
         </li>
       
@@ -1087,9 +1066,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The registration’s ID. Must be unique.</p>
-</div>
+            &mdash; <div class='inline'><p>The registration's ID. Must be unique.</p></div>
           
         </li>
       
@@ -1100,9 +1077,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The learner’s ID.</p>
-</div>
+            &mdash; <div class='inline'><p>The learner's ID.</p></div>
           
         </li>
       
@@ -1113,9 +1088,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The learner’s first name.</p>
-</div>
+            &mdash; <div class='inline'><p>The learner's first name.</p></div>
           
         </li>
       
@@ -1126,9 +1099,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The learner’s last name.</p>
-</div>
+            &mdash; <div class='inline'><p>The learner's last name.</p></div>
           
         </li>
       
@@ -1139,9 +1110,11 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>() Specifies an optional override URL for which to post activity and status data in real time as the course is completed. By default all of these settings are read from your configuration, so only specify this if you need to control it on a per-registration basis.</p>
-</div>
+            &mdash; <div class='inline'><p>()
+Specifies an optional override URL for which to post activity and
+status data in real time as the course is completed. By default all
+of these settings are read from your configuration, so only specify
+this if you need to control it on a per-registration basis.</p></div>
           
         </li>
       
@@ -1155,9 +1128,14 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>Optional parameter to specify how to authorize against the given postbackurl, can be ‘FORM’ or ‘HTTPBASIC’. If form authentication, the username and password for authentication are submitted as form fields ‘username’ and ‘password’, and the registration data as the form field ‘data’. If HTTP Basic Authentication is used, the username and password are placed in the standard Authorization HTTP header, and the registration data is the body of the message (sent as application/json content type).</p>
-</div>
+            &mdash; <div class='inline'><p>Optional parameter to specify how to authorize against the given
+postbackurl, can be 'FORM' or 'HTTPBASIC'. If form authentication,
+the username and password for authentication are submitted as form
+fields 'username' and 'password', and the registration data as the
+form field 'data'. If HTTP Basic Authentication is used, the
+username and password are placed in the standard Authorization HTTP
+header, and the registration data is the body of the message (sent
+as application/json content type).</p></div>
           
         </li>
       
@@ -1168,9 +1146,9 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>() The user name to be used in authorizing the postback of data to the URL specified by postback url.</p>
-</div>
+            &mdash; <div class='inline'><p>()
+The user name to be used in authorizing the postback of data to the
+URL specified by postback url.</p></div>
           
         </li>
       
@@ -1181,9 +1159,9 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>() The password to be used in authorizing the postback of data to the URL specified by postback url.</p>
-</div>
+            &mdash; <div class='inline'><p>()
+The password to be used in authorizing the postback of data to the
+URL specified by postback url.</p></div>
           
         </li>
       
@@ -1197,9 +1175,13 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>This parameter allows you to specify a level of detail in the information that is posted back while the course is being taken. It may be one of three values: ‘COURSE’ (course summary), ‘ACTIVITY’ (activity summary), or ‘FULL’ (full detail), and is set to ‘COURSE’ by default. The information will be posted as JSON using the same schema as what is returned in the /progress and /progress/detail endpoints.</p>
-</div>
+            &mdash; <div class='inline'><p>This parameter allows you to specify a level of detail in the
+information that is posted back while the course is being taken. It
+may be one of three values: 'COURSE' (course summary), 'ACTIVITY'
+(activity summary), or 'FULL' (full detail), and is set to 'COURSE'
+by default. The information will be posted as JSON using the same
+schema as what is returned in the /progress and /progress/detail
+endpoints.</p></div>
           
         </li>
       
@@ -1305,9 +1287,9 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Oct 20 13:46:34 2025 by
+  Generated on Thu Sep  3 13:36:19 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.37 (ruby-3.3.9).
+  0.9.45 (ruby-3.3.12).
 </div>
 
     </div>

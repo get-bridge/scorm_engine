@@ -6,13 +6,13 @@
 <title>
   Module: ScormEngine::Api::Endpoints::Dispatches
   
-    &mdash; Documentation by YARD 0.9.37
+    &mdash; Documentation by YARD 0.9.45
   
 </title>
 
-  <link rel="stylesheet" href="../../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "ScormEngine::Api::Endpoints::Dispatches";
@@ -27,6 +27,8 @@
 
   </head>
   <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
     <div class="nav_wrap">
       <iframe id="nav" src="../../../class_list.html?1"></iframe>
       <div id="resizer"></div>
@@ -83,7 +85,8 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/scorm_engine/api/endpoints/dispatches.rb</dd>
+    <dd>lib/scorm_engine/api/endpoints/dispatches.rb
+</dd>
   </dl>
   
 </div>
@@ -120,9 +123,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Delete a dispatch.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Delete a dispatch.</p></div></span>
   
 </li>
 
@@ -144,9 +145,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Reset the registration count and last reset time of a dispatch.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Reset the registration count and last reset time of a dispatch.</p></div></span>
   
 </li>
 
@@ -168,9 +167,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Get a dispatch.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Get a dispatch.</p></div></span>
   
 </li>
 
@@ -192,9 +189,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Get the enabled status of a dispatch.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Get the enabled status of a dispatch.</p></div></span>
   
 </li>
 
@@ -216,9 +211,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Get the registration count and last reset time of a dispatch.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Get the registration count and last reset time of a dispatch.</p></div></span>
   
 </li>
 
@@ -240,9 +233,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Get the ZIP dispatch package.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Get the ZIP dispatch package.</p></div></span>
   
 </li>
 
@@ -264,9 +255,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Get a list of dispatches.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Get a list of dispatches.</p></div></span>
   
 </li>
 
@@ -288,9 +277,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Create a dispatch.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Create a dispatch.</p></div></span>
   
 </li>
 
@@ -312,9 +299,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Update a dispatch.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Update a dispatch.</p></div></span>
   
 </li>
 
@@ -336,14 +321,13 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Enable or disable the dispatch.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Enable or disable the dispatch.</p></div></span>
   
 </li>
 
       
     </ul>
+    
   
 
 
@@ -363,9 +347,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Delete a dispatch.</p>
-
+    <p>Delete a dispatch.</p>
 
   </div>
 </div>
@@ -401,9 +383,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The ID of the dispatch to delete.</p>
-</div>
+            &mdash; <div class='inline'><p>The ID of the dispatch to delete.</p></div>
           
         </li>
       
@@ -437,16 +417,16 @@
       <pre class="lines">
 
 
-200
-201
 202
 203
 204
 205
-206</pre>
+206
+207
+208</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/dispatches.rb', line 200</span>
+      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/dispatches.rb', line 202</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delete_dispatch'>delete_dispatch</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_require_options'>require_options</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='symbol'>:dispatch_id</span><span class='rparen'>)</span>
@@ -471,9 +451,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Reset the registration count and last reset time of a dispatch.</p>
-
+    <p>Reset the registration count and last reset time of a dispatch.</p>
 
   </div>
 </div>
@@ -509,9 +487,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The ID of the dispatch to get.</p>
-</div>
+            &mdash; <div class='inline'><p>The ID of the dispatch to get.</p></div>
           
         </li>
       
@@ -545,16 +521,16 @@
       <pre class="lines">
 
 
-326
-327
 328
 329
 330
 331
-332</pre>
+332
+333
+334</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/dispatches.rb', line 326</span>
+      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/dispatches.rb', line 328</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delete_dispatch_registration_count'>delete_dispatch_registration_count</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_require_options'>require_options</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='symbol'>:dispatch_id</span><span class='rparen'>)</span>
@@ -579,9 +555,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Get a dispatch.</p>
-
+    <p>Get a dispatch.</p>
 
   </div>
 </div>
@@ -617,9 +591,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The ID of the dispatch to get.</p>
-</div>
+            &mdash; <div class='inline'><p>The ID of the dispatch to get.</p></div>
           
         </li>
       
@@ -653,8 +625,6 @@
       <pre class="lines">
 
 
-117
-118
 119
 120
 121
@@ -662,10 +632,12 @@
 123
 124
 125
-126</pre>
+126
+127
+128</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/dispatches.rb', line 117</span>
+      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/dispatches.rb', line 119</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_dispatch'>get_dispatch</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_require_options'>require_options</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='symbol'>:dispatch_id</span><span class='rparen'>)</span>
@@ -693,9 +665,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Get the enabled status of a dispatch.</p>
-
+    <p>Get the enabled status of a dispatch.</p>
 
   </div>
 </div>
@@ -731,9 +701,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The ID of the dispatch to delete.</p>
-</div>
+            &mdash; <div class='inline'><p>The ID of the dispatch to delete.</p></div>
           
         </li>
       
@@ -767,18 +735,18 @@
       <pre class="lines">
 
 
-220
-221
 222
 223
 224
 225
 226
 227
-228</pre>
+228
+229
+230</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/dispatches.rb', line 220</span>
+      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/dispatches.rb', line 222</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_dispatch_enabled'>get_dispatch_enabled</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_require_options'>require_options</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='symbol'>:dispatch_id</span><span class='rparen'>)</span>
@@ -805,9 +773,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Get the registration count and last reset time of a dispatch.</p>
-
+    <p>Get the registration count and last reset time of a dispatch.</p>
 
   </div>
 </div>
@@ -843,9 +809,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The ID of the dispatch to get.</p>
-</div>
+            &mdash; <div class='inline'><p>The ID of the dispatch to get.</p></div>
           
         </li>
       
@@ -879,8 +843,6 @@
       <pre class="lines">
 
 
-303
-304
 305
 306
 307
@@ -888,10 +850,12 @@
 309
 310
 311
-312</pre>
+312
+313
+314</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/dispatches.rb', line 303</span>
+      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/dispatches.rb', line 305</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_dispatch_registration_count'>get_dispatch_registration_count</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_require_options'>require_options</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='symbol'>:dispatch_id</span><span class='rparen'>)</span>
@@ -919,9 +883,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Get the ZIP dispatch package.</p>
-
+    <p>Get the ZIP dispatch package.</p>
 
   </div>
 </div>
@@ -957,9 +919,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The ID of the dispatch to delete.</p>
-</div>
+            &mdash; <div class='inline'><p>The ID of the dispatch to delete.</p></div>
           
         </li>
       
@@ -973,9 +933,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The type of dispatch package to export (SCORM12, SCORM2004-3RD or AICC)</p>
-</div>
+            &mdash; <div class='inline'><p>The type of dispatch package to export (SCORM12, SCORM2004-3RD or AICC)</p></div>
           
         </li>
       
@@ -1009,8 +967,6 @@
       <pre class="lines">
 
 
-270
-271
 272
 273
 274
@@ -1028,10 +984,12 @@
 286
 287
 288
-289</pre>
+289
+290
+291</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/dispatches.rb', line 270</span>
+      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/dispatches.rb', line 272</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_dispatch_zip'>get_dispatch_zip</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_require_options'>require_options</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='symbol'>:dispatch_id</span><span class='rparen'>)</span>
@@ -1069,9 +1027,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Get a list of dispatches.</p>
-
+    <p>Get a list of dispatches.</p>
 
   </div>
 </div>
@@ -1107,9 +1063,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>Limit the results to dispatches of the specified course.</p>
-</div>
+            &mdash; <div class='inline'><p>Limit the results to dispatches of the specified course.</p></div>
           
         </li>
       
@@ -1120,9 +1074,9 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>Only dispatches updated since the specified ISO 8601 TimeStamp (inclusive) are included. If a time zone is not specified, the server’s time zone will be used.</p>
-</div>
+            &mdash; <div class='inline'><p>Only dispatches updated since the specified ISO 8601 TimeStamp
+(inclusive) are included. If a time zone is not specified, the
+server's time zone will be used.</p></div>
           
         </li>
       
@@ -1210,9 +1164,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Create a dispatch.</p>
-
+    <p>Create a dispatch.</p>
 
   </div>
 </div>
@@ -1248,9 +1200,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The dispatch ID.</p>
-</div>
+            &mdash; <div class='inline'><p>The dispatch ID.</p></div>
           
         </li>
       
@@ -1261,9 +1211,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The destination ID.</p>
-</div>
+            &mdash; <div class='inline'><p>The destination ID.</p></div>
           
         </li>
       
@@ -1274,9 +1222,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The course ID.</p>
-</div>
+            &mdash; <div class='inline'><p>The course ID.</p></div>
           
         </li>
       
@@ -1290,9 +1236,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>If true, then new registrations can be created for this dispatch.</p>
-</div>
+            &mdash; <div class='inline'><p>If true, then new registrations can be created for this dispatch.</p></div>
           
         </li>
       
@@ -1306,9 +1250,10 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>If true, then a new registration instance will be created if the client LMS doesn’t provide launch data for an existing one. Otherwise, the same instance will always be used for the given cmi.learner_id.</p>
-</div>
+            &mdash; <div class='inline'><p>If true, then a new registration instance will be created if the
+client LMS doesn't provide launch data for an existing one.
+Otherwise, the same instance will always be used for the given
+cmi.learner_id.</p></div>
           
         </li>
       
@@ -1322,9 +1267,8 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The maximum number of registrations that can be created for this dispatch, where ‘0’ means ‘unlimited registrations’.</p>
-</div>
+            &mdash; <div class='inline'><p>The maximum number of registrations that can be created for this
+dispatch, where '0' means 'unlimited registrations'.</p></div>
           
         </li>
       
@@ -1338,9 +1282,8 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The date after which this dispatch will be disabled as an ISO 8601 string, or “none” for no expiration date.</p>
-</div>
+            &mdash; <div class='inline'><p>The date after which this dispatch will be disabled as an ISO 8601
+string, or &quot;none&quot; for no expiration date.</p></div>
           
         </li>
       
@@ -1354,9 +1297,8 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>Serialized external configuration information to include when launching the dispatched package.</p>
-</div>
+            &mdash; <div class='inline'><p>Serialized external configuration information to include when
+launching the dispatched package.</p></div>
           
         </li>
       
@@ -1413,7 +1355,9 @@
 100
 101
 102
-103</pre>
+103
+104
+105</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/dispatches.rb', line 80</span>
@@ -1425,15 +1369,17 @@
 
   <span class='id identifier rubyid_body'>body</span> <span class='op'>=</span> <span class='lbrace'>{</span>
     <span class='label'>dispatches:</span> <span class='lbracket'>[</span>
-      <span class='label'>id:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:dispatch_id</span><span class='rbracket'>]</span><span class='comma'>,</span>
-      <span class='label'>data:</span> <span class='lbrace'>{</span>
-        <span class='label'>destinationId:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:destination_id</span><span class='rbracket'>]</span><span class='comma'>,</span>
-        <span class='label'>courseId:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:course_id</span><span class='rbracket'>]</span><span class='comma'>,</span>
-        <span class='label'>allowNewRegistrations:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:allow_new_registrations</span><span class='rbracket'>]</span><span class='comma'>,</span>
-        <span class='label'>instanced:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:instanced</span><span class='rbracket'>]</span><span class='comma'>,</span>
-        <span class='label'>registrationCap:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:registration_cap</span><span class='rbracket'>]</span><span class='comma'>,</span>
-        <span class='label'>expirationDate:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:expiration_date</span><span class='rbracket'>]</span><span class='comma'>,</span>
-        <span class='label'>externalConfig:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:external_config</span><span class='rbracket'>]</span><span class='comma'>,</span>
+      <span class='lbrace'>{</span>
+        <span class='label'>id:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:dispatch_id</span><span class='rbracket'>]</span><span class='comma'>,</span>
+        <span class='label'>data:</span> <span class='lbrace'>{</span>
+          <span class='label'>destinationId:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:destination_id</span><span class='rbracket'>]</span><span class='comma'>,</span>
+          <span class='label'>courseId:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:course_id</span><span class='rbracket'>]</span><span class='comma'>,</span>
+          <span class='label'>allowNewRegistrations:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:allow_new_registrations</span><span class='rbracket'>]</span><span class='comma'>,</span>
+          <span class='label'>instanced:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:instanced</span><span class='rbracket'>]</span><span class='comma'>,</span>
+          <span class='label'>registrationCap:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:registration_cap</span><span class='rbracket'>]</span><span class='comma'>,</span>
+          <span class='label'>expirationDate:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:expiration_date</span><span class='rbracket'>]</span><span class='comma'>,</span>
+          <span class='label'>externalConfig:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:external_config</span><span class='rbracket'>]</span><span class='comma'>,</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
       <span class='rbrace'>}</span><span class='comma'>,</span>
     <span class='rbracket'>]</span>
   <span class='rbrace'>}</span>
@@ -1458,9 +1404,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Update a dispatch.</p>
-
+    <p>Update a dispatch.</p>
 
   </div>
 </div>
@@ -1496,9 +1440,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The dispatch ID.</p>
-</div>
+            &mdash; <div class='inline'><p>The dispatch ID.</p></div>
           
         </li>
       
@@ -1509,9 +1451,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The destination ID.</p>
-</div>
+            &mdash; <div class='inline'><p>The destination ID.</p></div>
           
         </li>
       
@@ -1522,9 +1462,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The course ID.</p>
-</div>
+            &mdash; <div class='inline'><p>The course ID.</p></div>
           
         </li>
       
@@ -1535,9 +1473,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>If true, then new registrations can be created for this dispatch.</p>
-</div>
+            &mdash; <div class='inline'><p>If true, then new registrations can be created for this dispatch.</p></div>
           
         </li>
       
@@ -1548,9 +1484,10 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>If true, then a new registration instance will be created if the client LMS doesn’t provide launch data for an existing one. Otherwise, the same instance will always be used for the given cmi.learner_id.</p>
-</div>
+            &mdash; <div class='inline'><p>If true, then a new registration instance will be created if the
+client LMS doesn't provide launch data for an existing one.
+Otherwise, the same instance will always be used for the given
+cmi.learner_id.</p></div>
           
         </li>
       
@@ -1561,9 +1498,8 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The maximum number of registrations that can be created for this dispatch, where ‘0’ means ‘unlimited registrations’.</p>
-</div>
+            &mdash; <div class='inline'><p>The maximum number of registrations that can be created for this
+dispatch, where '0' means 'unlimited registrations'.</p></div>
           
         </li>
       
@@ -1574,9 +1510,8 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The date after which this dispatch will be disabled as an ISO 8601 string, or “none” for no expiration date.</p>
-</div>
+            &mdash; <div class='inline'><p>The date after which this dispatch will be disabled as an ISO 8601
+string, or &quot;none&quot; for no expiration date.</p></div>
           
         </li>
       
@@ -1590,9 +1525,8 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>Serialized external configuration information to include when launching the dispatched package.</p>
-</div>
+            &mdash; <div class='inline'><p>Serialized external configuration information to include when
+launching the dispatched package.</p></div>
           
         </li>
       
@@ -1626,8 +1560,6 @@
       <pre class="lines">
 
 
-167
-168
 169
 170
 171
@@ -1645,10 +1577,12 @@
 183
 184
 185
-186</pre>
+186
+187
+188</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/dispatches.rb', line 167</span>
+      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/dispatches.rb', line 169</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_put_dispatch'>put_dispatch</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_require_options'>require_options</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='symbol'>:dispatch_id</span><span class='comma'>,</span> <span class='symbol'>:destination_id</span><span class='comma'>,</span> <span class='symbol'>:course_id</span><span class='comma'>,</span>
@@ -1686,9 +1620,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Enable or disable the dispatch.</p>
-
+    <p>Enable or disable the dispatch.</p>
 
   </div>
 </div>
@@ -1724,9 +1656,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The ID of the dispatch</p>
-</div>
+            &mdash; <div class='inline'><p>The ID of the dispatch</p></div>
           
         </li>
       
@@ -1737,9 +1667,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The enabledness of the dispatch</p>
-</div>
+            &mdash; <div class='inline'><p>The enabledness of the dispatch</p></div>
           
         </li>
       
@@ -1773,18 +1701,18 @@
       <pre class="lines">
 
 
-245
-246
 247
 248
 249
 250
 251
 252
-253</pre>
+253
+254
+255</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/dispatches.rb', line 245</span>
+      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/dispatches.rb', line 247</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_put_dispatch_enabled'>put_dispatch_enabled</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_require_options'>require_options</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='symbol'>:dispatch_id</span><span class='comma'>,</span> <span class='symbol'>:enabled</span><span class='rparen'>)</span>
@@ -1805,9 +1733,9 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Oct 20 13:46:34 2025 by
+  Generated on Thu Sep  3 13:36:19 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.37 (ruby-3.3.9).
+  0.9.45 (ruby-3.3.12).
 </div>
 
     </div>

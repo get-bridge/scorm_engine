@@ -6,13 +6,13 @@
 <title>
   Module: ScormEngine::Api::Endpoints::Destinations
   
-    &mdash; Documentation by YARD 0.9.37
+    &mdash; Documentation by YARD 0.9.45
   
 </title>
 
-  <link rel="stylesheet" href="../../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "ScormEngine::Api::Endpoints::Destinations";
@@ -27,6 +27,8 @@
 
   </head>
   <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
     <div class="nav_wrap">
       <iframe id="nav" src="../../../class_list.html?1"></iframe>
       <div id="resizer"></div>
@@ -83,7 +85,8 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/scorm_engine/api/endpoints/destinations.rb</dd>
+    <dd>lib/scorm_engine/api/endpoints/destinations.rb
+</dd>
   </dl>
   
 </div>
@@ -120,9 +123,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Delete a destination.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Delete a destination.</p></div></span>
   
 </li>
 
@@ -144,9 +145,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Get a destination.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Get a destination.</p></div></span>
   
 </li>
 
@@ -168,9 +167,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Get an aggregate count of all related dispatch registrations.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Get an aggregate count of all related dispatch registrations.</p></div></span>
   
 </li>
 
@@ -192,9 +189,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Get a list of destinations.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Get a list of destinations.</p></div></span>
   
 </li>
 
@@ -216,9 +211,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Create a destination.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Create a destination.</p></div></span>
   
 </li>
 
@@ -240,9 +233,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Enable or disable all related dispatches.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Enable or disable all related dispatches.</p></div></span>
   
 </li>
 
@@ -264,9 +255,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Enable or disable registration instancing.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Enable or disable registration instancing.</p></div></span>
   
 </li>
 
@@ -288,14 +277,13 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Update a destination.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Update a destination.</p></div></span>
   
 </li>
 
       
     </ul>
+    
   
 
 
@@ -315,11 +303,9 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Delete a destination.</p>
-
-<p>Deleting a destination will also delete all dispatches for that destination.</p>
-
+    <p>Delete a destination.</p>
+<p>Deleting a destination will also delete all dispatches for that
+destination.</p>
 
   </div>
 </div>
@@ -355,9 +341,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The ID of the destination to delete.</p>
-</div>
+            &mdash; <div class='inline'><p>The ID of the destination to delete.</p></div>
           
         </li>
       
@@ -391,16 +375,16 @@
       <pre class="lines">
 
 
-143
-144
 145
 146
 147
 148
-149</pre>
+149
+150
+151</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/destinations.rb', line 143</span>
+      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/destinations.rb', line 145</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delete_destination'>delete_destination</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_require_options'>require_options</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='symbol'>:destination_id</span><span class='rparen'>)</span>
@@ -425,9 +409,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Get a destination.</p>
-
+    <p>Get a destination.</p>
 
   </div>
 </div>
@@ -463,9 +445,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The ID of the destination to get.</p>
-</div>
+            &mdash; <div class='inline'><p>The ID of the destination to get.</p></div>
           
         </li>
       
@@ -499,8 +479,6 @@
       <pre class="lines">
 
 
-88
-89
 90
 91
 92
@@ -508,10 +486,12 @@
 94
 95
 96
-97</pre>
+97
+98
+99</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/destinations.rb', line 88</span>
+      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/destinations.rb', line 90</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_destination'>get_destination</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_require_options'>require_options</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='symbol'>:destination_id</span><span class='rparen'>)</span>
@@ -539,9 +519,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Get an aggregate count of all related dispatch registrations.</p>
-
+    <p>Get an aggregate count of all related dispatch registrations.</p>
 
   </div>
 </div>
@@ -577,9 +555,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The ID of the destination to delete.</p>
-</div>
+            &mdash; <div class='inline'><p>The ID of the destination to delete.</p></div>
           
         </li>
       
@@ -613,18 +589,18 @@
       <pre class="lines">
 
 
-213
-214
 215
 216
 217
 218
 219
 220
-221</pre>
+221
+222
+223</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/destinations.rb', line 213</span>
+      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/destinations.rb', line 215</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_destination_dispatches_registration_count'>get_destination_dispatches_registration_count</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_require_options'>require_options</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='symbol'>:destination_id</span><span class='rparen'>)</span>
@@ -651,9 +627,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Get a list of destinations.</p>
-
+    <p>Get a list of destinations.</p>
 
   </div>
 </div>
@@ -689,9 +663,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>Limit the results to destinations that have dispatches of the specified course.</p>
-</div>
+            &mdash; <div class='inline'><p>Limit the results to destinations that have dispatches of the specified course.</p></div>
           
         </li>
       
@@ -702,9 +674,9 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>Only destinations updated since the specified ISO 8601 TimeStamp (inclusive) are included. If a time zone is not specified, the server’s time zone will be used.</p>
-</div>
+            &mdash; <div class='inline'><p>Only destinations updated since the specified ISO 8601 TimeStamp
+(inclusive) are included. If a time zone is not specified, the
+server's time zone will be used.</p></div>
           
         </li>
       
@@ -792,9 +764,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Create a destination.</p>
-
+    <p>Create a destination.</p>
 
   </div>
 </div>
@@ -830,9 +800,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The destination ID.</p>
-</div>
+            &mdash; <div class='inline'><p>The destination ID.</p></div>
           
         </li>
       
@@ -846,9 +814,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The destination’s name.</p>
-</div>
+            &mdash; <div class='inline'><p>The destination's name.</p></div>
           
         </li>
       
@@ -900,7 +866,9 @@
 71
 72
 73
-74</pre>
+74
+75
+76</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/destinations.rb', line 56</span>
@@ -913,9 +881,11 @@
 
   <span class='id identifier rubyid_body'>body</span> <span class='op'>=</span> <span class='lbrace'>{</span>
     <span class='label'>destinations:</span> <span class='lbracket'>[</span>
-      <span class='label'>id:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:destination_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='comma'>,</span>
-      <span class='label'>data:</span> <span class='lbrace'>{</span>
-        <span class='label'>name:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='comma'>,</span>
+      <span class='lbrace'>{</span>
+        <span class='label'>id:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:destination_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='comma'>,</span>
+        <span class='label'>data:</span> <span class='lbrace'>{</span>
+          <span class='label'>name:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='comma'>,</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
       <span class='rbrace'>}</span><span class='comma'>,</span>
     <span class='rbracket'>]</span>
   <span class='rbrace'>}</span>
@@ -940,9 +910,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Enable or disable all related dispatches.</p>
-
+    <p>Enable or disable all related dispatches.</p>
 
   </div>
 </div>
@@ -978,9 +946,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The ID of the destination</p>
-</div>
+            &mdash; <div class='inline'><p>The ID of the destination</p></div>
           
         </li>
       
@@ -991,9 +957,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The enabledness of all related dispatches</p>
-</div>
+            &mdash; <div class='inline'><p>The enabledness of all related dispatches</p></div>
           
         </li>
       
@@ -1027,18 +991,18 @@
       <pre class="lines">
 
 
-166
-167
 168
 169
 170
 171
 172
 173
-174</pre>
+174
+175
+176</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/destinations.rb', line 166</span>
+      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/destinations.rb', line 168</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_post_destination_dispatches_enabled'>post_destination_dispatches_enabled</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_require_options'>require_options</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='symbol'>:destination_id</span><span class='comma'>,</span> <span class='symbol'>:enabled</span><span class='rparen'>)</span>
@@ -1065,9 +1029,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Enable or disable registration instancing.</p>
-
+    <p>Enable or disable registration instancing.</p>
 
   </div>
 </div>
@@ -1103,9 +1065,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The ID of the destination to delete.</p>
-</div>
+            &mdash; <div class='inline'><p>The ID of the destination to delete.</p></div>
           
         </li>
       
@@ -1116,9 +1076,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The enabledness of the registration instancing</p>
-</div>
+            &mdash; <div class='inline'><p>The enabledness of the registration instancing</p></div>
           
         </li>
       
@@ -1152,18 +1110,18 @@
       <pre class="lines">
 
 
-191
-192
 193
 194
 195
 196
 197
 198
-199</pre>
+199
+200
+201</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/destinations.rb', line 191</span>
+      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/destinations.rb', line 193</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_post_destination_dispatches_registration_instancing'>post_destination_dispatches_registration_instancing</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_require_options'>require_options</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='symbol'>:destination_id</span><span class='comma'>,</span> <span class='symbol'>:enabled</span><span class='rparen'>)</span>
@@ -1190,9 +1148,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Update a destination.</p>
-
+    <p>Update a destination.</p>
 
   </div>
 </div>
@@ -1228,9 +1184,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The destination ID.</p>
-</div>
+            &mdash; <div class='inline'><p>The destination ID.</p></div>
           
         </li>
       
@@ -1241,9 +1195,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The destination’s new name.</p>
-</div>
+            &mdash; <div class='inline'><p>The destination's new name.</p></div>
           
         </li>
       
@@ -1277,8 +1229,6 @@
       <pre class="lines">
 
 
-114
-115
 116
 117
 118
@@ -1289,10 +1239,12 @@
 123
 124
 125
-126</pre>
+126
+127
+128</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/destinations.rb', line 114</span>
+      <pre class="code"><span class="info file"># File 'lib/scorm_engine/api/endpoints/destinations.rb', line 116</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_put_destination'>put_destination</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_require_options'>require_options</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='symbol'>:destination_id</span><span class='comma'>,</span> <span class='symbol'>:name</span><span class='rparen'>)</span>
@@ -1317,9 +1269,9 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Oct 20 13:46:34 2025 by
+  Generated on Thu Sep  3 13:36:19 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.37 (ruby-3.3.9).
+  0.9.45 (ruby-3.3.12).
 </div>
 
     </div>

@@ -6,13 +6,13 @@
 <title>
   Module: ScormEngine::Api::Endpoints::Courses
   
-    &mdash; Documentation by YARD 0.9.37
+    &mdash; Documentation by YARD 0.9.45
   
 </title>
 
-  <link rel="stylesheet" href="../../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "ScormEngine::Api::Endpoints::Courses";
@@ -27,6 +27,8 @@
 
   </head>
   <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
     <div class="nav_wrap">
       <iframe id="nav" src="../../../class_list.html?1"></iframe>
       <div id="resizer"></div>
@@ -83,8 +85,9 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/scorm_engine/api/endpoints/courses.rb<span class="defines">,<br />
-  lib/scorm_engine/api/endpoints/courses/import.rb,<br /> lib/scorm_engine/api/endpoints/courses/configuration.rb</span>
+    <dd>lib/scorm_engine/api/endpoints/courses.rb<span class="defines">,<br>
+  lib/scorm_engine/api/endpoints/courses/import.rb,<br> lib/scorm_engine/api/endpoints/courses/configuration.rb</span>
+
 </dd>
   </dl>
   
@@ -132,9 +135,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Delete a course.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Delete a course.</p></div></span>
   
 </li>
 
@@ -156,9 +157,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Get the details of a course.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Get the details of a course.</p></div></span>
   
 </li>
 
@@ -180,9 +179,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Returns the launch link to use to preview this course.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Returns the launch link to use to preview this course.</p></div></span>
   
 </li>
 
@@ -204,14 +201,13 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Get the list of courses.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Get the list of courses.</p></div></span>
   
 </li>
 
       
     </ul>
+    
   
 
 
@@ -231,9 +227,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Delete a course</p>
-
+    <p>Delete a course</p>
 
   </div>
 </div>
@@ -269,9 +263,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The ID of the course to delete.</p>
-</div>
+            &mdash; <div class='inline'><p>The ID of the course to delete.</p></div>
           
         </li>
       
@@ -339,9 +331,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Get the details of a course</p>
-
+    <p>Get the details of a course</p>
 
   </div>
 </div>
@@ -377,9 +367,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The ID of the course to get.</p>
-</div>
+            &mdash; <div class='inline'><p>The ID of the course to get.</p></div>
           
         </li>
       
@@ -393,9 +381,8 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The version of this course to use. If not provided, the latest version will be used.</p>
-</div>
+            &mdash; <div class='inline'><p>The version of this course to use. If not provided, the latest
+version will be used.</p></div>
           
         </li>
       
@@ -473,9 +460,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Returns the launch link to use to preview this course</p>
-
+    <p>Returns the launch link to use to preview this course</p>
 
   </div>
 </div>
@@ -511,9 +496,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The ID of the course to get.</p>
-</div>
+            &mdash; <div class='inline'><p>The ID of the course to get.</p></div>
           
         </li>
       
@@ -527,9 +510,8 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The version of this course to use. If not provided, the latest version will be used.</p>
-</div>
+            &mdash; <div class='inline'><p>The version of this course to use. If not provided, the latest
+version will be used.</p></div>
           
         </li>
       
@@ -543,9 +525,8 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>Number of seconds from now this link will expire in. Use 0 for no expiration.</p>
-</div>
+            &mdash; <div class='inline'><p>Number of seconds from now this link will expire in. Use 0 for no
+expiration.</p></div>
           
         </li>
       
@@ -556,9 +537,8 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The URL the application should redirect to when the learner exits a course. If not specified, configured value will be used.</p>
-</div>
+            &mdash; <div class='inline'><p>The URL the application should redirect to when the learner exits a
+course. If not specified, configured value will be used.</p></div>
           
         </li>
       
@@ -638,9 +618,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Get the list of courses</p>
-
+    <p>Get the list of courses</p>
 
   </div>
 </div>
@@ -676,9 +654,9 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The ID of the single course to retrieve. If set no other options are respected. Note that multiple results may be returned if the course has multiple versions.</p>
-</div>
+            &mdash; <div class='inline'><p>The ID of the single course to retrieve. If set no other options
+are respected. Note that multiple results may be returned if the
+course has multiple versions.</p></div>
           
         </li>
       
@@ -689,9 +667,9 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>Only courses updated since the specified ISO 8601 TimeStamp (inclusive) are included.  If a time zone is not specified, the server’s time zone will be used.</p>
-</div>
+            &mdash; <div class='inline'><p>Only courses updated since the specified ISO 8601 TimeStamp
+(inclusive) are included.  If a time zone is not specified, the
+server's time zone will be used.</p></div>
           
         </li>
       
@@ -815,9 +793,9 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Oct 20 13:46:34 2025 by
+  Generated on Thu Sep  3 13:36:19 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.37 (ruby-3.3.9).
+  0.9.45 (ruby-3.3.12).
 </div>
 
     </div>

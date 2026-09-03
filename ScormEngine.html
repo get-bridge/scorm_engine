@@ -6,13 +6,13 @@
 <title>
   Module: ScormEngine
   
-    &mdash; Documentation by YARD 0.9.37
+    &mdash; Documentation by YARD 0.9.45
   
 </title>
 
-  <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <link rel="stylesheet" href="css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="css/common.css" type="text/css" />
+  <link rel="stylesheet" href="css/common.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "ScormEngine";
@@ -27,6 +27,8 @@
 
   </head>
   <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
     <div class="nav_wrap">
       <iframe id="nav" src="class_list.html?1"></iframe>
       <div id="resizer"></div>
@@ -78,8 +80,9 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/scorm_engine/api/endpoints/courses/configuration.rb<span class="defines">,<br />
-  lib/scorm_engine.rb,<br /> lib/scorm_engine/utils.rb,<br /> lib/scorm_engine/client.rb,<br /> lib/scorm_engine/version.rb,<br /> lib/scorm_engine/response.rb,<br /> lib/scorm_engine/models/base.rb,<br /> lib/scorm_engine/api/endpoints.rb,<br /> lib/scorm_engine/configuration.rb,<br /> lib/scorm_engine/models/course.rb,<br /> lib/scorm_engine/models/learner.rb,<br /> lib/scorm_engine/faraday/request.rb,<br /> lib/scorm_engine/models/dispatch.rb,<br /> lib/scorm_engine/api/endpoints/ping.rb,<br /> lib/scorm_engine/faraday/connection.rb,<br /> lib/scorm_engine/models/destination.rb,<br /> lib/scorm_engine/api/endpoints/about.rb,<br /> lib/scorm_engine/models/dispatch_zip.rb,<br /> lib/scorm_engine/models/registration.rb,<br /> lib/scorm_engine/models/course_import.rb,<br /> lib/scorm_engine/api/endpoints/courses.rb,<br /> lib/scorm_engine/api/endpoints/dispatches.rb,<br /> lib/scorm_engine/api/endpoints/destinations.rb,<br /> lib/scorm_engine/api/endpoints/configuration.rb,<br /> lib/scorm_engine/api/endpoints/registrations.rb,<br /> lib/scorm_engine/models/course_configuration.rb,<br /> lib/scorm_engine/models/tenant_configuration.rb,<br /> lib/scorm_engine/api/endpoints/courses/import.rb,<br /> lib/scorm_engine/models/registration_configuration.rb,<br /> lib/scorm_engine/models/dispatch_registration_count.rb,<br /> lib/scorm_engine/models/registration_launch_history.rb,<br /> lib/scorm_engine/api/endpoints/tenants/configuration.rb,<br /> lib/scorm_engine/models/registration_activity_detail.rb,<br /> lib/scorm_engine/models/registration_runtime_interaction.rb,<br /> lib/scorm_engine/api/endpoints/registrations/configuration.rb,<br /> lib/scorm_engine/api/endpoints/registrations/launch_history.rb</span>
+    <dd>lib/scorm_engine/api/endpoints/courses/configuration.rb<span class="defines">,<br>
+  lib/scorm_engine.rb,<br> lib/scorm_engine/utils.rb,<br> lib/scorm_engine/client.rb,<br> lib/scorm_engine/version.rb,<br> lib/scorm_engine/response.rb,<br> lib/scorm_engine/models/base.rb,<br> lib/scorm_engine/api/endpoints.rb,<br> lib/scorm_engine/configuration.rb,<br> lib/scorm_engine/models/course.rb,<br> lib/scorm_engine/models/learner.rb,<br> lib/scorm_engine/faraday/request.rb,<br> lib/scorm_engine/models/dispatch.rb,<br> lib/scorm_engine/api/endpoints/ping.rb,<br> lib/scorm_engine/faraday/connection.rb,<br> lib/scorm_engine/models/destination.rb,<br> lib/scorm_engine/api/endpoints/about.rb,<br> lib/scorm_engine/models/dispatch_zip.rb,<br> lib/scorm_engine/models/registration.rb,<br> lib/scorm_engine/models/course_import.rb,<br> lib/scorm_engine/api/endpoints/courses.rb,<br> lib/scorm_engine/api/endpoints/dispatches.rb,<br> lib/scorm_engine/api/endpoints/destinations.rb,<br> lib/scorm_engine/api/endpoints/configuration.rb,<br> lib/scorm_engine/api/endpoints/registrations.rb,<br> lib/scorm_engine/models/course_configuration.rb,<br> lib/scorm_engine/models/tenant_configuration.rb,<br> lib/scorm_engine/api/endpoints/courses/import.rb,<br> lib/scorm_engine/models/registration_configuration.rb,<br> lib/scorm_engine/models/dispatch_registration_count.rb,<br> lib/scorm_engine/models/registration_launch_history.rb,<br> lib/scorm_engine/api/endpoints/tenants/configuration.rb,<br> lib/scorm_engine/models/registration_activity_detail.rb,<br> lib/scorm_engine/models/registration_runtime_interaction.rb,<br> lib/scorm_engine/api/endpoints/registrations/configuration.rb,<br> lib/scorm_engine/api/endpoints/registrations/launch_history.rb</span>
+
 </dd>
   </dl>
   
@@ -87,12 +90,8 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>TODO: Consider consolidating this and [Courses|Tenants]::Configuration, but only after we’re</p>
-
-<pre class="code ruby"><code class="ruby">sure they are really 99.9% the same in terms of functionality.
-</code></pre>
-
+    <p>TODO: Consider consolidating this and [Courses|Tenants]::Configuration, but only after we're
+sure they are really 99.9% the same in terms of functionality.</p>
 
   </div>
 </div>
@@ -187,6 +186,7 @@
 
       
     </ul>
+    
   
 
 
@@ -282,9 +282,9 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Oct 20 13:46:33 2025 by
+  Generated on Thu Sep  3 13:36:18 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.37 (ruby-3.3.9).
+  0.9.45 (ruby-3.3.12).
 </div>
 
     </div>

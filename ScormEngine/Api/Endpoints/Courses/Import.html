@@ -6,13 +6,13 @@
 <title>
   Module: ScormEngine::Api::Endpoints::Courses::Import
   
-    &mdash; Documentation by YARD 0.9.37
+    &mdash; Documentation by YARD 0.9.45
   
 </title>
 
-  <link rel="stylesheet" href="../../../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../css/common.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "ScormEngine::Api::Endpoints::Courses::Import";
@@ -27,6 +27,8 @@
 
   </head>
   <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
     <div class="nav_wrap">
       <iframe id="nav" src="../../../../class_list.html?1"></iframe>
       <div id="resizer"></div>
@@ -83,7 +85,8 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/scorm_engine/api/endpoints/courses/import.rb</dd>
+    <dd>lib/scorm_engine/api/endpoints/courses/import.rb
+</dd>
   </dl>
   
 </div>
@@ -120,9 +123,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>This method will check the status of a course import.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>This method will check the status of a course import.</p></div></span>
   
 </li>
 
@@ -144,14 +145,13 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Import a course.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Import a course.</p></div></span>
   
 </li>
 
       
     </ul>
+    
   
 
 
@@ -171,9 +171,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>This method will check the status of a course import.</p>
-
+    <p>This method will check the status of a course import.</p>
 
   </div>
 </div>
@@ -209,9 +207,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The id of the import to check.</p>
-</div>
+            &mdash; <div class='inline'><p>The id of the import to check.</p></div>
           
         </li>
       
@@ -285,11 +281,9 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Import a course</p>
-
-<p>Either the actual contents of the zip file to import may be posted, or JSON that references the remote location to import from.</p>
-
+    <p>Import a course</p>
+<p>Either the actual contents of the zip file to import may be posted,
+or JSON that references the remote location to import from.</p>
 
   </div>
 </div>
@@ -325,9 +319,10 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>A unique identifier your application will use to identify the course after import. Your application is responsible both for generating this unique ID and for keeping track of the ID for later use.</p>
-</div>
+            &mdash; <div class='inline'><p>A unique identifier your application will use to identify the
+course after import. Your application is responsible both for
+generating this unique ID and for keeping track of the ID for later
+use.</p></div>
           
         </li>
       
@@ -338,9 +333,9 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>URL path to the .zip package representing the course or the manifest file defining the course. Mutually exclusive with :pathname.</p>
-</div>
+            &mdash; <div class='inline'><p>URL path to the .zip package representing the course or the
+manifest file defining the course. Mutually exclusive with
+:pathname.</p></div>
           
         </li>
       
@@ -351,9 +346,8 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>Local file path to the .zip package representing the course. Mutually exclusive with :url.</p>
-</div>
+            &mdash; <div class='inline'><p>Local file path to the .zip package representing the course.
+Mutually exclusive with :url.</p></div>
           
         </li>
       
@@ -367,9 +361,10 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>Is it OK to create a new version of this course? If this is set to false and the course already exists, the upload will fail. If true and the course already exists then a new version will be created. No effect if the course doesn’t already exist.</p>
-</div>
+            &mdash; <div class='inline'><p>Is it OK to create a new version of this course? If this is set to
+false and the course already exists, the upload will fail. If true
+and the course already exists then a new version will be created.
+No effect if the course doesn't already exist.</p></div>
           
         </li>
       
@@ -383,9 +378,7 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>A unique identifier that may be used as part of the directory name on disk.</p>
-</div>
+            &mdash; <div class='inline'><p>A unique identifier that may be used as part of the directory name on disk.</p></div>
           
         </li>
       
@@ -521,9 +514,9 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Oct 20 13:46:34 2025 by
+  Generated on Thu Sep  3 13:36:19 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.37 (ruby-3.3.9).
+  0.9.45 (ruby-3.3.12).
 </div>
 
     </div>
