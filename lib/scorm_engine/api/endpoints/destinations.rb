@@ -66,7 +66,7 @@ module ScormEngine
                 data: {
                   name: options[:name].to_s,
                 },
-              }
+              },
             ]
           }
 

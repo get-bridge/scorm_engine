@@ -95,7 +95,7 @@ module ScormEngine
                   expirationDate: options[:expiration_date],
                   externalConfig: options[:external_config],
                 },
-              }
+              },
             ]
           }
 
