@@ -17,7 +17,7 @@ jobs:
       contents: read
       id-token: write
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           repository: get-bridge/developer_portal
           token: ${{ secrets.GIT_HUB_TOKEN }}
